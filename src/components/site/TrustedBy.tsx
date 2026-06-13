@@ -10,7 +10,7 @@ function TrustedBy() {
     { quote: "Our sales team can now focus entirely on closing because everything upstream is handled by AI. Revenue is up 240% YoY.", name: "Elena Vasquez", role: "VP Sales, Polestar Corp" },
   ];
   return (
-    <section className="bg-paper py-24">
+    <section id="testimonial" className="bg-paper py-24">
           <div className="mx-auto max-w-[84vw] px-6">
               
     <div className="flex items-center w-full gap-4 mb-12">

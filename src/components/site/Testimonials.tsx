@@ -32,7 +32,7 @@ export default function Testimonials() {
             Discover why businesses trust us for their custom software, web, and mobile app solutions. Read real feedback from our clients who have transformed their ideas into seamless digital experiences with our expertise.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
           {items.map((t, i) => (
             <motion.div
               key={t.name}
