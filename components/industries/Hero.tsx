@@ -2,160 +2,175 @@
 
 import { motion, Variants } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Sparkles, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import { fadeInUp, staggerContainer, blowOut } from './Shared/animation';
+import { ArrowRight, Send, Sparkles } from 'lucide-react';
 import type { Section } from '@/content/type';
 
 interface HeroProps {
   section: Section;
-  bg?: string;
+  form?: {
+    fields: Array<{ name: string; type: string; placeholder: string; required?: boolean }>;
+    submitText?: string;
+    onSubmit?: (data: any) => void;
+  };
 }
 
 const wordVariants: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.9 },
+  hidden: { opacity: 0, y: 60 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    scale: 1,
     transition: {
-      delay: 0.1 + i * 0.08,
+      delay: i * 0.1,
       duration: 0.7,
-      ease: [0.34, 1.56, 0.64, 1],
+      ease: [0.22, 1, 0.36, 1],
     },
   }),
 };
 
-export default function Hero({ section, bg = 'bg-black' }: HeroProps) {
+export default function Hero({ section, form }: HeroProps) {
   const heading = section.heading || '';
   const subheading = section.subheading || '';
   const stats = section.stats || [];
   const ctas = section.ctas || [];
-  const primaryCta = ctas.find(c => c.primary) || ctas[0];
-  const secondaryCtas = ctas.filter(c => !c.primary);
+  const primaryCta = ctas.find((c) => c.primary) || ctas[0];
+  const secondaryCtas = ctas.filter((c) => !c.primary);
   const words = heading.split(' ');
+  const forIndex = words.findIndex((w) => w.toLowerCase() === 'for');
 
-  const isDark = bg === 'bg-black' || bg === 'bg-gray-900' || bg === 'bg-gray-800';
+  const defaultForm = {
+    fields: [
+      { name: 'name', type: 'text', placeholder: 'Your full name', required: true },
+      { name: 'email', type: 'email', placeholder: 'your@email.com', required: true },
+      { name: 'message', type: 'textarea', placeholder: 'What do you want to automate?', required: true },
+    ],
+    submitText: 'Send Message',
+    onSubmit: (data: any) => console.log('Form submitted:', data),
+  };
+
+  const activeForm = form || defaultForm;
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (activeForm.onSubmit) {
+      const formData = new FormData(e.currentTarget);
+      const data = Object.fromEntries(formData.entries());
+      activeForm.onSubmit(data);
+    }
+  };
 
   return (
-    <section className={`relative overflow-hidden min-h-screen flex items-center ${bg}`}>
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_70%_50%,rgba(249,115,22,0.07),transparent)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_20%_80%,rgba(249,115,22,0.04),transparent)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+    <section className="relative min-h-[50vh] flex items-center py-4 md:py-8 bg-black">
+      {/* Background decorations (same as Contact) */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-brand/20 rounded-full blur-3xl"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-brand/10 rounded-full blur-3xl"
+          animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.3, 0.1] }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(249,115,22,0.05),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
 
-      <motion.div
-        className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-brand/10 rounded-full blur-3xl"
-        animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-      />
-
-      {section.image && (
-        <div
-          className="absolute top-0 right-0 w-[55%] min-h-screen h-full z-0"
-          style={{
-            maskImage: `linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%),
-                        linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)`,
-            maskComposite: 'intersect',
-            WebkitMaskImage: `linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%),
-                              linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)`,
-            WebkitMaskComposite: 'source-in',
-          }}
-        >
-          <div className="absolute inset-0 bg-brand/10 blur-3xl" />
-          <motion.div
-            className="w-full h-full flex items-center justify-center p-8"
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0, y: [0, -12, 0] }}
-            transition={{
-              opacity: { duration: 0.9, delay: 0.4 },
-              x: { duration: 0.9, delay: 0.4 },
-              y: { duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 },
-            }}
-          >
-            <img
-              src={section.image.src}
-              alt={section.image.alt}
-              className="w-full h-full object-contain object-center drop-shadow-[0_0_60px rgba(249,115,22,0.2)]"
-            />
-          </motion.div>
-        </div>
-      )}
-
-      <div className="container relative mx-auto px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24 py-24 md:py-36 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="relative mx-auto max-w-[84vw] px-6 pt-12 pb-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center">
+          
+          {/* LEFT: Text */}
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={staggerContainer}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
+            }}
+            className="flex flex-col justify-center"
           >
             <motion.div
-              variants={fadeInUp}
-              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm mb-8 ${
-                isDark
-                  ? 'border-brand/30 bg-brand/10 text-brand'
-                  : 'border-brand/25 bg-brand/10 text-brand'
-              }`}
+              variants={wordVariants}
+              className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-4 py-2 text-sm text-brand backdrop-blur-sm mb-6"
             >
-              <Sparkles className="h-3.5 w-3.5" />
-              <span className="font-medium">Industry Automation</span>
+              <Sparkles className="h-4 w-4" />
+              <span>AI Automation</span>
               <span className="h-1 w-1 rounded-full bg-brand" />
-              <span className={`font-medium tracking-wide ${isDark ? 'text-brand/70' : 'text-brand/70'}`}>
-                AVAILABLE NOW
-              </span>
+              <span className="text-brand/70 animate-pulse">INDUSTRIES</span>
             </motion.div>
 
-            <motion.h1 className={`mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl leading-[1.08] font-sans ${
-              isDark ? 'text-white' : 'text-gray-900'
-            }`}>
-              {words.map((word, index) => (
-                <motion.span
-                  key={index}
-                  custom={index}
-                  variants={wordVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className={`inline-block mr-3 ${
-                    word.toLowerCase().includes('automation') || word.toLowerCase().includes('ai')
-                      ? 'text-brand'
-                      : isDark ? 'text-white' : 'text-gray-900'
-                  }`}
-                >
-                  {word}
-                </motion.span>
-              ))}
+            <motion.h1
+              variants={wordVariants}
+              className="display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 text-white"
+            >
+              {words.map((word, i) => {
+                const isLower = word[0] === word[0].toLowerCase() && /[a-z]/.test(word[0]);
+                const isAccent =
+                  word.toLowerCase().includes('automation') ||
+                  word.toLowerCase().includes('ai') ||
+                  word.toLowerCase().includes('future');
+
+                if (i === forIndex) {
+                  return (
+                    <span key={`group-${i}`}>
+                      <span
+                        className={
+                          isLower
+                            ? 'display-italic font-normal'
+                            : `font-black ${isAccent ? 'text-brand' : 'text-white'}`
+                        }
+                      >
+                        {word}
+                      </span>
+                      <br />
+                    </span>
+                  );
+                }
+
+                return (
+                  <span
+                    key={i}
+                    className={
+                      isLower
+                        ? 'display-italic font-normal'
+                        : `font-black ${isAccent ? 'text-brand' : 'text-white'}`
+                    }
+                  >
+                    {word}{' '}
+                  </span>
+                );
+              })}
             </motion.h1>
 
             {subheading && (
               <motion.p
-                variants={fadeInUp}
-                className={`mb-8 text-lg md:text-xl max-w-lg leading-relaxed font-normal ${
-                  isDark ? 'text-gray-300' : 'text-gray-500'
-                }`}
+                variants={wordVariants}
+                className="text-xl text-gray-300 leading-relaxed max-w-2xl text-justify"
               >
                 {subheading}
               </motion.p>
             )}
 
-            <motion.div variants={fadeInUp} className="flex flex-row items-center gap-6 flex-wrap">
+            <motion.div
+              variants={wordVariants}
+              className="flex flex-wrap items-center gap-6 mt-8"
+            >
               {stats.map((stat, idx) => (
-                <div key={idx} className="flex items-baseline gap-1.5">
-                  <span className="text-3xl font-bold text-brand">{stat.value}</span>
-                  <span className={`text-xs tracking-widest uppercase font-medium ${
-                    isDark ? 'text-gray-400' : 'text-gray-400'
-                  }`}>{stat.label}</span>
+                <div key={idx} className="flex flex-col items-start">
+                  <span className="text-2xl md:text-3xl font-black text-white leading-none">
+                    {stat.value}
+                  </span>
+                  <span className="text-[9px] tracking-widest uppercase text-gray-400 mt-0.5">
+                    {stat.label}
+                  </span>
                 </div>
               ))}
 
               {primaryCta && (
-                <motion.div
-                  whileHover={{ scale: 1.06, boxShadow: '0 0 30px rgba(249,115,22,0.4)' }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button
                     size="lg"
-                    className="bg-brand hover:bg-brand-dark text-white px-8 py-6 text-base rounded-full font-semibold shadow-lg shadow-brand/20 transition-all"
+                    className="bg-brand hover:bg-brand-dark text-white px-6 py-5 text-sm rounded-xl font-medium shadow-lg shadow-brand/30 transition-all"
                   >
                     {primaryCta.text}
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -164,38 +179,80 @@ export default function Hero({ section, bg = 'bg-black' }: HeroProps) {
               )}
 
               {secondaryCtas.map((cta, idx) => (
-                <motion.div key={idx} whileHover={{ scale: 1.04 }}>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className={`px-8 py-6 text-base rounded-full font-semibold transition-all ${
-                      isDark
-                        ? 'border-gray-600 text-gray-200 hover:bg-gray-800 hover:text-brand hover:border-brand'
-                        : 'border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-brand hover:border-brand'
-                    }`}
-                  >
-                    {cta.text}
-                  </Button>
-                </motion.div>
+                <motion.a
+                  key={idx}
+                  href="#"
+                  whileHover={{ x: 4 }}
+                  className="inline-flex items-center gap-1.5 text-white font-semibold text-base hover:text-brand transition-colors"
+                >
+                  {cta.text}
+                  <ArrowRight className="h-4 w-4" />
+                </motion.a>
               ))}
             </motion.div>
+          </motion.div>
 
-            <motion.div variants={fadeInUp} className="mt-10 flex items-center gap-3">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map(i => (
-                  <div key={i} className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold ${
-                    isDark
-                      ? 'bg-gray-800 border-gray-700 text-gray-300'
-                      : 'bg-brand/20 border-brand/30 text-brand'
-                  }`}>
-                    {String.fromCharCode(64 + i)}
+          {/* RIGHT: Form – no white borders, brand accent */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-full relative"
+          >
+            <div className="absolute -inset-4 bg-brand/20 blur-3xl rounded-3xl opacity-70" />
+            <div className="absolute -inset-2 bg-brand/10 blur-2xl rounded-3xl" />
+
+            {/* Container: border-brand/10 instead of white */}
+            <div className="relative p-6 md:p-8 rounded-2xl border border-brand/10 bg-transparent backdrop-blur-sm shadow-xl">
+              <h2 className="text-2xl font-bold text-white mb-1">Quick Message</h2>
+              <p className="text-gray-300 text-sm mb-6">We'll reply within a few hours.</p>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {activeForm.fields.map((field, idx) => (
+                  <div key={idx}>
+                    <label className="block text-sm text-gray-200 mb-1 font-medium">
+                      {field.name.charAt(0).toUpperCase() + field.name.slice(1)}
+                    </label>
+                    {field.type === 'textarea' ? (
+                      <textarea
+                        name={field.name}
+                        placeholder={field.placeholder}
+                        required={field.required}
+                        rows={3}
+                        className="w-full bg-white/10 border border-brand/20 rounded-xl px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/30 transition-all duration-200 text-sm resize-none"
+                      />
+                    ) : (
+                      <input
+                        type={field.type}
+                        name={field.name}
+                        placeholder={field.placeholder}
+                        required={field.required}
+                        className="w-full bg-white/10 border border-brand/20 rounded-xl px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/30 transition-all duration-200 text-sm"
+                      />
+                    )}
                   </div>
                 ))}
-              </div>
-              <span className={`text-sm font-medium ${isDark ? 'text-gray-400' : 'text-gray-400'}`}>
-                Trusted by 500+ companies
-              </span>
-            </motion.div>
+
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="relative group">
+                  <div className="absolute inset-0 bg-brand/20 blur-xl rounded-xl group-hover:blur-2xl transition-all" />
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="relative w-full bg-brand hover:bg-brand-dark text-white py-6 text-base rounded-xl font-medium shadow-lg shadow-brand/30 transition-all"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Send className="h-4 w-4" />
+                      {activeForm.submitText || 'Send Message'}
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </Button>
+                </motion.div>
+
+                <p className="text-xs text-gray-400 text-center">
+                  We never share your data. Your details are used only to respond to your enquiry.
+                </p>
+              </form>
+            </div>
           </motion.div>
         </div>
       </div>

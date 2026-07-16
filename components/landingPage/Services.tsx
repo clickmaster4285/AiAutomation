@@ -7,7 +7,7 @@ const services = [
   {
     title: "AI Agents",
     tag: "Most Popular",
-    desc: "Autonomous agents that think, decide, and act on your behalf — handling complex multi-step tasks without human input.",
+    desc: "Autonomous agents that think, decide, and act on your behalf handling complex multi-step tasks without human input.",
     col: "md:col-span-2",
     row: "md:row-span-1",
     order: 1,
@@ -42,7 +42,7 @@ const services = [
   },
   {
     title: "Lead Generation",
-    desc: "Automated outreach and inbound that fills your pipeline 24/7 — zero manual prospecting.",
+    desc: "Automated outreach and inbound that fills your pipeline 24/7 zero manual prospecting.",
     col: "md:col-span-1",
     row: "md:row-span-1",
     order: 6,

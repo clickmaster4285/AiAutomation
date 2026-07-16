@@ -48,8 +48,8 @@ export default function PainPoint({ section }: { section: Section }) {
   const lastSpans = items.length === 5;
 
   return (
-    <section className="py-20 border-t border-white/5 bg-black">
-      <div className="container mx-auto px-6 md:px-10 lg:px-16 xl:px-20" ref={ref}>
+    <section className="relative py-24 md:py-32 border-t border-white/5 bg-black">
+      <div className="mx-auto max-w-[84vw] px-6" ref={ref}>
         <motion.div
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
@@ -62,12 +62,12 @@ export default function PainPoint({ section }: { section: Section }) {
               style={{ background: 'var(--brand)' }}
             />
             {section.heading && (
-              <h2 className="display text-3xl md:text-4xl font-black text-white leading-tight mb-2">
+              <h2 className="display text-white text-3xl md:text-4xl mb-2">
                 {section.heading}
               </h2>
             )}
             {section.subheading && (
-              <p className="text-white/40 text-[0.9375rem] leading-relaxed max-w-lg text-justify">
+              <p className="text-white/40 text-[0.9375rem] leading-relaxed max-w-lg text-justify font-sans">
                 {section.subheading}
               </p>
             )}
@@ -109,8 +109,8 @@ export default function PainPoint({ section }: { section: Section }) {
                   >
                     {item.icon && <LucideIcon name={item.icon} />}
                   </div>
-                  <h3 className="font-bold text-white text-[0.9375rem] mb-2">{item.title}</h3>
-                  <p className="text-white/38 text-sm leading-relaxed text-justify">{item.description}</p>
+                  <h3 className="font-bold text-white text-[0.9375rem] mb-2 font-sans">{item.title}</h3>
+                  <p className="text-white/38 text-sm leading-relaxed text-justify font-sans">{item.description}</p>
                   <div
                     className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 origin-left"
                     style={{ background: `linear-gradient(to right, ${'var(--brand)'}, transparent)` }}

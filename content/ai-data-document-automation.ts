@@ -5,7 +5,7 @@ export const aiDataDocumentAutomation: ServiceContent = {
   slug: 'ai-data-document-automation',
   title: 'AI Data & Document Automation Services | Clickmasters',
   metaDescription:
-    'Clickmasters automates data and document work — extracting data from PDFs and invoices, validating it, and pushing it into your systems — no manual entry.',
+    'Clickmasters automates data and document work extracting data from PDFs and invoices, validating it, and pushing it into your systems no manual entry.',
   keywords: 'ai document processing, data extraction, document automation, ocr automation',
   sections: [
     // ========== HERO ==========
@@ -13,9 +13,9 @@ export const aiDataDocumentAutomation: ServiceContent = {
       type: 'hero',
       heading: 'AI Data & Document Automation',
       subheading:
-        'Turn documents and messy data into clean, structured, validated action — without anyone keying it by hand.',
+        'Turn documents and messy data into clean, structured, validated action without anyone keying it by hand.',
       content: [
-        'Clickmasters automates the data and document work where hours quietly disappear. Reading invoices and copying the numbers. Pulling fields off PDFs and forms. Cleaning messy spreadsheets. Validating entries and re-keying data between systems. None of it requires skill, all of it requires attention, and all of it is a poor use of the people doing it. AI data and document automation extracts, validates, and routes this work automatically — combining OCR to read documents with AI to understand them.',
+        'Clickmasters automates the data and document work where hours quietly disappear. Reading invoices and copying the numbers. Pulling fields off PDFs and forms. Cleaning messy spreadsheets. Validating entries and re-keying data between systems. None of it requires skill, all of it requires attention, and all of it is a poor use of the people doing it. AI data and document automation extracts, validates, and routes this work automatically combining OCR to read documents with AI to understand them.',
         'This page explains what AI document processing actually does, how modern extraction differs from the old OCR that everyone found unreliable, what we build, how accurate it really is, and where it delivers the most value.',
       ],
       stats: [
@@ -41,7 +41,7 @@ export const aiDataDocumentAutomation: ServiceContent = {
       heading: 'The Hidden Cost of Manual Data and Document Work',
       content: [
         'Document and data-entry work is the archetypal hidden cost. It rarely appears as a line item; it\'s absorbed into the day of finance staff, operations people, and admins as a constant background tax. Reading each invoice and typing the details into accounting. Transcribing form submissions. Reconciling figures across systems by eye. Cleaning data so a report will actually work. It feels like "just part of the job," which is exactly why it\'s never measured and never questioned.',
-        'It\'s also error-prone in a way that compounds. Manual data entry has a well-documented error rate, and errors in financial and operational data are expensive to find and fix downstream — a transposed figure in an invoice, a mistyped field in a record, propagating through reports and decisions until someone notices something doesn\'t add up. The cost isn\'t just the entry time; it\'s the time spent later hunting for and correcting the mistakes.',
+        'It\'s also error-prone in a way that compounds. Manual data entry has a well-documented error rate, and errors in financial and operational data are expensive to find and fix downstream a transposed figure in an invoice, a mistyped field in a record, propagating through reports and decisions until someone notices something doesn\'t add up. The cost isn\'t just the entry time; it\'s the time spent later hunting for and correcting the mistakes.',
       ],
     },
 
@@ -50,8 +50,8 @@ export const aiDataDocumentAutomation: ServiceContent = {
       type: 'text',
       heading: 'How Modern Document Extraction Differs From Old OCR',
       content: [
-        'Many businesses tried document automation years ago with traditional OCR and found it disappointing — it could read clean, perfectly formatted text but fell apart on real-world documents with varied layouts, and it had no understanding of what the text meant. You still needed a person to check and correct nearly everything, which defeated the purpose.',
-        'Modern AI-based extraction is a different proposition. It combines OCR with language models that understand documents, so it can find the invoice total even when invoices come in dozens of different layouts, distinguish a date from an invoice number from a PO number by meaning rather than position, and handle the messy variety of real documents. Instead of reading characters blindly, it understands the document the way a person does — which is what finally makes document automation reliable enough to remove the manual work rather than just relocate it.',
+        'Many businesses tried document automation years ago with traditional OCR and found it disappointing it could read clean, perfectly formatted text but fell apart on real-world documents with varied layouts, and it had no understanding of what the text meant. You still needed a person to check and correct nearly everything, which defeated the purpose.',
+        'Modern AI-based extraction is a different proposition. It combines OCR with language models that understand documents, so it can find the invoice total even when invoices come in dozens of different layouts, distinguish a date from an invoice number from a PO number by meaning rather than position, and handle the messy variety of real documents. Instead of reading characters blindly, it understands the document the way a person does which is what finally makes document automation reliable enough to remove the manual work rather than just relocate it.',
       ],
     },
 
@@ -98,8 +98,8 @@ export const aiDataDocumentAutomation: ServiceContent = {
       type: 'text',
       heading: 'How Accurate Is It, Really?',
       content: [
-        'This is the fair question, and the honest answer is: modern AI extraction is highly accurate on typical business documents, and crucially, it\'s built to know when it\'s unsure. The right way to deploy it isn\'t to assume perfection and hope — it\'s to combine strong extraction with validation rules and a human-in-the-loop step for exceptions. The system handles the high-confidence majority automatically and routes the genuinely ambiguous cases to a person, with the specific uncertain field flagged.',
-        'That design is what makes it trustworthy for financial and operational data. You\'re not choosing between "all manual" and "fully automated and hope it\'s right." You\'re getting automation that handles the bulk of the volume cleanly and escalates the small remainder it isn\'t sure about — which means the error rate in practice is typically lower than manual entry, not higher, because tired humans make mistakes on routine documents that a system flags for checking.',
+        'This is the fair question, and the honest answer is: modern AI extraction is highly accurate on typical business documents, and crucially, it\'s built to know when it\'s unsure. The right way to deploy it isn\'t to assume perfection and hope it\'s to combine strong extraction with validation rules and a human-in-the-loop step for exceptions. The system handles the high-confidence majority automatically and routes the genuinely ambiguous cases to a person, with the specific uncertain field flagged.',
+        'That design is what makes it trustworthy for financial and operational data. You\'re not choosing between "all manual" and "fully automated and hope it\'s right." You\'re getting automation that handles the bulk of the volume cleanly and escalates the small remainder it isn\'t sure about which means the error rate in practice is typically lower than manual entry, not higher, because tired humans make mistakes on routine documents that a system flags for checking.',
       ],
     },
 
@@ -188,8 +188,8 @@ export const aiDataDocumentAutomation: ServiceContent = {
       type: 'text',
       heading: 'A Worked Example: Invoice to Accounting, Untouched',
       content: [
-        'A vendor invoice arrives by email. Traditionally, someone opens it, reads the vendor, amount, date, and line items, types them into the accounting system, checks them against the purchase order, and files the document — a few minutes per invoice that, across a month, becomes a serious workload, with the occasional transposed figure to hunt down later.',
-        'Automated, the invoice is captured on arrival; AI extraction reads the fields across whatever layout this particular vendor uses; the values are validated against the purchase order and expected ranges; matching invoices flow straight into accounting; and anything that does not match — a wrong total, a missing PO, an unfamiliar vendor — is flagged with the specific issue for a person to resolve. The routine majority is processed with no human touch, the exceptions get exactly the attention they need, and the data that lands in your books is more accurate than manual entry, not less.',
+        'A vendor invoice arrives by email. Traditionally, someone opens it, reads the vendor, amount, date, and line items, types them into the accounting system, checks them against the purchase order, and files the document a few minutes per invoice that, across a month, becomes a serious workload, with the occasional transposed figure to hunt down later.',
+        'Automated, the invoice is captured on arrival; AI extraction reads the fields across whatever layout this particular vendor uses; the values are validated against the purchase order and expected ranges; matching invoices flow straight into accounting; and anything that does not match a wrong total, a missing PO, an unfamiliar vendor is flagged with the specific issue for a person to resolve. The routine majority is processed with no human touch, the exceptions get exactly the attention they need, and the data that lands in your books is more accurate than manual entry, not less.',
       ],
     },
 
@@ -201,7 +201,7 @@ export const aiDataDocumentAutomation: ServiceContent = {
         {
           title: 'What is AI document processing?',
           description:
-            'AI document processing uses OCR and language models to read documents — invoices, PDFs, forms — extract structured data, validate it, and route it into business systems automatically, replacing manual reading and data entry.',
+            'AI document processing uses OCR and language models to read documents invoices, PDFs, forms extract structured data, validate it, and route it into business systems automatically, replacing manual reading and data entry.',
         },
         {
           title: 'Can AI read invoices and PDFs accurately?',
@@ -226,7 +226,7 @@ export const aiDataDocumentAutomation: ServiceContent = {
         {
           title: 'Can it push data straight into our accounting or CRM?',
           description:
-            'Yes — extraction is only half the value. We push validated data directly into your accounting, CRM, or other systems as part of an end-to-end workflow, so there\'s no manual step between reading the document and updating your records.',
+            'Yes extraction is only half the value. We push validated data directly into your accounting, CRM, or other systems as part of an end-to-end workflow, so there\'s no manual step between reading the document and updating your records.',
         },
       ],
     },
@@ -235,7 +235,7 @@ export const aiDataDocumentAutomation: ServiceContent = {
     {
       type: 'cta',
       heading: 'See how much document work your team could stop doing by hand.',
-      subheading: 'Book a free automation audit — 30 minutes, no obligation.',
+      subheading: 'Book a free automation audit 30 minutes, no obligation.',
       cta: {
         text: 'Book Your Free Audit',
         link: '/free-automation-audit',

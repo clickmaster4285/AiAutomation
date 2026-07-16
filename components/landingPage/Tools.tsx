@@ -88,7 +88,7 @@ Our Stack
         </h2>
 
         <p className="text-muted-foreground text-md mt-6 max-w-xs">
-          We integrate with your existing tools and layer AI on top — no
+          We integrate with your existing tools and layer AI on top no
           rip-and-replace required.
         </p>
       </div>

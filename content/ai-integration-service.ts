@@ -3,17 +3,17 @@ import { ServiceContent } from './type';
 
 export const aiIntegrationServices: ServiceContent = {
   slug: 'ai-integration-services',
-  title: 'AI Integration Services | Connect AI to Your Tools — Clickmasters',
-  metaDescription: 'Clickmasters integrates AI into the tools you already use — CRM, support, email, and ops. Custom OpenAI, Claude, and Gemini integrations that automate real work.',
+  title: 'AI Integration Services | Connect AI to Your Tools Clickmasters',
+  metaDescription: 'Clickmasters integrates AI into the tools you already use CRM, support, email, and ops. Custom OpenAI, Claude, and Gemini integrations that automate real work.',
   keywords: 'ai integration services, ai integration, api integration, ai workflow, system integration',
   sections: [
     // ========== HERO ==========
     {
       type: 'hero',
       heading: 'AI Integration Services',
-      subheading: 'Connect AI directly to the tools you already use — CRM, help desk, email, and ops — so it takes action inside real workflows, not in a separate tab.',
+      subheading: 'Connect AI directly to the tools you already use CRM, help desk, email, and ops so it takes action inside real workflows, not in a separate tab.',
       content: [
-        'Clickmasters integrates AI directly into the tools your business already runs on. Most companies have AI sitting in a separate browser tab — used manually, disconnected from where work actually happens. Real AI integration wires the model into your CRM, help desk, email, and workflows so it reads context and takes action automatically: no copy-paste, no separate tool to remember to open. This page explains what AI integration really means, why it is where the return lives, what we connect, and how we keep it secure and accurate.'
+        'Clickmasters integrates AI directly into the tools your business already runs on. Most companies have AI sitting in a separate browser tab used manually, disconnected from where work actually happens. Real AI integration wires the model into your CRM, help desk, email, and workflows so it reads context and takes action automatically: no copy-paste, no separate tool to remember to open. This page explains what AI integration really means, why it is where the return lives, what we connect, and how we keep it secure and accurate.'
       ],
       stats: [
         { label: 'PROJECTS', value: '100+' },
@@ -24,7 +24,7 @@ export const aiIntegrationServices: ServiceContent = {
         { text: 'View Work', link: '/work', primary: false }
       ],
       image: {
-        src: '/images/integration.png',
+        src: '/images/ai.png',
         alt: 'AI Integration illustration',
         width: 600,
         height: 400
@@ -36,9 +36,13 @@ export const aiIntegrationServices: ServiceContent = {
       type: 'text',
       heading: 'What "AI Integration" Really Means',
       content: [
-        'Buying a chatbot subscription is not integration. Pasting text into a chat window and copying the result back into your CRM is not integration either — it is manual work with an extra step bolted on. Real AI integration means the model is wired into your systems: reading your CRM records, drafting in your inbox, classifying your tickets, updating your database — triggered automatically as part of the workflows you already run.',
-        'The difference comes down to whether the AI is a destination you visit or a capability that lives inside your tools. Integrated AI does not wait for someone to open a tab and write a prompt. It runs where the work is, on the triggers that already drive your business, and it acts on the results without a person shuttling data back and forth. That shift — from AI as a manual assistant to AI as a working part of your systems — is the whole point of integration.'
-      ]
+        'Buying a chatbot subscription is not integration. Pasting text into a chat window and copying the result back into your CRM is not integration either it is manual work with an extra step bolted on. Real AI integration means the model is wired into your systems: reading your CRM records, drafting in your inbox, classifying your tickets, updating your database triggered automatically as part of the workflows you already run.',
+        'The difference comes down to whether the AI is a destination you visit or a capability that lives inside your tools. Integrated AI does not wait for someone to open a tab and write a prompt. It runs where the work is, on the triggers that already drive your business, and it acts on the results without a person shuttling data back and forth. That shift from AI as a manual assistant to AI as a working part of your systems is the whole point of integration.'
+      ],
+       image: {
+    src: '/images/tech.png',
+    alt: 'AI Integration illustration'
+  }
     },
 
     // ========== TEXT: Why Integration Is Where the ROI Is ==========
@@ -46,7 +50,7 @@ export const aiIntegrationServices: ServiceContent = {
       type: 'text',
       heading: 'Why Integration Is Where the ROI Is',
       content: [
-        'A standalone AI tool saves a little time on individual tasks. Integrated AI changes how work flows. When the model is connected to your systems, it can handle entire steps autonomously — reading an incoming email and updating the right record, summarizing a call and logging it to the CRM, classifying a support ticket and routing it — with no human in the loop for the routine cases.',
+        'A standalone AI tool saves a little time on individual tasks. Integrated AI changes how work flows. When the model is connected to your systems, it can handle entire steps autonomously reading an incoming email and updating the right record, summarizing a call and logging it to the CRM, classifying a support ticket and routing it with no human in the loop for the routine cases.',
         'That is the gap between "we use AI" and "AI does the work." Most businesses are stuck in the first category, with AI as a clever assistant in a separate window that still depends entirely on a person to act on its output. Integration moves you to the second, where the AI is wired into the flow and the routine work simply happens. The return is not the cleverness of the model; it is the elimination of the manual handoffs around it.'
       ]
     },
@@ -68,7 +72,7 @@ export const aiIntegrationServices: ServiceContent = {
         },
         {
           title: 'Generative AI integration',
-          description: 'Content, summaries, and drafts generated inside your existing tools — in the inbox, the CRM, the document — rather than in a separate app you have to visit.',
+          description: 'Content, summaries, and drafts generated inside your existing tools in the inbox, the CRM, the document rather than in a separate app you have to visit.',
           icon: 'FileText'
         },
         {
@@ -78,15 +82,10 @@ export const aiIntegrationServices: ServiceContent = {
         },
         {
           title: 'Agent integration',
-          description: 'AI agents wired into your systems to take action — create records, send replies, trigger workflows — not just respond to questions.',
+          description: 'AI agents wired into your systems to take action create records, send replies, trigger workflows not just respond to questions.',
           icon: 'Bot'
         },
-        // ✅ NEW 6th card – makes 2 rows of 3
-        {
-          title: 'Data privacy & compliance',
-          description: 'We build integrations with GDPR, HIPAA, and SOC2 compliance in mind — ensuring your data stays protected and your AI workflows meet regulatory requirements.',
-          icon: 'Shield'
-        }
+      
       ]
     },
 
@@ -134,8 +133,8 @@ export const aiIntegrationServices: ServiceContent = {
       type: 'text',
       heading: 'Integration vs. Development: What You Actually Need',
       content: [
-        'There is a useful distinction worth being clear about, because it affects cost and timeline. AI development means building custom models or applications from scratch — training a model on your data, building bespoke AI software. AI integration means connecting existing, proven models like OpenAI, Claude, or Gemini into your tools and workflows. The two get conflated, and businesses sometimes assume they need expensive custom development when integration would serve them better and faster.',
-        'For the large majority of businesses, integration is what delivers the value. The frontier models are already extraordinarily capable; the bottleneck is rarely the model itself but the fact that it is not connected to your systems. Wiring a proven model into your real workflow is faster, cheaper, and lower-risk than custom development, and it captures most of the available return. We will tell you honestly which one your situation calls for — and it is almost always integration.'
+        'There is a useful distinction worth being clear about, because it affects cost and timeline. AI development means building custom models or applications from scratch training a model on your data, building bespoke AI software. AI integration means connecting existing, proven models like OpenAI, Claude, or Gemini into your tools and workflows. The two get conflated, and businesses sometimes assume they need expensive custom development when integration would serve them better and faster.',
+        'For the large majority of businesses, integration is what delivers the value. The frontier models are already extraordinarily capable; the bottleneck is rarely the model itself but the fact that it is not connected to your systems. Wiring a proven model into your real workflow is faster, cheaper, and lower-risk than custom development, and it captures most of the available return. We will tell you honestly which one your situation calls for and it is almost always integration.'
       ]
     },
 
@@ -146,18 +145,18 @@ export const aiIntegrationServices: ServiceContent = {
       items: [
         {
           title: 'Security',
-          description: 'We use proper access controls, keep credentials in secure environment configuration rather than hardcoded, and — where data sensitivity demands it — build on self-hostable infrastructure so your data stays in your environment. Each integration is scoped to exactly what the AI needs, and nothing more.',
+          description: 'We use proper access controls, keep credentials in secure environment configuration rather than hardcoded, and where data sensitivity demands it build on self-hostable infrastructure so your data stays in your environment. Each integration is scoped to exactly what the AI needs, and nothing more.',
           icon: 'Shield'
         },
         {
           title: 'Accuracy',
-          description: 'We ground the AI in your real data through retrieval-augmented generation, add validation on outputs, and keep humans in the loop wherever a mistake would be costly. The aim is an integration you can actually trust to run on its own for the routine cases — not one you have to double-check constantly.',
+          description: 'We ground the AI in your real data through retrieval-augmented generation, add validation on outputs, and keep humans in the loop wherever a mistake would be costly. The aim is an integration you can actually trust to run on its own for the routine cases not one you have to double-check constantly.',
           icon: 'Target'
         },
         // ✅ NEW 3rd card – makes 1 row of 3
         {
           title: 'Monitoring & observability',
-          description: 'We provide real‑time dashboards and alerts for every integration — so you know exactly when a workflow runs, what it processed, and if anything needs attention, before it becomes a problem.',
+          description: 'We provide real‑time dashboards and alerts for every integration so you know exactly when a workflow runs, what it processed, and if anything needs attention, before it becomes a problem.',
           icon: 'BarChart3'
         }
       ]
@@ -170,7 +169,7 @@ export const aiIntegrationServices: ServiceContent = {
       items: [
         {
           title: 'We integrate into your real workflow',
-          description: 'Not a demo — the actual systems where your work happens, on the triggers that already run your business.',
+          description: 'Not a demo the actual systems where your work happens, on the triggers that already run your business.',
           icon: 'Zap'
         },
         {
@@ -191,7 +190,7 @@ export const aiIntegrationServices: ServiceContent = {
         // ✅ NEW 5th card
         {
           title: 'Fast implementation',
-          description: 'We get your first integration live in weeks, not months, using pre‑built connectors and battle‑tested patterns — so you see ROI quickly.',
+          description: 'We get your first integration live in weeks, not months, using pre‑built connectors and battle‑tested patterns so you see ROI quickly.',
           icon: 'Clock'
         }
       ]
@@ -204,7 +203,7 @@ export const aiIntegrationServices: ServiceContent = {
       items: [
         {
           title: 'What are AI integration services?',
-          description: 'AI integration services connect AI models like OpenAI or Claude directly into a business\'s existing software — CRM, email, help desk, databases — so the AI reads context and takes action automatically inside real workflows, rather than running as a separate tool you use manually.'
+          description: 'AI integration services connect AI models like OpenAI or Claude directly into a business\'s existing software CRM, email, help desk, databases so the AI reads context and takes action automatically inside real workflows, rather than running as a separate tool you use manually.'
         },
         {
           title: 'How do you integrate AI into existing software?',
@@ -212,11 +211,11 @@ export const aiIntegrationServices: ServiceContent = {
         },
         {
           title: 'What\'s the difference between AI integration and AI development?',
-          description: 'Integration connects existing, proven AI models to your tools; development builds custom models or applications from scratch. Most businesses need integration — wiring capable models into their workflows — not custom model training, which is slower, costlier, and rarely necessary.'
+          description: 'Integration connects existing, proven AI models to your tools; development builds custom models or applications from scratch. Most businesses need integration wiring capable models into their workflows not custom model training, which is slower, costlier, and rarely necessary.'
         },
         {
           title: 'Is it safe to connect AI to our CRM and data?',
-          description: 'Yes, when built with scoped access controls, secure credential handling, and — for sensitive data — self-hostable infrastructure so data stays in your environment. We scope each integration to only what the AI needs to do its job.'
+          description: 'Yes, when built with scoped access controls, secure credential handling, and for sensitive data self-hostable infrastructure so data stays in your environment. We scope each integration to only what the AI needs to do its job.'
         },
         {
           title: 'Which AI models can you integrate?',
@@ -233,7 +232,7 @@ export const aiIntegrationServices: ServiceContent = {
     {
       type: 'cta',
       heading: 'See where AI fits in your stack.',
-      subheading: 'Book a free integration audit — we\'ll map the highest-ROI connection first, with no obligation.',
+      subheading: 'Book a free integration audit we\'ll map the highest-ROI connection first, with no obligation.',
       cta: {
         text: 'Book Your Free Audit',
         link: '/free-automation-audit',

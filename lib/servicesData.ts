@@ -15,7 +15,7 @@ export interface ServiceContent {
 
 export const servicesData: Record<string, ServiceContent> = {
   "ai-automation-agency": {
-    title: "AI Automation Agency | Custom AI Workflows & Agents — Clickmasters",
+    title: "AI Automation Agency | Custom AI Workflows & Agents Clickmasters",
     metaDescription: "Clickmasters is a US AI automation agency building custom AI agents, workflow automation, and business process systems that cut manual work and scale teams.",
     primaryKeyword: "ai automation agency",
     tagline: "Custom AI agents, workflow automation, and business process systems for US businesses that want to scale without hiring.",

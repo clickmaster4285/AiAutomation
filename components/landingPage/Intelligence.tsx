@@ -70,7 +70,7 @@ export default function Intelligence() {
           <div>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
               AI automation replaces manual, repetitive work with intelligent
-              systems that qualify, communicate, organize, and convert — 24/7
+              systems that qualify, communicate, organize, and convert 24/7
               without human intervention.
             </p>
 

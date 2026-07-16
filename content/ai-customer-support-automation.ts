@@ -3,7 +3,7 @@ import { ServiceContent } from './type';
 
 export const aiCustomerSupportAutomation: ServiceContent = {
   slug: 'ai-customer-support-automation',
-  title: 'AI Customer Support Automation | 24/7 AI Support Agents — Clickmasters',
+  title: 'AI Customer Support Automation | 24/7 AI Support Agents Clickmasters',
   metaDescription: 'Automate customer support with AI agents that resolve tickets, answer from your docs, and route what needs a human. Clickmasters cuts response time and ticket volume.',
   keywords: 'ai customer support, support automation, ticket automation, customer service ai',
   sections: [
@@ -11,7 +11,7 @@ export const aiCustomerSupportAutomation: ServiceContent = {
     {
       type: 'hero',
       heading: 'AI Customer Support Automation',
-      subheading: 'AI support that actually resolves tickets — answering from your own knowledge, working around the clock, and escalating only what truly needs a human.',
+      subheading: 'AI support that actually resolves tickets answering from your own knowledge, working around the clock, and escalating only what truly needs a human.',
       content: [
         'Clickmasters builds AI customer support automation that resolves the repetitive work and escalates the rest. Not a scripted chatbot that frustrates people and dead-ends in "I didn\'t understand that," but AI support agents that answer from your own documentation, handle the high-volume questions around the clock, take action in your systems, and route the genuinely complex cases to your team with full context attached.',
         'This page explains the support bottleneck every growing business hits, what modern AI support automation actually does differently from the old chatbots, what we build, how we keep answers accurate and on-brand, and the returns you can realistically expect. It is written for a support or operations leader weighing whether AI can take real load off the team without damaging the customer experience.'
@@ -37,8 +37,8 @@ export const aiCustomerSupportAutomation: ServiceContent = {
       type: 'text',
       heading: 'The Support Bottleneck Every Growing Business Hits',
       content: [
-        'Support volume grows with the business, but the nature of that volume is lopsided. A large share of every support queue is variations on a small set of questions: where is my order, how do I reset this, what is your refund policy, how do I change my plan, why was I charged this. These are not hard questions. They are repetitive ones, and answering each by hand is slow and expensive — not because any single answer is difficult, but because there are so many of them and they never stop.',
-        'The consequences compound. Customers wait, and waiting is the single biggest driver of support dissatisfaction. Your skilled support people spend their day on repetitive questions instead of the complex, high-value cases where they would actually make a difference. And coverage gaps appear — questions that arrive overnight or at the weekend sit unanswered until someone is back at their desk, by which point a frustrated customer may already be looking elsewhere.',
+        'Support volume grows with the business, but the nature of that volume is lopsided. A large share of every support queue is variations on a small set of questions: where is my order, how do I reset this, what is your refund policy, how do I change my plan, why was I charged this. These are not hard questions. They are repetitive ones, and answering each by hand is slow and expensive not because any single answer is difficult, but because there are so many of them and they never stop.',
+        'The consequences compound. Customers wait, and waiting is the single biggest driver of support dissatisfaction. Your skilled support people spend their day on repetitive questions instead of the complex, high-value cases where they would actually make a difference. And coverage gaps appear questions that arrive overnight or at the weekend sit unanswered until someone is back at their desk, by which point a frustrated customer may already be looking elsewhere.',
         'Hiring more support staff is the obvious answer, and it works, but it ties your support capacity directly to headcount and cost. Every increase in volume requires a proportional increase in people. AI support automation breaks that link by absorbing the repetitive volume, so your team\'s size is driven by the complex cases that genuinely need humans rather than by the sheer quantity of routine ones.'
       ]
     },
@@ -49,8 +49,8 @@ export const aiCustomerSupportAutomation: ServiceContent = {
       heading: 'What Modern AI Support Automation Does Differently',
       content: [
         'It is worth being clear about why this is not the chatbot experience everyone has learned to dread. The old generation of support bots followed rigid decision trees. They could only handle the exact paths someone had pre-programmed, they misunderstood anything phrased unexpectedly, and they became a wall between the customer and a human rather than a help. Everyone has hammered "talk to an agent" into one of these and remembers the frustration.',
-        'Modern AI support agents work fundamentally differently. They understand natural language, so a customer can ask in their own words rather than picking from a menu. Critically, they answer from your actual content — your help docs, your policies, your product information — using retrieval-augmented generation, so the answers are accurate and specific to your business rather than generic or invented. And they can take action: not just describe how to do something, but actually do it in your systems where appropriate. The shift is from a bot that deflects to an agent that resolves.',
-        'Just as important, a well-built AI support system knows its limits. When a question is complex, sensitive, or outside what it should handle, it hands off to a human — with the conversation history and a summary attached, so the customer does not have to repeat themselves and the agent starts from context. Done right, the customer barely notices the handoff; done wrong, in the old style, the handoff was the whole frustrating point.'
+        'Modern AI support agents work fundamentally differently. They understand natural language, so a customer can ask in their own words rather than picking from a menu. Critically, they answer from your actual content your help docs, your policies, your product information using retrieval-augmented generation, so the answers are accurate and specific to your business rather than generic or invented. And they can take action: not just describe how to do something, but actually do it in your systems where appropriate. The shift is from a bot that deflects to an agent that resolves.',
+        'Just as important, a well-built AI support system knows its limits. When a question is complex, sensitive, or outside what it should handle, it hands off to a human with the conversation history and a summary attached, so the customer does not have to repeat themselves and the agent starts from context. Done right, the customer barely notices the handoff; done wrong, in the old style, the handoff was the whole frustrating point.'
       ]
     },
 
@@ -71,7 +71,7 @@ export const aiCustomerSupportAutomation: ServiceContent = {
         },
         {
           title: 'AI-drafted replies',
-          description: 'For tickets your team handles directly, the AI drafts a suggested response your agents can approve or edit in one click — keeping a human in control while removing most of the typing.',
+          description: 'For tickets your team handles directly, the AI drafts a suggested response your agents can approve or edit in one click keeping a human in control while removing most of the typing.',
           icon: 'FileText'
         },
         {
@@ -92,8 +92,8 @@ export const aiCustomerSupportAutomation: ServiceContent = {
       type: 'text',
       heading: 'How We Keep Answers Accurate and On-Brand',
       content: [
-        'The single biggest fear about AI support is that it will confidently tell a customer something wrong. That fear is justified for AI that answers from its general training, and it is exactly what we design against. The core technique is grounding: instead of letting the model answer from what it vaguely "knows," we connect it to your real content — your help center, your policy documents, your product information — and have it answer from that. This is retrieval-augmented generation, and it is the difference between an agent you can put in front of customers and one you cannot.',
-        'On top of grounding, we add guardrails around what the agent is allowed to say and do, keep humans in the loop for sensitive categories, and monitor the agent\'s responses so problems surface early and the system improves over time. The aim is an agent whose answers are as accurate as your documentation — and where the documentation is silent, an agent that says so and escalates, rather than one that guesses to seem helpful.',
+        'The single biggest fear about AI support is that it will confidently tell a customer something wrong. That fear is justified for AI that answers from its general training, and it is exactly what we design against. The core technique is grounding: instead of letting the model answer from what it vaguely "knows," we connect it to your real content your help center, your policy documents, your product information and have it answer from that. This is retrieval-augmented generation, and it is the difference between an agent you can put in front of customers and one you cannot.',
+        'On top of grounding, we add guardrails around what the agent is allowed to say and do, keep humans in the loop for sensitive categories, and monitor the agent\'s responses so problems surface early and the system improves over time. The aim is an agent whose answers are as accurate as your documentation and where the documentation is silent, an agent that says so and escalates, rather than one that guesses to seem helpful.',
         'There is a useful side effect to this approach: building an AI support agent forces your knowledge base into shape. Gaps and contradictions in your documentation become visible because the agent surfaces them. Many clients find their human support improves alongside the automation, simply because the underlying knowledge gets cleaned up in the process.'
       ]
     },
@@ -132,7 +132,7 @@ export const aiCustomerSupportAutomation: ServiceContent = {
         // ✅ NEW 6th card – makes 2 rows of 3
         {
           title: 'Analytics & reporting',
-          description: 'Real‑time dashboards showing ticket volume, deflection rate, response time, and customer sentiment — so you can track ROI and continuously improve your support operations.',
+          description: 'Real‑time dashboards showing ticket volume, deflection rate, response time, and customer sentiment so you can track ROI and continuously improve your support operations.',
           icon: 'BarChart3'
         }
       ]
@@ -143,8 +143,8 @@ export const aiCustomerSupportAutomation: ServiceContent = {
       type: 'text',
       heading: 'The Returns You Can Expect',
       content: [
-        'The value of support automation shows up in four measurable places. Response time falls, often dramatically, because the AI answers instantly instead of a customer waiting in a queue. Ticket deflection rises, as the agent resolves the routine questions that previously consumed your team — freeing capacity without adding people. Coverage extends to around the clock, so customers in different time zones or with late-night questions are served without you staffing those hours. And your team\'s work shifts upward, from repetitive triage to the complex, relationship-defining cases where human skill actually matters.',
-        'It is worth being realistic about the shape of this. AI support automation does not eliminate your support team, and any vendor promising that is overselling. What it does is change the mix of what your team handles — absorbing the high-volume routine so the humans focus on the cases that genuinely need them. For most businesses, the right framing is not "replace support" but "let support scale without scaling headcount in lockstep, and let the people you have do better work."'
+        'The value of support automation shows up in four measurable places. Response time falls, often dramatically, because the AI answers instantly instead of a customer waiting in a queue. Ticket deflection rises, as the agent resolves the routine questions that previously consumed your team freeing capacity without adding people. Coverage extends to around the clock, so customers in different time zones or with late-night questions are served without you staffing those hours. And your team\'s work shifts upward, from repetitive triage to the complex, relationship-defining cases where human skill actually matters.',
+        'It is worth being realistic about the shape of this. AI support automation does not eliminate your support team, and any vendor promising that is overselling. What it does is change the mix of what your team handles absorbing the high-volume routine so the humans focus on the cases that genuinely need them. For most businesses, the right framing is not "replace support" but "let support scale without scaling headcount in lockstep, and let the people you have do better work."'
       ]
     },
 
@@ -176,7 +176,7 @@ export const aiCustomerSupportAutomation: ServiceContent = {
         // ✅ NEW 5th card
         {
           title: 'Scalable support capacity',
-          description: 'Our AI handles spikes in ticket volume without breaking a sweat — so you never need to over‑hire for peak seasons or worry about unexpected surges.',
+          description: 'Our AI handles spikes in ticket volume without breaking a sweat so you never need to over‑hire for peak seasons or worry about unexpected surges.',
           icon: 'TrendingUp'
         }
       ]
@@ -210,7 +210,7 @@ export const aiCustomerSupportAutomation: ServiceContent = {
     // ========== TEXT: Staged Approach ==========
     {
       type: 'text',
-      content: 'This staged approach captures value quickly on the routine questions while protecting the customer experience, and it surfaces gaps in your documentation along the way — which improves both the automated and the human side of support.'
+      content: 'This staged approach captures value quickly on the routine questions while protecting the customer experience, and it surfaces gaps in your documentation along the way which improves both the automated and the human side of support.'
     },
 
     // ========== FAQ ==========
@@ -220,7 +220,7 @@ export const aiCustomerSupportAutomation: ServiceContent = {
       items: [
         {
           title: 'What is AI customer support automation?',
-          description: 'It is the use of AI agents and workflows to handle customer support tasks automatically — answering common questions from your documentation, triaging and routing tickets, and drafting replies — while escalating complex or sensitive cases to human agents with full context.'
+          description: 'It is the use of AI agents and workflows to handle customer support tasks automatically answering common questions from your documentation, triaging and routing tickets, and drafting replies while escalating complex or sensitive cases to human agents with full context.'
         },
         {
           title: 'Can AI replace customer support agents?',
@@ -232,7 +232,7 @@ export const aiCustomerSupportAutomation: ServiceContent = {
         },
         {
           title: 'Won\'t customers be frustrated by a bot?',
-          description: 'They are frustrated by old, scripted bots that misunderstand and dead-end. Modern AI agents understand natural language, answer accurately from your content, take real action, and hand off cleanly to a human when needed — which is a markedly better experience than waiting in a queue for a routine answer.'
+          description: 'They are frustrated by old, scripted bots that misunderstand and dead-end. Modern AI agents understand natural language, answer accurately from your content, take real action, and hand off cleanly to a human when needed which is a markedly better experience than waiting in a queue for a routine answer.'
         },
         {
           title: 'Which help desks do you work with?',
@@ -249,7 +249,7 @@ export const aiCustomerSupportAutomation: ServiceContent = {
     {
       type: 'cta',
       heading: 'See how many tickets you could deflect automatically.',
-      subheading: 'Book a free support automation audit — 30 minutes, no obligation.',
+      subheading: 'Book a free support automation audit 30 minutes, no obligation.',
       cta: {
         text: 'Book Your Free Audit',
         link: '/free-automation-audit',

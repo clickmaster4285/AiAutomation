@@ -36,7 +36,7 @@ export default function Live() {
               Watch the<br />automation<br /><span className="display-italic text-brand">in motion.</span>
             </h2>
             <p className="text-muted-foreground mt-4 md:mt-6 max-w-xl text-sm md:text-md leading-relaxed mx-auto md:mx-0">
-              From the moment a prospect fills in your form, our AI takes over — qualifying, enriching, syncing, and booking — without a single human touch.
+              From the moment a prospect fills in your form, our AI takes over qualifying, enriching, syncing, and booking without a single human touch.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-6 md:gap-10 mt-8 md:mt-10">
               <div>

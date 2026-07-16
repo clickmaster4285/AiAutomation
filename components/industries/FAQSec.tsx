@@ -1,178 +1,300 @@
 'use client';
 
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus } from 'lucide-react';
+import { Plus, X } from 'lucide-react';
 import type { Section } from '@/content/type';
 
-interface FaqSecProps {
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+};
+const stagger: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+interface Props {
   section: Section;
-  bg?: string;
+  variant?: 'dark' | 'light';
 }
 
-export default function FaqSec({
-  section,
-  bg = 'bg-white',
-}: FaqSecProps) {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
+/* ─── Animated right-side decorative background ─────────────────────────── */
+function RightPattern() {
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-y-0 right-0 w-[50%] overflow-hidden"
+    >
+      {/* Soft radial wash anchored top-right */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 60% at 90% 20%, color-mix(in oklch, var(--brand) 10%, transparent), transparent 70%)',
+        }}
+      />
 
+      {/* Dot grid SVG pattern tile */}
+      <svg
+        className="absolute inset-0 h-full w-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            id="faq-dots"
+            x="0"
+            y="0"
+            width="32"
+            height="32"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx="1.5" cy="1.5" r="1.5" fill="var(--brand)" opacity="0.18" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#faq-dots)" />
+      </svg>
+
+      {/* Pulsing concentric rings large, top-right */}
+      {[0, 1, 2, 3].map((i) => (
+        <motion.div
+          key={`ring-a-${i}`}
+          className="absolute rounded-full border"
+          style={{
+            borderColor: 'var(--brand)',
+            opacity: 0.12 - i * 0.02,
+            width:  180 + i * 80,
+            height: 180 + i * 80,
+            top:   -60 + i * -30,
+            right: -60 + i * -30,
+          }}
+          animate={{ scale: [1, 1.06, 1], opacity: [0.12 - i * 0.02, 0.2 - i * 0.02, 0.12 - i * 0.02] }}
+          transition={{ duration: 5 + i * 1.4, repeat: Infinity, ease: 'easeInOut', delay: i * 0.6 }}
+        />
+      ))}
+
+      {/* Pulsing concentric rings smaller, bottom-right */}
+      {[0, 1, 2].map((i) => (
+        <motion.div
+          key={`ring-b-${i}`}
+          className="absolute rounded-full border"
+          style={{
+            borderColor: 'var(--brand)',
+            opacity: 0.1 - i * 0.025,
+            width:  120 + i * 60,
+            height: 120 + i * 60,
+            bottom: -40 + i * -20,
+            right:  100 + i * -10,
+          }}
+          animate={{ scale: [1, 1.08, 1], opacity: [0.1 - i * 0.025, 0.18 - i * 0.025, 0.1 - i * 0.025] }}
+          transition={{ duration: 6 + i * 1.2, repeat: Infinity, ease: 'easeInOut', delay: 1 + i * 0.8 }}
+        />
+      ))}
+
+      {/* Floating brand-tinted squares scattered */}
+      {[
+        { size: 28, top: '18%', right: '22%', rot: 18, dur: 8 },
+        { size: 16, top: '42%', right: '10%', rot: -12, dur: 11 },
+        { size: 22, top: '65%', right: '30%', rot: 30, dur: 9 },
+        { size: 12, top: '80%', right: '14%', rot: -25, dur: 7 },
+        { size: 18, top: '30%', right: '44%', rot: 10, dur: 10 },
+      ].map((s, i) => (
+        <motion.div
+          key={`sq-${i}`}
+          className="absolute rounded-sm border"
+          style={{
+            width: s.size,
+            height: s.size,
+            top: s.top,
+            right: s.right,
+            rotate: s.rot,
+            borderColor: 'var(--brand)',
+            background: 'color-mix(in oklch, var(--brand) 8%, transparent)',
+          }}
+          animate={{
+            y: [0, -12, 0],
+            rotate: [s.rot, s.rot + 8, s.rot],
+            opacity: [0.35, 0.55, 0.35],
+          }}
+          transition={{ duration: s.dur, repeat: Infinity, ease: 'easeInOut', delay: i * 0.7 }}
+        />
+      ))}
+
+      {/* Vertical brand lines thin, spaced */}
+      {[18, 34, 52, 68, 84].map((pct, i) => (
+        <motion.div
+          key={`line-${i}`}
+          className="absolute top-0 bottom-0"
+          style={{
+            left: `${pct}%`,
+            width: 1,
+            background: `linear-gradient(to bottom, transparent, color-mix(in oklch, var(--brand) 22%, transparent) 40%, color-mix(in oklch, var(--brand) 22%, transparent) 60%, transparent)`,
+          }}
+          animate={{ opacity: [0.4, 0.8, 0.4] }}
+          transition={{ duration: 4 + i * 0.9, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 }}
+        />
+      ))}
+
+      {/* Orbiting dot around the top-right ring cluster */}
+      <motion.div
+        className="absolute rounded-full"
+        style={{
+          width: 7,
+          height: 7,
+          background: 'var(--brand)',
+          top: '8%',
+          right: '18%',
+          boxShadow: '0 0 10px 3px color-mix(in oklch, var(--brand) 50%, transparent)',
+        }}
+        animate={{
+          x: [0, 40, 0, -40, 0],
+          y: [0, 30, 60, 30, 0],
+          opacity: [0.7, 1, 0.7, 1, 0.7],
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+      />
+
+      {/* Edge fade blends pattern into the left/content side */}
+      <div
+        className="absolute inset-y-0 left-0 w-32"
+        style={{
+          background: 'linear-gradient(to right, var(--background), transparent)',
+        }}
+      />
+    </div>
+  );
+}
+
+/* ─── Main component ─────────────────────────────────────────────────────── */
+export default function FaqSec({ section, variant = 'light' }: Props) {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
   const items = section.items || [];
-  const isBlack = bg === 'bg-black';
-
-  if (!items.length) {
-    return (
-      <section className={`py-24 md:py-32 ${bg}`}>
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-gray-400">No FAQ items to display.</p>
-        </div>
-      </section>
-    );
-  }
-
-  const toggleFaq = (index: number) => {
-    setOpenIdx(openIdx === index ? null : index);
-  };
 
   return (
-    <section
-      className={`relative overflow-hidden py-24 md:py-32 ${bg}`}
-    >
-      {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_40%_60%_at_90%_50%,rgba(249,115,22,0.05),transparent)]" />
+    <section className="relative py-24 md:py-32 bg-background border-t border-border overflow-hidden">
 
-      <div className="relative z-10 container mx-auto px-6 md:px-10 lg:px-16 xl:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+      {/* Animated right-side patterns */}
+      <RightPattern />
 
-          {/* Left Side */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-brand" />
-              <span className="text-brand text-sm font-semibold tracking-widest uppercase">
-                FAQ
-              </span>
-            </div>
+      {/* Content */}
+      <div className="relative mx-auto max-w-[84vw] px-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+        >
+          {/* Eyebrow */}
+          <motion.p
+            variants={fadeUp}
+            className="eyebrow text-brand flex items-center gap-2 mb-4"
+          >
+            <span className="w-7 h-0.5 rounded-full bg-brand inline-block" />
+            FAQ
+          </motion.p>
 
-            {section.heading && (
-              <h2
-                className={`text-3xl md:text-4xl font-bold leading-tight mb-4 ${
-                  isBlack ? 'text-white' : 'text-gray-900'
-                }`}
-              >
-                {section.heading}
-              </h2>
-            )}
+          {/* Title */}
+          <motion.h2
+            variants={fadeUp}
+            className="display text-foreground mb-3"
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.25rem)' }}
+          >
+            Frequently asked<br />
+            <em className="display-italic text-brand">questions</em>
+          </motion.h2>
 
-            <p
-              className={`text-sm leading-relaxed ${
-                isBlack ? 'text-gray-400' : 'text-gray-500'
-              }`}
-            >
-              Can't find the answer? Book a free 30-minute audit and we'll
-              answer directly.
-            </p>
-          </div>
+          <motion.p
+            variants={fadeUp}
+            className="text-muted-foreground font-sans mb-12"
+            style={{ fontSize: '0.9375rem', lineHeight: 1.65, maxWidth: '480px' }}
+          >
+            Everything you need to know before getting started. Can't find what
+            you're looking for? We're here to help.
+          </motion.p>
 
-          {/* FAQ Items */}
-          <div className="lg:col-span-2 space-y-4">
+          {/* Divider */}
+          <motion.div variants={fadeUp} className="border-t border-border" />
+
+          {/* Accordion */}
+          <motion.div variants={stagger}>
             {items.map((item, idx) => {
-              const isOpen = openIdx === idx;
-
+              const isOpen = openIndex === idx;
               return (
-                <div
+                <motion.div
                   key={idx}
-                  className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
-                    isBlack
-                      ? isOpen
-                        ? 'border-brand/40 bg-gray-900'
-                        : 'border-gray-800 bg-gray-900/50 hover:border-gray-700'
-                      : isOpen
-                        ? 'border-brand/30 bg-brand/10 shadow-sm'
-                        : 'border-gray-200 bg-gray-50 hover:border-gray-300'
-                  }`}
+                  variants={fadeUp}
+                  className="border-b border-border"
                 >
-                  {/* Question Row */}
-                  <div className="flex items-center justify-between gap-4 p-6">
-                    <h3
-                      className={`flex-1 font-semibold text-base leading-snug ${
-                        isBlack
-                          ? 'text-white'
-                          : 'text-gray-900'
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? null : idx)}
+                    className="w-full flex items-start justify-between gap-6 py-5 text-left focus-visible:outline-2 focus-visible:outline-brand focus-visible:outline-offset-2"
+                    aria-expanded={isOpen}
+                  >
+                    <span
+                      className={`font-semibold font-sans transition-colors duration-200 leading-snug text-[0.9375rem] ${
+                        isOpen ? 'text-brand' : 'text-foreground'
                       }`}
                     >
                       {item.title}
-                    </h3>
-
-                    <button
-                      type="button"
-                      onClick={() => toggleFaq(idx)}
-                      aria-expanded={isOpen}
-                      className={`cursor-pointer flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-                        isOpen
-                          ? 'bg-brand'
-                          : isBlack
-                          ? 'bg-gray-800'
-                          : 'bg-gray-200'
-                      }`}
+                    </span>
+                    <span
+                      className="flex-shrink-0 mt-0.5 w-[22px] h-[22px] flex items-center justify-center rounded-full border transition-all duration-[280ms]"
+                      style={{
+                        borderColor: isOpen ? 'var(--brand)' : 'var(--border)',
+                        background: isOpen ? 'color-mix(in oklch, var(--brand) 12%, transparent)' : 'transparent',
+                        transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
+                        color: isOpen ? 'var(--brand)' : 'var(--muted-foreground)',
+                      }}
                     >
-                      <motion.div
-                        animate={{ rotate: isOpen ? 180 : 0 }}
-                        transition={{ duration: 0.25 }}
-                      >
-                        {isOpen ? (
-                          <Minus className="h-4 w-4 text-white" />
-                        ) : (
-                          <Plus
-                            className={`h-4 w-4 ${
-                              isBlack
-                                ? 'text-gray-400'
-                                : 'text-gray-600'
-                            }`}
-                          />
-                        )}
-                      </motion.div>
-                    </button>
-                  </div>
+                      {isOpen ? <X className="h-3 w-3" /> : <Plus className="h-3 w-3" />}
+                    </span>
+                  </button>
 
-                  {/* Answer */}
                   <AnimatePresence initial={false}>
                     {isOpen && (
                       <motion.div
-                        initial={{
-                          height: 0,
-                          opacity: 0,
-                        }}
-                        animate={{
-                          height: 'auto',
-                          opacity: 1,
-                        }}
-                        exit={{
-                          height: 0,
-                          opacity: 0,
-                        }}
-                        transition={{
-                          duration: 0.35,
-                          ease: 'easeInOut',
-                        }}
-                        className="overflow-hidden"
+                        key="answer"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                        style={{ overflow: 'hidden' }}
                       >
-                        <div
-                          className={`border-t px-6 pb-6 pt-4 text-sm leading-relaxed ${
-                            isBlack
-                              ? 'border-gray-800 text-gray-400'
-                              : 'border-brand/20 text-gray-600'
-                          }`}
+                        <p
+                          className="pb-5 font-sans text-muted-foreground"
+                          style={{ fontSize: '0.9375rem', lineHeight: 1.75 }}
                         >
                           {item.description}
-                        </div>
+                        </p>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
-        </div>
+          {/* Footer CTA */}
+          <motion.div
+            variants={fadeUp}
+            className="mt-9 flex items-center justify-between gap-4 rounded-[var(--radius)] px-6 py-5"
+            style={{
+              background: 'color-mix(in oklch, var(--brand) 6%, transparent)',
+              border: '1px solid color-mix(in oklch, var(--brand) 20%, transparent)',
+            }}
+          >
+            <p className="text-sm text-muted-foreground font-sans">
+              <strong className="text-foreground font-semibold">Still have questions?</strong>{' '}
+              Our support team usually replies within a few hours.
+            </p>
+            <button
+              className="text-[0.8125rem] font-semibold text-brand border rounded-full px-4 py-1.5 whitespace-nowrap transition-colors hover:bg-[color-mix(in_oklch,var(--brand)_10%,transparent)]"
+              style={{ borderColor: 'color-mix(in oklch, var(--brand) 35%, transparent)' }}
+            >
+              Get in touch
+            </button>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

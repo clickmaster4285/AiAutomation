@@ -31,7 +31,7 @@ export default function GridSec({ section }: { section: Section }) {
   const items = section.items || [];
 
   return (
-    <section className="relative py-28 overflow-hidden bg-[#060606]">
+    <section className="relative py-24 md:py-32 overflow-hidden bg-[#060606]">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#121212_1px,transparent_1px),linear-gradient(to_bottom,#121212_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none opacity-60" />
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[450px] pointer-events-none mix-blend-screen select-none opacity-80"
@@ -40,7 +40,7 @@ export default function GridSec({ section }: { section: Section }) {
         }}
       />
 
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl">
+      <div className="mx-auto max-w-[84vw] px-6">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -54,14 +54,14 @@ export default function GridSec({ section }: { section: Section }) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand/40 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand"></span>
               </span>
-              <span className="text-xs font-bold tracking-[0.25em] uppercase text-neutral-500">
+              <span className="text-xs font-bold tracking-[0.25em] uppercase text-neutral-500 font-sans">
                 {section.subheading || 'Expertise'}
               </span>
             </div>
             <h2 className="display font-semibold tracking-tight text-white text-3xl sm:text-4xl leading-[1.15]">
               {section.heading}
             </h2>
-            <p className="mt-4 text-sm text-neutral-500 leading-relaxed max-w-[260px] text-justify">
+            <p className="mt-4 text-sm text-neutral-500 leading-relaxed max-w-[260px] text-justify font-sans">
               Real‑world resilience, not just happy‑path scripting.
             </p>
           </motion.div>
@@ -135,14 +135,14 @@ function GridCard({ item, idx, spanClass }: { item: any; idx: number; spanClass:
               {String(idx + 1).padStart(2, '0')}
             </span>
           </div>
-          <h3 className="font-medium tracking-tight text-neutral-200 group-hover:text-white transition-colors duration-300 text-lg">
+          <h3 className="font-medium tracking-tight text-neutral-200 group-hover:text-white transition-colors duration-300 text-lg font-sans">
             {item.title}
           </h3>
-          <p className="mt-2 text-sm leading-relaxed text-neutral-400 group-hover:text-neutral-300 transition-colors duration-500 font-light text-justify">
+          <p className="mt-2 text-sm leading-relaxed text-neutral-400 group-hover:text-neutral-300 transition-colors duration-500 font-light text-justify font-sans">
             {item.description}
           </p>
         </div>
-        <div className="mt-5 flex items-center gap-1.5 text-xs font-medium text-brand/0 group-hover:text-brand/100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
+        <div className="mt-5 flex items-center gap-1.5 text-xs font-medium text-brand/0 group-hover:text-brand/100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100 font-sans">
           <span>Explore Architecture</span>
           <Icons.ArrowUpRight className="w-3.5 h-3.5" />
         </div>

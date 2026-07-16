@@ -3,7 +3,7 @@ import { ServiceContent } from './type';
 
 export const aiWorkflowAutomation: ServiceContent = {
   slug: 'ai-automation-agency',
-  title: 'AI Automation Agency | Custom AI Workflows & Agents — Clickmasters',
+  title: 'AI Automation Agency | Custom AI Workflows & Agents Clickmasters',
   metaDescription: 'Clickmasters is a US AI automation agency building custom AI agents, workflow automation, and business process systems that cut manual work and scale teams.',
   keywords: 'ai automation agency, ai automation company, ai automation services, automation agency ai',
   sections: [
@@ -13,7 +13,7 @@ export const aiWorkflowAutomation: ServiceContent = {
       heading: 'AI Automation Agency',
       subheading: 'Custom AI agents, workflow automation, and business process systems for US businesses that want to scale without hiring.',
       content: [
-        'Clickmasters is a US-based AI automation agency. We design and build the systems that take repetitive, manual work off your team\'s plate — custom AI agents, connected workflow automation, and end-to-end business process automation — so the people you pay to think can stop doing the work that software should be doing instead.',
+        'Clickmasters is a US-based AI automation agency. We design and build the systems that take repetitive, manual work off your team\'s plate custom AI agents, connected workflow automation, and end-to-end business process automation so the people you pay to think can stop doing the work that software should be doing instead.',
         'If your team copies data between apps by hand, loses leads because nobody followed up fast enough, or rebuilds the same report every week, you don\'t have an AI problem. You have a manual-work problem. This page explains exactly how an AI automation agency solves it, what we build, how we work, and how to decide whether automation is worth it for your business.'
       ],
       stats: [
@@ -82,8 +82,8 @@ export const aiWorkflowAutomation: ServiceContent = {
       type: 'text',
       heading: 'What an AI Automation Agency Actually Does',
       content: [
-        'The phrase "AI automation" gets thrown around loosely, so it\'s worth being precise. Most businesses already own plenty of software — a CRM, an email platform, a help desk, spreadsheets, project tools. The problem is rarely a missing tool. The problem is the manual labor that lives in the gaps between those tools: the human who copies a lead from a form into the CRM, the person who reads each invoice and types the numbers into accounting, the rep who remembers (or forgets) to follow up on day three.',
-        'An AI automation agency closes those gaps. Instead of selling you yet another disconnected app, we build systems that connect the tools you already use, move information between them automatically, make routine decisions, and take action — all without a person in the loop for the repetitive parts.',
+        'The phrase "AI automation" gets thrown around loosely, so it\'s worth being precise. Most businesses already own plenty of software a CRM, an email platform, a help desk, spreadsheets, project tools. The problem is rarely a missing tool. The problem is the manual labor that lives in the gaps between those tools: the human who copies a lead from a form into the CRM, the person who reads each invoice and types the numbers into accounting, the rep who remembers (or forgets) to follow up on day three.',
+        'An AI automation agency closes those gaps. Instead of selling you yet another disconnected app, we build systems that connect the tools you already use, move information between them automatically, make routine decisions, and take action all without a person in the loop for the repetitive parts.',
         'At Clickmasters, that work falls into three connected categories. They overlap in practice, but it helps to understand them separately.'
       ]
     },
@@ -95,17 +95,17 @@ export const aiWorkflowAutomation: ServiceContent = {
       items: [
         {
           title: 'AI Agents',
-          description: 'Software that can reason about a goal, use your tools, take several steps, and act inside your systems. An agent doesn\'t just answer a question — it qualifies the lead, drafts the reply, updates the record, and books the call. It\'s the difference between a calculator and an assistant.',
+          description: 'Software that can reason about a goal, use your tools, take several steps, and act inside your systems. An agent doesn\'t just answer a question it qualifies the lead, drafts the reply, updates the record, and books the call. It\'s the difference between a calculator and an assistant.',
           icon: 'Bot'
         },
         {
           title: 'Workflow Automation',
-          description: 'The plumbing that connects your apps so data and triggers move on their own. A form submission enriches a contact, scores it, routes it to the right rep, and starts a follow-up sequence — automatically, every time, without anyone touching it.',
+          description: 'The plumbing that connects your apps so data and triggers move on their own. A form submission enriches a contact, scores it, routes it to the right rep, and starts a follow-up sequence automatically, every time, without anyone touching it.',
           icon: 'Zap'
         },
         {
           title: 'Business Process Automation',
-          description: 'Taking an entire repeatable process — client onboarding, invoicing, monthly reporting — and running it end to end. This is where the biggest time savings live, because you\'re not automating a task, you\'re automating a whole chain of them.',
+          description: 'Taking an entire repeatable process client onboarding, invoicing, monthly reporting and running it end to end. This is where the biggest time savings live, because you\'re not automating a task, you\'re automating a whole chain of them.',
           icon: 'Layers'
         }
       ]
@@ -185,7 +185,7 @@ export const aiWorkflowAutomation: ServiceContent = {
         },
         {
           title: 'AI Data & Document Automation',
-          description: 'Extracting, validating, and routing data from invoices, PDFs, and forms — no more manual keying.',
+          description: 'Extracting, validating, and routing data from invoices, PDFs, and forms no more manual keying.',
           link: '/ai-data-document-automation',
           icon: 'FileText'
         },
@@ -201,7 +201,7 @@ export const aiWorkflowAutomation: ServiceContent = {
     // ========== TEXT SECTION 3 ==========
     {
       type: 'text',
-      content: 'Not sure which of these you need? That\'s normal, and it\'s exactly what the free automation audit is for — we map your processes and tell you where the highest return is, before you commit to anything.'
+      content: 'Not sure which of these you need? That\'s normal, and it\'s exactly what the free automation audit is for we map your processes and tell you where the highest return is, before you commit to anything.'
     },
 
     // ========== TEXT SECTION 4 ==========
@@ -209,7 +209,7 @@ export const aiWorkflowAutomation: ServiceContent = {
       type: 'text',
       heading: 'The Platforms We Build On',
       content: [
-        'We are deliberately platform-agnostic. We don\'t resell one tool and bend every project to fit it. We pick the right platform for your budget, your data requirements, and the complexity of what you\'re automating — and we\'ll tell you honestly when a cheaper option is the better fit, even though that sometimes means less work for us.',
+        'We are deliberately platform-agnostic. We don\'t resell one tool and bend every project to fit it. We pick the right platform for your budget, your data requirements, and the complexity of what you\'re automating and we\'ll tell you honestly when a cheaper option is the better fit, even though that sometimes means less work for us.',
         'Here\'s how the major platforms compare and when each makes sense.'
       ]
     },
@@ -256,7 +256,7 @@ export const aiWorkflowAutomation: ServiceContent = {
     // ========== TEXT SECTION 5 ==========
     {
       type: 'text',
-      content: 'For most growing businesses the answer isn\'t one platform — it\'s the right mix. Zapier for the simple connectors, Make or n8n for the heavy workflows, custom code where the platforms hit a ceiling, and an AI model layered in where judgment is needed. The skill isn\'t loyalty to a tool; it\'s matching each job to the cheapest thing that does it reliably.'
+      content: 'For most growing businesses the answer isn\'t one platform it\'s the right mix. Zapier for the simple connectors, Make or n8n for the heavy workflows, custom code where the platforms hit a ceiling, and an AI model layered in where judgment is needed. The skill isn\'t loyalty to a tool; it\'s matching each job to the cheapest thing that does it reliably.'
     },
 
     // ========== STEPS ==========
@@ -267,7 +267,7 @@ export const aiWorkflowAutomation: ServiceContent = {
       items: [
         {
           title: 'Free automation audit',
-          description: 'We map your manual processes and identify the single highest-ROI automation to start with. You get a clear recommendation — including an honest "you don\'t need us for this yet" when that\'s the truth.'
+          description: 'We map your manual processes and identify the single highest-ROI automation to start with. You get a clear recommendation including an honest "you don\'t need us for this yet" when that\'s the truth.'
         },
         {
           title: 'Build and integrate',
@@ -279,7 +279,7 @@ export const aiWorkflowAutomation: ServiceContent = {
         },
         {
           title: 'Optimize',
-          description: 'We monitor, refine, and expand the system as your needs grow — on an ongoing basis if you want it, or you take the wheel yourself.'
+          description: 'We monitor, refine, and expand the system as your needs grow on an ongoing basis if you want it, or you take the wheel yourself.'
         }
       ]
     },
@@ -320,8 +320,8 @@ export const aiWorkflowAutomation: ServiceContent = {
       heading: 'What AI Automation Is Actually Worth',
       content: [
         'It\'s fair to be skeptical. Plenty of businesses have spent money on "AI" and gotten a chatbot that frustrates customers or a pilot that never reached production. So it\'s worth being concrete about where the return actually comes from.',
-        'The value shows up in four places. First, time: hours of repetitive work per week handed back to your team. Second, speed: leads answered in seconds instead of hours, invoices processed same-day instead of in a weekly batch, tickets resolved around the clock. Third, accuracy: automated processes don\'t get tired, skip a step, or fat-finger a number the way manual work does. Fourth, capacity: the ability to handle more volume without proportionally more headcount — which is the entire point for a business trying to scale.',
-        'The risk, honestly, is automating the wrong thing — pouring effort into a process that\'s rare, low-value, or about to change. That\'s why we start with an audit that prioritizes by return, not by what\'s technically interesting. The best first automation is usually boring, high-volume, and universally hated by the people who currently do it by hand.'
+        'The value shows up in four places. First, time: hours of repetitive work per week handed back to your team. Second, speed: leads answered in seconds instead of hours, invoices processed same-day instead of in a weekly batch, tickets resolved around the clock. Third, accuracy: automated processes don\'t get tired, skip a step, or fat-finger a number the way manual work does. Fourth, capacity: the ability to handle more volume without proportionally more headcount which is the entire point for a business trying to scale.',
+        'The risk, honestly, is automating the wrong thing pouring effort into a process that\'s rare, low-value, or about to change. That\'s why we start with an audit that prioritizes by return, not by what\'s technically interesting. The best first automation is usually boring, high-volume, and universally hated by the people who currently do it by hand.'
       ]
     },
 
@@ -346,7 +346,7 @@ export const aiWorkflowAutomation: ServiceContent = {
       items: [
         {
           title: 'Speed-to-lead systems',
-          description: 'The moment a lead fills out a form, an AI agent enriches it with company and contact data, scores it against your ideal-customer profile, routes it to the right rep, and fires a personalized first response — often within seconds. Most businesses lose deals simply because a competitor replied first; this closes that gap permanently.',
+          description: 'The moment a lead fills out a form, an AI agent enriches it with company and contact data, scores it against your ideal-customer profile, routes it to the right rep, and fires a personalized first response often within seconds. Most businesses lose deals simply because a competitor replied first; this closes that gap permanently.',
           icon: 'Rocket'
         },
         {
@@ -366,7 +366,7 @@ export const aiWorkflowAutomation: ServiceContent = {
         },
         {
           title: 'Onboarding sequences',
-          description: 'When a new client or employee comes aboard, the entire onboarding chain — document collection, account setup, welcome communications, task assignment — runs automatically, with people involved only where a human decision is actually required.',
+          description: 'When a new client or employee comes aboard, the entire onboarding chain document collection, account setup, welcome communications, task assignment runs automatically, with people involved only where a human decision is actually required.',
           icon: 'Users'
         },
         {
@@ -431,7 +431,7 @@ export const aiWorkflowAutomation: ServiceContent = {
     // ========== TEXT SECTION 9 ==========
     {
       type: 'text',
-      content: 'If your industry isn\'t listed, that rarely matters — the underlying processes (lead handling, data entry, follow-up, reporting) are common to almost every business. The vertical mostly determines which automation we start with.'
+      content: 'If your industry isn\'t listed, that rarely matters the underlying processes (lead handling, data entry, follow-up, reporting) are common to almost every business. The vertical mostly determines which automation we start with.'
     },
 
     // ========== TEXT SECTION 10 ==========
@@ -455,7 +455,7 @@ export const aiWorkflowAutomation: ServiceContent = {
         },
         {
           title: 'Are they platform-honest?',
-          description: 'A good partner recommends the right tool for your situation — sometimes the cheap one — rather than forcing their preferred stack.',
+          description: 'A good partner recommends the right tool for your situation sometimes the cheap one rather than forcing their preferred stack.',
           icon: 'Award'
         },
         {
@@ -479,7 +479,7 @@ export const aiWorkflowAutomation: ServiceContent = {
     // ========== TEXT SECTION 11 ==========
     {
       type: 'text',
-      content: 'Clickmasters is built to clear all five — but the questions are worth asking of anyone, including us.'
+      content: 'Clickmasters is built to clear all five but the questions are worth asking of anyone, including us.'
     },
 
     // ========== FAQ ==========
@@ -489,7 +489,7 @@ export const aiWorkflowAutomation: ServiceContent = {
       items: [
         {
           title: 'What is an AI automation agency?',
-          description: 'An AI automation agency designs and builds custom systems — AI agents, workflow automation, and business process automation — that handle repetitive work automatically. It connects the tools a business already uses so information and decisions move without manual effort, rather than selling another standalone piece of software.'
+          description: 'An AI automation agency designs and builds custom systems AI agents, workflow automation, and business process automation that handle repetitive work automatically. It connects the tools a business already uses so information and decisions move without manual effort, rather than selling another standalone piece of software.'
         },
         {
           title: 'How much does AI automation cost?',
@@ -497,15 +497,15 @@ export const aiWorkflowAutomation: ServiceContent = {
         },
         {
           title: 'What\'s the difference between an AI automation agency and an AI consulting firm?',
-          description: 'A consulting firm typically writes strategy and roadmaps. An automation agency builds and ships the working systems. Most failed AI initiatives die in the gap between a strategy deck and a system in production. Clickmasters does the building — production systems you own, not slides.'
+          description: 'A consulting firm typically writes strategy and roadmaps. An automation agency builds and ships the working systems. Most failed AI initiatives die in the gap between a strategy deck and a system in production. Clickmasters does the building production systems you own, not slides.'
         },
         {
-          title: 'Which platform do you use — Zapier, Make, or n8n?',
+          title: 'Which platform do you use Zapier, Make, or n8n?',
           description: 'All of them, plus custom code where it\'s needed. We choose per project: Zapier for simple linear flows, Make for visual multi-step logic, n8n for self-hosted production systems with full data control. We\'re not tied to one platform, so the recommendation is based on your needs, not ours.'
         },
         {
           title: 'Do I need technical staff to maintain what you build?',
-          description: 'No. We hand off documented, transparent systems, and we offer ongoing optimization if you\'d rather not manage them in-house. The point is that you have the choice — the system isn\'t a black box only we can touch.'
+          description: 'No. We hand off documented, transparent systems, and we offer ongoing optimization if you\'d rather not manage them in-house. The point is that you have the choice the system isn\'t a black box only we can touch.'
         },
         {
           title: 'How quickly can we see results?',
@@ -518,7 +518,7 @@ export const aiWorkflowAutomation: ServiceContent = {
     {
       type: 'cta',
       heading: 'Stop paying people to do what software can.',
-      subheading: 'Book a free automation audit — we\'ll map your highest-ROI automation in 30 minutes, with no obligation.',
+      subheading: 'Book a free automation audit we\'ll map your highest-ROI automation in 30 minutes, with no obligation.',
       cta: {
         text: 'Book Your Free Automation Audit',
         link: '/free-automation-audit',

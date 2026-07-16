@@ -12,7 +12,6 @@ interface PainPointSecProps {
 export default function PainPointSec({ section }: PainPointSecProps) {
   const items = section.items || [];
 
-  // Extract stats (first two items) and problems (remaining)
   const stats = items.slice(0, 2).map((item: any) => ({
     label: item.title || '',
     value: item.value || '',
@@ -27,7 +26,7 @@ export default function PainPointSec({ section }: PainPointSecProps) {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-black relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-black relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black" />
         <motion.div
@@ -45,9 +44,8 @@ export default function PainPointSec({ section }: PainPointSecProps) {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_0%,transparent_100%)]" />
       </div>
 
-      <div className="container mx-auto px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24 relative">
+      <div className="mx-auto max-w-[84vw] px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -67,7 +65,6 @@ export default function PainPointSec({ section }: PainPointSecProps) {
               {data.description}
             </motion.p>
 
-            {/* Stats */}
             <motion.div
               variants={fadeInUp}
               className="flex flex-wrap gap-6 md:gap-8 mb-8"
@@ -92,7 +89,6 @@ export default function PainPointSec({ section }: PainPointSecProps) {
               })}
             </motion.div>
 
-            {/* Problem Tags */}
             <motion.div
               variants={fadeInUp}
               className="flex flex-wrap gap-3"
@@ -108,7 +104,6 @@ export default function PainPointSec({ section }: PainPointSecProps) {
             </motion.div>
           </motion.div>
 
-          {/* Right Visual */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -139,7 +134,6 @@ export default function PainPointSec({ section }: PainPointSecProps) {
                 </div>
               </div>
 
-              {/* Floating Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

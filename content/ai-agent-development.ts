@@ -3,18 +3,18 @@ import { ServiceContent } from './type';
 
 export const aiAgentDevelopment: ServiceContent = {
   slug: 'ai-agent-development',
-  title: 'AI Agent Development Services | Custom AI Agents — Clickmasters',
-  metaDescription: 'Clickmasters builds custom AI agents that qualify leads, handle support, generate proposals, and act inside your systems — taking action, not just answering.',
+  title: 'AI Agent Development Services | Custom AI Agents Clickmasters',
+  metaDescription: 'Clickmasters builds custom AI agents that qualify leads, handle support, generate proposals, and act inside your systems taking action, not just answering.',
   keywords: 'ai agent development, custom ai agents, intelligent automation, ai assistant',
   sections: [
     // ========== HERO ==========
     {
       type: 'hero',
       heading: 'AI Agent Development',
-      subheading: 'Custom AI agents that reason, use your tools, take multiple steps, and act inside your real systems — not just answer questions.',
+      subheading: 'Custom AI agents that reason, use your tools, take multiple steps, and act inside your real systems not just answer questions.',
       content: [
-        'Clickmasters builds custom AI agents that do real work inside your business. An AI agent is more than a chatbot: it can reason about a goal, use your tools, take several steps, and act inside your systems — qualifying a lead, drafting and sending a reply, updating a record, booking a meeting — largely on its own, with human oversight where it matters. The result is not a smarter FAQ box. It is a tireless operator that handles work your team currently does by hand.',
-        'This page explains what an AI agent actually is, how it differs from a chatbot in ways that matter for what you can delegate to it, the specific kinds of agents we build, how they connect to your systems to take real action, and — most importantly — how we make an agent reliable enough to trust with genuine responsibility. That last part is where most agent projects succeed or fail.'
+        'Clickmasters builds custom AI agents that do real work inside your business. An AI agent is more than a chatbot: it can reason about a goal, use your tools, take several steps, and act inside your systems qualifying a lead, drafting and sending a reply, updating a record, booking a meeting largely on its own, with human oversight where it matters. The result is not a smarter FAQ box. It is a tireless operator that handles work your team currently does by hand.',
+        'This page explains what an AI agent actually is, how it differs from a chatbot in ways that matter for what you can delegate to it, the specific kinds of agents we build, how they connect to your systems to take real action, and most importantly how we make an agent reliable enough to trust with genuine responsibility. That last part is where most agent projects succeed or fail.'
       ],
       stats: [
         { label: 'PROJECTS', value: '150+' },
@@ -37,9 +37,9 @@ export const aiAgentDevelopment: ServiceContent = {
       type: 'text',
       heading: 'What Is an AI Agent?',
       content: [
-        'A chatbot responds to messages. An AI agent pursues a goal. Given an objective — qualify this lead, resolve this ticket, prepare this report — an agent can break it into steps, work out what information it needs, use tools to get that information, take action, observe the result, and adjust. It is the difference between something that talks and something that does.',
+        'A chatbot responds to messages. An AI agent pursues a goal. Given an objective qualify this lead, resolve this ticket, prepare this report an agent can break it into steps, work out what information it needs, use tools to get that information, take action, observe the result, and adjust. It is the difference between something that talks and something that does.',
         'Technically, an agent combines three things: a language model that serves as the reasoning engine, a set of tools it is allowed to use (your CRM, your database, your email, your calendar, your internal systems), and a loop that lets it take multiple steps toward a goal instead of producing a single one-shot response. That architecture is what allows an agent to handle work that previously required a person to sit there and do it step by step.',
-        'The practical upshot is significant. An agent does not just tell a customer where their order is — it looks up the order, checks the shipping status, drafts an accurate answer, and sends it. It does not just suggest that a follow-up would be a good idea — it writes the follow-up, schedules it, and logs the activity to the CRM. The agent closes the loop, which is precisely the part that, done by hand, eats your team\'s time.'
+        'The practical upshot is significant. An agent does not just tell a customer where their order is it looks up the order, checks the shipping status, drafts an accurate answer, and sends it. It does not just suggest that a follow-up would be a good idea it writes the follow-up, schedules it, and logs the activity to the CRM. The agent closes the loop, which is precisely the part that, done by hand, eats your team\'s time.'
       ]
     },
 
@@ -48,8 +48,8 @@ export const aiAgentDevelopment: ServiceContent = {
       type: 'text',
       heading: 'AI Agents vs. Chatbots: Why the Difference Matters',
       content: [
-        'This distinction is not pedantic — it determines what you can actually hand off. A traditional chatbot is reactive and conversational. It answers what it is asked, within a script, and when the conversation goes off-script it falls apart or escalates. It informs, but it does not act, which means a human still has to do everything the conversation was about.',
-        'An AI agent is proactive and operational. It takes action across systems to complete a task, not just to answer a question about it. Consider a refund request. A support chatbot can tell the customer your refund policy. An AI support agent can actually process the refund: verify the order exists, check it against the policy, confirm eligibility, issue the refund in your payment system, update the record, and confirm to the customer — escalating to a human only if something falls outside the rules. The chatbot informs; the agent resolves.',
+        'This distinction is not pedantic it determines what you can actually hand off. A traditional chatbot is reactive and conversational. It answers what it is asked, within a script, and when the conversation goes off-script it falls apart or escalates. It informs, but it does not act, which means a human still has to do everything the conversation was about.',
+        'An AI agent is proactive and operational. It takes action across systems to complete a task, not just to answer a question about it. Consider a refund request. A support chatbot can tell the customer your refund policy. An AI support agent can actually process the refund: verify the order exists, check it against the policy, confirm eligibility, issue the refund in your payment system, update the record, and confirm to the customer escalating to a human only if something falls outside the rules. The chatbot informs; the agent resolves.',
         'That is why agents, built and supervised properly, replace far more manual work than chatbots ever could. A chatbot deflects a question. An agent completes the job behind the question. For a business measuring return in hours of work removed, that gap is the whole point.'
       ]
     },
@@ -61,12 +61,12 @@ export const aiAgentDevelopment: ServiceContent = {
       items: [
         {
           title: 'Custom AI agents',
-          description: 'Agents designed around your specific workflows and goals, connected to your specific tools — not a generic template dressed up for your brand. The value of an agent comes from how well it fits the way your business actually works.',
+          description: 'Agents designed around your specific workflows and goals, connected to your specific tools not a generic template dressed up for your brand. The value of an agent comes from how well it fits the way your business actually works.',
           icon: 'Bot'
         },
         {
           title: 'Lead qualification agents',
-          description: 'Agents that enrich inbound leads, score them against your ideal-customer profile, route them to the right person, and begin personalized outreach — so your sales team spends time on conversations, not triage.',
+          description: 'Agents that enrich inbound leads, score them against your ideal-customer profile, route them to the right person, and begin personalized outreach so your sales team spends time on conversations, not triage.',
           icon: 'Target'
         },
         {
@@ -76,7 +76,7 @@ export const aiAgentDevelopment: ServiceContent = {
         },
         {
           title: 'Internal and operations agents',
-          description: 'Agents that pull data, generate reports, update systems, and run multi-step internal tasks on demand or on a schedule — the operational equivalent of an assistant who never forgets and never sleeps.',
+          description: 'Agents that pull data, generate reports, update systems, and run multi-step internal tasks on demand or on a schedule the operational equivalent of an assistant who never forgets and never sleeps.',
           icon: 'BarChart3'
         },
         {
@@ -93,7 +93,7 @@ export const aiAgentDevelopment: ServiceContent = {
       heading: 'How Agents Connect to Your Systems',
       content: [
         'An agent is only as useful as the tools it can reach. An agent that can only talk is a chatbot; an agent that can act needs to be wired into the systems where your work actually happens. We connect agents to your CRM, help desk, databases, email, calendar, and internal tools through secure integrations and automation platforms. The agent reads context from those systems and takes action in them, which is what turns it from a clever demonstration into a working part of your operations.',
-        'Where an agent needs to answer from your specific knowledge — your policies, your product details, your documentation, your data — we use retrieval-augmented generation, usually shortened to RAG. Instead of relying on the model\'s general training, the agent retrieves the relevant information from your own content and answers based on that. This keeps responses accurate, current, on-brand, and grounded in what is actually true for your business, rather than plausible-sounding but wrong. For most business agents, this grounding is essential; it is the difference between an agent you can trust in front of customers and one you cannot.'
+        'Where an agent needs to answer from your specific knowledge your policies, your product details, your documentation, your data we use retrieval-augmented generation, usually shortened to RAG. Instead of relying on the model\'s general training, the agent retrieves the relevant information from your own content and answers based on that. This keeps responses accurate, current, on-brand, and grounded in what is actually true for your business, rather than plausible-sounding but wrong. For most business agents, this grounding is essential; it is the difference between an agent you can trust in front of customers and one you cannot.'
       ]
     },
 
@@ -101,7 +101,7 @@ export const aiAgentDevelopment: ServiceContent = {
     {
       type: 'features',
       heading: 'Making Agents Reliable Enough to Trust',
-      subheading: 'Here is the part that matters most, and the part inexperienced builders underestimate. Getting an agent to work once, in a demo, is not hard. Making it reliable enough to hand real responsibility to — to let it touch customer interactions, financial actions, or production data without someone checking every move — is the actual job. We design for that from the very start, not as an afterthought.',
+      subheading: 'Here is the part that matters most, and the part inexperienced builders underestimate. Getting an agent to work once, in a demo, is not hard. Making it reliable enough to hand real responsibility to to let it touch customer interactions, financial actions, or production data without someone checking every move is the actual job. We design for that from the very start, not as an afterthought.',
       items: [
         {
           title: 'Guardrails',
@@ -137,7 +137,7 @@ export const aiAgentDevelopment: ServiceContent = {
       heading: 'Where Agents Deliver the Most Value',
       content: [
         'Agents earn their keep in the same kinds of places workflow automation does, but they go further because they can handle judgment, not just sequence. The strongest use cases share a profile: high volume, repetitive at the core but with enough variation that simple rules fall short, and currently consuming skilled people\'s time on work that does not require their skill.',
-        'Lead qualification is a classic example — high volume, judgment-laden, and a poor use of a salesperson\'s time until the lead is actually worth a conversation. Front-line customer support is another: a large share of tickets are variations on a small number of questions, perfect for an agent to resolve, leaving the genuinely hard cases for humans. Internal operations — pulling together data, generating routine reports, updating records across systems — is a third, often overlooked because it is invisible back-office work that nonetheless eats hours every week.',
+        'Lead qualification is a classic example high volume, judgment-laden, and a poor use of a salesperson\'s time until the lead is actually worth a conversation. Front-line customer support is another: a large share of tickets are variations on a small number of questions, perfect for an agent to resolve, leaving the genuinely hard cases for humans. Internal operations pulling together data, generating routine reports, updating records across systems is a third, often overlooked because it is invisible back-office work that nonetheless eats hours every week.',
         'The audit exists to find your version of these: the place where an agent removes the most manual work for the least risk, so you can prove the value before extending agents into more sensitive territory.'
       ]
     },
@@ -149,7 +149,7 @@ export const aiAgentDevelopment: ServiceContent = {
       items: [
         {
           title: 'We build agents that act, not just chat',
-          description: 'Connected to your real systems and taking real action — the part that actually removes work.',
+          description: 'Connected to your real systems and taking real action the part that actually removes work.',
           icon: 'Zap'
         },
         {
@@ -170,7 +170,7 @@ export const aiAgentDevelopment: ServiceContent = {
         // ✅ NEW CARD 5
         {
           title: 'Security-first approach',
-          description: 'We build agents with enterprise-grade security, including data encryption, access controls, and compliance with your industry standards — so your sensitive data stays protected.',
+          description: 'We build agents with enterprise-grade security, including data encryption, access controls, and compliance with your industry standards so your sensitive data stays protected.',
           icon: 'Lock'
         }
       ]
@@ -184,7 +184,7 @@ export const aiAgentDevelopment: ServiceContent = {
       items: [
         {
           title: 'Inbound lead qualification agent',
-          description: 'A lead submits an enquiry. The agent reads the message, enriches the contact with company and role information, and assesses how well the lead fits your ideal customer — not with a rigid score on one field, but by weighing several signals the way a thoughtful SDR would. It writes a genuinely relevant first response that references what the prospect actually asked, books a call if the lead is ready, or starts a nurture sequence if it is not, and logs everything to the CRM with a short summary for the rep. The salesperson wakes up to qualified, contextualized opportunities instead of a pile of raw form fills to triage.',
+          description: 'A lead submits an enquiry. The agent reads the message, enriches the contact with company and role information, and assesses how well the lead fits your ideal customer not with a rigid score on one field, but by weighing several signals the way a thoughtful SDR would. It writes a genuinely relevant first response that references what the prospect actually asked, books a call if the lead is ready, or starts a nurture sequence if it is not, and logs everything to the CRM with a short summary for the rep. The salesperson wakes up to qualified, contextualized opportunities instead of a pile of raw form fills to triage.',
           icon: 'Rocket'
         },
         {
@@ -199,17 +199,17 @@ export const aiAgentDevelopment: ServiceContent = {
         },
         {
           title: 'Sales outreach agent',
-          description: 'The agent autonomously identifies high‑value prospects from your CRM and external data sources, crafts personalized outreach messages, and sends them via email or LinkedIn. It tracks engagement, schedules follow‑ups, and notifies your sales team when a prospect shows strong interest — turning prospecting from a manual chore into an automated pipeline‑building machine.',
+          description: 'The agent autonomously identifies high‑value prospects from your CRM and external data sources, crafts personalized outreach messages, and sends them via email or LinkedIn. It tracks engagement, schedules follow‑ups, and notifies your sales team when a prospect shows strong interest turning prospecting from a manual chore into an automated pipeline‑building machine.',
           icon: 'TrendingUp'
         },
         {
           title: 'Data analysis and insight agent',
-          description: 'The agent connects to your data warehouse, BI tools, and spreadsheets. On demand or on a schedule, it runs complex queries, generates visualizations, and delivers a plain‑English summary of key insights. Whether it\'s weekly performance, customer segmentation, or anomaly detection, the agent makes data accessible to everyone — no SQL expertise required.',
+          description: 'The agent connects to your data warehouse, BI tools, and spreadsheets. On demand or on a schedule, it runs complex queries, generates visualizations, and delivers a plain‑English summary of key insights. Whether it\'s weekly performance, customer segmentation, or anomaly detection, the agent makes data accessible to everyone no SQL expertise required.',
           icon: 'Database'
         },
         {
           title: 'Employee onboarding agent',
-          description: 'When a new team member joins, the agent takes over the entire onboarding workflow: sends welcome materials, schedules training sessions, provisions necessary accounts, and answers common HR and IT questions. It adapts the onboarding sequence based on the new hire\'s role and department, ensuring a smooth, consistent, and personalized start — without tying up your HR or IT staff.',
+          description: 'When a new team member joins, the agent takes over the entire onboarding workflow: sends welcome materials, schedules training sessions, provisions necessary accounts, and answers common HR and IT questions. It adapts the onboarding sequence based on the new hire\'s role and department, ensuring a smooth, consistent, and personalized start without tying up your HR or IT staff.',
           icon: 'Users'
         }
       ]
@@ -253,11 +253,11 @@ export const aiAgentDevelopment: ServiceContent = {
       items: [
         {
           title: 'What is an AI agent?',
-          description: 'An AI agent is software that uses an AI model to reason about a goal, use tools, and take multi-step action inside real systems — qualifying leads, resolving tickets, updating records — rather than simply answering questions the way a chatbot does. It pursues an objective and closes the loop.'
+          description: 'An AI agent is software that uses an AI model to reason about a goal, use tools, and take multi-step action inside real systems qualifying leads, resolving tickets, updating records rather than simply answering questions the way a chatbot does. It pursues an objective and closes the loop.'
         },
         {
           title: 'What can AI agents do for a business?',
-          description: 'They can qualify and route leads, handle customer support, generate proposals and reports, pull and update data, and run multi-step internal processes — autonomously for the routine cases, with human oversight on the consequential decisions.'
+          description: 'They can qualify and route leads, handle customer support, generate proposals and reports, pull and update data, and run multi-step internal processes autonomously for the routine cases, with human oversight on the consequential decisions.'
         },
         {
           title: 'How are AI agents different from chatbots?',
@@ -282,7 +282,7 @@ export const aiAgentDevelopment: ServiceContent = {
     {
       type: 'cta',
       heading: 'See what an AI agent could take off your team\'s plate.',
-      subheading: 'Book a free automation audit — 30 minutes, no obligation.',
+      subheading: 'Book a free automation audit 30 minutes, no obligation.',
       cta: {
         text: 'Book Your Free Audit',
         link: '/free-automation-audit',

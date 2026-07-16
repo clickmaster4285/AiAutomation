@@ -4,16 +4,16 @@ import { ServiceContent } from './type';
 export const aiKnowledgeAssistants: ServiceContent = {
   slug: 'ai-knowledge-assistants',
   title: 'AI Knowledge Assistants & Internal Tools | Clickmasters',
-  metaDescription: 'Clickmasters builds internal AI knowledge assistants that answer from your company\'s documents, policies, and data — so your team finds answers in seconds.',
+  metaDescription: 'Clickmasters builds internal AI knowledge assistants that answer from your company\'s documents, policies, and data so your team finds answers in seconds.',
   keywords: 'ai knowledge assistant, internal ai, knowledge management, ai search',
   sections: [
     // ========== HERO ==========
     {
       type: 'hero',
       heading: 'AI Knowledge Assistants',
-      subheading: 'Give your team an AI that knows your business — answering from your own documents, policies, and data, where your team already works.',
+      subheading: 'Give your team an AI that knows your business answering from your own documents, policies, and data, where your team already works.',
       content: [
-        'Clickmasters builds internal AI knowledge assistants that answer your team\'s questions from your company\'s own documents, policies, and data. Instead of digging through shared drives, pinging colleagues, and re-asking the same questions, your people get accurate answers in seconds — grounded in your real content and available right where they already work.',
+        'Clickmasters builds internal AI knowledge assistants that answer your team\'s questions from your company\'s own documents, policies, and data. Instead of digging through shared drives, pinging colleagues, and re-asking the same questions, your people get accurate answers in seconds grounded in your real content and available right where they already work.',
         'This page explains the cost of scattered internal knowledge, what a knowledge assistant is and how it differs from a public chatbot, what we build, how we keep it secure and accurate, and where it delivers the most value inside an organization.'
       ],
       stats: [
@@ -37,18 +37,18 @@ export const aiKnowledgeAssistants: ServiceContent = {
       type: 'text',
       heading: 'The Cost of Knowledge Trapped in Drives and Heads',
       content: [
-        'In most organizations, the information people need to do their jobs is scattered: across documents in a shared drive, pages in a wiki, threads in Slack, policies in a PDF nobody can find, and — most fragile of all — in the heads of a few long-tenured colleagues. Finding an answer means searching several systems, interrupting a coworker, or simply guessing. Studies of knowledge work consistently find that a meaningful share of every week is lost to searching for information that already exists somewhere in the company.',
+        'In most organizations, the information people need to do their jobs is scattered: across documents in a shared drive, pages in a wiki, threads in Slack, policies in a PDF nobody can find, and most fragile of all in the heads of a few long-tenured colleagues. Finding an answer means searching several systems, interrupting a coworker, or simply guessing. Studies of knowledge work consistently find that a meaningful share of every week is lost to searching for information that already exists somewhere in the company.',
         'The costs compound in ways that are easy to miss. New hires take longer to become productive because they do not yet know where anything lives or whom to ask. Experienced staff are constantly interrupted to answer the same questions. Knowledge walks out the door when a key person leaves. And decisions get made on stale or half-remembered information because finding the current, correct answer was too much friction in the moment.',
         'An AI knowledge assistant addresses this directly. It indexes your internal knowledge and answers questions from it instantly, in natural language, so the right answer is a question away rather than a search-and-interrupt expedition. The knowledge stops being trapped and starts being available.'
       ]
     },
 
-    // ========== TEXT: What a Knowledge Assistant Is — and Isn't ==========
+    // ========== TEXT: What a Knowledge Assistant Is and Isn't ==========
     {
       type: 'text',
-      heading: 'What a Knowledge Assistant Is — and Isn\'t',
+      heading: 'What a Knowledge Assistant Is and Isn\'t',
       content: [
-        'A knowledge assistant is an internal-facing AI that answers from your company\'s own content. It is not a public chatbot for customers, and it is not a general-purpose model that answers from the open internet. Its entire value comes from being grounded in your specific, internal, often confidential information — your processes, your policies, your product details, your accumulated documentation — and answering only from that.',
+        'A knowledge assistant is an internal-facing AI that answers from your company\'s own content. It is not a public chatbot for customers, and it is not a general-purpose model that answers from the open internet. Its entire value comes from being grounded in your specific, internal, often confidential information your processes, your policies, your product details, your accumulated documentation and answering only from that.',
         'This grounding is what makes it trustworthy and useful. When an employee asks how a particular process works, what the policy is on something, or where to find a piece of information, the assistant retrieves the relevant content from your real documents and answers based on it, citing or pointing to the source. It is not guessing or generalizing; it is surfacing what your organization actually knows. Where the answer is not in your content, a well-built assistant says so rather than inventing one.'
       ]
     },
@@ -91,8 +91,8 @@ export const aiKnowledgeAssistants: ServiceContent = {
       type: 'text',
       heading: 'Keeping It Secure and Accurate',
       content: [
-        'Internal knowledge is sensitive, so security is central, not an afterthought. We build knowledge assistants with proper access controls — so people see only what they are permitted to — and, where data sensitivity demands it, on self-hostable infrastructure so your information stays entirely within your environment rather than flowing to a third party. The assistant is scoped to your content and your permissions, nothing more.',
-        'Accuracy comes from the same grounding principle that makes customer-facing AI trustworthy: retrieval-augmented generation. The assistant answers from your actual documents rather than from a model\'s general training, and it can point to the source so an employee can verify and read further. Where your content does not contain an answer, the assistant says so instead of fabricating one — which matters even more internally than externally, because staff act on these answers directly.',
+        'Internal knowledge is sensitive, so security is central, not an afterthought. We build knowledge assistants with proper access controls so people see only what they are permitted to and, where data sensitivity demands it, on self-hostable infrastructure so your information stays entirely within your environment rather than flowing to a third party. The assistant is scoped to your content and your permissions, nothing more.',
+        'Accuracy comes from the same grounding principle that makes customer-facing AI trustworthy: retrieval-augmented generation. The assistant answers from your actual documents rather than from a model\'s general training, and it can point to the source so an employee can verify and read further. Where your content does not contain an answer, the assistant says so instead of fabricating one which matters even more internally than externally, because staff act on these answers directly.',
         'As with support bots, building a knowledge assistant tends to improve the underlying knowledge itself. Gaps, contradictions, and out-of-date documents become visible because the assistant surfaces them, giving you a clear picture of where your internal documentation needs attention.'
       ]
     },
@@ -131,7 +131,7 @@ export const aiKnowledgeAssistants: ServiceContent = {
         // ✅ NEW 6th card – makes 2 rows of 3
         {
           title: 'Product development',
-          description: 'Engineering and product teams get instant access to technical docs, API references, design specs, and past decisions — accelerating development and reducing context‑switching.',
+          description: 'Engineering and product teams get instant access to technical docs, API references, design specs, and past decisions accelerating development and reducing context‑switching.',
           icon: 'Code'
         }
       ]
@@ -165,7 +165,7 @@ export const aiKnowledgeAssistants: ServiceContent = {
         // ✅ NEW 5th card
         {
           title: 'Multi‑source ingestion',
-          description: 'We connect the assistant to all your knowledge sources — Google Drive, Confluence, SharePoint, Notion, Slack, and more — so no knowledge silo is left untouched.',
+          description: 'We connect the assistant to all your knowledge sources Google Drive, Confluence, SharePoint, Notion, Slack, and more so no knowledge silo is left untouched.',
           icon: 'Link2'
         }
       ]
@@ -179,7 +179,7 @@ export const aiKnowledgeAssistants: ServiceContent = {
       items: [
         {
           title: 'Identify and connect sources',
-          description: 'We map where your knowledge actually lives — documents, wikis, Slack, policy files — and connect the assistant to the sources that matter, respecting existing permissions.'
+          description: 'We map where your knowledge actually lives documents, wikis, Slack, policy files and connect the assistant to the sources that matter, respecting existing permissions.'
         },
         {
           title: 'Index and ground',
@@ -201,8 +201,8 @@ export const aiKnowledgeAssistants: ServiceContent = {
       type: 'text',
       heading: 'A Worked Example: Cutting New-Hire Ramp Time',
       content: [
-        'Consider onboarding, where the cost of scattered knowledge is most visible. A new hire in their first weeks has constant questions — how a process works, where to find something, what the policy is, who owns what. Traditionally each question means searching unfamiliar systems or, more often, interrupting a busy colleague, which slows the new hire and drains the team around them.',
-        'With a knowledge assistant, the new hire simply asks — in Slack or Teams, in plain language — and gets an accurate, sourced answer drawn from the company\'s real documentation, instantly. They become productive faster because they can self-serve answers without waiting, and the experienced staff who would otherwise field those questions keep their focus. The same assistant that helps the new hire on day one keeps serving the whole team indefinitely, and preserves hard-won knowledge even when the people who held it move on.'
+        'Consider onboarding, where the cost of scattered knowledge is most visible. A new hire in their first weeks has constant questions how a process works, where to find something, what the policy is, who owns what. Traditionally each question means searching unfamiliar systems or, more often, interrupting a busy colleague, which slows the new hire and drains the team around them.',
+        'With a knowledge assistant, the new hire simply asks in Slack or Teams, in plain language and gets an accurate, sourced answer drawn from the company\'s real documentation, instantly. They become productive faster because they can self-serve answers without waiting, and the experienced staff who would otherwise field those questions keep their focus. The same assistant that helps the new hire on day one keeps serving the whole team indefinitely, and preserves hard-won knowledge even when the people who held it move on.'
       ]
     },
 
@@ -217,11 +217,11 @@ export const aiKnowledgeAssistants: ServiceContent = {
         },
         {
           title: 'Is our internal data safe?',
-          description: 'Yes — assistants can be built with access controls and, where needed, self-hosted infrastructure so sensitive company data stays in your environment. Access is scoped so people see only what they are permitted to.'
+          description: 'Yes assistants can be built with access controls and, where needed, self-hosted infrastructure so sensitive company data stays in your environment. Access is scoped so people see only what they are permitted to.'
         },
         {
           title: 'Where does the assistant get its answers?',
-          description: 'From your indexed internal content — documents, wikis, knowledge bases, policies — not the open web. This grounding keeps answers accurate and specific to your business, and the assistant can point to the source.'
+          description: 'From your indexed internal content documents, wikis, knowledge bases, policies not the open web. This grounding keeps answers accurate and specific to your business, and the assistant can point to the source.'
         },
         {
           title: 'How is this different from using ChatGPT internally?',
@@ -242,7 +242,7 @@ export const aiKnowledgeAssistants: ServiceContent = {
     {
       type: 'cta',
       heading: 'Give your team an AI that knows your business.',
-      subheading: 'Book a free automation audit — 30 minutes, no obligation.',
+      subheading: 'Book a free automation audit 30 minutes, no obligation.',
       cta: {
         text: 'Book Your Free Audit',
         link: '/free-automation-audit',

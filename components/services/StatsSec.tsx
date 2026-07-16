@@ -44,10 +44,10 @@ export default function StatsSec({ section }: StatsSectionProps) {
   const statsItems = section.items || [];
 
   return (
-    <section className="py-20 md:py-28 bg-white relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(249,115,22,0.03),rgba(0,0,0,0))]" />
       
-      <div className="container mx-auto px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24 relative">
+      <div className="mx-auto max-w-[84vw] px-6">
         <motion.div
           initial="hidden"
           whileInView="visible"

@@ -29,7 +29,7 @@ export default function CTASec({ section }: { section: Section }) {
         }}
       />
 
-      <div className="container relative mx-auto px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24 text-center">
+      <div className="mx-auto max-w-[84vw] px-6 text-center">
         <motion.div
           initial="hidden"
           whileInView="visible"

@@ -4,17 +4,17 @@ import { ServiceContent } from './type';
 export const roboticProcessAutomation: ServiceContent = {
   slug: 'robotic-process-automation',
   title: 'Robotic Process Automation (RPA) Services | Clickmasters',
-  metaDescription: 'Clickmasters builds RPA and AI-RPA that automate rule-based, high-volume tasks across your systems — including legacy apps without APIs.',
+  metaDescription: 'Clickmasters builds RPA and AI-RPA that automate rule-based, high-volume tasks across your systems including legacy apps without APIs.',
   keywords: 'robotic process automation, rpa services, software robots, automation bots',
   sections: [
     // ========== HERO ==========
     {
       type: 'hero',
       heading: 'Robotic Process Automation (RPA)',
-      subheading: 'Software bots that handle the repetitive, rule-based clicks — including in legacy systems that have no API to connect to.',
+      subheading: 'Software bots that handle the repetitive, rule-based clicks including in legacy systems that have no API to connect to.',
       content: [
-        'Clickmasters builds robotic process automation that takes the repetitive, rule-based work off your team — including the work trapped inside old systems that nothing else can connect to. RPA uses software bots to do what a person does on screen: log in, copy data, fill forms, move files between applications. Combined with AI, those bots can also read documents and make routine decisions, handling work that pure rule-based automation never could.',
-        'This page explains what RPA is, where it fits relative to workflow and AI automation, why its ability to operate legacy and API-less systems makes it uniquely valuable, what we build, and how to tell whether RPA is the right tool for a given task — because sometimes it is, and sometimes a cleaner integration is the better answer.'
+        'Clickmasters builds robotic process automation that takes the repetitive, rule-based work off your team including the work trapped inside old systems that nothing else can connect to. RPA uses software bots to do what a person does on screen: log in, copy data, fill forms, move files between applications. Combined with AI, those bots can also read documents and make routine decisions, handling work that pure rule-based automation never could.',
+        'This page explains what RPA is, where it fits relative to workflow and AI automation, why its ability to operate legacy and API-less systems makes it uniquely valuable, what we build, and how to tell whether RPA is the right tool for a given task because sometimes it is, and sometimes a cleaner integration is the better answer.'
       ],
       stats: [
         { label: 'PROJECTS', value: '150+' },
@@ -37,20 +37,20 @@ export const roboticProcessAutomation: ServiceContent = {
       type: 'text',
       heading: 'What Is Robotic Process Automation?',
       content: [
-        'RPA uses software \'bots\' that operate applications the same way a person does — through the user interface. The bot logs in, navigates screens, reads fields, copies data, types into forms, clicks buttons, and moves information between systems. To the applications involved, the bot looks essentially like a very fast, very consistent human user who never gets bored, never mistypes, and never takes a break.',
-        'That UI-level approach is RPA\'s defining characteristic and its greatest strength. Most modern automation connects systems through APIs — clean, programmatic interfaces designed for software to talk to software. But a great deal of business-critical software, especially in finance, healthcare, insurance, and government-adjacent sectors, is old. It has no API, or no usable one. You cannot integrate with it in the normal way. RPA can still automate it, because it operates the software through the same screens a person uses.',
-        'When you add AI to RPA — sometimes called intelligent automation — the bots gain the ability to handle the parts that rigid rules cannot: reading an unstructured document and extracting the right values, classifying an input, deciding which path to take. A pure RPA bot follows a fixed script; an AI-enhanced bot can deal with variation, which is what most real-world work actually contains.'
+        'RPA uses software \'bots\' that operate applications the same way a person does through the user interface. The bot logs in, navigates screens, reads fields, copies data, types into forms, clicks buttons, and moves information between systems. To the applications involved, the bot looks essentially like a very fast, very consistent human user who never gets bored, never mistypes, and never takes a break.',
+        'That UI-level approach is RPA\'s defining characteristic and its greatest strength. Most modern automation connects systems through APIs clean, programmatic interfaces designed for software to talk to software. But a great deal of business-critical software, especially in finance, healthcare, insurance, and government-adjacent sectors, is old. It has no API, or no usable one. You cannot integrate with it in the normal way. RPA can still automate it, because it operates the software through the same screens a person uses.',
+        'When you add AI to RPA sometimes called intelligent automation the bots gain the ability to handle the parts that rigid rules cannot: reading an unstructured document and extracting the right values, classifying an input, deciding which path to take. A pure RPA bot follows a fixed script; an AI-enhanced bot can deal with variation, which is what most real-world work actually contains.'
       ]
     },
 
-    // ========== TEXT: Where RPA Fits — and Where It Doesn't ==========
+    // ========== TEXT: Where RPA Fits and Where It Doesn't ==========
     {
       type: 'text',
-      heading: 'Where RPA Fits — and Where It Doesn\'t',
+      heading: 'Where RPA Fits and Where It Doesn\'t',
       content: [
-        'Honesty matters here, because RPA is sometimes the right tool and sometimes a workaround for a problem better solved another way. When a system has a good API, integrating through it is usually cleaner, faster, and more robust than driving its user interface with a bot — APIs do not break when a button moves or a screen is redesigned. So our default, where a clean integration is available, is to use it.',
+        'Honesty matters here, because RPA is sometimes the right tool and sometimes a workaround for a problem better solved another way. When a system has a good API, integrating through it is usually cleaner, faster, and more robust than driving its user interface with a bot APIs do not break when a button moves or a screen is redesigned. So our default, where a clean integration is available, is to use it.',
         'RPA earns its place when that option does not exist: legacy systems with no API, applications you cannot modify, vendor software that locks you out of direct integration, or processes that span several such systems. In those cases, RPA is often the only practical way to automate the work at all, and it can deliver substantial returns precisely because that work has been stuck as manual for years with no other path forward.',
-        'We will tell you which situation you are in. If a clean integration will do the job better, we will recommend that even though it is different work. If RPA is genuinely the right tool, we will build it well — with the resilience that UI-driven automation specifically requires.'
+        'We will tell you which situation you are in. If a clean integration will do the job better, we will recommend that even though it is different work. If RPA is genuinely the right tool, we will build it well with the resilience that UI-driven automation specifically requires.'
       ]
     },
 
@@ -61,7 +61,7 @@ export const roboticProcessAutomation: ServiceContent = {
       items: [
         {
           title: 'Rule-based task bots',
-          description: 'Bots that automate repetitive, high-volume data tasks across applications — the data entry, transfers, and lookups that consume hours of staff time.',
+          description: 'Bots that automate repetitive, high-volume data tasks across applications the data entry, transfers, and lookups that consume hours of staff time.',
           icon: 'Bot'
         },
         {
@@ -71,7 +71,7 @@ export const roboticProcessAutomation: ServiceContent = {
         },
         {
           title: 'Legacy system automation',
-          description: 'Automating applications that have no API by operating them through the user interface — often the only way to automate this work at all.',
+          description: 'Automating applications that have no API by operating them through the user interface often the only way to automate this work at all.',
           icon: 'Cpu'
         },
         {
@@ -103,8 +103,8 @@ export const roboticProcessAutomation: ServiceContent = {
       type: 'text',
       heading: 'Example: Automating a Legacy Data-Entry Process',
       content: [
-        'A common scenario: a business receives orders or records in one system — email, a portal, a spreadsheet — and a person re-keys each one into an old line-of-business application that has no API. It is pure manual transfer, hours a day, and error-prone because attention wanders. There is no clean integration available because the old system simply does not offer one.',
-        'An RPA bot handles this directly. It reads the incoming records (with AI extracting the relevant fields where the input is unstructured), logs into the legacy application, navigates to the right screen, enters the data accurately, and confirms each entry — flagging anything that does not look right for a human to check. The manual transfer disappears, the error rate drops, and the work that was stuck as unavoidable manual labor for years is simply done, reliably, by the bot.'
+        'A common scenario: a business receives orders or records in one system email, a portal, a spreadsheet and a person re-keys each one into an old line-of-business application that has no API. It is pure manual transfer, hours a day, and error-prone because attention wanders. There is no clean integration available because the old system simply does not offer one.',
+        'An RPA bot handles this directly. It reads the incoming records (with AI extracting the relevant fields where the input is unstructured), logs into the legacy application, navigates to the right screen, enters the data accurately, and confirms each entry flagging anything that does not look right for a human to check. The manual transfer disappears, the error rate drops, and the work that was stuck as unavoidable manual labor for years is simply done, reliably, by the bot.'
       ]
     },
 
@@ -120,7 +120,7 @@ export const roboticProcessAutomation: ServiceContent = {
         },
         {
           title: 'Built for resilience',
-          description: 'Robust element handling, monitoring, and graceful failure — the difference between RPA that lasts and RPA that breaks.',
+          description: 'Robust element handling, monitoring, and graceful failure the difference between RPA that lasts and RPA that breaks.',
           icon: 'Shield'
         },
         {
@@ -132,7 +132,13 @@ export const roboticProcessAutomation: ServiceContent = {
           title: 'You own it',
           description: 'Documented, transparent automation you control.',
           icon: 'Award'
-        }
+        },
+        {
+    title: "Scalable from day one",
+    description: "Our RPA solutions grow with your business – from a single process to enterprise‑wide automation without rebuilding.",
+    icon: "TrendingUp" 
+  }
+  
       ]
     },
 
@@ -184,15 +190,15 @@ export const roboticProcessAutomation: ServiceContent = {
       items: [
         {
           title: 'What is robotic process automation?',
-          description: 'RPA uses software bots to automate repetitive, rule-based tasks by mimicking how a person interacts with applications — clicking, copying, entering data — across systems, including ones that have no API. It operates software through the user interface, the way a human user would.'
+          description: 'RPA uses software bots to automate repetitive, rule-based tasks by mimicking how a person interacts with applications clicking, copying, entering data across systems, including ones that have no API. It operates software through the user interface, the way a human user would.'
         },
         {
           title: 'What\'s the difference between RPA and AI automation?',
-          description: 'RPA follows fixed rules and is excellent at repetitive, structured tasks. AI automation adds reasoning — reading unstructured input and making decisions. "Intelligent automation" combines the two: bots that also read documents and handle variation.'
+          description: 'RPA follows fixed rules and is excellent at repetitive, structured tasks. AI automation adds reasoning reading unstructured input and making decisions. "Intelligent automation" combines the two: bots that also read documents and handle variation.'
         },
         {
           title: 'Can RPA work with old software that has no API?',
-          description: 'Yes — that is one of RPA\'s greatest strengths. Because it operates software through the user interface rather than through a programmatic connection, it can automate legacy and API-less applications that nothing else can reach.'
+          description: 'Yes that is one of RPA\'s greatest strengths. Because it operates software through the user interface rather than through a programmatic connection, it can automate legacy and API-less applications that nothing else can reach.'
         },
         {
           title: 'Is RPA fragile? I\'ve heard bots break easily.',
@@ -200,11 +206,11 @@ export const roboticProcessAutomation: ServiceContent = {
         },
         {
           title: 'When should we use RPA versus a normal integration?',
-          description: 'When a system has a good API, a direct integration is usually cleaner and more robust. RPA is the right choice when no usable API exists — legacy systems, locked-down vendor software, or processes spanning several such systems. We will tell you which applies to your case.'
+          description: 'When a system has a good API, a direct integration is usually cleaner and more robust. RPA is the right choice when no usable API exists legacy systems, locked-down vendor software, or processes spanning several such systems. We will tell you which applies to your case.'
         },
         {
           title: 'Can RPA handle documents and unstructured data?',
-          description: 'With AI enhancement, yes. AI-RPA can read invoices, forms, and other documents, extract the relevant data, and feed it into the bot\'s process — extending RPA well beyond the perfectly uniform inputs that pure rule-based bots require.'
+          description: 'With AI enhancement, yes. AI-RPA can read invoices, forms, and other documents, extract the relevant data, and feed it into the bot\'s process extending RPA well beyond the perfectly uniform inputs that pure rule-based bots require.'
         }
       ]
     },
@@ -213,7 +219,7 @@ export const roboticProcessAutomation: ServiceContent = {
     {
       type: 'cta',
       heading: 'Got work trapped in an old system nothing can connect to?',
-      subheading: 'Book a free automation audit — we\'ll tell you honestly whether RPA is the answer.',
+      subheading: 'Book a free automation audit we\'ll tell you honestly whether RPA is the answer.',
       cta: {
         text: 'Book Your Free Audit',
         link: '/free-automation-audit',

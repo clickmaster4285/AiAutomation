@@ -1,5 +1,5 @@
 // content/index.ts
-import { ServiceContent } from './type';
+import { ServiceContent, Section } from './type';
 import { aiWorkflowAutomation } from './ai-workflow-automation';
 import { aiWorkflowAutomationService } from './ai-workflow-automation-service';
 import { businessProcessAutomation } from './business-process-automation';
@@ -14,84 +14,311 @@ import { aiVoiceAgents } from './ai-voice-agents';
 import { aiKnowledgeAssistants } from './ai-knowledge-assistants';
 import { aiMarketingAutomation } from './ai-marketing-automation';
 
+// Import service pages from solution index
+import { 
+  SERVICE_PAGES, 
+  getServiceByUrl, 
+  getServicesByCategory, 
+  getAllCategories, 
+  getServiceRoutes, 
+  searchServices,
+  type ServicePage 
+} from './solution index';
+
 import DefaultTemplate from '@/components/templates/ServiceTemplate';
-const contentMap: Record<string, ServiceContent> = {};
-function registerService(service: ServiceContent) {
-  if (!service.slug) return;
-  contentMap[service.slug] = service;
+
+// ── Helper function to create sections from rich content ──
+function createSectionsFromRichContent(page: ServicePage): Section[] {
+  const sections: Section[] = [];
+  const richContent = page.richContent;
+  const title = page.title.split(' | ')[0] || page.title;
+  
+  if (!richContent) {
+    return getFallbackSections(page);
+  }
+  
+  sections.push({
+    type: 'hero',
+    heading: title,
+    subheading: page.description,
+    content: richContent.heroContent || [page.description],
+    stats: richContent.stats || [],
+    ctas: [
+      { text: 'Book a Free Audit', link: '/free-automation-audit', primary: true },
+      { text: 'View Work', link: '/work', primary: false }
+    ],
+    image: {
+      src: `/images/${page.filePath.replace('.md', '')}-hero.png`,
+      alt: `${title} Illustration`,
+      width: 400,
+      height: 300
+    }
+  });
+  
+  if (richContent.sectionContent) {
+    Object.entries(richContent.sectionContent).forEach(([heading, content]) => {
+      sections.push({
+        type: 'text',
+        heading: heading,
+        content: content
+      });
+    });
+  }
+  
+  if (richContent.featureItems && richContent.featureItems.length > 0) {
+    sections.push({
+      type: 'features',
+      heading: 'Key Features',
+      subheading: '',
+      items: richContent.featureItems
+    });
+  }
+  
+  if (richContent.stepItems && richContent.stepItems.length > 0) {
+    sections.push({
+      type: 'steps',
+      heading: 'How We Work',
+      subheading: '',
+      items: richContent.stepItems
+    });
+  }
+  
+  if (richContent.faqItems && richContent.faqItems.length > 0) {
+    sections.push({
+      type: 'faq',
+      heading: 'Frequently Asked Questions',
+      items: richContent.faqItems
+    });
+  }
+  
+  sections.push({
+    type: 'cta',
+    heading: richContent.ctaContent?.heading || 'Ready to Get Started?',
+    subheading: richContent.ctaContent?.subheading || 'Contact us today to discuss how we can help you achieve your goals.',
+    cta: {
+      text: richContent.ctaContent?.buttonText || 'Book a Free Consultation',
+      link: richContent.ctaContent?.buttonLink || '/free-automation-audit',
+      primary: true
+    }
+  });
+  
+  return sections;
 }
 
-registerService(aiWorkflowAutomation);
-registerService(aiWorkflowAutomationService);
-registerService(businessProcessAutomation);
-registerService(aiAgentDevelopment);
-registerService(aiIntegrationServices);
-registerService(roboticProcessAutomation);
-registerService(aiChatbotAutomation); 
-registerService(aiSalesAutomation);
-registerService(aiCustomerSupportAutomation);
-registerService(aiDataDocumentAutomation); 
-registerService(aiVoiceAgents);
-registerService(aiKnowledgeAssistants);
-registerService(aiMarketingAutomation);
+// ── Fallback sections if no rich content ──
+function getFallbackSections(page: ServicePage): Section[] {
+  const title = page.title.split(' | ')[0] || page.title;
+  return [
+    {
+      type: 'hero',
+      heading: title,
+      subheading: page.description,
+      content: [page.summary || page.description],
+      ctas: [
+        { text: 'Get Started', link: '/contact', primary: true },
+        { text: 'Learn More', link: '#learn-more', primary: false }
+      ]
+    },
+    {
+      type: 'text',
+      heading: 'Overview',
+      content: [page.summary || page.description]
+    },
+    {
+      type: 'faq',
+      heading: 'Frequently Asked Questions',
+      items: page.faqs.map((faq: string) => ({
+        title: faq,
+        description: `Contact us for more information about ${faq.toLowerCase().replace('?', '')}.`
+      }))
+    },
+    {
+      type: 'cta',
+      heading: 'Ready to Get Started?',
+      subheading: 'Contact us today to discuss how we can help you achieve your goals.',
+      cta: {
+        text: 'Book a Free Consultation',
+        link: '/free-automation-audit',
+        primary: true
+      }
+    }
+  ];
+}
 
+// ── Helper function to extract slug from URL ──
+function extractSlugFromUrl(url: string): string {
+  // Remove leading /services/ and trailing slashes
+  return url.replace(/^\/services\//, '').replace(/\/$/, '');
+}
 
-export const serviceCategories = [
+// ── Build service content from SERVICE_PAGES ──
+// This ensures ALL services from solution index are included
+const builtServiceContent: Record<string, ServiceContent> = {};
+
+SERVICE_PAGES.forEach(page => {
+  // Extract the slug from the URL (last part after the last /)
+  const urlParts = page.url.replace(/^\/|\/$/g, '').split('/');
+  const slug = urlParts[urlParts.length - 1]; // Get the last part as slug
+  
+  const content: ServiceContent = {
+    slug: slug,
+    title: page.title.split(' | ')[0] || page.title,
+    metaDescription: page.description,
+    keywords: page.keywords.join(', '),
+    template: 'default',
+    path: page.url,
+    sections: createSectionsFromRichContent(page),
+  };
+  
+  builtServiceContent[slug] = content;
+});
+
+// ── Initial service content from individual files ──
+const initialServiceContent: Record<string, ServiceContent> = {
+  'ai-workflow-automation': aiWorkflowAutomation,
+  'ai-workflow-automation-service': aiWorkflowAutomationService,
+  'business-process-automation': businessProcessAutomation,
+  'ai-agent-development': aiAgentDevelopment,
+  'ai-integration-services': aiIntegrationServices,
+  'robotic-process-automation': roboticProcessAutomation,
+  'ai-chatbot-automation': aiChatbotAutomation,
+  'ai-sales-automation': aiSalesAutomation,
+  'ai-customer-support-automation': aiCustomerSupportAutomation,
+  'ai-data-document-automation': aiDataDocumentAutomation,
+  'ai-voice-agents': aiVoiceAgents,
+  'ai-knowledge-assistants': aiKnowledgeAssistants,
+  'ai-marketing-automation': aiMarketingAutomation,
+};
+
+// ── Final service content map (merge both sources) ──
+export const serviceContent: Record<string, ServiceContent> = {
+  ...initialServiceContent,
+  ...builtServiceContent,
+};
+
+// ── Service Categories ──
+export interface ServiceItem {
+  title: string;
+  slug: string;
+  description?: string;
+}
+
+export interface ServiceCategory {
+  title: string;
+  slug: string;
+  description?: string;
+  heroTitle?: string;
+  heroDescription?: string;
+  image?: string;
+  services: ServiceItem[];
+}
+
+export const serviceCategories: ServiceCategory[] = [
   {
     title: 'Core Automation',
+    slug: 'core-automation',
+    description: 'Automate your core business processes with AI-driven workflows and robotics.',
+    heroTitle: 'Core Automation Solutions',
+    heroDescription: 'Streamline operations, reduce errors, and scale effortlessly with our core automation services.',
     services: [
-      { title: 'AI Workflow Automation', path: '/services/ai-workflow-automation' },
-      { title: 'Business Process Automation', path: '/services/business-process-automation' },
-      { title: 'Robotic Process Automation (RPA)', path: '/services/robotic-process-automation' },
-    ]
+      { title: 'AI Workflow Automation', slug: 'ai-workflow-automation', description: 'Automate repetitive tasks and complex workflows with AI.' },
+      { title: 'Business Process Automation', slug: 'business-process-automation', description: 'End-to-end automation of business processes.' },
+      { title: 'Robotic Process Automation (RPA)', slug: 'robotic-process-automation', description: 'Deploy software robots to handle rule-based tasks.' },
+      { title: 'AI Reporting Automation', slug: 'ai-reporting-automation', description: 'Automated reports and dashboards with AI summaries.' },
+    ],
   },
   {
     title: 'AI Agents & Assistants',
+    slug: 'ai-agents-and-assistants',   
+    description: 'Deploy intelligent agents and assistants that handle customer interactions, data processing, and more.',
+    heroTitle: 'AI Agents & Assistants',
+    heroDescription: 'From chatbots to voice agents – create AI assistants that work 24/7 for your business.',
     services: [
-      { title: 'AI Agent Development', path: '/services/ai-agent-development' },
-      { title: 'AI Chatbot Automation', path: '/services/ai-chatbot-automation' },
-      { title: 'AI Voice Agents', path: '/services/ai-voice-agents' },
-      { title: 'AI Knowledge Assistants', path: '/services/ai-knowledge-assistants' },
-    ]
+      { title: 'AI Agent Development', slug: 'ai-agent-development', description: 'Build autonomous agents for complex tasks.' },
+      { title: 'AI Chatbot Automation', slug: 'ai-chatbot-automation', description: 'AI-powered chatbots for customer engagement.' },
+      { title: 'AI Voice Agents', slug: 'ai-voice-agents', description: 'Voice assistants for hands-free operations.' },
+      { title: 'AI Knowledge Assistants', slug: 'ai-knowledge-assistants', description: 'Assistants that retrieve and summarize knowledge.' },
+      { title: 'AI Lead Generation', slug: 'ai-lead-generation', description: 'AI-powered lead generation and qualification systems.' },
+    ],
   },
   {
     title: 'Automation by Function',
+    slug: 'automation-by-function',
+    description: 'Automate specific business functions – sales, marketing, support, data, and integrations.',
+    heroTitle: 'Automation by Function',
+    heroDescription: 'Targeted automation solutions for every department – from lead generation to customer retention.',
     services: [
-      { title: 'AI Sales Automation', path: '/services/ai-sales-automation' },
-      { title: 'AI Marketing Automation', path: '/services/ai-marketing-automation' },
-      { title: 'AI Customer Support Automation', path: '/services/ai-customer-support-automation' },
-      { title: 'AI Data & Document Automation', path: '/services/ai-data-document-automation' },
-      { title: 'AI Integration Services', path: '/services/ai-integration-services' },
-    ]
+      { title: 'AI Sales Automation', slug: 'ai-sales-automation', description: 'Automate lead scoring, outreach, and follow-ups.' },
+      { title: 'AI Marketing Automation', slug: 'ai-marketing-automation', description: 'Personalized campaigns and audience segmentation.' },
+      { title: 'AI Customer Support Automation', slug: 'ai-customer-support-automation', description: 'Automated ticket routing, chatbots, and self-service.' },
+      { title: 'AI Data & Document Automation', slug: 'ai-data-document-automation', description: 'Extract, process, and organize data and documents.' },
+      { title: 'AI Integration Services', slug: 'ai-integration-services', description: 'Connect your apps and systems with AI-powered integration.' },
+    ],
+  },
+  // ── NEW CATEGORY ADDED ──
+  {
+    title: 'AI Strategy & Development',
+    slug: 'ai-strategy-development',
+    description: 'Strategic AI consulting and custom development services to transform your business.',
+    heroTitle: 'AI Strategy & Development',
+    heroDescription: 'From strategy to execution – we help you plan, build, and deploy AI solutions that drive real business value.',
+    services: [
+      { 
+        title: 'AI Strategy & Advisory', 
+        slug: 'ai-strategy-advisory', 
+        description: 'Strategy that ships — opportunity audits, roadmaps, and implementation.' 
+      },
+      { 
+        title: 'Custom AI Development', 
+        slug: 'custom-ai-development', 
+        description: 'Custom AI solutions on proven models with honest scoping.' 
+      },
+    ],
   },
 ];
 
-// All service entries for the navbar (flat list)
+// ── Category slugs for static generation ──
+export const categorySlugs = serviceCategories.map((cat) => cat.slug);
+
+// ── Flat list of all services ──
 export const allServices: { slug: string; title: string; path: string }[] = [
-  // Flatten services from categories
-  ...serviceCategories.flatMap(cat => cat.services.map(s => ({
-    slug: s.path.replace('/services/', ''),
-    title: s.title,
-    path: s.path,
-  }))),
-  // Add the pillar page (top-level)
-  { slug: 'ai-automation-agency', title: 'AI Automation Agency', path: '/ai-automation-agency' },
+  ...serviceCategories.flatMap((cat) =>
+    cat.services.map((s) => ({
+      slug: s.slug,
+      title: s.title,
+      path: `/services/${cat.slug}/${s.slug}`,
+    }))
+  ),
 ];
 
-// Helper: get full content by slug
-export function getServiceBySlug(slug: string): ServiceContent | undefined {
-  return contentMap[slug];
-}
+// ── Helpers ──
+export const getServiceBySlug = (slug: string): ServiceContent | undefined => {
+  // Check both sources
+  if (initialServiceContent[slug]) return initialServiceContent[slug];
+  if (builtServiceContent[slug]) return builtServiceContent[slug];
+  return undefined;
+};
 
-// Helper: get all slugs for static generation
-export function getAllServiceSlugs(): string[] {
+export const getAllServiceSlugs = (): string[] => {
   return allServices.map((s) => s.slug);
-}
+};
 
-// Helper: get the appropriate template for a service
-export function getTemplate(slug: string) {
+export const getTemplate = (slug: string) => {
   return DefaultTemplate;
-}
+};
+
+// ── Re-export everything from solution index ──
+export * from './solution index';
+
+export { 
+  SERVICE_PAGES,
+  getServiceByUrl, 
+  getServicesByCategory, 
+  getAllCategories, 
+  getServiceRoutes, 
+  searchServices,
+  type ServicePage
+};
 
 // ──────────────────────────────────────────────
 // ── PLATFORM DATA FOR NAV DROPDOWN ──
@@ -139,7 +366,6 @@ export const platformCategories: PlatformCategory[] = [
       },
     ],
   },
-  
   {
     title: 'HubSpot',
     platforms: [
@@ -159,8 +385,12 @@ export const platformCategories: PlatformCategory[] = [
         description: 'Funnels, pipelines, AI follow-up',
       },
     ],
-  }
+  },
 ];
+
+// ──────────────────────────────────────────────
+// ── INDUSTRY DATA FOR NAV DROPDOWN ──
+// ──────────────────────────────────────────────
 
 export interface IndustryItem {
   title: string;
@@ -182,12 +412,12 @@ export const industryCategories: IndustryCategory[] = [
         path: '/industries/finance-accounting',
         description: 'Automate invoicing, reconciliation, and reporting',
       },
-        {
+      {
         title: 'Healthcare',
         path: '/industries/healthcare',
         description: 'Appointment scheduling, intake, reminders, and follow-up',
       },
-       {
+      {
         title: 'Law Firms',
         path: '/industries/law-firms',
         description: 'Client intake, document generation, deadline tracking',
@@ -197,7 +427,7 @@ export const industryCategories: IndustryCategory[] = [
         path: '/industries/ecommerce',
         description: 'Support, orders, cart recovery, and marketing',
       },
-       {
+      {
         title: 'SaaS',
         path: '/industries/saas',
         description: 'Onboarding, support deflection, churn signals, and revenue ops',

@@ -19,7 +19,6 @@ export default function GridSec({ section }: { section: Section }) {
 
   const toggleShowAll = () => setShowAll(prev => !prev);
 
-  // Animated Heading
   const heading = section.heading || '';
   const words = heading.split(' ');
 
@@ -36,7 +35,6 @@ export default function GridSec({ section }: { section: Section }) {
     }),
   };
 
-  // Determine which word to highlight (brand)
   const getHighlightIndex = () => {
     const commonKeywords = ['Services', 'Automations', 'Comparison', 'Examples', 'Automation'];
     for (let i = 0; i < words.length; i++) {
@@ -44,17 +42,16 @@ export default function GridSec({ section }: { section: Section }) {
         return i;
       }
     }
-    return words.length - 1; // fallback: highlight last word
+    return words.length - 1;
   };
 
   const highlightIndex = getHighlightIndex();
 
   return (
-    <section className="py-20 md:py-28 border-t border-gray-200 bg-white relative overflow-hidden">
+    <section className="py-24 md:py-32 border-t border-gray-200 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(249,115,22,0.02),rgba(0,0,0,0))]" />
 
-      <div className="container mx-auto px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24 relative">
-        {/* Animated Heading */}
+      <div className="mx-auto max-w-[84vw] px-6">
         {heading && (
           <motion.h2
             initial="hidden"
@@ -87,7 +84,6 @@ export default function GridSec({ section }: { section: Section }) {
           </motion.p>
         )}
 
-        {/* Cards Grid */}
         <motion.div
           key={showAll ? 'all' : 'limited'}
           initial="hidden"
@@ -138,7 +134,6 @@ export default function GridSec({ section }: { section: Section }) {
           })}
         </motion.div>
 
-        {/* View More / Show Less Button */}
         {hasMore && (
           <div className="mt-12 text-center">
             <motion.button

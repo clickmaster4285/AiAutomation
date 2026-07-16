@@ -1,5 +1,5 @@
 // components/platforms/Shared/animation.ts
-// Shared animation variants — keep in sync across all section components
+// Shared animation variants keep in sync across all section components
 
 import type { Variants } from 'framer-motion';
 

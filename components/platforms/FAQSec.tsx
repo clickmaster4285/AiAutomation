@@ -36,10 +36,10 @@ export default function FaqSec({ section, variant = 'light' }: Props) {
 
   return (
     <section
-      className="relative py-24"
+      className="relative py-24 md:py-32"
       style={{ background: bg, borderTop: `1px solid ${sectionBorder}` }}
     >
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
+      <div className="mx-auto max-w-[84vw] px-6">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -55,7 +55,7 @@ export default function FaqSec({ section, variant = 'light' }: Props) {
             >
               {section.heading || 'Frequently Asked Questions'}
             </h2>
-            <p style={{ fontSize: '0.9375rem', color: subColor, lineHeight: 1.65 }} className="text-justify">
+            <p style={{ fontSize: '0.9375rem', color: subColor, lineHeight: 1.65 }} className="text-justify font-sans">
               Everything you need to know before getting started.
             </p>
           </motion.div>
@@ -74,7 +74,7 @@ export default function FaqSec({ section, variant = 'light' }: Props) {
                     className="w-full flex items-center justify-between gap-6 py-5 text-left"
                   >
                     <span
-                      className="font-semibold transition-colors duration-200"
+                      className="font-semibold transition-colors duration-200 font-sans"
                       style={{ fontSize: '0.9375rem', color: questionColor(isOpen) }}
                     >
                       {item.title}
@@ -105,7 +105,7 @@ export default function FaqSec({ section, variant = 'light' }: Props) {
                         style={{ overflow: 'hidden' }}
                       >
                         <p
-                          className="pb-5 text-justify"
+                          className="pb-5 text-justify font-sans"
                           style={{ fontSize: '0.9375rem', color: answerColor, lineHeight: 1.75 }}
                         >
                           {item.description}

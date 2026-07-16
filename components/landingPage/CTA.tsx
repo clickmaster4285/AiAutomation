@@ -63,12 +63,25 @@ export default function CTA() {
           The AI automation agency for businesses that refuse to be left behind.
         </p>
 
-        {/* Bottom marquee text */}
-        <div className="mt-16 overflow-hidden">
-          <div className="display text-[8vw] text-ink/5 whitespace-nowrap">
-            CLICKMASTERS · CLICKMASTERS
-          </div>
-        </div>
+        {/* Bottom marquee text – left to right continuous slide */}
+<div className="mt-16 overflow-hidden">
+  <div className="display text-[8vw] text-ink/5 whitespace-nowrap flex">
+    <div className="flex animate-marquee">
+      <span>CLICKMASTERS · CLICKMASTERS · CLICKMASTERS · CLICKMASTERS · </span>
+      <span>CLICKMASTERS · CLICKMASTERS · CLICKMASTERS · CLICKMASTERS · </span>
+    </div>
+  </div>
+</div>
+
+<style jsx>{`
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+`}</style>
       </div>
     </section>
   );

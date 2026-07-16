@@ -5,7 +5,7 @@ export const lawFirms: ServiceContent = {
   slug: 'law-firms',
   title: 'AI Automation for Law Firms | Clickmasters',
   metaDescription:
-    'Clickmasters builds AI automation for law firms — client intake, document generation, deadline tracking, and follow-up — so attorneys spend time on cases, not admin.',
+    'Clickmasters builds AI automation for law firms client intake, document generation, deadline tracking, and follow-up so attorneys spend time on cases, not admin.',
   keywords: 'ai automation for law firms, legal automation',
   sections: [
     // ========== HERO ==========
@@ -13,9 +13,9 @@ export const lawFirms: ServiceContent = {
       type: 'hero',
       heading: 'AI Automation for Law Firms',
       subheading:
-        'Automate client intake, document generation, deadline tracking, and follow-up — so attorneys spend time on cases, not admin.',
+        'Automate client intake, document generation, deadline tracking, and follow-up so attorneys spend time on cases, not admin.',
       content: [
-        'Clickmasters builds AI automation for law firms, targeting the heavy administrative overhead that surrounds legal work — client intake, document generation, deadline tracking, and client communication. We automate the repetitive parts so attorneys and staff spend their time on legal work and client relationships, while every matter of legal judgment stays firmly with the lawyers. Automation handles the busywork; it does not practice law.',
+        'Clickmasters builds AI automation for law firms, targeting the heavy administrative overhead that surrounds legal work client intake, document generation, deadline tracking, and client communication. We automate the repetitive parts so attorneys and staff spend their time on legal work and client relationships, while every matter of legal judgment stays firmly with the lawyers. Automation handles the busywork; it does not practice law.',
         'This page explains where law firms lose time to administration, what we automate, and how we keep the boundary between automation and legal judgment clear.',
       ],
       stats: [
@@ -41,7 +41,7 @@ export const lawFirms: ServiceContent = {
       heading: 'The Administrative Overhead in Legal Work',
       content: [
         'Legal work is wrapped in administration. New clients need intake and onboarding. Documents need drafting, often from templates and repeated information. Deadlines and matter statuses need tracking, with serious consequences if something is missed. Clients need updates and follow-up. Much of this is repetitive and time-consuming, and because attorney time is expensive, every hour spent on administration rather than billable legal work is costly twice over.',
-        'The stakes also make consistency essential. A missed deadline, a dropped follow-up, an intake that fell through the cracks — these are not just inefficiencies in a law firm; they carry real risk. Automation brings consistency to exactly these areas: intake that always happens, deadlines that are always tracked and flagged, follow-up that never slips. It removes both the time cost and the risk of human inconsistency from the administrative layer, while leaving the legal substance to the professionals.',
+        'The stakes also make consistency essential. A missed deadline, a dropped follow-up, an intake that fell through the cracks these are not just inefficiencies in a law firm; they carry real risk. Automation brings consistency to exactly these areas: intake that always happens, deadlines that are always tracked and flagged, follow-up that never slips. It removes both the time cost and the risk of human inconsistency from the administrative layer, while leaving the legal substance to the professionals.',
       ],
     },
 
@@ -59,7 +59,7 @@ export const lawFirms: ServiceContent = {
         {
           title: 'Document generation',
           description:
-            'AI-drafted documents assembled from intake data and templates, for attorney review — turning hours of drafting into minutes of editing.',
+            'AI-drafted documents assembled from intake data and templates, for attorney review turning hours of drafting into minutes of editing.',
           icon: 'FileText',
         },
         {
@@ -94,8 +94,8 @@ export const lawFirms: ServiceContent = {
       type: 'text',
       heading: 'The Boundary: Automation vs. Legal Judgment',
       content: [
-        'This boundary matters more in law than almost anywhere, so we are explicit about it. Automation in a law firm handles administration and drafting support — it gathers intake information, assembles draft documents from templates and data, tracks deadlines, and manages routine client communication. What it does not do is exercise legal judgment. Every document it drafts is for attorney review before it is used. Every legal decision remains with the lawyers.',
-        'AI document drafting, in particular, should be understood correctly: it accelerates the production of routine documents by assembling them from your templates and the matter\'s information, saving substantial time. But it produces drafts, not final legal work, and an attorney reviews and takes responsibility for what goes out. Used this way — as a drafting accelerator with professional review — it is a genuine efficiency gain. Treated as a replacement for legal judgment, it would be a serious mistake, and we build the workflow to keep that line clear.',
+        'This boundary matters more in law than almost anywhere, so we are explicit about it. Automation in a law firm handles administration and drafting support it gathers intake information, assembles draft documents from templates and data, tracks deadlines, and manages routine client communication. What it does not do is exercise legal judgment. Every document it drafts is for attorney review before it is used. Every legal decision remains with the lawyers.',
+        'AI document drafting, in particular, should be understood correctly: it accelerates the production of routine documents by assembling them from your templates and the matter\'s information, saving substantial time. But it produces drafts, not final legal work, and an attorney reviews and takes responsibility for what goes out. Used this way as a drafting accelerator with professional review it is a genuine efficiency gain. Treated as a replacement for legal judgment, it would be a serious mistake, and we build the workflow to keep that line clear.',
       ],
     },
 
@@ -121,7 +121,7 @@ export const lawFirms: ServiceContent = {
         {
           title: 'Attorney review',
           description:
-            'The attorney receives a draft to review and refine rather than a blank page — cutting routine production time dramatically.',
+            'The attorney receives a draft to review and refine rather than a blank page cutting routine production time dramatically.',
           icon: 'Shield',
         },
         {
@@ -196,8 +196,8 @@ export const lawFirms: ServiceContent = {
       type: 'text',
       heading: 'Where to Start in a Law Firm',
       content: [
-        'For most firms, client intake automation is a strong starting point, because it captures prospective clients consistently, improves the experience, and feeds clean information into everything downstream. For firms handling volumes of similar matters, document generation is often the highest-return automation, turning repetitive drafting into review-and-refine. Deadline tracking is valuable everywhere given the risk that missed dates carry. We start where your firm\'s administrative load and risk are concentrated and build out from there.',
-        'Firms with repeatable matter types — areas of practice where the documents and processes are similar case to case — benefit most, because the automation has a consistent pattern to work with. The audit identifies where your attorneys are spending the most time on administration that could be automated away.',
+        'For most firms, client intake automation is a strong starting point, because it captures prospective clients consistently, improves the experience, and feeds clean information into everything downstream. For firms handling volumes of similar matters, document generation is often the highest-return automation, turning repetitive drafting into review-and-refine.',
+        'Firms with repeatable matter types areas of practice where the documents and processes are similar case to case benefit most, because the automation has a consistent pattern to work with. The audit identifies where your attorneys are spending the most time on administration that could be automated away.',
       ],
     },
 
@@ -206,7 +206,7 @@ export const lawFirms: ServiceContent = {
       type: 'text',
       heading: 'The Return for Law Firms',
       content: [
-        'The return is measured in attorney and staff hours redirected from administration to billable legal work and client relationships — which, given the cost of legal time, is a substantial and easily quantified saving. There is also a risk dimension: consistent automated deadline tracking and intake reduce the chance of the missed dates and dropped matters that carry real consequences in legal practice. Automation here saves money and reduces risk simultaneously, while leaving all legal judgment with the attorneys.',
+        'The return is measured in attorney and staff hours redirected from administration to billable legal work and client relationships which, given the cost of legal time, is a substantial and easily quantified saving. There is also a risk dimension: consistent automated deadline tracking and intake reduce the chance of the missed dates and dropped matters that carry real consequences in legal practice. Automation here saves money and reduces risk simultaneously, while leaving all legal judgment with the attorneys.',
       ],
     },
 
@@ -218,7 +218,7 @@ export const lawFirms: ServiceContent = {
         {
           title: 'How can law firms use AI automation?',
           description:
-            'Law firms use AI automation for client intake, document drafting support, deadline tracking, and client communication — automating administrative work while attorneys retain all legal judgment and review all output.',
+            'Law firms use AI automation for client intake, document drafting support, deadline tracking, and client communication automating administrative work while attorneys retain all legal judgment and review all output.',
         },
         {
           title: 'Is AI document drafting safe for legal work?',
@@ -233,7 +233,7 @@ export const lawFirms: ServiceContent = {
         {
           title: 'Is client confidentiality protected?',
           description:
-            'We build with confidentiality in mind — access controls, secure handling, and where appropriate infrastructure that keeps data in your environment. As with any tool, confidentiality obligations are the firm\'s responsibility, and we design to support them.',
+            'We build with confidentiality in mind access controls, secure handling, and where appropriate infrastructure that keeps data in your environment. As with any tool, confidentiality obligations are the firm\'s responsibility, and we design to support them.',
         },
       ],
     },

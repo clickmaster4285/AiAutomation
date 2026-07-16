@@ -5,7 +5,7 @@ export const healthcare: ServiceContent = {
   slug: 'healthcare',
   title: 'AI Automation for Healthcare | Clickmasters',
   metaDescription:
-    'Clickmasters builds AI automation for healthcare practices — appointment scheduling, patient intake, reminders, and follow-up — built with privacy and human oversight.',
+    'Clickmasters builds AI automation for healthcare practices appointment scheduling, patient intake, reminders, and follow-up built with privacy and human oversight.',
   keywords: 'ai automation for healthcare, healthcare automation',
   sections: [
     // ========== HERO ==========
@@ -13,9 +13,9 @@ export const healthcare: ServiceContent = {
       type: 'hero',
       heading: 'AI Automation for Healthcare',
       subheading:
-        'Automate scheduling, intake, reminders, and follow-up — securely, with privacy and human oversight built in.',
+        'Automate scheduling, intake, reminders, and follow-up securely, with privacy and human oversight built in.',
       content: [
-        'Clickmasters builds AI automation for healthcare practices, focused on the heavy administrative load that pulls staff away from patients — appointment scheduling, patient intake, reminders, and follow-up. We automate the repetitive front-office work while keeping sensitive data controlled and every clinical decision firmly with your clinicians. The goal is to free your team for patient care, not to insert AI where judgment belongs.',
+        'Clickmasters builds AI automation for healthcare practices, focused on the heavy administrative load that pulls staff away from patients appointment scheduling, patient intake, reminders, and follow-up. We automate the repetitive front-office work while keeping sensitive data controlled and every clinical decision firmly with your clinicians. The goal is to free your team for patient care, not to insert AI where judgment belongs.',
         'This page explains where healthcare automation delivers value, what we build, and how we approach the privacy and oversight that healthcare rightly demands.',
       ],
       stats: [
@@ -40,8 +40,8 @@ export const healthcare: ServiceContent = {
       type: 'text',
       heading: 'The Administrative Load in Healthcare',
       content: [
-        'Healthcare practices carry an enormous administrative burden that has little to do with care itself. Front-desk staff spend their days on the phone booking and rescheduling, chasing patients for intake paperwork, sending reminders, and following up — repetitive work that nonetheless has to be done accurately. Meanwhile, calls go unanswered when staff are busy with patients in the office, no-shows cost revenue and clog the schedule, and intake forms arrive incomplete and need chasing.',
-        'This administrative layer is a poor use of skilled staff and a constant source of friction for patients, who wait on hold, miss reminders, and re-supply information they have already given. Automating it improves both sides: staff are freed for the human work that matters, and patients get faster, smoother service. Crucially, none of this touches clinical decision-making — it is the administrative wrapper around care, which is exactly where automation belongs.',
+        'Healthcare practices carry an enormous administrative burden that has little to do with care itself. Front-desk staff spend their days on the phone booking and rescheduling, chasing patients for intake paperwork, sending reminders, and following up repetitive work that nonetheless has to be done accurately. Meanwhile, calls go unanswered when staff are busy with patients in the office, no-shows cost revenue and clog the schedule, and intake forms arrive incomplete and need chasing.',
+        'This administrative layer is a poor use of skilled staff and a constant source of friction for patients, who wait on hold, miss reminders, and re-supply information they have already given. Automating it improves both sides: staff are freed for the human work that matters, and patients get faster, smoother service. Crucially, none of this touches clinical decision-making it is the administrative wrapper around care, which is exactly where automation belongs.',
       ],
     },
 
@@ -53,7 +53,7 @@ export const healthcare: ServiceContent = {
         {
           title: 'Appointment scheduling',
           description:
-            'AI-driven booking, rescheduling, and confirmation — including handling calls that would otherwise go unanswered when the front desk is busy.',
+            'AI-driven booking, rescheduling, and confirmation including handling calls that would otherwise go unanswered when the front desk is busy.',
           icon: 'Calendar',
         },
         {
@@ -94,8 +94,8 @@ export const healthcare: ServiceContent = {
       type: 'text',
       heading: 'Privacy, Security, and Human Oversight',
       content: [
-        'Healthcare data is among the most sensitive there is, and automation here has to be built accordingly. We design with privacy as a first principle: access controls so data is seen only by those permitted, secure handling throughout, and — where appropriate — infrastructure that keeps patient information within your environment rather than flowing to third-party clouds. Each automation is scoped to handle only the data it genuinely needs.',
-        'Equally important is keeping humans in control. Automation handles the administrative tasks — booking, reminders, intake — but clinical decisions, sensitive conversations, and anything requiring professional judgment stay with your staff. We design the boundaries deliberately so the system handles the routine and escalates anything that should involve a person. An honest note: formal regulatory compliance such as HIPAA is a shared responsibility that depends on your specific setup, processes, and agreements; we build with privacy and security in mind and will work within your compliance requirements, but compliance is something to confirm for your particular situation rather than assume.',
+        'Healthcare data is among the most sensitive there is, and automation here has to be built accordingly. We design with privacy as a first principle: access controls so data is seen only by those permitted, secure handling throughout, and where appropriate infrastructure that keeps patient information within your environment rather than flowing to third-party clouds. Each automation is scoped to handle only the data it genuinely needs.',
+        'Equally important is keeping humans in control. Automation handles the administrative tasks booking, reminders, intake but clinical decisions, sensitive conversations, and anything requiring professional judgment stay with your staff. We design the boundaries deliberately so the system handles the routine and escalates anything that should involve a person. An honest note: formal regulatory compliance such as HIPAA is a shared responsibility that depends on your specific setup, processes, and agreements; we build with privacy and security in mind and will work within your compliance requirements, but compliance is something to confirm for your particular situation rather than assume.',
       ],
     },
 
@@ -108,7 +108,7 @@ export const healthcare: ServiceContent = {
       items: [
         {
           title: 'Timely reminders',
-          description: 'Patients receive reminders across their preferred channel — text, email, or phone.',
+          description: 'Patients receive reminders across their preferred channel text, email, or phone.',
           icon: 'Bell',
         },
         {
@@ -190,8 +190,9 @@ export const healthcare: ServiceContent = {
       type: 'text',
       heading: 'Where to Start in Healthcare',
       content: [
-        'For most practices, scheduling and reminders are the highest-return starting point, because they address the most visible pain — unanswered calls, no-shows, front-desk overload — and deliver measurable results quickly. From there, automated patient intake reduces the paperwork chase and improves data completeness before visits, and records automation removes manual re-entry between systems. We start with the administrative pain point that is costing the practice most and expand from there, always within your privacy and compliance requirements.',
-        'The benefit compounds for practices with high call and appointment volume, where the administrative load is heaviest and the cost of missed calls and no-shows is greatest. The audit identifies where your front office is losing the most time and revenue today.',
+        'For most practices, scheduling and reminders are the highest-return starting point, because they address the most visible pain unanswered calls, no-shows, front-desk overload and deliver measurable results quickly. From there, automated patient intake reduces the paperwork chase and improves data completeness before visits, and records automation removes manual re-entry between systems. We start with the administrative pain point that is costing the practice most and expand from there.',
+        '  Follow‑up messaging and patient outreach become fully automated as well, ensuring that post‑visit instructions, lab results, and medication reminders reach patients without manual effort. This not only improves patient satisfaction but also frees clinical staff to focus on care rather than chasing administrative loose ends. Over time, the automation layer learns patient preferences and adapts communication channels, making the entire patient journey smoother and more personal.',
+        
       ],
     },
 
@@ -200,7 +201,7 @@ export const healthcare: ServiceContent = {
       type: 'text',
       heading: 'The Return for Healthcare Practices',
       content: [
-        'The return appears in three places: staff time reclaimed from administrative work for patient-facing care, revenue protected by reducing no-shows and capturing calls that would otherwise be missed, and a better patient experience from faster, smoother service. Because these are concrete and measurable — fewer no-shows, more calls answered, hours saved at the front desk — automation in a practice is straightforward to justify, and it does so without touching the clinical care that defines your practice.',
+        'The return appears in three places: staff time reclaimed from administrative work for patient-facing care, revenue protected by reducing no-shows and capturing calls that would otherwise be missed, and a better patient experience from faster, smoother service. Because these are concrete and measurable fewer no-shows, more calls answered, hours saved at the front desk automation in a practice is straightforward to justify, and it does so without touching the clinical care that defines your practice.',
       ],
     },
 
@@ -212,7 +213,7 @@ export const healthcare: ServiceContent = {
         {
           title: 'How is AI automation used in healthcare?',
           description:
-            'It automates front-office work — scheduling, patient intake, reminders, follow-up, and records movement — reducing administrative load while keeping data secure and clinical decisions with clinicians.',
+            'It automates front-office work scheduling, patient intake, reminders, follow-up, and records movement reducing administrative load while keeping data secure and clinical decisions with clinicians.',
         },
         {
           title: 'Is healthcare automation secure and compliant?',
@@ -222,12 +223,12 @@ export const healthcare: ServiceContent = {
         {
           title: 'Does AI make any clinical decisions?',
           description:
-            'No. We automate administrative tasks only — booking, reminders, intake, records. Clinical decisions and sensitive conversations stay entirely with your clinical staff, by design.',
+            'No. We automate administrative tasks only booking, reminders, intake, records. Clinical decisions and sensitive conversations stay entirely with your clinical staff, by design.',
         },
         {
           title: 'Can AI handle patient phone calls?',
           description:
-            'Yes, for administrative calls — booking, rescheduling, common questions — an AI voice agent can handle calls that would otherwise go unanswered when staff are busy, routing anything clinical or sensitive to a person.',
+            'Yes, for administrative calls booking, rescheduling, common questions an AI voice agent can handle calls that would otherwise go unanswered when staff are busy, routing anything clinical or sensitive to a person.',
         },
       ],
     },

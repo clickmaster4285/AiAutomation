@@ -5,7 +5,7 @@ export const ecommerce: ServiceContent = {
   slug: 'ecommerce',
   title: 'AI Automation for E-commerce | Clickmasters',
   metaDescription:
-    'Clickmasters builds AI automation for e-commerce — customer support, order workflows, abandoned-cart recovery, and marketing — so your store runs leaner and converts more.',
+    'Clickmasters builds AI automation for e-commerce customer support, order workflows, abandoned-cart recovery, and marketing so your store runs leaner and converts more.',
   keywords: 'ai automation for ecommerce, ecommerce automation',
   sections: [
     // ========== HERO ==========
@@ -13,9 +13,9 @@ export const ecommerce: ServiceContent = {
       type: 'hero',
       heading: 'AI Automation for E-commerce',
       subheading:
-        'Automate support, orders, cart recovery, and marketing — so a lean team runs a store that feels much larger.',
+        'Automate support, orders, cart recovery, and marketing so a lean team runs a store that feels much larger.',
       content: [
-        'Clickmasters builds AI automation for e-commerce businesses, handling the constant operational volume that comes with selling online — customer support, order workflows, abandoned-cart recovery, and marketing. We automate the repetitive, high-volume work so a lean team can run a store that feels far larger, converting more and serving customers better without adding headcount for every increase in volume.',
+        'Clickmasters builds AI automation for e-commerce businesses, handling the constant operational volume that comes with selling online customer support, order workflows, abandoned-cart recovery, and marketing. We automate the repetitive, high-volume work so a lean team can run a store that feels far larger, converting more and serving customers better without adding headcount for every increase in volume.',
         'This page explains where e-commerce work piles up, what we automate, and how it integrates with your store and stack.',
       ],
       stats: [
@@ -40,8 +40,8 @@ export const ecommerce: ServiceContent = {
       type: 'text',
       heading: 'Where E-commerce Work Piles Up',
       content: [
-        'E-commerce generates relentless repetitive work that scales directly with sales. Customer support tickets — where is my order, what is your return policy, does this come in another size — arrive constantly and are mostly variations on a handful of questions. Orders need processing, status updates, and exception handling. Carts are abandoned at high rates and need recovery. Marketing — emails, campaigns, lifecycle messaging — needs constant feeding. For a small team, this volume is overwhelming, and it grows with every increase in traffic and sales.',
-        'The trap is that handling this manually ties your operational capacity to headcount: more sales means more support, more order issues, more everything, requiring more people. Automation breaks that link, absorbing the repetitive volume so your team\'s size is driven by genuinely complex work rather than sheer quantity. This is how lean e-commerce teams punch far above their weight — they automate the operational layer that would otherwise consume them.',
+        'E-commerce generates relentless repetitive work that scales directly with sales. Customer support tickets where is my order, what is your return policy, does this come in another size arrive constantly and are mostly variations on a handful of questions. Orders need processing, status updates, and exception handling. Carts are abandoned at high rates and need recovery. Marketing emails, campaigns, lifecycle messaging needs constant feeding. For a small team, this volume is overwhelming, and it grows with every increase in traffic and sales.',
+        'The trap is that handling this manually ties your operational capacity to headcount: more sales means more support, more order issues, more everything, requiring more people. Automation breaks that link, absorbing the repetitive volume so your team\'s size is driven by genuinely complex work rather than sheer quantity. This is how lean e-commerce teams punch far above their weight they automate the operational layer that would otherwise consume them.',
       ],
     },
 
@@ -71,7 +71,7 @@ export const ecommerce: ServiceContent = {
         {
           title: 'Marketing automation',
           description:
-            'AI-generated content and lifecycle campaigns — welcome, post-purchase, win-back — that run themselves.',
+            'AI-generated content and lifecycle campaigns welcome, post-purchase, win-back that run themselves.',
           icon: 'Megaphone',
         },
         {
@@ -195,8 +195,8 @@ export const ecommerce: ServiceContent = {
       type: 'text',
       heading: 'Where to Start in E-commerce',
       content: [
-        'For most stores, AI customer support is the highest-return starting point, because support volume is relentless, mostly repetitive, and directly affects both customer satisfaction and the team\'s capacity. Abandoned-cart recovery is often the fastest revenue win, recovering sales that are otherwise simply lost. From there, order workflows and marketing automation extend the leverage. We start with whichever is consuming your team or costing you the most revenue today and expand from there.',
-        'Lean teams benefit most dramatically, because automation lets a small operation deliver the service levels and marketing consistency of a much larger one. The audit identifies where your store is losing the most time and revenue — usually a mix of support load and unrecovered carts — and prioritizes accordingly.',
+        'For most stores, AI customer support is the highest-return starting point, because support volume is relentless, mostly repetitive, and directly affects both customer satisfaction and the team\'s capacity. Abandoned-cart recovery is often the fastest revenue win, recovering sales that are otherwise simply lost.',
+        'Lean teams benefit most dramatically, because automation lets a small operation deliver the service levels and marketing consistency of a much larger one. The audit identifies where your store is losing the most time and revenue usually a mix of support load and unrecovered carts and prioritizes accordingly.',
       ],
     },
 
@@ -205,7 +205,7 @@ export const ecommerce: ServiceContent = {
       type: 'text',
       heading: 'The Return for E-commerce',
       content: [
-        'The return is concrete and measurable: tickets deflected and response times improved on the support side, revenue recovered on the abandoned-cart side, and time freed from operational busywork across the board. Because e-commerce metrics are so trackable, the impact of automation is easy to quantify — you can see the recovered carts and the deflected tickets directly. The deeper return is the ability to grow sales without your operational workload and headcount growing in lockstep, which is what lets a lean store scale profitably.',
+        'The return is concrete and measurable: tickets deflected and response times improved on the support side, revenue recovered on the abandoned-cart side, and time freed from operational busywork across the board. Because e-commerce metrics are so trackable, the impact of automation is easy to quantify you can see the recovered carts and the deflected tickets directly. The deeper return is the ability to grow sales without your operational workload and headcount growing in lockstep, which is what lets a lean store scale profitably.',
       ],
     },
 
@@ -217,12 +217,12 @@ export const ecommerce: ServiceContent = {
         {
           title: 'How is AI automation used in e-commerce?',
           description:
-            'It automates customer support, order and fulfillment workflows, abandoned-cart recovery, marketing campaigns, and review management — letting lean teams operate at a scale that would otherwise require many more people.',
+            'It automates customer support, order and fulfillment workflows, abandoned-cart recovery, marketing campaigns, and review management letting lean teams operate at a scale that would otherwise require many more people.',
         },
         {
           title: 'Can AI handle e-commerce customer support?',
           description:
-            'Yes. AI agents answer order, shipping, and product questions from your store data 24/7, escalating complex cases to humans — deflecting the high-volume routine tickets that consume small teams.',
+            'Yes. AI agents answer order, shipping, and product questions from your store data 24/7, escalating complex cases to humans deflecting the high-volume routine tickets that consume small teams.',
         },
         {
           title: 'Does cart-recovery automation actually work?',

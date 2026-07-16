@@ -54,8 +54,8 @@ export default function StepSec({ section }: { section: Section }) {
   const lastSpans = items.length === 5;
 
   return (
-    <section className="py-20 border-t border-white/5 bg-[#070707]">
-      <div className="container mx-auto px-6 md:px-10 lg:px-16 xl:px-20" ref={ref}>
+    <section className="relative py-24 md:py-32 border-t border-white/5 bg-[#070707]">
+      <div className="mx-auto max-w-[84vw] px-6" ref={ref}>
         <motion.div
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
@@ -68,12 +68,12 @@ export default function StepSec({ section }: { section: Section }) {
               style={{ background: 'var(--brand)' }}
             />
             {section.heading && (
-              <h2 className="display text-3xl md:text-4xl font-black text-white leading-tight">
+              <h2 className="display text-white text-3xl md:text-4xl">
                 {section.heading}
               </h2>
             )}
             {section.subheading && (
-              <p className="mt-2 text-white/40 text-[0.9375rem] leading-relaxed max-w-lg text-justify">
+              <p className="mt-2 text-white/40 text-[0.9375rem] leading-relaxed max-w-lg text-justify font-sans">
                 {section.subheading}
               </p>
             )}
@@ -99,13 +99,13 @@ export default function StepSec({ section }: { section: Section }) {
                   <motion.span
                     custom={idx}
                     variants={numVariants}
-                    className="absolute top-3 right-4 font-black select-none tabular-nums leading-none pointer-events-none transition-colors duration-300 group-hover:text-brand/20"
+                    className="absolute top-3 right-4 font-black select-none tabular-nums leading-none pointer-events-none transition-colors duration-300 group-hover:text-brand/20 font-mono"
                     style={{ fontSize: '5rem', color: 'rgba(249,115,22,0.06)' }}
                   >
                     {String(idx + 1).padStart(2, '0')}
                   </motion.span>
                   <div
-                    className="w-7 h-7 rounded-lg flex items-center justify-center mb-5 text-[11px] font-black transition-transform duration-300 group-hover:scale-110"
+                    className="w-7 h-7 rounded-lg flex items-center justify-center mb-5 text-[11px] font-black transition-transform duration-300 group-hover:scale-110 font-sans"
                     style={{
                       background: 'rgba(249,115,22,0.1)',
                       border: '1px solid rgba(249,115,22,0.25)',
@@ -114,8 +114,8 @@ export default function StepSec({ section }: { section: Section }) {
                   >
                     {idx + 1}
                   </div>
-                  <h3 className="font-bold text-white text-[0.9375rem] mb-2">{item.title}</h3>
-                  <p className="text-white/38 text-sm leading-relaxed text-justify">{item.description}</p>
+                  <h3 className="font-bold text-white text-[0.9375rem] mb-2 font-sans">{item.title}</h3>
+                  <p className="text-white/38 text-sm leading-relaxed text-justify font-sans">{item.description}</p>
                   <div
                     className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500"
                     style={{ background: `linear-gradient(to right, ${'var(--brand)'}, transparent)` }}

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     apple: "/logo.png",
   },
   verification: {
-    google: "Wj_h0JbVwyvoLp7jT7VzLlMN05Z8Ws7NDAkACJ10W-E",
+    google: "yZxB_VaKHIvQZzdrxKOV_Rh9R5rYkEkRt9HVFIAKXvk", 
   },
 };
 
@@ -43,6 +43,12 @@ export default function RootLayout({
         <link rel="icon" href="/logo.png" sizes="any" />
         <link rel="apple-touch-icon" href="/logo.png" />
         <meta name="theme-color" content="#000000" />
+
+        {/* ✅ Google Site Verification - Added directly in head */}
+        <meta 
+          name="google-site-verification" 
+          content="yZxB_VaKHIvQZzdrxKOV_Rh9R5rYkEkRt9HVFIAKXvk" 
+        />
 
         {/* Google Tag Manager */}
         <Script id="gtm-script" strategy="afterInteractive">

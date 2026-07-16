@@ -3,9 +3,9 @@ import { ServiceContent } from '../type';
 
 export const saas: ServiceContent = {
   slug: 'saas',
-  title: 'AI Automation for SaaS Companies | Clickmasters',
+  title: 'AI Automation for SaaS | Clickmasters',
   metaDescription:
-    'Clickmasters builds AI automation for SaaS — user onboarding, support deflection, churn signals, and revenue operations — so you scale without scaling headcount.',
+    'Clickmasters builds AI automation for SaaS user onboarding, support deflection, churn signals, and revenue operations so you scale without scaling headcount.',
   keywords: 'ai automation for saas, saas automation',
   sections: [
     // ========== HERO ==========
@@ -13,9 +13,9 @@ export const saas: ServiceContent = {
       type: 'hero',
       heading: 'AI Automation for SaaS Companies',
       subheading:
-        'Automate onboarding, support deflection, churn signals, and revenue ops — so you scale without scaling headcount.',
+        'Automate onboarding, support deflection, churn signals, and revenue ops so you scale without scaling headcount.',
       content: [
-        'Clickmasters builds AI automation for SaaS companies, where growth puts predictable strain on support, onboarding, and operations, and where the whole business model depends on scaling efficiently. We automate user onboarding, support deflection, churn detection, and revenue operations, so you serve more users and run tighter operations without adding headcount in lockstep with growth — which is exactly the leverage SaaS economics reward.',
+        'Clickmasters builds AI automation for SaaS companies, where growth puts predictable strain on support, onboarding, and operations, and where the whole business model depends on scaling efficiently. We automate user onboarding, support deflection, churn detection, and revenue operations, so you serve more users and run tighter operations without adding headcount in lockstep with growth which is exactly the leverage SaaS economics reward.',
         'This page explains where SaaS companies feel the strain as they grow, what we automate, and how it fits a modern SaaS stack.',
       ],
       stats: [
@@ -40,8 +40,8 @@ export const saas: ServiceContent = {
       type: 'text',
       heading: 'Where Growth Strains a SaaS Business',
       content: [
-        'SaaS growth is wonderful until it overwhelms the systems around it. More users mean more support tickets, and a large share are repetitive how-do-I questions. More signups mean more onboarding, and onboarding quality directly drives activation and retention — yet doing it well at scale by hand is impossible. Churn creeps in, often with warning signs buried in usage data that no one has time to watch. Revenue operations — billing, CRM, reporting — grow more complex and consume more manual effort.',
-        'The SaaS model rewards efficient scaling: the goal is to grow revenue much faster than cost. But if every increment of growth requires proportional increases in support staff, onboarding effort, and operational headcount, that efficiency erodes. Automation is how successful SaaS companies preserve it — absorbing the repetitive support, automating onboarding, surfacing churn signals, and streamlining revenue ops, so the business scales on software rather than on hiring.',
+        'SaaS growth is wonderful until it overwhelms the systems around it. More users mean more support tickets, and a large share are repetitive how-do-I questions. More signups mean more onboarding, and onboarding quality directly drives activation and retention yet doing it well at scale by hand is impossible. Churn creeps in, often with warning signs buried in usage data that no one has time to watch. Revenue operations billing, CRM, reporting grow more complex and consume more manual effort.',
+        'The SaaS model rewards efficient scaling: the goal is to grow revenue much faster than cost. But if every increment of growth requires proportional increases in support staff, onboarding effort, and operational headcount, that efficiency erodes. Automation is how successful SaaS companies preserve it absorbing the repetitive support, automating onboarding, surfacing churn signals, and streamlining revenue ops, so the business scales on software rather than on hiring.',
       ],
     },
 
@@ -117,7 +117,7 @@ export const saas: ServiceContent = {
         {
           title: 'Efficient scaling',
           description:
-            'Support scales with usage without scaling headcount proportionally — preserving the SaaS growth model.',
+            'Support scales with usage without scaling headcount proportionally preserving the SaaS growth model.',
           icon: 'TrendingUp',
         },
          {
@@ -195,7 +195,7 @@ export const saas: ServiceContent = {
       type: 'text',
       heading: 'Where to Start in SaaS',
       content: [
-        'For most SaaS companies, support deflection is the highest-return starting point, because support volume scales directly with growth and a large share is repetitive — so deflecting it preserves the efficient-scaling the model depends on. Onboarding automation is the next priority, since activation quality drives retention and revenue. Churn monitoring and revenue-ops automation follow. We start where growth is putting the most strain today and build out from there.',
+        'For most SaaS companies, support deflection is the highest-return starting point, because support volume scales directly with growth and a large share is repetitive so deflecting it preserves the efficient-scaling the model depends on. Onboarding automation is the next priority, since activation quality drives retention and revenue. ',
         'Companies in a fast-growth phase benefit most, because that is precisely when manual processes break and the gap between revenue growth and cost growth is most at risk. The audit identifies where your growth is straining your systems and starts there.',
       ],
     },
@@ -205,7 +205,7 @@ export const saas: ServiceContent = {
       type: 'text',
       heading: 'The Return for SaaS',
       content: [
-        'The return is the preservation of efficient scaling: serving more users, onboarding more signups, and running more complex operations without proportional increases in headcount. Concretely, that shows up as tickets deflected, activation and retention improved, churn caught earlier, and operations time saved — all measurable, and all directly supportive of the unit economics that determine a SaaS company\'s profitability and valuation. Automation here is not just a cost saving; it protects the scaling model itself.',
+        'The return is the preservation of efficient scaling: serving more users, onboarding more signups, and running more complex operations without proportional increases in headcount. Concretely, that shows up as tickets deflected, activation and retention improved, churn caught earlier, and operations time saved all measurable, and all directly supportive of the unit economics that determine a SaaS company\'s profitability and valuation. Automation here is not just a cost saving; it protects the scaling model itself.',
       ],
     },
 
@@ -217,22 +217,22 @@ export const saas: ServiceContent = {
         {
           title: 'How do SaaS companies use AI automation?',
           description:
-            'SaaS companies automate user onboarding, support deflection, churn detection, and revenue operations — scaling customer-facing and internal processes without proportionally growing headcount, which preserves the efficient-scaling their model depends on.',
+            'SaaS companies automate user onboarding, support deflection, churn detection, and revenue operations scaling customer-facing and internal processes without proportionally growing headcount, which preserves the efficient-scaling their model depends on.',
         },
         {
           title: 'Can AI reduce SaaS support load?',
           description:
-            'Yes. AI support agents answer common questions from your documentation, deflecting a large share of routine tickets while routing complex issues to your team — so support scales with usage without scaling headcount in lockstep.',
+            'Yes. AI support agents answer common questions from your documentation, deflecting a large share of routine tickets while routing complex issues to your team so support scales with usage without scaling headcount in lockstep.',
         },
         {
           title: 'How does automation help with churn?',
           description:
-            'Automated monitoring can surface at-risk accounts from usage and engagement signals, flagging them so your team intervenes before customers churn — catching warning signs that would otherwise be buried in data no one has time to watch.',
+            'Automated monitoring can surface at-risk accounts from usage and engagement signals, flagging them so your team intervenes before customers churn catching warning signs that would otherwise be buried in data no one has time to watch.',
         },
         {
           title: 'What does it integrate with?',
           description:
-            'Your product via API, support platforms like Intercom and Zendesk, CRM and billing systems, analytics for churn signals, and internal tools like Slack — connecting to where your product and operations already run.',
+            'Your product via API, support platforms like Intercom and Zendesk, CRM and billing systems, analytics for churn signals, and internal tools like Slack connecting to where your product and operations already run.',
         },
       ],
     },

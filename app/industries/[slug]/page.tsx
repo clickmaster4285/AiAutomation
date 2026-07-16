@@ -5,7 +5,7 @@ import Hero from '@/components/industries/Hero';
 import TextSec from '@/components/industries/TextSec';
 import FeatureSec from '@/components/industries/FeaturesSec';
 import GridSec from '@/components/industries/GridSec';
-import FaqSec from '@/components/industries/FAQSec';
+import FAQSec from '@/components/industries/FAQSec';
 import CTASec from '@/components/industries/CTASec';
 import PainPoint from '@/components/industries/PainPoint';
 import StepSec from '@/components/industries/StepSec';
@@ -15,7 +15,7 @@ const sectionMap: Record<string, React.ComponentType<{ section: any; bg?: string
   text: TextSec,
   features: FeatureSec,
   grid: GridSec,
-  faq: FaqSec,
+  faq: FAQSec,
   cta: CTASec,
   painpoint: PainPoint,
   steps: StepSec,

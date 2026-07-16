@@ -44,59 +44,36 @@ export default function Hero() {
     <section
       ref={ref}
       id="top"
-      className="relative pt-24 pb-20 overflow-hidden bg-paper isolate"
+      className="relative pt-8 pb-12 md:pt-16 md:pb-20 overflow-hidden bg-paper isolate"
     >
       <div className="mx-auto max-w-[84vw] px-6 relative z-10">
 
-        {/* TOP META */}
-        <div className="flex items-center justify-between hero-meta">
-          <div className="flex items-center gap-4 py-8">
-            <Marker n="01" />
-            <span className="eyebrow text-muted-foreground">
-              AI Automation Agency
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="eyebrow text-muted-foreground">
-              Available for new projects
-            </span>
-          </div>
-        </div>
-
-        <div className="border-t border-border mt-4" />
-
         {/* HERO MAIN */}
-        <div className="relative grid md:grid-cols-[1.4fr_1fr] gap-6 mt-10">
+        <div className="relative grid md:grid-cols-[1.4fr_1fr] gap-4 md:gap-6 mt-6 md:mt-10">
 
           {/* TEXT */}
-          <div className="relative z-10 py-10">
-            <h1 className="display text-[13vw] md:text-[8.5vw] leading-[0.92]">
-
+          <div className="relative z-10 py-6 md:py-10">
+            <h1 className="display text-[13vw] md:text-[8.5vw] leading-[1.05]">
               <div className="overflow-hidden">
-                <div className="hero-word">AUTOMATE</div>
+                <div className="hero-word py-1">AUTOMATE</div>
               </div>
-
               <div className="overflow-hidden">
-                <div className="hero-word whitespace-nowrap">
+                <div className="hero-word whitespace-nowrap py-1">
                   THE <span className="text-brand">FUTURE</span>
                 </div>
               </div>
-
               <div className="overflow-hidden">
-                <div className="hero-word display-italic font-normal">
+                <div className="hero-word display-italic font-normal py-1">
                   of work.
                 </div>
               </div>
-
             </h1>
           </div>
 
           {/* IMAGE */}
           <motion.div
             style={{ y }}
-            className="relative md:absolute md:right-0 md:top-0 md:w-[42%] md:h-full flex items-end justify-end pointer-events-none z-0"
+            className="relative md:absolute md:right-0 md:top-0 md:w-[42%] md:h-full flex items-end justify-center md:justify-end pointer-events-none z-0 mt-4 md:mt-0"
           >
             <Image
               src="/images/hero.png"
@@ -104,43 +81,43 @@ export default function Hero() {
               width={1024}
               height={1280}
               priority
-              className="w-full max-w-md md:max-w-none object-contain"
+              className="w-full max-w-sm md:max-w-none object-contain max-h-[50vh] md:max-h-full"
             />
           </motion.div>
 
         </div>
 
         {/* BOTTOM SECTION */}
-        <div className="mt-16 grid md:grid-cols-[1.4fr_auto_auto] items-end gap-8 hero-meta relative z-10">
+        <div className="mt-8 md:mt-16 grid md:grid-cols-[1.4fr_auto_auto] items-end gap-6 md:gap-8 hero-meta relative z-10">
 
-          <p className="text-lg text-muted-foreground max-w-md leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground max-w-md leading-relaxed">
             We build intelligent AI systems that eliminate repetitive work,
             supercharge your team, and scale without headcount.
           </p>
 
-          <div className="flex gap-10">
+          <div className="flex gap-6 md:gap-10">
             <div>
-              <div className="display text-5xl">500+</div>
-              <div className="eyebrow text-muted-foreground mt-1">Projects</div>
+              <div className="display text-3xl md:text-5xl">500+</div>
+              <div className="eyebrow text-muted-foreground mt-1 text-xs md:text-sm">Projects</div>
             </div>
 
             <div>
-              <div className="display text-5xl">120+</div>
-              <div className="eyebrow text-muted-foreground mt-1">Clients</div>
+              <div className="display text-3xl md:text-5xl">120+</div>
+              <div className="eyebrow text-muted-foreground mt-1 text-xs md:text-sm">Clients</div>
             </div>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <a
               href="#contact"
-              className="bg-ink text-white text-sm px-5 py-3 hover:bg-brand transition-colors inline-flex items-center gap-2"
+              className="bg-ink text-white text-sm px-5 py-3 hover:bg-brand transition-colors inline-flex items-center justify-center gap-2 text-center"
             >
               Start Automating <span>›</span>
             </a>
 
             <a
               href="#work"
-              className="border border-ink text-ink text-sm px-5 py-3 font-medium hover:bg-ink hover:text-white transition-colors"
+              className="border border-ink text-ink text-sm px-5 py-3 font-medium hover:bg-ink hover:text-white transition-colors text-center"
             >
               View Work
             </a>

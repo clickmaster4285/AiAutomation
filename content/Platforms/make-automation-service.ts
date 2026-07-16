@@ -5,7 +5,7 @@ export const makeAutomationService: ServiceContent = {
   slug: 'make-automation-services',
   title: 'Make (Integromat) Automation Services | Clickmasters',
   metaDescription:
-    'Clickmasters designs Make automations — visual, multi-step workflows with real logic — at lower run-cost than enterprise tools. Build, migrate, and scale on Make.',
+    'Clickmasters designs Make automations visual, multi-step workflows with real logic at lower run-cost than enterprise tools. Build, migrate, and scale on Make.',
   keywords: 'make automation agency, make automation services, integromat, make integromat',
   sections: [
     // ========== HERO ==========
@@ -15,7 +15,7 @@ export const makeAutomationService: ServiceContent = {
       subheading:
         'Powerful visual workflows for teams that have outgrown simple tools but want lower run-costs than enterprise platforms.',
       content: [
-        'Clickmasters designs and builds Make automations for businesses that have outgrown the simplest tools but do not want the cost or complexity of enterprise platforms. Make — formerly Integromat — sits in a genuinely useful middle ground: a visual canvas for building multi-step workflows with real branching logic, at a per-operation price that is usually friendlier than Zapier\'s per-task model once volume climbs. For a lot of growing operations teams, it is the sweet spot.',
+        'Clickmasters designs and builds Make automations for businesses that have outgrown the simplest tools but do not want the cost or complexity of enterprise platforms. Make formerly Integromat sits in a genuinely useful middle ground: a visual canvas for building multi-step workflows with real branching logic, at a per-operation price that is usually friendlier than Zapier\'s per-task model once volume climbs. For a lot of growing operations teams, it is the sweet spot.',
         'This page explains what Make is good at, when it is the right choice, the services we provide, and how it compares to the alternatives, so you can decide whether it fits your situation.',
       ],
       stats: [
@@ -39,9 +39,10 @@ export const makeAutomationService: ServiceContent = {
     {
       type: 'text',
       heading: 'What Make Is Good At',
+      image: '/images/rob.png',   
       content: [
-        'Make\'s defining strength is its visual scenario builder. Instead of the linear, step-after-step model of simpler tools, Make gives you a canvas where you can see the whole workflow, branch it down multiple paths, loop over data, and handle real conditional logic. For workflows that are more than a straight line — where what happens next depends on the data, or where one trigger fans out into several actions — that visual clarity is a real advantage, both for building and for understanding what a workflow does later.',
-        'Its second strength is cost at volume. Make charges per operation rather than per task, and for many real-world workflows that works out cheaper than the equivalent on Zapier, especially as the number of steps and runs grows. It is not always cheaper — it depends on the workflow shape — but for multi-step automations at volume, Make frequently wins on economics while offering more logical power.',
+        'Make\'s defining strength is its visual scenario builder. Instead of the linear, step-after-step model of simpler tools, Make gives you a canvas where you can see the whole workflow, branch it down multiple paths, loop over data, and handle real conditional logic. For workflows that are more than a straight line where what happens next depends on the data, or where one trigger fans out into several actions that visual clarity is a real advantage, both for building and for understanding what a workflow does later.',
+        'Its second strength is cost at volume. Make charges per operation rather than per task, and for many real-world workflows that works out cheaper than the equivalent on Zapier, especially as the number of steps and runs grows. It is not always cheaper it depends on the workflow shape but for multi-step automations at volume, Make frequently wins on economics while offering more logical power.',
       ],
     },
 
@@ -49,8 +50,9 @@ export const makeAutomationService: ServiceContent = {
     {
       type: 'text',
       heading: 'When Make Is the Right Choice',
+      image: '/images/rob.png',
       content: [
-        'Make is the right tool when your automations have real complexity — multiple steps, branching, conditional logic, data transformation — but you do not need the self-hosting or full data control that pushes a project toward n8n, and you have outgrown the simplicity ceiling of Zapier. It suits operations teams at small and mid-sized businesses who want to see and manage their workflows visually and who care about keeping run-costs reasonable as volume grows.',
+        'Make is the right tool when your automations have real complexity multiple steps, branching, conditional logic, data transformation but you do not need the self-hosting or full data control that pushes a project toward n8n, and you have outgrown the simplicity ceiling of Zapier. It suits operations teams at small and mid-sized businesses who want to see and manage their workflows visually and who care about keeping run-costs reasonable as volume grows.',
         'It is less ideal at the extremes. For a genuinely simple, linear automation and a non-technical user who wants it live in minutes, Zapier is often easier. For high-volume, data-sensitive, or AI-heavy production workflows where self-hosting and no per-run fees matter, n8n is usually the better home. We will tell you honestly which end of that spectrum your project sits on rather than pushing Make for everything.',
       ],
     },
@@ -159,7 +161,7 @@ export const makeAutomationService: ServiceContent = {
         {
           title: 'Cost-aware',
           description:
-            'We design to keep operation usage — and your bill — under control.',
+            'We design to keep operation usage and your bill under control.',
           icon: 'DollarSign',
         },
         {
@@ -178,12 +180,12 @@ export const makeAutomationService: ServiceContent = {
         {
           title: 'What is Make used for?',
           description:
-            'Make (formerly Integromat) is a visual automation platform for building multi-step workflows that connect apps with branching logic — a middle ground between Zapier\'s simplicity and developer-level tools, well suited to operations teams with real workflow complexity.',
+            'Make (formerly Integromat) is a visual automation platform for building multi-step workflows that connect apps with branching logic a middle ground between Zapier\'s simplicity and developer-level tools, well suited to operations teams with real workflow complexity.',
         },
         {
           title: 'Is Make cheaper than Zapier?',
           description:
-            'Often, yes. Make\'s per-operation pricing is usually more cost-effective than Zapier\'s per-task model at comparable volume, particularly for multi-step workflows — though it depends on the specific workflow shape.',
+            'Often, yes. Make\'s per-operation pricing is usually more cost-effective than Zapier\'s per-task model at comparable volume, particularly for multi-step workflows though it depends on the specific workflow shape.',
         },
         {
           title: 'Should I use Make or n8n?',
@@ -198,7 +200,7 @@ export const makeAutomationService: ServiceContent = {
         {
           title: 'Can you migrate our Zapier workflows to Make?',
           description:
-            'Yes. When Zapier\'s per-task pricing has become expensive, we migrate the right workflows to Make to cut run-cost while preserving the automation — and we tell you honestly when a migration is and isn\'t worth it.',
+            'Yes. When Zapier\'s per-task pricing has become expensive, we migrate the right workflows to Make to cut run-cost while preserving the automation and we tell you honestly when a migration is and isn\'t worth it.',
         },
       ],
     },
@@ -208,7 +210,7 @@ export const makeAutomationService: ServiceContent = {
       type: 'cta',
       heading: 'Wondering if Make is right for your workflows?',
       subheading:
-        "Book a free automation audit — we'll recommend the platform that fits, honestly.",
+        "Book a free automation audit we'll recommend the platform that fits, honestly.",
       cta: {
         text: 'Book Your Free Audit',
         link: '/free-automation-audit',
