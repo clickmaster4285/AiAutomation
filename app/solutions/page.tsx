@@ -14,6 +14,20 @@ import {
   TrendingUp, 
   BarChart3, 
   Briefcase,
+  Brain,
+  Building2,
+  HardHat,
+  ShoppingBag,
+  GraduationCap,
+  Heart,
+  Shield,
+  Scale,
+  Truck,
+  Factory,
+  Home,
+  Utensils,
+  Store,
+  Cloud,
   ArrowRight,
   Sparkles
 } from 'lucide-react';
@@ -23,9 +37,11 @@ export const metadata: Metadata = {
   description: 'Explore our comprehensive AI automation solutions for business efficiency.',
 };
 
-// Icon mapping for solution cards
+// Icon mapping for solution cards - Expanded with all icons
 const iconMap: Record<string, any> = {
+  // Main Solutions
   'AI Chatbots': MessageSquare,
+  'AI Chatbot Solutions': MessageSquare,
   'AI Workflow Automation': Workflow,
   'CRM Automation': Database,
   'Customer Support Automation': Headphones,
@@ -34,6 +50,30 @@ const iconMap: Record<string, any> = {
   'Marketing Automation': TrendingUp,
   'Reporting Automation': BarChart3,
   'Sales Automation': Briefcase,
+  'AI Agent Development': Brain,
+  
+  // Industries - AI Chatbots
+  'AI Chatbots for Accounting Firms': Building2,
+  'AI Chatbots for Construction': HardHat,
+  'AI Chatbots for E-commerce': ShoppingBag,
+  'AI Chatbots for Education': GraduationCap,
+  'AI Chatbots for Healthcare': Heart,
+  'AI Chatbots for Insurance Agencies': Shield,
+  
+  // Industries - AI Agents
+  'AI Agent Development for Accounting Firms': Building2,
+  'AI Agent Development for Construction': HardHat,
+  'AI Agent Development for E-commerce': ShoppingBag,
+  'AI Agent Development for Education': GraduationCap,
+  'AI Agent Development for Healthcare': Heart,
+  'AI Agent Development for Insurance Agencies': Shield,
+  'AI Agent Development for Law Firms': Scale,
+  'AI Agent Development for Logistics & Transportation': Truck,
+  'AI Agent Development for Manufacturing': Factory,
+  'AI Agent Development for Real Estate': Home,
+  'AI Agent Development for Restaurants & Hospitality': Utensils,
+  'AI Agent Development for Retail': Store,
+  'AI Agent Development for SaaS Companies': Cloud,
 };
 
 export default function SolutionsPage() {
@@ -56,6 +96,13 @@ export default function SolutionsPage() {
       href: '/free-automation-audit',
     },
     image: '/images/solutions-hero.png',
+    imageWidth: 700,
+    imageHeight: 580,
+    textSize: 'xlarge' as const,
+    breadcrumb: [
+      { label: 'Home', href: '/' },
+      { label: 'Solutions', href: '/solutions' },
+    ],
   };
 
   return (
@@ -72,7 +119,14 @@ export default function SolutionsPage() {
           />
 
           {Object.entries(categories).map(([category, solutions], categoryIndex) => {
-            const displayName = category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            // Format category name for display
+            let displayName = category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            
+            // Special formatting for specific categories
+            if (category === 'ai-agents') displayName = 'AI Agent Development';
+            if (category === 'ai-chatbots') displayName = 'AI Chatbots';
+            if (category === 'ai-workflow-automation') displayName = 'AI Workflow Automation';
+            
             return (
               <div key={category} className={`${categoryIndex > 0 ? 'mt-16' : 'mt-12'}`}>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 capitalize">
@@ -80,8 +134,10 @@ export default function SolutionsPage() {
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {solutions.map((solution) => {
-                    // Get icon based on solution title or category
-                    const Icon = iconMap[solution.heroHeading] || iconMap[solution.title] || Sparkles;
+                    // Get icon based on solution title or heading
+                    const iconKey = solution.heroHeading || solution.title || '';
+                    const Icon = iconMap[iconKey] || iconMap[solution.category] || Sparkles;
+                    
                     return (
                       <Link
                         key={solution.slug}
@@ -92,12 +148,12 @@ export default function SolutionsPage() {
                           <div className="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center group-hover:bg-brand/20 transition-colors duration-300">
                             <Icon className="h-5 w-5" />
                           </div>
-                          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-brand transition-colors">
+                          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-brand transition-colors line-clamp-1">
                             {solution.heroHeading || solution.title}
                           </h3>
                         </div>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          {solution.metaDescription || solution.description}
+                        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                          {solution.metaDescription || solution.description || solution.heroSubheading || ''}
                         </p>
                         <div className="mt-4 flex items-center gap-2 text-brand font-medium text-sm opacity-0 group-hover:opacity-100 transition-all duration-300">
                           <span>Learn More</span>

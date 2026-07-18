@@ -3,6 +3,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useInView, animate } from 'framer-motion';
 import {
   ArrowRight,
@@ -17,6 +18,10 @@ import {
   TrendingUp,
   Bot,
   Workflow,
+  Quote,
+  Star,
+  Circle,
+  Grid,
 } from 'lucide-react';
 
 interface ContentSectionProps {
@@ -30,9 +35,10 @@ interface ContentSectionProps {
   imageRight?: boolean;
   stats?: Array<{ label: string; value: string }>;
   cta?: { text: string; href: string };
-  background?: 'paper' | 'muted' | 'light' | 'white' | 'gray-50';
+  background?: 'paper' | 'muted' | 'light' | 'white' | 'gray-50' | 'brand-light' | 'gradient' | 'dark';
   className?: string;
   showImage?: boolean;
+  visualVariant?: 'default' | 'minimal' | 'featured' | 'accent';
 }
 
 /* ── Count-up stat ── */
@@ -83,24 +89,20 @@ function AutomationCoreVisual() {
 
   return (
     <div className="relative w-full max-w-[360px] aspect-square">
-      {/* Ambient glow */}
       <div className="absolute inset-[6%] rounded-full bg-brand/10 blur-3xl" />
       <div className="absolute inset-[22%] rounded-full bg-orange-300/10 blur-2xl" />
 
-      {/* Outer rotating dashed orbit */}
       <motion.div
         className="absolute inset-[8%] rounded-full border border-dashed border-brand/25"
         animate={{ rotate: 360 }}
         transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
       />
-      {/* Inner counter-rotating ring */}
       <motion.div
         className="absolute inset-[22%] rounded-full border border-gray-200"
         animate={{ rotate: -360 }}
         transition={{ duration: 38, repeat: Infinity, ease: 'linear' }}
       />
 
-      {/* Connecting lines + traveling data pulses */}
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" fill="none">
         {nodes.map((n, i) => (
           <motion.line
@@ -130,7 +132,6 @@ function AutomationCoreVisual() {
         ))}
       </svg>
 
-      {/* Central engine */}
       <motion.div
         initial={{ opacity: 0, scale: 0.85 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -150,7 +151,6 @@ function AutomationCoreVisual() {
         </div>
       </motion.div>
 
-      {/* Orbiting capability nodes */}
       {nodes.map(({ Icon, label, style }, i) => (
         <motion.div
           key={i}
@@ -174,7 +174,6 @@ function AutomationCoreVisual() {
         </motion.div>
       ))}
 
-      {/* Sparkle accent */}
       <motion.div
         className="absolute top-[16%] left-[74%] z-10 text-brand"
         animate={{ opacity: [0.3, 1, 0.3], scale: [0.85, 1.15, 0.85] }}
@@ -183,7 +182,6 @@ function AutomationCoreVisual() {
         <Sparkles className="h-3.5 w-3.5" />
       </motion.div>
 
-      {/* Floating dashboard card  bottom right */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -220,7 +218,6 @@ function AutomationCoreVisual() {
         </div>
       </motion.div>
 
-      {/* Floating status pill  top left */}
       <motion.div
         initial={{ opacity: 0, y: -16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -238,6 +235,158 @@ function AutomationCoreVisual() {
   );
 }
 
+/* ── Minimal Visual ── */
+function MinimalVisual() {
+  return (
+    <div className="relative w-full max-w-[320px] aspect-square flex items-center justify-center">
+      <div className="relative w-40 h-40">
+        <motion.div
+          className="absolute inset-0 rounded-full border-2 border-brand/20"
+          animate={{ scale: [1, 1.1, 1], rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+        />
+        <motion.div
+          className="absolute inset-[15%] rounded-full border-2 border-brand/10"
+          animate={{ scale: [1, 1.15, 1], rotate: -360 }}
+          transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+        />
+        <motion.div
+          className="absolute inset-[30%] rounded-full bg-gradient-to-br from-brand/20 to-orange-400/20"
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center"
+          animate={{ scale: [0.9, 1.1, 0.9] }}
+          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center shadow-lg shadow-brand/30">
+            <Sparkles className="h-6 w-6 text-white" />
+          </div>
+        </motion.div>
+        <motion.div
+          className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-orange-400"
+          animate={{ scale: [1, 1.5, 1] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute -bottom-2 -left-2 w-3 h-3 rounded-full bg-brand/50"
+          animate={{ scale: [1, 1.3, 1] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+        />
+      </div>
+    </div>
+  );
+}
+
+/* ── Featured Visual ── */
+function FeaturedVisual() {
+  return (
+    <div className="relative w-full max-w-[340px] aspect-square">
+      <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-orange-400/5 rounded-3xl" />
+      <div className="absolute inset-[10%] border border-brand/10 rounded-2xl" />
+      <div className="absolute inset-[20%] border border-brand/5 rounded-xl" />
+      
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center"
+        animate={{ scale: [0.95, 1.05, 0.95] }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <div className="text-center">
+          <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-brand to-orange-400 flex items-center justify-center shadow-2xl shadow-brand/30">
+            <Bot className="h-10 w-10 text-white" />
+          </div>
+          <div className="mt-4 space-y-1">
+            <div className="h-2 w-24 mx-auto bg-gray-200 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-brand to-orange-400 rounded-full"
+                initial={{ width: '0%' }}
+                whileInView={{ width: '75%' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, delay: 0.5 }}
+              />
+            </div>
+            <div className="h-2 w-20 mx-auto bg-gray-200 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-brand to-orange-400 rounded-full"
+                initial={{ width: '0%' }}
+                whileInView={{ width: '60%' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, delay: 0.7 }}
+              />
+            </div>
+          </div>
+        </div>
+      </motion.div>
+      
+      <motion.div
+        className="absolute top-[15%] right-[15%] w-8 h-8 rounded-full bg-brand/10 border border-brand/20 flex items-center justify-center"
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <Zap className="h-4 w-4 text-brand" />
+      </motion.div>
+      
+      <motion.div
+        className="absolute bottom-[15%] left-[15%] w-8 h-8 rounded-full bg-orange-400/10 border border-orange-400/20 flex items-center justify-center"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+      >
+        <Shield className="h-4 w-4 text-orange-400" />
+      </motion.div>
+    </div>
+  );
+}
+
+/* ── Accent Visual ── */
+function AccentVisual() {
+  const bars = [35, 65, 45, 80, 55, 70, 40, 90];
+  
+  return (
+    <div className="relative w-full max-w-[300px] aspect-square flex items-center justify-center">
+      <div className="relative w-full max-w-[250px]">
+        <div className="flex items-end justify-between gap-1.5 h-32">
+          {bars.map((height, i) => (
+            <motion.div
+              key={i}
+              className="flex-1 rounded-t-lg bg-gradient-to-t from-brand to-orange-400"
+              initial={{ height: 0 }}
+              whileInView={{ height: `${height}%` }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+            />
+          ))}
+        </div>
+        <div className="mt-4 flex items-center justify-between">
+          <span className="text-[10px] font-medium text-gray-400">Mon</span>
+          <span className="text-[10px] font-medium text-gray-400">Tue</span>
+          <span className="text-[10px] font-medium text-gray-400">Wed</span>
+          <span className="text-[10px] font-medium text-gray-400">Thu</span>
+          <span className="text-[10px] font-medium text-gray-400">Fri</span>
+          <span className="text-[10px] font-medium text-gray-400">Sat</span>
+          <span className="text-[10px] font-medium text-gray-400">Sun</span>
+        </div>
+        <motion.div
+          className="mt-4 flex items-center justify-center gap-2"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+        >
+          <div className="flex items-center gap-1.5">
+            <span className="inline-block w-3 h-3 rounded-full bg-brand" />
+            <span className="text-xs text-gray-500">This week</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="inline-block w-3 h-3 rounded-full bg-gray-200" />
+            <span className="text-xs text-gray-400">Previous</span>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
 export function ContentSection({
   id,
   title,
@@ -248,16 +397,22 @@ export function ContentSection({
   cta,
   background = 'muted',
   className = '',
+  visualVariant = 'default',
 }: ContentSectionProps) {
   const bgMap = {
     paper: 'bg-white',
     muted: 'bg-gray-50',
-    light: 'bg-gray-50',
+    light: 'bg-gray-50/80',
     white: 'bg-white',
     'gray-50': 'bg-gray-50',
+    'brand-light': 'bg-gradient-to-br from-orange-50/90 via-white/80 to-gray-50/95',
+    gradient: 'bg-gradient-to-br from-gray-50 via-white to-gray-50/80',
+    dark: 'bg-gray-900 text-white',
   };
 
-  const paragraphs = Array.isArray(content) ? content : [content];
+  const paragraphs = (Array.isArray(content) ? content : [content]).filter(
+    (paragraph): paragraph is string => typeof paragraph === 'string' && paragraph.trim().length > 0
+  );
 
   const iconMap = {
     Zap: Zap,
@@ -269,16 +424,60 @@ export function ContentSection({
     TrendingUp: TrendingUp,
   };
 
+  // Select visual component based on variant
+  const getVisualComponent = () => {
+    switch (visualVariant) {
+      case 'minimal':
+        return <MinimalVisual />;
+      case 'featured':
+        return <FeaturedVisual />;
+      case 'accent':
+        return <AccentVisual />;
+      default:
+        return <AutomationCoreVisual />;
+    }
+  };
+
+  // Get background class with variant-specific styles
+  const getBackgroundStyles = () => {
+    const base = bgMap[background] || bgMap.muted;
+    
+    // Add variant-specific enhancements
+    if (visualVariant === 'featured') {
+      return `${base} relative before:absolute before:inset-0 before:bg-gradient-to-br before:from-brand/5 before:via-transparent before:to-orange-400/5 before:pointer-events-none`;
+    }
+    if (visualVariant === 'accent') {
+      return `${base} relative before:absolute before:inset-0 before:bg-grid-pattern before:opacity-5 before:pointer-events-none`;
+    }
+    if (background === 'brand-light') {
+      return `${base} relative before:absolute before:inset-0 before:bg-gradient-to-tr before:from-brand/5 before:via-transparent before:to-orange-400/5 before:pointer-events-none`;
+    }
+    return base;
+  };
+
+  // Get border accent
+  const getBorderAccent = () => {
+    if (visualVariant === 'featured') {
+      return 'border-l-4 border-l-brand/30';
+    }
+    if (visualVariant === 'accent') {
+      return 'border-b-2 border-b-brand/20';
+    }
+    return '';
+  };
+
   return (
     <section
       id={id}
-      className={`relative isolate overflow-hidden py-20 md:py-28 ${bgMap[background] || bgMap.muted} ${className}`}
+      className={`relative isolate overflow-hidden py-20 md:py-28 ${getBackgroundStyles()} ${getBorderAccent()} ${className}`}
     >
       {/* ── Advanced Animated Background ── */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Gradient orbs with parallax */}
+        {/* Gradient orbs with parallax - vary based on variant */}
         <motion.div
-          className="absolute -top-40 -right-20 w-[600px] h-[600px] rounded-full bg-brand/5 blur-3xl"
+          className={`absolute -top-40 -right-20 w-[600px] h-[600px] rounded-full blur-3xl ${
+            visualVariant === 'featured' ? 'bg-brand/8' : 'bg-brand/5'
+          }`}
           animate={{
             x: [0, -30, 0],
             y: [0, 20, 0],
@@ -292,7 +491,9 @@ export function ContentSection({
         />
         
         <motion.div
-          className="absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full bg-orange-400/5 blur-3xl"
+          className={`absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full blur-3xl ${
+            visualVariant === 'accent' ? 'bg-orange-400/8' : 'bg-orange-400/5'
+          }`}
           animate={{
             x: [0, 30, 0],
             y: [0, -20, 0],
@@ -305,6 +506,35 @@ export function ContentSection({
             delay: 1,
           }}
         />
+
+        {/* Variant-specific decorative elements */}
+        {visualVariant === 'featured' && (
+          <>
+            <motion.div
+              className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full border border-brand/5"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            />
+            <motion.div
+              className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full border border-orange-400/5"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+            />
+          </>
+        )}
+
+        {visualVariant === 'accent' && (
+          <>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(249,115,22,0.03),transparent_50%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(249,115,22,0.02),transparent_50%)]" />
+          </>
+        )}
+
+        {visualVariant === 'minimal' && (
+          <>
+            <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
+          </>
+        )}
 
         {/* Animated grid pattern - subtle */}
         <div className="absolute inset-0 opacity-[0.03]">
@@ -558,7 +788,7 @@ export function ContentSection({
 
           {/* ── Right: animated visual ── */}
           <div className="hidden lg:flex lg:min-w-0 lg:items-center lg:justify-center">
-            <AutomationCoreVisual />
+            {getVisualComponent()}
           </div>
         </div>
       </div>

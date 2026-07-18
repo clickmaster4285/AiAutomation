@@ -4,21 +4,39 @@
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
+export type SectionBackground = 
+  | 'paper' 
+  | 'ink' 
+  | 'muted' 
+  | 'gradient' 
+  | 'dark' 
+  | 'black'
+  | 'orange-light'
+  | 'white'
+  | 'gray'
+  | 'light'
+  | 'none';
+
 interface SectionProps {
   id?: string;
   children: ReactNode;
   className?: string;
-  bg?: 'paper' | 'ink' | 'muted' | 'gradient' | 'dark' | 'black'; // ✅ Added dark/black
+  bg?: SectionBackground;
   pattern?: 'dots' | 'blob' | 'grid' | 'none';
 }
 
-const bgMap = {
+const bgMap: Record<SectionBackground, string> = {
   paper: 'bg-paper text-ink',
   ink: 'bg-ink text-paper',
   muted: 'bg-secondary text-ink',
   gradient: 'bg-gradient-to-b from-paper via-secondary to-paper text-ink',
-  dark: 'bg-black text-white', // ✅ Added dark
-  black: 'bg-black text-white', // ✅ Added black
+  dark: 'bg-black text-white',
+  black: 'bg-black text-white',
+  'orange-light': 'bg-orange-50/80 text-gray-900',
+  white: 'bg-white text-gray-900',
+  gray: 'bg-gray-100 text-gray-900',
+  light: 'bg-gray-50 text-gray-900',
+  none: '',
 };
 
 // Every section on every solutions page uses this shell.
@@ -72,13 +90,13 @@ export function SectionHeading({
   subtitle,
   eyebrow,
   align = 'center',
-  className = '', // ✅ Added className prop
+  className = '',
 }: {
   title: string;
   subtitle?: string;
   eyebrow?: string;
   align?: 'center' | 'left';
-  className?: string; // ✅ Added className
+  className?: string;
 }) {
   return (
     <div className={cn(

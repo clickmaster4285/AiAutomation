@@ -36,11 +36,9 @@ export function CTASection({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
     setIsSubmitting(false);
     setIsSubmitted(true);
-    // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({ name: '', email: '', message: '' });
@@ -54,7 +52,6 @@ export function CTASection({
     });
   };
 
-  // Background styles based on prop
   const getBackgroundStyles = () => {
     switch (background) {
       case 'ink':
@@ -125,9 +122,8 @@ export function CTASection({
 
   return (
     <section className={`relative isolate overflow-hidden py-12 md:py-20 ${getBackgroundStyles()}`}>
-      {/* Background decorative elements - Light Orange, Grey, White effects */}
+      {/* Background decorative elements */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        {/* Main gradient orb - Light Orange */}
         <motion.div
           className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-orange-200/30 via-orange-100/20 to-transparent blur-3xl"
           animate={{
@@ -141,7 +137,6 @@ export function CTASection({
           }}
         />
 
-        {/* Secondary gradient orb - Grey */}
         <motion.div
           className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-gray-200/40 via-gray-100/30 to-transparent blur-3xl"
           animate={{
@@ -156,7 +151,6 @@ export function CTASection({
           }}
         />
 
-        {/* White glow orb */}
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-white/40 blur-3xl"
           animate={{
@@ -171,21 +165,15 @@ export function CTASection({
           }}
         />
 
-        {/* Orange ring */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-orange-200/20" />
-        
-        {/* Grey ring */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-gray-200/15" />
 
-        {/* Pattern overlays */}
         <div className="absolute inset-0 bg-grid-orange-100/[0.03] bg-[size:40px_40px]" />
         <div className="absolute inset-0 bg-grid-gray-900/[0.02] bg-[size:60px_60px]" />
         
-        {/* Subtle gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-tr from-orange-100/10 via-transparent to-gray-100/20" />
         <div className="absolute inset-0 bg-gradient-to-bl from-white/30 via-transparent to-gray-50/20" />
 
-        {/* Floating orange particles */}
         {Array.from({ length: 8 }).map((_, i) => (
           <motion.div
             key={i}
@@ -210,7 +198,6 @@ export function CTASection({
           />
         ))}
 
-        {/* Grey floating particles */}
         {Array.from({ length: 6 }).map((_, i) => (
           <motion.div
             key={`grey-${i}`}
@@ -238,7 +225,7 @@ export function CTASection({
 
       <div className="relative z-10 mx-auto max-w-[84vw] px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left Content - Left Aligned */}
+          {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -280,7 +267,6 @@ export function CTASection({
               )}
             </div>
 
-            {/* Trust indicators */}
             <div className="mt-8 flex flex-wrap gap-6">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-brand" />
@@ -303,7 +289,7 @@ export function CTASection({
             </div>
           </motion.div>
 
-          {/* Right Content - Contact Form */}
+          {/* Right Content - Contact Form with fixed icon spacing */}
           {showForm && (
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -337,7 +323,7 @@ export function CTASection({
                         Your Name
                       </label>
                       <div className="relative">
-                        <User className={`absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 ${
+                        <User className={`absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 ${
                           background === 'light' || background === 'orange' ? 'text-gray-400' : 'text-white/40'
                         }`} />
                         <input
@@ -347,11 +333,10 @@ export function CTASection({
                           onChange={handleChange}
                           required
                           className={`
-                            w-full pl-10 pr-4 py-3 rounded-lg transition-all duration-200
+                            w-full pl-12 pr-4 py-3 rounded-lg transition-all duration-200
                             ${getInputStyles()}
                           `}
                           placeholder="John Doe"
-                          style={{ paddingLeft: '2.75rem' }}
                         />
                       </div>
                     </div>
@@ -361,7 +346,7 @@ export function CTASection({
                         Email Address
                       </label>
                       <div className="relative">
-                        <Mail className={`absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 ${
+                        <Mail className={`absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 ${
                           background === 'light' || background === 'orange' ? 'text-gray-400' : 'text-white/40'
                         }`} />
                         <input
@@ -371,11 +356,10 @@ export function CTASection({
                           onChange={handleChange}
                           required
                           className={`
-                            w-full pl-10 pr-4 py-3 rounded-lg transition-all duration-200
+                            w-full pl-12 pr-4 py-3 rounded-lg transition-all duration-200
                             ${getInputStyles()}
                           `}
                           placeholder="john@example.com"
-                          style={{ paddingLeft: '2.75rem' }}
                         />
                       </div>
                     </div>
@@ -385,7 +369,7 @@ export function CTASection({
                         Message
                       </label>
                       <div className="relative">
-                        <MessageSquare className={`absolute left-3.5 top-3.5 h-4 w-4 ${
+                        <MessageSquare className={`absolute left-4 top-3.5 h-4 w-4 ${
                           background === 'light' || background === 'orange' ? 'text-gray-400' : 'text-white/40'
                         }`} />
                         <textarea
@@ -395,11 +379,10 @@ export function CTASection({
                           required
                           rows={3}
                           className={`
-                            w-full pl-10 pr-4 py-3 rounded-lg transition-all duration-200 resize-none
+                            w-full pl-12 pr-4 py-3 rounded-lg transition-all duration-200 resize-none
                             ${getInputStyles()}
                           `}
                           placeholder="Tell us about your automation needs..."
-                          style={{ paddingLeft: '2.75rem' }}
                         />
                       </div>
                     </div>

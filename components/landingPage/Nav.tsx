@@ -42,6 +42,8 @@ import {
   BookOpen,
   Rocket as RocketIcon,
   CheckCircle,
+  Calendar,
+  Receipt,
 } from 'lucide-react';
 import {
   serviceCategories,
@@ -116,12 +118,33 @@ const solutionsData = [
     description: 'Intelligent chatbots that answer, qualify, and book automatically.',
     icon: MessageSquare,
   },
+  // AI Voice Agent Solutions
+  {
+    title: 'AI Voice Agents',
+    slug: 'ai-voice-agents',
+    description: 'Intelligent voice conversations that answer, book, and route automatically — never miss a call.',
+    icon: PhoneCall,
+  },
   // AI Workflow Automation Solutions
   {
     title: 'AI Workflow Automation',
     slug: 'ai-workflow-automation',
     description: 'Multi-step processes that run automatically across your tools.',
     icon: Workflow,
+  },
+  // Appointment & Booking Automation Solutions
+  {
+    title: 'Appointment & Booking Automation',
+    slug: 'appointment-booking-automation',
+    description: 'Automation that books, confirms, and reminds — never miss a booking again.',
+    icon: Calendar,
+  },
+  // Business Process Automation Solutions
+  {
+    title: 'Business Process Automation',
+    slug: 'bussiness-process-automation',
+    description: 'Automation that runs, coordinates, and completes — end-to-end processes that eliminate manual hand-offs.',
+    icon: RefreshCw,
   },
   // CRM Automation Solutions
   {
@@ -136,6 +159,13 @@ const solutionsData = [
     slug: 'document-automation',
     description: 'Extract, validate, and route data from documents automatically.',
     icon: FileText,
+  },
+  // Invoice & Finance Automation Solutions
+  {
+    title: 'Invoice & Finance Automation',
+    slug: 'invoice-automation',
+    description: 'Capture, validate, and post invoices automatically — cut days from the close.',
+    icon: Receipt,
   },
   // Lead Generation Solutions
   {
@@ -172,11 +202,18 @@ const solutionsData = [
     description: 'Enrich, follow up, and log automatically so reps can sell.',
     icon: Briefcase,
   },
+  // AI Agent Development
+  {
+    title: 'AI Agent Development',
+    slug: 'ai-agents',
+    description: 'Custom AI agents that reason, act, and complete tasks automatically for your industry.',
+    icon: Brain,
+  },
 ];
 
 // ── Standalone services (no category) - these will use /services/ directly ──
 const standaloneServices = [
-  { title: 'AI Consulting Services', slug: 'ai-consulting', description: 'Strategy that ships  opportunity audits, roadmaps, and implementation.' },
+  { title: 'AI Consulting Services', slug: 'ai-consulting', description: 'Strategy that ships — opportunity audits, roadmaps, and implementation.' },
   { title: 'Custom AI Development', slug: 'custom-ai-development', description: 'Custom AI solutions on proven models with honest scoping.' },
   { title: 'AI Reporting Automation', slug: 'ai-reporting-automation', description: 'Automated reports and dashboards with AI summaries.' },
   { title: 'AI Lead Generation', slug: 'ai-lead-generation', description: 'AI-powered lead generation and qualification systems.' },
@@ -533,11 +570,11 @@ export default function Nav() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="absolute left-0 top-full mt-2 w-[520px] rounded-2xl border border-gray-200 bg-white/95 backdrop-blur-xl shadow-2xl shadow-black/10 overflow-hidden"
+                  className="absolute left-0 top-full mt-3 w-[780px] rounded-2xl border border-gray-200 bg-white shadow-2xl shadow-black/10 overflow-hidden"
                   onMouseEnter={handleSolutionsDropdownMouseEnter}
                   onMouseLeave={handleSolutionsDropdownMouseLeave}
                 >
-                  <div className="p-3 max-h-[80vh] overflow-y-auto">
+                  <div className="p-4 max-h-[80vh] overflow-y-auto">
                     <div className="flex items-center gap-2 px-3 pb-3 border-b border-gray-100">
                       <Sparkles className="h-4 w-4 text-brand" />
                       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.12em]">
@@ -548,14 +585,14 @@ export default function Nav() {
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-1 pt-2">
+                    <div className="grid grid-cols-3 gap-2 pt-3">
                       {solutionsData.map((solution, idx) => {
                         const Icon = solution.icon || Sparkles;
                         return (
                           <Link
                             key={idx}
                             href={`/solutions/${solution.slug}`}
-                            className="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-brand/10 transition-all duration-200 group"
+                            className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-brand/10 transition-all duration-200 group"
                             onClick={() => setIsSolutionsOpen(false)}
                           >
                             <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-brand/20 text-brand text-sm mt-0.5">
@@ -565,11 +602,10 @@ export default function Nav() {
                               <span className="text-sm font-medium text-gray-800 group-hover:text-brand transition-colors block leading-tight">
                                 {solution.title}
                               </span>
-                              <p className="text-xs text-gray-400 group-hover:text-gray-500 transition-colors leading-snug mt-0.5">
+                              <p className="text-xs text-gray-400 group-hover:text-gray-500 transition-colors leading-snug mt-0.5 line-clamp-2">
                                 {solution.description}
                               </p>
                             </div>
-                            <ArrowRight className="h-4 w-4 text-gray-300 group-hover:text-brand transition-colors flex-shrink-0 ml-auto mt-1" />
                           </Link>
                         );
                       })}
@@ -591,7 +627,7 @@ export default function Nav() {
             </AnimatePresence>
           </div>
 
-          {/* ── Platforms Dropdown - Salesforce REMOVED ── */}
+          {/* ── Platforms Dropdown ── */}
           <div
             className="relative"
             onMouseEnter={handlePlatformsMouseEnter}
@@ -672,9 +708,6 @@ export default function Nav() {
                             <ArrowRight className="h-4 w-4 text-gray-300 group-hover:text-brand transition-colors" />
                           </Link>
                         </div>
-
-                        {/* ── Salesforce - REMOVED ── */}
-                        {/* The Salesforce entry has been removed from the platforms dropdown */}
                       </>
                     ) : (
                       <div className="px-4 py-6 text-center">
@@ -908,7 +941,7 @@ export default function Nav() {
               )}
             </div>
 
-            {/* Mobile Platforms - Salesforce REMOVED */}
+            {/* Mobile Platforms */}
             <div>
               <button
                 className="flex items-center justify-between w-full text-gray-700 hover:text-black transition-colors"
@@ -962,8 +995,6 @@ export default function Nav() {
                           <p className="text-xs text-gray-400">Custom operational systems and AI-connected bases</p>
                         </div>
                       </Link>
-
-                      {/* Salesforce - REMOVED from mobile platforms */}
                     </>
                   ) : (
                     <div className="py-3 px-3">
