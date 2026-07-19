@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { aiVoiceAgentsForAccountingFirms } from '@/content/Solutions';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: aiVoiceAgentsForAccountingFirms.titleTag,
@@ -68,10 +69,18 @@ export default function ForAccountingFirmsPage() {
           text: 'Learn More',
           href: '#why-accounting-firms-need-ai-voice-agents',
         }}
-        image="/images/solutions/ai-voice-agent-accounting-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+                              <AutomationHeroMockup
+                                industry="Accounting Firms"
+                                triggerLabel="New Client Inquiry"
+                                actionLabels={['Provide Tax Guidance', 'Schedule Consultation', 'Send Document Previews']}
+                                metricValue="1,500"
+                                metricLabel="client inquiries handled automatically this week"
+                                submetric="90% improved client satisfaction"
+                                platform="CRM + Practice Management Software"
+                                accent="#F97316"
+                              />
+                            }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForAccountingFirmsPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForAccountingFirmsPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where voice agent pays off for accounting firms."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where voice agent pays off for accounting firms."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

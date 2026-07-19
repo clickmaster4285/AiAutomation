@@ -41,7 +41,7 @@ export default function ReportingAutomationPage() {
   const heroData = {
     badge: 'Reporting Automation',
     heading: 'Reporting Automation Solutions',
-    subheading: 'Aggregate, build, and deliver reports automatically with AI — built on the platforms you already use.',
+    subheading: 'Aggregate, build, and deliver reports automatically with AIbuilt on the platforms you already use.',
     primaryCta: {
       text: 'Book a Free Audit',
       href: '/free-automation-audit',
@@ -57,7 +57,7 @@ export default function ReportingAutomationPage() {
       id: 'n8n',
       title: 'n8n Reporting Automation',
       icon: GitBranch,
-      description: 'Open-source reporting automation on n8n — ideal for high-volume, data-sensitive, or AI-heavy production workflows.',
+      description: 'Open-source reporting automation on n8nideal for high-volume, data-sensitive, or AI-heavy production workflows.',
       href: '/solutions/reporting-automation/with-n8n',
       features: ['Self-hosted', 'No per-task fees', 'Deep AI/LLM support'],
       color: 'from-brand/30 to-orange-400/30',
@@ -71,7 +71,7 @@ export default function ReportingAutomationPage() {
       id: 'salesforce',
       title: 'Salesforce Reporting Automation',
       icon: Cloud,
-      description: 'Enterprise-grade reporting automation on Salesforce — ideal for organizations with Salesforce at the core of revenue operations.',
+      description: 'Enterprise-grade reporting automation on Salesforceideal for organizations with Salesforce at the core of revenue operations.',
       href: '/solutions/reporting-automation/with-salesforce',
       features: ['Enterprise security', 'Native CRM', 'Scalable'],
       color: 'from-brand/30 to-orange-400/30',
@@ -220,21 +220,21 @@ export default function ReportingAutomationPage() {
     {
       id: 'scheduled-reports',
       title: 'Scheduled Report Generation',
-      description: 'Recurring reports that build and deliver themselves — no manual effort required.',
+      description: 'Recurring reports that build and deliver themselvesno manual effort required.',
       icon: BarChart3,
       color: 'from-blue-500/20 to-cyan-500/20',
     },
     {
       id: 'live-dashboards',
       title: 'Live Dashboards',
-      description: 'Current numbers without manual refresh — always up to date.',
+      description: 'Current numbers without manual refreshalways up to date.',
       icon: Activity,
       color: 'from-green-500/20 to-emerald-500/20',
     },
     {
       id: 'multi-source-aggregation',
       title: 'Multi-Source Aggregation',
-      description: 'Data pulled and combined across your systems — one source of truth.',
+      description: 'Data pulled and combined across your systemsone source of truth.',
       icon: Database,
       color: 'from-purple-500/20 to-pink-500/20',
     },
@@ -248,7 +248,7 @@ export default function ReportingAutomationPage() {
     {
       id: 'distribution-automation',
       title: 'Distribution Automation',
-      description: 'The right report to the right people, on time — automatically delivered.',
+      description: 'The right report to the right people, on timeautomatically delivered.',
       icon: Share2,
       color: 'from-teal-500/20 to-cyan-500/20',
     },
@@ -378,7 +378,7 @@ export default function ReportingAutomationPage() {
             </span>
             <h2 className="display text-3xl md:text-5xl text-white font-bold">Choose Your Platform</h2>
             <p className="text-base md:text-lg text-gray-300 mt-4 leading-relaxed max-w-2xl mx-auto">
-              We build reporting automation on the platforms you already use — with honest platform recommendations.
+              We build reporting automation on the platforms you already usewith honest platform recommendations.
             </p>
           </div>
 
@@ -576,26 +576,26 @@ export default function ReportingAutomationPage() {
                   className="relative group"
                 >
                   <div
-                    className={`
-                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 
+                    className="
+                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100
                       transition-all duration-500 blur-xl
-                      bg-gradient-to-r ${industry.color}
-                    `}
+                      bg-brand/10
+                    "
                   />
 
                   <Link
                     href={industry.href}
-                    className={`
-                      relative block h-full p-6 rounded-2xl 
-                      bg-gradient-to-br ${industry.color}
-                      border-2 border-brand/30 group-hover:border-brand/60
-                      transition-all duration-300 shadow-lg hover:shadow-2xl
-                      backdrop-blur-sm bg-white/5
+                    className="
+                      relative block h-full p-6 rounded-2xl
+                      bg-gradient-to-br from-white/10 via-white/5 to-brand/5
+                      border border-white/10 group-hover:border-brand/30
+                      transition-all duration-300 shadow-[0_12px_30px_rgba(0,0,0,0.18)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.24)]
+                      backdrop-blur-sm
                       text-white
-                    `}
+                    "
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand blur-3xl" />
+                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand/25 blur-3xl" />
                     </div>
 
                     <motion.div
@@ -605,13 +605,13 @@ export default function ReportingAutomationPage() {
                       whileHover="hover"
                     >
                       <div
-                        className={`
-                          w-14 h-14 rounded-2xl 
-                          bg-gradient-to-br ${industry.color}
+                        className="
+                          w-14 h-14 rounded-2xl
+                          bg-brand/10
                           flex items-center justify-center
                           transition-all duration-300
                           group-hover:shadow-lg
-                        `}
+                        "
                       >
                         <Icon className="h-7 w-7 text-brand" />
                       </div>

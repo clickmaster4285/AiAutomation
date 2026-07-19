@@ -25,7 +25,7 @@ export const aiWorkflowAutomation: ServiceContent = {
         { text: 'View Work', link: '/work', primary: false }
       ],
       image: {
-        src: '/images/agency-hero.png',
+        src: '/images/aiworkflow.webp',
         alt: 'AI Automation Agency illustration',
         width: 600,
         height: 400

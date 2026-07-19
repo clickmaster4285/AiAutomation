@@ -37,6 +37,10 @@ function createSectionsFromRichContent(page: ServicePage): Section[] {
     return getFallbackSections(page);
   }
   
+  const heroImageSrc = page.url?.includes('/ai-lead-generation')
+    ? '/images/lead.jpg'
+    : `/images/${page.filePath.replace('.md', '')}-hero.png`;
+
   sections.push({
     type: 'hero',
     heading: title,
@@ -48,7 +52,7 @@ function createSectionsFromRichContent(page: ServicePage): Section[] {
       { text: 'View Work', link: '/work', primary: false }
     ],
     image: {
-      src: `/images/${page.filePath.replace('.md', '')}-hero.png`,
+      src: heroImageSrc,
       alt: `${title} Illustration`,
       width: 400,
       height: 300
@@ -263,15 +267,15 @@ export const serviceCategories: ServiceCategory[] = [
     heroTitle: 'AI Strategy & Development',
     heroDescription: 'From strategy to execution – we help you plan, build, and deploy AI solutions that drive real business value.',
     services: [
-      { 
-        title: 'AI Strategy & Advisory', 
-        slug: 'ai-strategy-advisory', 
-        description: 'Strategy that ships — opportunity audits, roadmaps, and implementation.' 
+      {
+        title: 'AI Strategy & Advisory',
+        slug: 'ai-strategy-advisory',
+        description: 'Strategy that shipsopportunity audits, roadmaps, and implementation.',
       },
-      { 
-        title: 'Custom AI Development', 
-        slug: 'custom-ai-development', 
-        description: 'Custom AI solutions on proven models with honest scoping.' 
+      {
+        title: 'Custom AI Development',
+        slug: 'custom-ai-development',
+        description: 'Custom AI solutions on proven models with honest scoping.',
       },
     ],
   },

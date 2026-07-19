@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { appointmentBookingAutomationForAccountingFirms } from '@/content/Solutions/appointment-booking-automation-for-accounting-firms';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: appointmentBookingAutomationForAccountingFirms.titleTag,
@@ -68,10 +69,18 @@ export default function ForAccountingFirmsPage() {
           text: 'Learn More',
           href: '#why-accounting-firms-need-appointment-booking-automation',
         }}
-        image="/images/solutions/appointment-booking-automation-accounting-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+       visual={
+                                           <AutomationHeroMockup
+                                             industry="Accounting Firms"
+                                             triggerLabel="New Shipment Inquiry"
+                                             actionLabels={['Provide Tracking Information', 'Schedule Delivery', 'Submit Claim Details']}
+                                             metricValue="3,000"
+                                             metricLabel="shipment inquiries handled automatically this week"
+                                             submetric="85% improved response time"
+                                             platform="CRM + Logistics Platform"
+                                             accent="#F97316"
+                                           />
+                                         }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForAccountingFirmsPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForAccountingFirmsPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where booking automation pays off for accounting firms."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where booking automation pays off for accounting firms."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

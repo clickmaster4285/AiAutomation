@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { appointmentBookingAutomationForManufacturing } from '@/content/Solutions/appointment-booking-automation-for-manufacturing';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: appointmentBookingAutomationForManufacturing.titleTag,
@@ -68,10 +69,18 @@ export default function ForManufacturingPage() {
           text: 'Learn More',
           href: '#why-manufacturing-need-appointment-booking-automation',
         }}
-        image="/images/solutions/appointment-booking-automation-manufacturing-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+                                           <AutomationHeroMockup
+                                             industry="Manufacturing"
+                                             triggerLabel="New Lead"
+                                             actionLabels={['Schedule Demo', 'Provide Quote', 'Submit Request']}
+                                             metricValue="2,000"
+                                             metricLabel="leads generated automatically this month"
+                                             submetric="90% improved conversion rate"
+                                             platform="CRM + Manufacturing Platform"
+                                             accent="#3B82F6"
+                                           />
+                                         }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForManufacturingPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForManufacturingPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where booking automation pays off for manufacturing."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where booking automation pays off for manufacturing."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

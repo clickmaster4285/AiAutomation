@@ -211,7 +211,6 @@ export default function ContactPage() {
                     ))}
                   </div>
                   
-                  {/* ✅ FIXED BUTTON – full width on mobile, inline on larger screens */}
                   <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="relative group/btn block sm:inline-block">
                     <div className="absolute inset-0 bg-brand/20 blur-xl rounded-full group-hover/btn:blur-2xl transition-all" />
                     <Button
@@ -350,7 +349,7 @@ export default function ContactPage() {
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="mt-3 text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-justify"
+              className="mt-3 text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center mx-auto"
             >
               Build intelligent AI systems that eliminate repetitive work,
               <br className="hidden sm:block" />

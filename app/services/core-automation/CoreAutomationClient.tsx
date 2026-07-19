@@ -178,6 +178,160 @@ export default function CoreAutomationClient() {
     </div>
   </div>
 </motion.section>
+
+      {/* ── SERVICES GRID ── */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={fadeUp}
+        className="py-24 bg-white"
+      >
+        <div className="max-w-[84vw] px-6 mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center gap-2 text-brand text-xs font-semibold uppercase tracking-[0.15em] mb-4">
+              <span className="w-8 h-px bg-brand" />
+              Our Services
+              <span className="w-8 h-px bg-brand" />
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              AI & Automation{' '}
+              <span className="text-brand">Capabilities</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              End-to-end AI and automation services to transform your business operations.
+            </p>
+          </div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={index}
+                  variants={cardVariants}
+                  className="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-brand/30 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-brand/5"
+                >
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand/[0.02] to-orange-400/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <div className="relative">
+                    <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-4 group-hover:bg-brand/20 transition-colors">
+                      <Icon className="h-6 w-6 text-brand" />
+                    </div>
+
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      {service.description}
+                    </p>
+
+                    <ul className="space-y-2 mb-6">
+                      {service.outcomes.map((outcome, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
+                          <CheckCircle2 className="h-4 w-4 text-brand flex-shrink-0 mt-0.5" />
+                          <span>{outcome}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* ── Learn More (non-clickable) ── */}
+                    <div className="inline-flex items-center gap-2 text-brand font-medium text-sm cursor-default opacity-70">
+                      Learn More
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand/30 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* ── STATS ── */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={fadeUp}
+        className="py-16 bg-muted border-y border-gray-200"
+      >
+        <div className="max-w-[84vw] px-6 mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                variants={fadeUp}
+                className="text-center"
+              >
+                <div className="text-3xl md:text-4xl font-bold text-brand mb-1">
+                  {stat.value}
+                </div>
+                <p className="text-sm text-gray-600">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* ── PROCESS ── */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={fadeUp}
+        className="py-24 bg-white"
+      >
+        <div className="max-w-[84vw] px-6 mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center gap-2 text-brand text-xs font-semibold uppercase tracking-[0.15em] mb-4">
+              <span className="w-8 h-px bg-brand" />
+              Our Process
+              <span className="w-8 h-px bg-brand" />
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              From <span className="text-brand">Audit</span> to{' '}
+              <span className="text-brand">Launch</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              A transparent, proven process that delivers results.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {process.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={fadeUp}
+                className="relative"
+              >
+                <div className="text-center">
+                  <div className="w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-brand">{index + 1}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.step}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                </div>
+                {index < process.length - 1 && (
+                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gray-200">
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-brand" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
       {/* ── CTA ── */}
       <motion.section
         initial="hidden"
@@ -216,7 +370,7 @@ export default function CoreAutomationClient() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="/free-automation-audit"
+                  href="/contact"
                   className="group relative inline-flex items-center gap-3 bg-brand hover:bg-orange-600 text-white px-10 py-4 rounded-full font-semibold text-base transition-all shadow-lg shadow-brand/30 hover:shadow-brand/50 hover:scale-[1.02]"
                 >
                   <span>Book your free audit</span>

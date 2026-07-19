@@ -39,7 +39,7 @@ export const airtableAutomationService: ServiceContent = {
     {
       type: 'text',
       heading: 'What Airtable Automation Actually Means',
-      image: '/images/airtable-workflow.png',
+      image: '/images/rob.png',
       content: [
         'Three layers, in increasing power:',
         '**Native Airtable automations.** Trigger-action rules inside Airtable itself when a record changes, send an email; when a form is submitted, create a record. Useful, and most teams underuse them. We build these where they\'re sufficient.',

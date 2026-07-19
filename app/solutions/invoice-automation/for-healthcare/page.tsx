@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { invoiceAutomationForHealthcare } from '@/content/Solutions/invoice-automation-for-healthcare';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: invoiceAutomationForHealthcare.titleTag,
@@ -68,10 +69,18 @@ export default function ForHealthcarePage() {
           text: 'Learn More',
           href: '#why-healthcare-need-invoice-finance-automation',
         }}
-        image="/images/solutions/invoice-automation-healthcare-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Healthcare"
+            triggerLabel="New Document Request"
+            actionLabels={['Generate Reports', 'Create Invoices', 'Manage Client Data']}
+            metricValue="1800"
+            metricLabel="invoices processed automatically each month"
+            submetric="90% reduction in processing time"
+            platform="Invoice & Finance Automation + Healthcare Management System"
+            accent="#EF4444"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForHealthcarePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForHealthcarePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where finance automation pays off for healthcare."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where finance automation pays off for healthcare."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

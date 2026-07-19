@@ -33,7 +33,7 @@ export default function FeaturesSec({ section }: { section: Section }) {
   }
 
   return (
-    <section className={`py-24 md:py-32 ${borderClasses} ${bgClasses} relative overflow-hidden`}>
+    <section className={`py-20 sm:py-24 lg:py-32 ${borderClasses} ${bgClasses} relative overflow-hidden`}>
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(249,115,22,0.03),rgba(0,0,0,0))]" />
       <motion.div 
@@ -48,14 +48,14 @@ export default function FeaturesSec({ section }: { section: Section }) {
         </>
       )}
       
-      <div className="mx-auto max-w-[84vw] px-6">
+      <div className="mx-auto max-w-[92vw] sm:max-w-[84vw] px-4 sm:px-6">
         {section.heading && (
           <motion.h2 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeInUp}
-            className={`display mb-4 text-3xl font-bold md:text-4xl ${headingColor} text-left relative inline-block`}
+            className={`display mb-4 text-2xl sm:text-3xl font-bold md:text-4xl ${headingColor} text-left relative inline-block`}
           >
             {section.heading}
             <motion.span 
@@ -73,7 +73,7 @@ export default function FeaturesSec({ section }: { section: Section }) {
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeInUp}
-            className={`mb-12 text-left ${textColor} max-w-2xl text-justify`}
+            className={`mb-8 sm:mb-12 text-left ${textColor} max-w-2xl text-justify text-sm sm:text-base`}
           >
             {section.subheading}
           </motion.p>
@@ -84,7 +84,7 @@ export default function FeaturesSec({ section }: { section: Section }) {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainer}
-          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
           {featuresItems.slice(0, 3).map((item: SectionItem, idx: number) => {
             const Icon = getIcon(item.icon);
@@ -139,7 +139,7 @@ export default function FeaturesSec({ section }: { section: Section }) {
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={staggerContainer}
-            className={`grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 ${
+            className={`grid grid-cols-1 gap-4 sm:gap-6 mt-4 sm:mt-6 md:grid-cols-2 ${
               featuresItems.length === 4 
                 ? 'lg:grid-cols-1 lg:max-w-md lg:mx-0' 
                 : 'lg:grid-cols-2'
@@ -156,7 +156,7 @@ export default function FeaturesSec({ section }: { section: Section }) {
                     scale: 1.01,
                     transition: { duration: 0.3 }
                   }}
-                  className={`group relative rounded-2xl border ${cardBorder} ${cardBg} backdrop-blur-sm p-8 transition-all duration-300 hover:border-brand/40 hover:${cardHoverBg} hover:shadow-xl hover:shadow-brand/5`}
+                  className={`group relative rounded-2xl border ${cardBorder} ${cardBg} backdrop-blur-sm p-6 sm:p-8 transition-all duration-300 hover:border-brand/40 hover:${cardHoverBg} hover:shadow-xl hover:shadow-brand/5`}
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative">

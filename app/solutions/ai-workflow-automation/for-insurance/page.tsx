@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { aiWorkflowAutomationForInsurance } from '@/content/Solutions';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: aiWorkflowAutomationForInsurance.titleTag,
@@ -68,10 +69,18 @@ export default function ForInsurancePage() {
           text: 'Learn More',
           href: '#why-insurance-agencies-need-ai-workflow-automation',
         }}
-        image="/images/solutions/ai-workflow-automation-insurance-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+      visual={
+                                            <AutomationHeroMockup
+                                              industry="Insurance"
+                                              triggerLabel="New Claim Inquiry"
+                                              actionLabels={['Provide Policy Information', 'Schedule Assessment', 'Submit Documentation']}
+                                              metricValue="3,000"
+                                              metricLabel="claim inquiries handled automatically this week"
+                                              submetric="85% improved response time"
+                                              platform="CRM + Logistics Platform"
+                                              accent="#F97316"
+                                            />
+                                          }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForInsurancePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForInsurancePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where workflow automation pays off for insurance agencies."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where workflow automation pays off for insurance agencies."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

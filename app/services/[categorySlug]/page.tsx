@@ -39,6 +39,10 @@ export default async function CategoryPage({
 }) {
   const { categorySlug } = await params;
 
+  if (categorySlug === 'ai-strategy-development') {
+    notFound();
+  }
+
   // Is it a category?
   const category = serviceCategories.find((cat) => cat.slug === categorySlug);
   if (category) {

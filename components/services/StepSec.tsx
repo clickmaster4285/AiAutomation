@@ -13,7 +13,7 @@ export default function StepSec({ section }: { section: Section }) {
   const isHowWeWork = section.heading?.includes('How We Work');
 
   return (
-    <section className={`py-24 md:py-32 border-t border-gray-800 dark:border-gray-800 ${isHowWeWork ? 'bg-gray-950/80 dark:bg-gray-950/80' : 'bg-black dark:bg-black'} relative overflow-hidden`}>
+    <section className={`py-20 sm:py-24 lg:py-32 border-t border-gray-800 dark:border-gray-800 ${isHowWeWork ? 'bg-gray-950/80 dark:bg-gray-950/80' : 'bg-black dark:bg-black'} relative overflow-hidden`}>
       <div className="absolute inset-0 bg-dot-pattern opacity-20" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(249,115,22,0.02),rgba(0,0,0,0))]" />
       
@@ -24,14 +24,14 @@ export default function StepSec({ section }: { section: Section }) {
         </>
       )}
 
-      <div className="mx-auto max-w-[84vw] px-6">
+      <div className="mx-auto max-w-[92vw] sm:max-w-[84vw] px-4 sm:px-6">
         {section.heading && (
           <motion.h2
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeInUp}
-            className="display mb-4 text-3xl font-bold md:text-4xl text-white text-left relative inline-block"
+            className="display mb-4 text-2xl sm:text-3xl font-bold md:text-4xl text-white text-left relative inline-block"
           >
             {section.heading}
             <motion.span 
@@ -49,7 +49,7 @@ export default function StepSec({ section }: { section: Section }) {
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeInUp}
-            className="mb-12 text-left text-gray-400 max-w-2xl leading-relaxed text-justify"
+            className="mb-8 sm:mb-12 text-left text-gray-400 max-w-2xl leading-relaxed text-justify text-sm sm:text-base"
           >
             {section.subheading}
           </motion.p>
@@ -60,7 +60,7 @@ export default function StepSec({ section }: { section: Section }) {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainer}
-          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4"
         >
           {items.map((item: SectionItem, idx: number) => {
             const Icon = stepIcons[idx % stepIcons.length] || Sparkles;
@@ -73,7 +73,7 @@ export default function StepSec({ section }: { section: Section }) {
                   scale: 1.01,
                   transition: { duration: 0.3 },
                 }}
-                className="relative rounded-2xl border border-gray-800/50 bg-white/5 backdrop-blur-sm p-8 text-left transition-all duration-300 hover:border-brand/40 hover:bg-white/10 hover:shadow-xl hover:shadow-brand/5 group"
+                className="relative rounded-2xl border border-gray-800/50 bg-white/5 backdrop-blur-sm p-6 sm:p-8 text-left transition-all duration-300 hover:border-brand/40 hover:bg-white/10 hover:shadow-xl hover:shadow-brand/5 group"
               >
                 <div className="absolute -top-3 -right-3 h-8 w-8 rounded-full bg-brand text-white text-sm font-bold flex items-center justify-center shadow-lg shadow-brand/30">
                   {idx + 1}

@@ -33,7 +33,7 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     url: '/services/ai-strategy-development/ai-strategy-advisory/',
     title: 'AI Strategy & Advisory | Strategy That Ships | Clickmasters',
-    description: 'Clickmasters provides AI strategy and advisory that ends in working systems, not slide decks — opportunity audits, roadmaps, tool selection, and implementation by the same team that builds.',
+    description: 'Clickmasters provides AI strategy and advisory that ends in working systems, not slide decksopportunity audits, roadmaps, tool selection, and implementation by the same team that builds.',
     primaryKeyword: 'ai strategy advisory (cluster: 49 keywords, incl. "ai consulting services" 5K bucket at $40, "ai consulting companies/firms" 5K at $39, "ai consultant" 5K at $26)',
     keywords: ["ai strategy advisory", "ai consulting services", "ai consulting companies/firms", "ai consultant"],
     category: 'ai-strategy-development',

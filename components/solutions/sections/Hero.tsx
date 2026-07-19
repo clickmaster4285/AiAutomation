@@ -2,6 +2,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
@@ -65,6 +66,8 @@ export function HeroSection({
     'Sales Enablement',
   ],
 }: HeroSectionProps) {
+  const router = useRouter();
+
   // Determine text sizes based on textSize prop
   const headingSize = {
     normal: 'text-3xl md:text-4xl lg:text-5xl',
@@ -101,6 +104,12 @@ export function HeroSection({
   ];
 
   const breadcrumbItems = breadcrumb || defaultBreadcrumb;
+
+  // Handle primary CTA click - navigate to contact page for "Book a Free Audit"
+  const handlePrimaryCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    router.push('/contact');
+  };
 
   return (
     <>
@@ -258,6 +267,7 @@ export function HeroSection({
               >
                 <Link
                   href={primaryCta.href}
+                  onClick={handlePrimaryCtaClick}
                   className="inline-flex items-center gap-2 bg-ink hover:bg-ink/90 text-paper text-sm md:text-base px-6 md:px-8 py-3 md:py-3.5 transition-all duration-300 rounded-lg font-medium group"
                 >
                   {primaryCta.text}

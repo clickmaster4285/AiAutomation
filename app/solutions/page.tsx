@@ -95,7 +95,7 @@ export default function SolutionsPage() {
       text: 'Book a Free Audit',
       href: '/free-automation-audit',
     },
-    image: '/images/solutions-hero.png',
+    image: '/images/solution.jpg',
     imageWidth: 700,
     imageHeight: 580,
     textSize: 'xlarge' as const,

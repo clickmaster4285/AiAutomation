@@ -2,6 +2,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail, User, MessageSquare, Send } from 'lucide-react';
 import { useState } from 'react';
@@ -25,6 +26,7 @@ export function CTASection({
   background = 'light',
   showForm = true,
 }: CTASectionProps) {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -50,6 +52,11 @@ export function CTASection({
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handlePrimaryCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    router.push('/contact');
   };
 
   const getBackgroundStyles = () => {
@@ -252,6 +259,7 @@ export function CTASection({
             <div className="flex flex-wrap gap-4">
               <Link
                 href={primaryCta.href}
+                onClick={handlePrimaryCtaClick}
                 className="inline-flex items-center gap-2 bg-brand hover:bg-brand/90 text-white text-sm px-8 py-3 rounded-lg font-medium transition-all duration-300 group shadow-lg shadow-orange-200/40 hover:shadow-orange-300/50"
               >
                 {primaryCta.text}

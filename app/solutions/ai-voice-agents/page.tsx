@@ -40,12 +40,12 @@ export default function AIVoiceAgentsPage() {
     badge: 'AI Voice Agents',
     heading: 'AI Voice Agent Solutions',
     subheading:
-      'Intelligent voice conversations that answer, book, and route automatically — never miss a call again.',
+      'Intelligent voice conversations that answer, book, and route automaticallynever miss a call again.',
     primaryCta: {
       text: 'Book a Free Audit',
       href: '/free-automation-audit',
     },
-    image: '/images/ai-voice-agents-hero.png',
+    image: '/images/voice.jpg',
     imageWidth: 700,
     imageHeight: 580,
     textSize: 'xlarge' as const,
@@ -176,7 +176,7 @@ export default function AIVoiceAgentsPage() {
     {
       id: 'inbound-call-handling',
       title: 'Inbound Call Handling',
-      description: 'Every call answered instantly, at any hour, with natural conversation — never miss a lead or client again.',
+      description: 'Every call answered instantly, at any hour, with natural conversationnever miss a lead or client again.',
       icon: Phone,
       color: 'from-blue-500/20 to-cyan-500/20',
     },
@@ -197,7 +197,7 @@ export default function AIVoiceAgentsPage() {
     {
       id: 'outbound-followup',
       title: 'Outbound & Follow-up Calls',
-      description: 'Reminders, confirmations, and qualification at scale — calls made automatically.',
+      description: 'Reminders, confirmations, and qualification at scalecalls made automatically.',
       icon: PhoneOutgoing,
       color: 'from-orange-500/20 to-red-500/20',
     },
@@ -345,26 +345,26 @@ export default function AIVoiceAgentsPage() {
                   className="relative group"
                 >
                   <div
-                    className={`
-                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 
+                    className="
+                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100
                       transition-all duration-500 blur-xl
-                      bg-gradient-to-r ${industry.color}
-                    `}
+                      bg-brand/10
+                    "
                   />
 
                   <Link
                     href={industry.href}
-                    className={`
-                      relative block h-full p-6 rounded-2xl 
-                      bg-gradient-to-br ${industry.color}
-                      border-2 border-brand/30 group-hover:border-brand/60
-                      transition-all duration-300 shadow-lg hover:shadow-2xl
-                      backdrop-blur-sm bg-white/5
+                    className="
+                      relative block h-full p-6 rounded-2xl
+                      bg-gradient-to-br from-white/10 via-white/5 to-brand/5
+                      border border-white/10 group-hover:border-brand/30
+                      transition-all duration-300 shadow-[0_12px_30px_rgba(0,0,0,0.18)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.24)]
+                      backdrop-blur-sm
                       text-white
-                    `}
+                    "
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand blur-3xl" />
+                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand/25 blur-3xl" />
                     </div>
 
                     <motion.div
@@ -374,13 +374,13 @@ export default function AIVoiceAgentsPage() {
                       whileHover="hover"
                     >
                       <div
-                        className={`
-                          w-14 h-14 rounded-2xl 
-                          bg-gradient-to-br ${industry.color}
+                        className="
+                          w-14 h-14 rounded-2xl
+                          bg-brand/10
                           flex items-center justify-center
                           transition-all duration-300
                           group-hover:shadow-lg
-                        `}
+                        "
                       >
                         <Icon className={`h-7 w-7 text-brand`} />
                       </div>

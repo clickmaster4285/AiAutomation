@@ -73,58 +73,67 @@ export function ReturnSection({ title, content, stats }: ReturnSectionProps) {
       </div>
 
       <div className="mx-auto max-w-[84vw] px-6 relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <div className="inline-flex items-center gap-2 text-brand text-xs font-semibold uppercase tracking-[0.15em] mb-4">
-            <span className="w-8 h-px bg-brand" />
-            Measurable Results
-            <span className="w-8 h-px bg-brand" />
-          </div>
-          <h2 className="display text-3xl md:text-5xl lg:text-6xl text-white mb-6 leading-[1.05]">
-            {title}
-          </h2>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 text-brand text-xs font-semibold uppercase tracking-[0.15em] mb-4">
+              <span className="w-8 h-px bg-brand" />
+              Measurable Results
+            </div>
+            
+            {/* Same heading style as ProblemsSection */}
+            <h2 className="display text-3xl md:text-5xl lg:text-6xl text-white mb-6 leading-[1.05]">
+              {title}
+            </h2>
 
-        {/* Metrics Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
-          {metrics.map((metric, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand/30 hover:bg-white/10 transition-all duration-300"
-            >
-              <div className="w-12 h-12 rounded-xl bg-brand/20 flex items-center justify-center mx-auto mb-3">
-                <metric.icon className="h-6 w-6 text-brand" />
-              </div>
-              <div className="text-3xl font-bold text-brand">{metric.value}</div>
-              <div className="text-sm font-medium text-white">{metric.label}</div>
-              <div className="text-xs text-gray-400">{metric.unit}</div>
-            </motion.div>
-          ))}
-        </div>
+            {/* Same text size as ProblemsSection intro text */}
+            <div className="space-y-4">
+              {paragraphs.map((paragraph, idx) => (
+                <motion.p
+                  key={idx}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="text-lg text-gray-300 leading-relaxed"
+                >
+                  {paragraph}
+                </motion.p>
+              ))}
+            </div>
+          </motion.div>
 
-        {/* Content */}
-        <div className="max-w-4xl mx-auto space-y-4">
-          {paragraphs.map((paragraph, idx) => (
-            <motion.p
-              key={idx}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 + 0.3 }}
-              className="text-base md:text-lg text-gray-300 leading-relaxed text-center"
-            >
-              {paragraph}
-            </motion.p>
-          ))}
+          {/* Right Content - Metrics Cards */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="grid grid-cols-2 gap-4"
+          >
+            {metrics.map((metric, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 + 0.3 }}
+                className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand/30 hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="w-12 h-12 rounded-xl bg-brand/20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <metric.icon className="h-6 w-6 text-brand" />
+                </div>
+                <div className="text-3xl font-bold text-brand mb-1">{metric.value}</div>
+                <div className="text-sm font-semibold text-white">{metric.label}</div>
+                <div className="text-xs text-gray-400">{metric.unit}</div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

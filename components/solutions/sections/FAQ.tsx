@@ -39,7 +39,7 @@ export function FAQSection({ title, subtitle, eyebrow = 'FAQ', faqs }: FAQSectio
       <div className="pointer-events-none absolute inset-y-0 right-0 w-72 bg-[radial-gradient(circle_at_right,theme(colors.brand/8%),transparent_70%)]" />
 
       <div ref={wrapRef} className="relative mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-[180px_minmax(0,48rem)_300px] gap-8 xl:gap-12 items-start">
-        {/* ── Left rail — scroll progress indicator ── */}
+        {/* ── Left railscroll progress indicator ── */}
         <div className="hidden lg:flex flex-col items-center sticky top-32 self-start h-[440px]">
           <span
             className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-6 whitespace-nowrap"
@@ -114,7 +114,7 @@ export function FAQSection({ title, subtitle, eyebrow = 'FAQ', faqs }: FAQSectio
           })}
         </div>
 
-        {/* ── Right rail — still-need-help contact card (WIDTH INCREASED) ── */}
+        {/* ── Right railstill-need-help contact card (WIDTH INCREASED) ── */}
         <div className="hidden lg:block sticky top-32 self-start">
           <motion.div
             initial={{ opacity: 0, x: 20 }}

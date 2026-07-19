@@ -122,7 +122,7 @@ const solutionsData = [
   {
     title: 'AI Voice Agents',
     slug: 'ai-voice-agents',
-    description: 'Intelligent voice conversations that answer, book, and route automatically — never miss a call.',
+    description: 'Intelligent voice conversations that answer, book, and route automaticallynever miss a call.',
     icon: PhoneCall,
   },
   // AI Workflow Automation Solutions
@@ -136,14 +136,14 @@ const solutionsData = [
   {
     title: 'Appointment & Booking Automation',
     slug: 'appointment-booking-automation',
-    description: 'Automation that books, confirms, and reminds — never miss a booking again.',
+    description: 'Automation that books, confirms, and remindsnever miss a booking again.',
     icon: Calendar,
   },
   // Business Process Automation Solutions
   {
     title: 'Business Process Automation',
     slug: 'bussiness-process-automation',
-    description: 'Automation that runs, coordinates, and completes — end-to-end processes that eliminate manual hand-offs.',
+    description: 'Automation that runs, coordinates, and completesend-to-end processes that eliminate manual hand-offs.',
     icon: RefreshCw,
   },
   // CRM Automation Solutions
@@ -164,7 +164,7 @@ const solutionsData = [
   {
     title: 'Invoice & Finance Automation',
     slug: 'invoice-automation',
-    description: 'Capture, validate, and post invoices automatically — cut days from the close.',
+    description: 'Capture, validate, and post invoices automaticallycut days from the close.',
     icon: Receipt,
   },
   // Lead Generation Solutions
@@ -213,7 +213,7 @@ const solutionsData = [
 
 // ── Standalone services (no category) - these will use /services/ directly ──
 const standaloneServices = [
-  { title: 'AI Consulting Services', slug: 'ai-consulting', description: 'Strategy that ships — opportunity audits, roadmaps, and implementation.' },
+  { title: 'AI Consulting Services', slug: 'ai-consulting', description: 'Strategy that shipsopportunity audits, roadmaps, and implementation.' },
   { title: 'Custom AI Development', slug: 'custom-ai-development', description: 'Custom AI solutions on proven models with honest scoping.' },
   { title: 'AI Reporting Automation', slug: 'ai-reporting-automation', description: 'Automated reports and dashboards with AI summaries.' },
   { title: 'AI Lead Generation', slug: 'ai-lead-generation', description: 'AI-powered lead generation and qualification systems.' },
@@ -439,7 +439,7 @@ export default function Nav() {
                           return (
                             <Link
                               key={idx}
-                              href={`/services/${category.slug}`}
+                              href={category.slug === 'ai-strategy-development' ? '/services/ai-strategy-development' : `/services/${category.slug}`}
                               className={`w-full text-left px-5 py-3 flex items-center gap-3 transition-all duration-150 relative group ${
                                 isActive ? 'bg-white' : 'hover:bg-white/70'
                               }`}
@@ -792,9 +792,9 @@ export default function Nav() {
             </AnimatePresence>
           </div>
 
-          {/* ── Simple links ── */}
-          <Link href="/#work" className="text-gray-700 hover:text-black transition-colors">Work</Link>
-          <Link href="/#process" className="text-gray-700 hover:text-black transition-colors">Process</Link>
+          {/* ── Simple links (removed hashes) ── */}
+          <Link href="/work" className="text-gray-700 hover:text-black transition-colors">Work</Link>
+          <Link href="/process" className="text-gray-700 hover:text-black transition-colors">Process</Link>
           <Link href="/about" className="text-gray-700 hover:text-black transition-colors">About</Link>
           <Link href="/contact" className="text-gray-700 hover:text-black transition-colors">Contact</Link>
         </nav>
@@ -1055,8 +1055,9 @@ export default function Nav() {
               )}
             </div>
 
-            <Link href="/#work" className="block text-gray-700 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Work</Link>
-            <Link href="/#process" className="block text-gray-700 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Process</Link>
+            {/* Mobile links (removed hashes) */}
+            <Link href="/work" className="block text-gray-700 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Work</Link>
+            <Link href="/process" className="block text-gray-700 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Process</Link>
             <Link href="/about" className="block text-gray-700 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
             <Link href="/contact" className="block text-gray-700 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
 

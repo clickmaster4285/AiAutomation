@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { crmAutomationForRetail } from '@/content/Solutions/crm-automation-for-retail';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: crmAutomationForRetail.titleTag,
@@ -68,10 +69,18 @@ export default function ForRetailPage() {
           text: 'Learn More',
           href: '#why-retail-need-crm-automation',
         }}
-        image="/images/solutions/crm-automation-retail-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Retail"
+            triggerLabel="New Customer Inquiry"
+            actionLabels={['Qualify Lead', 'Send Informational Email', 'Schedule Consultation']}
+            metricValue="800"
+            metricLabel="new customer inquiries captured automatically each month"
+            submetric="90% increase in customer satisfaction"
+            platform="CRM + Retail Management System"
+            accent="#10B981"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForRetailPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForRetailPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where CRM automation pays off for retail."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where CRM automation pays off for retail."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

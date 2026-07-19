@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { appointmentBookingAutomationForRealEstate } from '@/content/Solutions/appointment-booking-automation-for-real-estate';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: appointmentBookingAutomationForRealEstate.titleTag,
@@ -68,10 +69,18 @@ export default function ForRealEstatePage() {
           text: 'Learn More',
           href: '#why-real-estate-need-appointment-booking-automation',
         }}
-        image="/images/solutions/appointment-booking-automation-real-estate-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+                                           <AutomationHeroMockup
+                                             industry="Real Estate"
+                                             triggerLabel="New Client Inquiry"
+                                             actionLabels={['Schedule Consultation', 'Provide Quote', 'Submit Property Details']}
+                                             metricValue="1,200"
+                                             metricLabel="client inquiries handled automatically this month"
+                                             submetric="80% improved response time"
+                                             platform="CRM + Real Estate Platform"
+                                             accent="#F59E0B"
+                                           />
+                                         }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForRealEstatePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForRealEstatePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where booking automation pays off for real estate."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where booking automation pays off for real estate."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

@@ -17,7 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { aiVoiceAgentsForEducation } from '@/content/Solutions';
-
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 export const metadata: Metadata = {
   title: aiVoiceAgentsForEducation.titleTag,
   description: aiVoiceAgentsForEducation.metaDescription,
@@ -68,10 +68,18 @@ export default function ForEducationPage() {
           text: 'Learn More',
           href: '#why-education-need-ai-voice-agents',
         }}
-        image="/images/solutions/ai-voice-agent-education-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+                              <AutomationHeroMockup
+                                industry="Education"
+                                triggerLabel="New Student Inquiry"
+                                actionLabels={['Provide Program Information', 'Schedule Campus Tour', 'Send Admission Details']}
+                                metricValue="1,500"
+                                metricLabel="student inquiries handled automatically this week"
+                                submetric="90% improved response time"
+                                platform="CRM + Student Information System"
+                                accent="#F97316"
+                              />
+                            }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +114,8 @@ export default function ForEducationPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +148,7 @@ export default function ForEducationPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where voice agent pays off for education."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where voice agent pays off for education."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

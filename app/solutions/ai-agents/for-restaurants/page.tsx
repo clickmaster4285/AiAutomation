@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { aiAgentsForRestaurants } from '@/content/Solutions';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: aiAgentsForRestaurants.titleTag,
@@ -68,10 +69,18 @@ export default function ForRestaurantsPage() {
           text: 'Learn More',
           href: '#why-restaurants-need-ai-agent-development',
         }}
-        image="/images/ai-agent-restaurants-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+                              <AutomationHeroMockup
+                                industry="Restaurants & Hospitality"
+                                triggerLabel="New Customer Inquiry"
+                                actionLabels={['Send Menu Details', 'Book Table', 'Provide Recommendations']}
+                                metricValue="3,200"
+                                metricLabel="customer inquiries handled automatically this week"
+                                submetric="85% improved satisfaction rate"
+                                platform="CRM + Restaurant Management System"
+                                accent="#F97316"
+                              />
+                            }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForRestaurantsPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForRestaurantsPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where AI agent pays off for restaurants & hospitality."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where AI agent pays off for restaurants & hospitality."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

@@ -17,7 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { aiVoiceAgentsForInsurance } from '@/content/Solutions';
-
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 export const metadata: Metadata = {
   title: aiVoiceAgentsForInsurance.titleTag,
   description: aiVoiceAgentsForInsurance.metaDescription,
@@ -68,10 +68,18 @@ export default function ForInsurancePage() {
           text: 'Learn More',
           href: '#why-insurance-agencies-need-ai-voice-agents',
         }}
-        image="/images/solutions/ai-voice-agent-insurance-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+                              <AutomationHeroMockup
+                                industry="Insurance"
+                                triggerLabel="New Lead Inquiry"
+                                actionLabels={['Provide Policy Information', 'Schedule Consultation', 'Submit Claim Details']}
+                                metricValue="2,000"
+                                metricLabel="lead inquiries handled automatically this week"
+                                submetric="95% improved response time"
+                                platform="CRM + Insurance Platform"
+                                accent="#F97316"
+                              />
+                            }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +114,8 @@ export default function ForInsurancePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +148,7 @@ export default function ForInsurancePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where voice agent pays off for insurance agencies."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where voice agent pays off for insurance agencies."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

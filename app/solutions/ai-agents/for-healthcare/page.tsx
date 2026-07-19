@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { aiAgentsForHealthcare } from '@/content/Solutions';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: aiAgentsForHealthcare.titleTag,
@@ -68,10 +69,18 @@ export default function ForHealthcarePage() {
           text: 'Learn More',
           href: '#why-healthcare-need-ai-agent-development',
         }}
-        image="/images/ai-agent-healthcare-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+                              <AutomationHeroMockup
+                                industry="Healthcare"
+                                triggerLabel="New Patient Inquiry"
+                                actionLabels={['Send Welcome Email', 'Schedule Appointment', 'Provide Educational Resources']}
+                                metricValue="3,200"
+                                metricLabel="inquiries handled automatically this week"
+                                submetric="87% resolved without staff involvement"
+                                platform="EHR + CRM"
+                                accent="#F97316"
+                              />
+                            }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForHealthcarePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForHealthcarePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where AI agent pays off for healthcare."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where AI agent pays off for healthcare."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

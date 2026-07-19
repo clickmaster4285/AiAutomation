@@ -41,7 +41,7 @@ export default function SalesAutomationPage() {
   const heroData = {
     badge: 'AI Sales Automation',
     heading: 'AI Sales Automation Solutions',
-    subheading: 'Enrich, follow up, and log automatically with AI — built on the platforms you already use.',
+    subheading: 'Enrich, follow up, and log automatically with AIbuilt on the platforms you already use.',
     primaryCta: {
       text: 'Book a Free Audit',
       href: '/free-automation-audit',
@@ -57,7 +57,7 @@ export default function SalesAutomationPage() {
       id: 'hubspot',
       title: 'HubSpot Sales Automation',
       icon: Mail,
-      description: 'Extend HubSpot\'s power with AI lead enrichment, scoring, and follow-up — ideal for teams already running sales and marketing on HubSpot.',
+      description: 'Extend HubSpot\'s power with AI lead enrichment, scoring, and follow-upideal for teams already running sales and marketing on HubSpot.',
       href: '/solutions/sales-automation/with-hubspot',
       features: ['Native CRM', 'AI enrichment', 'Follow-up automation'],
       color: 'from-brand/30 to-orange-400/30',
@@ -214,7 +214,7 @@ export default function SalesAutomationPage() {
     {
       id: 'follow-up-automation',
       title: 'Follow-up Automation',
-      description: 'Personalized sequences with perfect consistency — no lead ever slips through.',
+      description: 'Personalized sequences with perfect consistencyno lead ever slips through.',
       icon: Mail,
       color: 'from-green-500/20 to-emerald-500/20',
     },
@@ -365,7 +365,7 @@ export default function SalesAutomationPage() {
             </span>
             <h2 className="display text-3xl md:text-5xl text-white font-bold">Choose Your Platform</h2>
             <p className="text-base md:text-lg text-gray-300 mt-4 leading-relaxed max-w-2xl mx-auto">
-              We build sales automation on the platforms you already use — with honest platform recommendations.
+              We build sales automation on the platforms you already usewith honest platform recommendations.
             </p>
           </div>
 
@@ -563,26 +563,26 @@ export default function SalesAutomationPage() {
                   className="relative group"
                 >
                   <div
-                    className={`
-                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 
+                    className="
+                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100
                       transition-all duration-500 blur-xl
-                      bg-gradient-to-r ${industry.color}
-                    `}
+                      bg-brand/10
+                    "
                   />
 
                   <Link
                     href={industry.href}
-                    className={`
-                      relative block h-full p-6 rounded-2xl 
-                      bg-gradient-to-br ${industry.color}
-                      border-2 border-brand/30 group-hover:border-brand/60
-                      transition-all duration-300 shadow-lg hover:shadow-2xl
-                      backdrop-blur-sm bg-white/5
+                    className="
+                      relative block h-full p-6 rounded-2xl
+                      bg-gradient-to-br from-white/10 via-white/5 to-brand/5
+                      border border-white/10 group-hover:border-brand/30
+                      transition-all duration-300 shadow-[0_12px_30px_rgba(0,0,0,0.18)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.24)]
+                      backdrop-blur-sm
                       text-white
-                    `}
+                    "
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand blur-3xl" />
+                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand/25 blur-3xl" />
                     </div>
 
                     <motion.div
@@ -592,13 +592,13 @@ export default function SalesAutomationPage() {
                       whileHover="hover"
                     >
                       <div
-                        className={`
-                          w-14 h-14 rounded-2xl 
-                          bg-gradient-to-br ${industry.color}
+                        className="
+                          w-14 h-14 rounded-2xl
+                          bg-brand/10
                           flex items-center justify-center
                           transition-all duration-300
                           group-hover:shadow-lg
-                        `}
+                        "
                       >
                         <Icon className="h-7 w-7 text-brand" />
                       </div>

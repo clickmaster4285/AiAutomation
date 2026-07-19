@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { documentAutomationForLogistics } from '@/content/Solutions/document-automation-for-logistics';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: documentAutomationForLogistics.titleTag,
@@ -68,10 +69,18 @@ export default function ForLogisticsPage() {
           text: 'Learn More',
           href: '#why-logistics-transportation-need-document-data-automation',
         }}
-        image="/images/solutions/document-automation-logistics-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Logistics & Transportation"
+            triggerLabel="New Document Request"
+            actionLabels={['Generate Reports', 'Create Shipment Documents', 'Manage Supply Chain Data']}
+            metricValue="2000"
+            metricLabel="documents processed automatically each month"
+            submetric="75% reduction in processing time"
+            platform="Document & Data Automation + Logistics Management System"
+            accent="#10B981"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForLogisticsPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForLogisticsPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where document automation pays off for logistics & transportation."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where document automation pays off for logistics & transportation."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

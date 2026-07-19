@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { crmAutomationForLawFirms } from '@/content/Solutions/crm-automation-for-law-firms';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: crmAutomationForLawFirms.titleTag,
@@ -68,10 +69,18 @@ export default function ForLawFirmsPage() {
           text: 'Learn More',
           href: '#why-law-firms-need-crm-automation',
         }}
-        image="/images/solutions/crm-automation-law-firms-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Law Firms"
+            triggerLabel="New Client Inquiry"
+            actionLabels={['Qualify Lead', 'Send Informational Email', 'Schedule Consultation']}
+            metricValue="600"
+            metricLabel="new client inquiries captured automatically each month"
+            submetric="85% increase in client conversion rates"
+            platform="CRM + Legal Case Management System"
+            accent="#3B82F6"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForLawFirmsPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForLawFirmsPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where CRM automation pays off for law firms."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where CRM automation pays off for law firms."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

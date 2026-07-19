@@ -25,7 +25,7 @@ export function WhySection({ title, content, stats }: WhySectionProps) {
 
       <div className="mx-auto max-w-[84vw] px-6 relative">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
-          {/* Left Content - Expanded */}
+          {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -38,12 +38,12 @@ export function WhySection({ title, content, stats }: WhySectionProps) {
               Why This Matters
             </div>
 
-            {/* Exact same heading style as AutomationSection */}
+            {/* Same heading style as ProblemsSection */}
             <h2 className="display text-3xl md:text-5xl lg:text-6xl text-gray-900 mb-6 leading-[1.05]">
               {title}
             </h2>
 
-            {/* Decreased text size for content below heading */}
+            {/* Same text sizes as ProblemsSection intro text */}
             <div className="space-y-4">
               {paragraphs.map((paragraph, idx) => (
                 <motion.p
@@ -52,7 +52,7 @@ export function WhySection({ title, content, stats }: WhySectionProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed"
+                  className="text-lg text-gray-600 leading-relaxed"
                 >
                   {paragraph}
                 </motion.p>
@@ -71,7 +71,7 @@ export function WhySection({ title, content, stats }: WhySectionProps) {
             )}
           </motion.div>
 
-          {/* Right Cards - Expanded */}
+          {/* Right Cards */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -99,8 +99,10 @@ export function WhySection({ title, content, stats }: WhySectionProps) {
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
                       <item.icon className="h-6 w-6 text-brand" />
                     </div>
-                    <h4 className="text-base md:text-lg font-semibold text-gray-900">{item.label}</h4>
-                    <p className="text-sm md:text-base text-gray-500 leading-relaxed mt-1">AI-powered automation</p>
+                    {/* Same card title size as ProblemsSection */}
+                    <h4 className="text-lg md:text-xl font-semibold text-gray-900">{item.label}</h4>
+                    {/* Same card description size as ProblemsSection */}
+                    <p className="text-base md:text-lg text-gray-500 leading-relaxed mt-1">AI-powered automation</p>
                   </div>
                 </motion.div>
               ))}

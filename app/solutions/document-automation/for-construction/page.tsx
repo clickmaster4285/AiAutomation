@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { documentAutomationForConstruction } from '@/content/Solutions/document-automation-for-construction';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: documentAutomationForConstruction.titleTag,
@@ -68,10 +69,18 @@ export default function ForConstructionPage() {
           text: 'Learn More',
           href: '#why-construction-need-document-data-automation',
         }}
-        image="/images/solutions/document-automation-construction-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Construction"
+            triggerLabel="New Document Request"
+            actionLabels={['Generate Reports', 'Create Drawings', 'Manage Contracts']}
+            metricValue="3000"
+            metricLabel="documents processed automatically each month"
+            submetric="85% reduction in processing time"
+            platform="Document & Data Automation + Construction Management Software"
+            accent="#F59E0B"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForConstructionPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForConstructionPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where document automation pays off for construction."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where document automation pays off for construction."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

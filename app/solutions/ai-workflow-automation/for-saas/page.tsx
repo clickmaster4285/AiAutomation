@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { aiWorkflowAutomationForSaaS } from '@/content/Solutions/ai-workflow-automation-for-saas';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: aiWorkflowAutomationForSaaS.titleTag,
@@ -68,10 +69,18 @@ export default function ForSaaSPage() {
           text: 'Learn More',
           href: '#why-saas-companies-need-ai-workflow-automation',
         }}
-        image="/images/solutions/ai-workflow-automation-saas-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+         visual={
+                                            <AutomationHeroMockup
+                                              industry="SaaS"
+                                              triggerLabel="New Customer Inquiry"
+                                              actionLabels={['Gather Requirements', 'Schedule Meeting', 'Submit Proposal']}
+                                              metricValue="3,000"
+                                              metricLabel="client inquiries handled automatically this week"
+                                              submetric="85% improved response time"
+                                              platform="CRM + Logistics Platform"
+                                              accent="#F97316"
+                                            />
+                                          }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForSaaSPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForSaaSPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where workflow automation pays off for SaaS companies."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where workflow automation pays off for SaaS companies."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

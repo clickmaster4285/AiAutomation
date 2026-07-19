@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { businessProcessAutomationForRestaurants } from '@/content/Solutions/bussiness-process-automation-for-restaurants';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: businessProcessAutomationForRestaurants.titleTag,
@@ -68,10 +69,18 @@ export default function ForRestaurantsPage() {
           text: 'Learn More',
           href: '#why-restaurants-hospitality-need-bussiness-process-automation',
         }}
-        image="/images/solutions/bussiness-process-automation-restaurants-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Restaurants & Hospitality"
+            triggerLabel="New Customer Order"
+            actionLabels={['Process Order', 'Prepare Food', 'Deliver to Table']}
+            metricValue="5,000"
+            metricLabel="customer orders managed automatically this month"
+            submetric="90% reduced wait times"
+            platform="POS + Kitchen Display System"
+            accent="#EF4444"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForRestaurantsPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForRestaurantsPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where process automation pays off for restaurants & hospitality."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where process automation pays off for restaurants & hospitality."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

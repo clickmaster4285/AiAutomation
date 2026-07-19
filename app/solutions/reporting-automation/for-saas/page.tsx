@@ -106,8 +106,8 @@ export default function ForSaaSPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +140,7 @@ export default function ForSaaSPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where reporting automation pays off for saas companies."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where reporting automation pays off for saas companies."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

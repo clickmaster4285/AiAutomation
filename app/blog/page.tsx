@@ -380,12 +380,6 @@ export default function BlogPage() {
                   Subscribe Now
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a
-                  href="/free-automation-audit"
-                  className="inline-flex items-center gap-2 border border-gray-300/50 hover:border-brand hover:text-brand hover:bg-orange-50/50 text-gray-700 px-8 py-3 rounded-lg font-medium transition-all duration-300"
-                >
-                  Book a Free Audit
-                </a>
               </div>
 
               <div className="mt-8 flex flex-wrap gap-6">

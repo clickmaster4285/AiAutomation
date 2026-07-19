@@ -34,7 +34,7 @@ const AnimatedCounter = ({ value, suffix = '', prefix = '' }: { value: number; s
   }, [inView, value]);
 
   return (
-    <span ref={ref} className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-brand">
+    <span ref={ref} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-brand">
       {prefix}{count}{suffix}
     </span>
   );
@@ -44,10 +44,10 @@ export default function StatsSec({ section }: StatsSectionProps) {
   const statsItems = section.items || [];
 
   return (
-    <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+    <section className="py-20 sm:py-24 lg:py-32 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(249,115,22,0.03),rgba(0,0,0,0))]" />
       
-      <div className="mx-auto max-w-[84vw] px-6">
+      <div className="mx-auto max-w-[92vw] sm:max-w-[84vw] px-4 sm:px-6">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -63,7 +63,7 @@ export default function StatsSec({ section }: StatsSectionProps) {
           </motion.h2>
           <motion.h3 
             variants={fadeInUp}
-            className="display text-3xl md:text-4xl font-bold text-black text-left"
+            className="display text-2xl sm:text-3xl md:text-4xl font-bold text-black text-left"
           >
             {section.heading || 'Measurable Results'}
           </motion.h3>
@@ -74,7 +74,7 @@ export default function StatsSec({ section }: StatsSectionProps) {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12"
         >
           {statsItems.map((item: any, idx: number) => {
             const value = typeof item.value === 'number' ? item.value : parseInt(item.value) || 0;

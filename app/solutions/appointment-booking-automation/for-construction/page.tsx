@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { appointmentBookingAutomationForConstruction } from '@/content/Solutions/appointment-booking-automation-for-construction';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: appointmentBookingAutomationForConstruction.titleTag,
@@ -68,10 +69,18 @@ export default function ForConstructionPage() {
           text: 'Learn More',
           href: '#why-construction-need-appointment-booking-automation',
         }}
-        image="/images/solutions/appointment-booking-automation-construction-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+       visual={
+                                           <AutomationHeroMockup
+                                             industry="Construction"
+                                             triggerLabel="New Project Inquiry"
+                                             actionLabels={['Schedule Site Visit', 'Provide Quote', 'Submit Contract Details']}
+                                             metricValue="1,500"
+                                             metricLabel="project inquiries handled automatically this month"
+                                             submetric="90% improved lead conversion"
+                                             platform="CRM + Project Management Platform"
+                                             accent="#F97316"
+                                           />
+                                         }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForConstructionPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForConstructionPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where booking automation pays off for construction."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where booking automation pays off for construction."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

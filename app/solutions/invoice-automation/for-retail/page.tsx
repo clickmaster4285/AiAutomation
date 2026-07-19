@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { invoiceAutomationForRetail } from '@/content/Solutions/invoice-automation-for-retail';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: invoiceAutomationForRetail.titleTag,
@@ -68,10 +69,18 @@ export default function ForRetailPage() {
           text: 'Learn More',
           href: '#why-retail-need-invoice-finance-automation',
         }}
-        image="/images/solutions/invoice-automation-retail-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Retail"
+            triggerLabel="New Document Request"
+            actionLabels={['Generate Reports', 'Create Invoices', 'Manage Client Data']}
+            metricValue="2000"
+            metricLabel="invoices processed automatically each month"
+            submetric="70% reduction in processing time"
+            platform="Invoice & Finance Automation + Retail Management System"
+            accent="#F59E0B"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForRetailPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForRetailPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where finance automation pays off for retail."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where finance automation pays off for retail."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

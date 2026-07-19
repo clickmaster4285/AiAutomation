@@ -246,7 +246,7 @@ export default function AIChatbotsPage() {
     {
       id: 'action-taking',
       title: 'Action-Taking',
-      description: 'Lookups, updates, and processes are executed, not just described — your chatbot takes real action.',
+      description: 'Lookups, updates, and processes are executed, not just describedyour chatbot takes real action.',
       icon: Workflow,
       color: 'from-orange-500/20 to-red-500/20',
     },
@@ -629,26 +629,26 @@ export default function AIChatbotsPage() {
                   className="relative group"
                 >
                   <div
-                    className={`
-                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 
+                    className="
+                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100
                       transition-all duration-500 blur-xl
-                      bg-gradient-to-r ${industry.color}
-                    `}
+                      bg-brand/10
+                    "
                   />
 
                   <Link
                     href={industry.href}
-                    className={`
-                      relative block h-full p-6 rounded-2xl 
-                      bg-gradient-to-br ${industry.color}
-                      border-2 border-brand/30 group-hover:border-brand/60
-                      transition-all duration-300 shadow-lg hover:shadow-2xl
-                      backdrop-blur-sm bg-white/5
+                    className="
+                      relative block h-full p-6 rounded-2xl
+                      bg-gradient-to-br from-white/10 via-white/5 to-brand/5
+                      border border-white/10 group-hover:border-brand/30
+                      transition-all duration-300 shadow-[0_12px_30px_rgba(0,0,0,0.18)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.24)]
+                      backdrop-blur-sm
                       text-white
-                    `}
+                    "
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand blur-3xl" />
+                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand/25 blur-3xl" />
                     </div>
 
                     <motion.div
@@ -658,13 +658,13 @@ export default function AIChatbotsPage() {
                       whileHover="hover"
                     >
                       <div
-                        className={`
-                          w-14 h-14 rounded-2xl 
-                          bg-gradient-to-br ${industry.color}
+                        className="
+                          w-14 h-14 rounded-2xl
+                          bg-brand/10
                           flex items-center justify-center
                           transition-all duration-300
                           group-hover:shadow-lg
-                        `}
+                        "
                       >
                         <Icon className="h-7 w-7 text-brand" />
                       </div>

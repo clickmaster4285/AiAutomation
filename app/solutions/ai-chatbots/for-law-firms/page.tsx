@@ -17,7 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { aiChatbotsForLawFirms } from '@/content/Solutions';
-
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 export const metadata: Metadata = {
   title: aiChatbotsForLawFirms.titleTag,
   description: aiChatbotsForLawFirms.metaDescription,
@@ -68,10 +68,18 @@ export default function ForLawFirmsPage() {
           text: 'Learn More',
           href: '#why-law-firms-need-ai-chatbots',
         }}
-        image="/images/solutions/ai-chatbot-law-firms-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+                              <AutomationHeroMockup
+                                industry="Law Firms"
+                                triggerLabel="New Client Inquiry"
+                                actionLabels={['Send Intake Form', 'Schedule Call', 'Add to CRM']}
+                                metricValue="1,247"
+                                metricLabel="inquiries handled automatically this week"
+                                submetric="94% resolved without staff involvement"
+                                platform="QuickBooks + HubSpot"
+                                accent="#F97316"
+                              />
+                            }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +114,8 @@ export default function ForLawFirmsPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +148,7 @@ export default function ForLawFirmsPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where chatbot pays off for law firms."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where chatbot pays off for law firms."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { businessProcessAutomationForHealthcare } from '@/content/Solutions/bussiness-process-automation-for-healthcare';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: businessProcessAutomationForHealthcare.titleTag,
@@ -68,10 +69,18 @@ export default function ForHealthcarePage() {
           text: 'Learn More',
           href: '#why-healthcare-need-bussiness-process-automation',
         }}
-        image="/images/solutions/bussiness-process-automation-healthcare-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Healthcare"
+            triggerLabel="New Patient Inquiry"
+            actionLabels={['Send Appointment Confirmation', 'Provide Medical Information', 'Schedule Follow-up']}
+            metricValue="1,500"
+            metricLabel="patient inquiries managed automatically this month"
+            submetric="90% improved response time"
+            platform="CRM + Electronic Health Record System"
+            accent="#EF4444"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForHealthcarePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForHealthcarePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where process automation pays off for healthcare."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where process automation pays off for healthcare."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

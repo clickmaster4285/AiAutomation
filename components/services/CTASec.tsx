@@ -8,7 +8,7 @@ import { fadeInUp, staggerContainer } from '../services/Shared/animation';
 
 export default function CTASec({ section }: { section: Section }) {
   return (
-    <section className="relative py-24 md:py-32 border-t border-gray-800 bg-black overflow-hidden">
+    <section className="relative py-20 sm:py-24 lg:py-32 border-t border-gray-800 bg-black overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_100%_at_50%_0%,rgba(249,115,22,0.08),rgba(0,0,0,0))]" />
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-brand/10 via-transparent to-transparent"
@@ -29,7 +29,7 @@ export default function CTASec({ section }: { section: Section }) {
         }}
       />
 
-      <div className="mx-auto max-w-[84vw] px-6 text-center">
+      <div className="mx-auto max-w-[92vw] sm:max-w-[84vw] px-4 sm:px-6 text-center">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -47,7 +47,7 @@ export default function CTASec({ section }: { section: Section }) {
           {section.heading && (
             <motion.h2
               variants={fadeInUp}
-              className="display text-4xl font-bold md:text-5xl text-white"
+              className="display text-3xl sm:text-4xl font-bold md:text-5xl text-white"
             >
               {section.heading}
             </motion.h2>
@@ -55,7 +55,7 @@ export default function CTASec({ section }: { section: Section }) {
           {section.subheading && (
             <motion.p
               variants={fadeInUp}
-              className="mb-8 text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed text-justify"
+              className="mb-8 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed text-justify"
             >
               {section.subheading}
             </motion.p>
@@ -70,7 +70,7 @@ export default function CTASec({ section }: { section: Section }) {
               <div className="absolute inset-0 bg-brand/30 blur-xl rounded-full group-hover:blur-2xl transition-all" />
               <Button
                 size="lg"
-                className="relative bg-brand hover:bg-brand-dark text-white px-10 py-6 text-lg rounded-full transition-all font-medium shadow-lg shadow-brand/25"
+                className="relative bg-brand hover:bg-brand-dark text-white px-8 sm:px-10 py-5 sm:py-6 text-base sm:text-lg rounded-full transition-all font-medium shadow-lg shadow-brand/25 w-full sm:w-auto"
               >
                 {section.cta.text}
                 <ArrowRight className="ml-2 h-5 w-5" />

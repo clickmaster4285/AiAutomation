@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { reportingAutomationForLogistics } from '@/content/Solutions/reporting-automation-for-logistics';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: reportingAutomationForLogistics.titleTag,
@@ -68,10 +69,18 @@ export default function ForLogisticsPage() {
           text: 'Learn More',
           href: '#why-logistics-transportation-need-reporting-automation',
         }}
-        image="/images/solutions/reporting-automation-logistics-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Logistics & Transportation"
+            triggerLabel="New Document Request"
+            actionLabels={['Generate Reports', 'Create Invoices', 'Manage Client Data']}
+            metricValue="800"
+            metricLabel="reports generated automatically each month"
+            submetric="35% increase in delivery efficiency"
+            platform="Reporting Automation + Logistics Platform"
+            accent="#3B82F6"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForLogisticsPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForLogisticsPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where reporting automation pays off for logistics & transportation."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where reporting automation pays off for logistics & transportation."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

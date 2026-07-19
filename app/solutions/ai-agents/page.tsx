@@ -33,12 +33,12 @@ export default function AIAgentsPage() {
   const heroData = {
     badge: 'AI Agents',
     heading: 'AI Agent Development',
-    subheading: 'Custom AI agents that reason, act, and complete tasks automatically — built for your industry.',
+    subheading: 'Custom AI agents that reason, act, and complete tasks automaticallybuilt for your industry.',
     primaryCta: {
       text: 'Book a Free Audit',
       href: '/free-automation-audit',
     },
-    image: '/images/ai-agents-hero.png',
+    image: '/images/agent.jpg',
     imageWidth: 700,
     imageHeight: 580,
     textSize: 'xlarge' as const,
@@ -52,7 +52,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that handle document collection, data entry, and reconciliation.',
       href: '/solutions/ai-agents/for-accounting-firms',
       features: ['Document collection', 'Data entry automation', 'Deadline tracking'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-construction',
@@ -61,7 +60,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that manage bids, documents, and client communications.',
       href: '/solutions/ai-agents/for-construction',
       features: ['Lead intake', 'Bid handling', 'Document organization'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-ecommerce',
@@ -70,7 +68,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that handle support, cart recovery, and order processing.',
       href: '/solutions/ai-agents/for-ecommerce',
       features: ['Customer support', 'Cart recovery', 'Order processing'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-education',
@@ -79,7 +76,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that manage inquiries, enrollment, and student communication.',
       href: '/solutions/ai-agents/for-education',
       features: ['Inquiry response', 'Enrollment nurture', 'FAQ handling'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-healthcare',
@@ -88,7 +84,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that handle scheduling, intake, and patient communication.',
       href: '/solutions/ai-agents/for-healthcare',
       features: ['Appointment scheduling', 'Patient intake', 'Reminders & follow-up'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-insurance',
@@ -97,7 +92,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that manage quotes, certificates, and renewals.',
       href: '/solutions/ai-agents/for-insurance',
       features: ['Quote intake', 'Certificate issuance', 'Renewal tracking'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-law-firms',
@@ -106,7 +100,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that handle intake, document assembly, and deadlines.',
       href: '/solutions/ai-agents/for-law-firms',
       features: ['Client intake', 'Engagement letters', 'Deadline tracking'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-logistics',
@@ -115,7 +108,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that manage orders, tracking, and documentation.',
       href: '/solutions/ai-agents/for-logistics',
       features: ['Order intake', 'Status updates', 'Document processing'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-manufacturing',
@@ -124,7 +116,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that handle orders, inventory, and purchasing.',
       href: '/solutions/ai-agents/for-manufacturing',
       features: ['Order entry', 'Inventory monitoring', 'Purchase orders'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-real-estate',
@@ -133,7 +124,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that handle leads, showings, and transactions.',
       href: '/solutions/ai-agents/for-real-estate',
       features: ['Lead response', 'Nurture sequences', 'Showing scheduling'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-restaurants',
@@ -142,7 +132,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that handle reservations, calls, and reviews.',
       href: '/solutions/ai-agents/for-restaurants',
       features: ['Reservation booking', 'Call answering', 'No-show reduction'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-retail',
@@ -151,7 +140,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that handle inventory, inquiries, and reporting.',
       href: '/solutions/ai-agents/for-retail',
       features: ['Inventory monitoring', 'Customer inquiries', 'Sales reporting'],
-      color: 'from-brand/30 to-orange-400/30',
     },
     {
       id: 'for-saas',
@@ -160,7 +148,6 @@ export default function AIAgentsPage() {
       description: 'AI agents that handle support, onboarding, and churn monitoring.',
       href: '/solutions/ai-agents/for-saas',
       features: ['Support triage', 'User onboarding', 'Churn monitoring'],
-      color: 'from-brand/30 to-orange-400/30',
     },
   ];
 
@@ -291,24 +278,15 @@ export default function AIAgentsPage() {
                   onMouseLeave={() => setHoveredCard(null)}
                   className="relative group"
                 >
-                  <div className={`
-                    absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 
-                    transition-all duration-500 blur-xl
-                    bg-gradient-to-r ${industry.color}
-                  `} />
+                  {/* Glow effect on hover */}
+                  <div className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-60 transition-all duration-500 blur-xl bg-brand/20" />
 
                   <Link
                     href={industry.href}
-                    className={`
-                      relative block h-full p-6 rounded-2xl 
-                      bg-gradient-to-br ${industry.color}
-                      border-2 border-brand/30 group-hover:border-brand/60
-                      transition-all duration-300 shadow-lg hover:shadow-2xl
-                      backdrop-blur-sm bg-white/5
-                      text-white
-                    `}
+                    className="relative block h-full p-6 rounded-2xl bg-gray-900/60 backdrop-blur-sm border border-gray-700/50 hover:border-brand/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-brand/5 text-white group"
                   >
-                    <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                    {/* Background pattern */}
+                    <div className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
                       <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand blur-3xl" />
                     </div>
 
@@ -318,14 +296,8 @@ export default function AIAgentsPage() {
                       initial="initial"
                       whileHover="hover"
                     >
-                      <div className={`
-                        w-14 h-14 rounded-2xl 
-                        bg-gradient-to-br ${industry.color}
-                        flex items-center justify-center
-                        transition-all duration-300
-                        group-hover:shadow-lg
-                      `}>
-                        <Icon className={`h-7 w-7 text-brand`} />
+                      <div className="w-14 h-14 rounded-2xl bg-brand/10 border border-brand/20 flex items-center justify-center transition-all duration-300 group-hover:bg-brand/20 group-hover:border-brand/40 group-hover:shadow-lg group-hover:shadow-brand/10">
+                        <Icon className="h-7 w-7 text-brand" />
                       </div>
                       <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -386,7 +358,7 @@ export default function AIAgentsPage() {
                           x: isHovered ? 0 : -5,
                         }}
                         transition={{ duration: 0.3 }}
-                        className="inline-flex items-center gap-2 text-brand font-medium text-sm group/link"
+                        className="inline-flex items-center gap-2 text-brand font-medium text-sm"
                       >
                         <span>Learn More</span>
                         <motion.span
@@ -400,8 +372,9 @@ export default function AIAgentsPage() {
                       </motion.div>
                     </div>
 
+                    {/* Bottom accent bar */}
                     <motion.div 
-                      className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand/0 via-brand to-brand/0 rounded-b-2xl"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand to-transparent rounded-b-2xl"
                       initial={{ scaleX: 0, opacity: 0 }}
                       animate={{ 
                         scaleX: isHovered ? 1 : 0,

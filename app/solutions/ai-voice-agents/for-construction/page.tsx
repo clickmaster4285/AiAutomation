@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { aiVoiceAgentsForConstruction } from '@/content/Solutions';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: aiVoiceAgentsForConstruction.titleTag,
@@ -68,10 +69,18 @@ export default function ForConstructionPage() {
           text: 'Learn More',
           href: '#why-construction-need-ai-voice-agents',
         }}
-        image="/images/solutions/ai-voice-agent-construction-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+                              <AutomationHeroMockup
+                                industry="Construction"
+                                triggerLabel="New Lead Inquiry"
+                                actionLabels={['Provide Project Details', 'Schedule Site Visit', 'Send Quote']}
+                                metricValue="1,200"
+                                metricLabel="leads engaged automatically this week"
+                                submetric="85% improved conversion rate"
+                                platform="CRM + Marketing Automation"
+                                accent="#F97316"
+                              />
+                            }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForConstructionPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForConstructionPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where voice agent pays off for construction."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where voice agent pays off for construction."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

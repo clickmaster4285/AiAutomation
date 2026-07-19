@@ -109,84 +109,84 @@ const cardVariants: Variants = {
 export default function AutomationByFunctionClient() {
   return (
     <div className="bg-white text-gray-900 overflow-x-hidden">
-   {/* ── HERO ── */}
-<motion.section
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.1 }}
-  variants={fadeUp}
-  className="relative pt-32 pb-24 overflow-hidden bg-black"
->
-  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:56px_56px]" />
-  <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_100%_50%,rgba(249,115,22,0.12),transparent)]" />
-
-  <div className="relative max-w-[84vw] px-6 mx-auto">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      {/* ── LEFT COLUMN: Text ── */}
-      <div>
-        <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-orange-800/60 bg-orange-950/30">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-          <span className="eyebrow text-brand text-[11px]">Automation by Functions</span>
-        </div>
-
-        <h1 className="display text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[0.95]">
-          Automate the work,<br />
-          <span className="display-italic text-brand">not the people.</span>
-        </h1>
-        <p className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed mb-10">
-          Every department in your business has repetitive, automatable work. We build automation tailored to how your Sales, Marketing, Finance, HR, and Operations teams actually operate so they can do more with less.
-        </p>
-        <div className="flex flex-wrap items-center gap-4">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-brand hover:bg-black text-white px-8 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg shadow-brand/30 hover:shadow-black/30"
-          >
-            Choose your function <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </div>
-
-      {/* ── RIGHT COLUMN: Image (big, right edge faded) ── */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-        className="flex justify-center lg:justify-end"
+      {/* ── HERO ── */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={fadeUp}
+        className="relative pt-32 pb-24 overflow-hidden bg-black"
       >
-        <div className="relative w-full max-w-5xl">
-          {/* Glow behind image */}
-          <div className="absolute -inset-8 rounded-3xl blur-3xl opacity-70"
-            style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.35) 0%, rgba(249,115,22,0) 70%)' }} />
-          <div className="absolute -inset-4 rounded-2xl blur-2xl opacity-50"
-            style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.2) 0%, transparent 70%)' }} />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:56px_56px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_100%_50%,rgba(249,115,22,0.12),transparent)]" />
 
-          <motion.img
-            src="/images/mini.png"
-            alt="Automation by Function illustration"
-            className="w-full h-auto rounded-2xl shadow-2xl shadow-brand/10 object-cover"
-            style={{
-              maskImage: 'linear-gradient(to left, transparent 0%, black 25%, black 100%)',
-              WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 25%, black 100%)',
-            }}
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-              const parent = target.parentElement;
-              if (parent) {
-                const fallback = document.createElement('div');
-                fallback.className = 'w-full aspect-[4/3] flex items-center justify-center text-5xl font-black text-brand/30';
-                fallback.textContent = '⚙️';
-                parent.appendChild(fallback);
-              }
-            }}
-          />
+        <div className="relative max-w-[84vw] px-6 mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* ── LEFT COLUMN: Text ── */}
+            <div>
+              <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-orange-800/60 bg-orange-950/30">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand" />
+                <span className="eyebrow text-brand text-[11px]">Automation by Functions</span>
+              </div>
+
+              <h1 className="display text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-[0.95]">
+                Automate the work,<br />
+                <span className="display-italic text-brand">not the people.</span>
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed mb-10">
+                Every department in your business has repetitive, automatable work. We build automation tailored to how your Sales, Marketing, Finance, HR, and Operations teams actually operate so they can do more with less.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-brand hover:bg-black text-white px-8 py-4 rounded-full font-semibold text-sm transition-colors shadow-lg shadow-brand/30 hover:shadow-black/30"
+                >
+                  Choose your function <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* ── RIGHT COLUMN: Image ── */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+              className="flex justify-center lg:justify-end"
+            >
+              <div className="relative w-full max-w-5xl">
+                <div className="absolute -inset-8 rounded-3xl blur-3xl opacity-70"
+                  style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.35) 0%, rgba(249,115,22,0) 70%)' }} />
+                <div className="absolute -inset-4 rounded-2xl blur-2xl opacity-50"
+                  style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.2) 0%, transparent 70%)' }} />
+
+                <motion.img
+                  src="/images/mini.png"
+                  alt="Automation by Function illustration"
+                  className="w-full h-auto rounded-2xl shadow-2xl shadow-brand/10 object-cover"
+                  style={{
+                    maskImage: 'linear-gradient(to left, transparent 0%, black 25%, black 100%)',
+                    WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 25%, black 100%)',
+                  }}
+                  animate={{ y: [0, -12, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      const fallback = document.createElement('div');
+                      fallback.className = 'w-full aspect-[4/3] flex items-center justify-center text-5xl font-black text-brand/30';
+                      fallback.textContent = '⚙️';
+                      parent.appendChild(fallback);
+                    }
+                  }}
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </motion.div>
-    </div>
-  </div>
-</motion.section>
+      </motion.section>
+
       {/* ── STATS ── */}
       <motion.section
         initial="hidden"
@@ -196,9 +196,14 @@ export default function AutomationByFunctionClient() {
         className="border-y border-gray-100 bg-gray-50"
       >
         <div className="max-w-[84vw] px-6 mx-auto py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((s, i) => (
-              <motion.div key={i} variants={fadeUp} custom={i} className="flex flex-col gap-1">
+              <motion.div 
+                key={i} 
+                variants={fadeUp} 
+                custom={i} 
+                className="flex flex-col items-center gap-1"
+              >
                 <span className="text-4xl font-bold text-brand font-sans">{s.value}</span>
                 <span className="text-xs text-gray-500 uppercase tracking-widest font-medium">{s.label}</span>
               </motion.div>
@@ -263,59 +268,60 @@ export default function AutomationByFunctionClient() {
         </div>
       </motion.section>
 
-    {/* ── HOW IT WORKS / THE PROCESS ── */}
-<motion.section
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.1 }}
-  variants={staggerContainer}
-  className="py-24 bg-gray-950 text-white relative overflow-hidden"
->
-  <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_70%_at_0%_50%,rgba(249,115,22,0.08),transparent)]" />
-  <div className="relative max-w-[84vw] px-6 mx-auto">
-    <motion.div variants={fadeUp} className="mb-14">
-      <p className="eyebrow text-brand text-[11px] mb-3">The Process</p>
-      <h2 className="display text-4xl md:text-5xl text-white">
-        From spreadsheet chaos<br />
-        <span className="display-italic text-brand">to automated calm.</span>
-      </h2>
-    </motion.div>
+      {/* ── HOW IT WORKS / THE PROCESS ── */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={staggerContainer}
+        className="py-24 bg-gray-950 text-white relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_70%_at_0%_50%,rgba(249,115,22,0.08),transparent)]" />
+        <div className="relative max-w-[84vw] px-6 mx-auto">
+          <motion.div variants={fadeUp} className="mb-14">
+            <p className="eyebrow text-brand text-[11px] mb-3">The Process</p>
+            <h2 className="display text-4xl md:text-5xl text-white">
+              From spreadsheet chaos<br />
+              <span className="display-italic text-brand">to automated calm.</span>
+            </h2>
+          </motion.div>
 
-    <div className="grid md:grid-cols-2 gap-px bg-gray-800 border border-gray-800 rounded-2xl overflow-hidden">
-      {howItWorks.map((step, i) => (
-        <motion.div
-          key={i}
-          variants={fadeUp}
-          custom={i}
-          whileHover={{
-            scale: 1.02,
-            backgroundColor: 'rgba(249,115,22,0.10)',
-            borderColor: 'var(--brand)',
-            transition: { duration: 0.2, ease: 'easeInOut' },
-          }}
-          className="bg-gray-950 p-10 flex flex-col gap-4 border border-transparent rounded-lg transition-all duration-200 cursor-default"
-        >
-          <motion.span
-            whileHover={{
-              color: 'var(--brand)',
-              scale: 1.05,
-              transition: { duration: 0.2 },
-            }}
-            className="text-5xl font-bold text-gray-700 font-sans transition-colors duration-200"
-          >
-            {String(i + 1).padStart(2, '0')}
-          </motion.span>
-          <h3 className="text-xl font-semibold text-white group-hover:text-brand transition-colors duration-200">
-            {step.title}
-          </h3>
-          <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-200">
-            {step.desc}
-          </p>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</motion.section>
+          <div className="grid md:grid-cols-2 gap-px bg-gray-800 border border-gray-800 rounded-2xl overflow-hidden">
+            {howItWorks.map((step, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                custom={i}
+                whileHover={{
+                  scale: 1.02,
+                  backgroundColor: 'rgba(249,115,22,0.10)',
+                  borderColor: 'var(--brand)',
+                  transition: { duration: 0.2, ease: 'easeInOut' },
+                }}
+                className="bg-gray-950 p-10 flex flex-col gap-4 border border-transparent rounded-lg transition-all duration-200 cursor-default"
+              >
+                <motion.span
+                  whileHover={{
+                    color: 'var(--brand)',
+                    scale: 1.05,
+                    transition: { duration: 0.2 },
+                  }}
+                  className="text-5xl font-bold text-gray-700 font-sans transition-colors duration-200"
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </motion.span>
+                <h3 className="text-xl font-semibold text-white group-hover:text-brand transition-colors duration-200">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-200">
+                  {step.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
       {/* ── CTA ── */}
       <motion.section
         initial="hidden"
@@ -352,7 +358,7 @@ export default function AutomationByFunctionClient() {
               </p>
 
               <Link
-                href="/free-automation-audit"
+                href="/contact"
                 className="group relative inline-flex items-center gap-3 bg-brand hover:bg-orange-600 text-white px-10 py-4 rounded-full font-semibold text-base transition-all shadow-lg shadow-brand/30 hover:shadow-brand/50 hover:scale-[1.02]"
               >
                 <span>Book your free audit</span>

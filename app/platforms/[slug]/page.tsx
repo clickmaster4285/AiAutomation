@@ -1,17 +1,20 @@
 // app/platforms/[slug]/page.tsx
 import { notFound } from 'next/navigation';
+import dynamic from 'next/dynamic';
+import type { ComponentType } from 'react';
 import { platformContent, platformSlugs } from '@/content/Platforms';
-import Hero from '@/components/platforms/Hero';
-import TextSec from '@/components/platforms/TextSec';
-import FeatureSec from '@/components/platforms/FeatureSec';
-import GridSec from '@/components/platforms/GridSec';
-import FaqSec from '@/components/platforms/FAQSec';
-import CTASec from '@/components/platforms/CTASec';
-import StepSec from '@/components/platforms/StepSec';
-import PainPoint from '@/components/platforms/PainPoint';
+
+const Hero = dynamic(() => import('@/components/platforms/Hero').then((mod) => mod.default));
+const TextSec = dynamic(() => import('@/components/platforms/TextSec').then((mod) => mod.default));
+const FeatureSec = dynamic(() => import('@/components/platforms/FeatureSec').then((mod) => mod.default));
+const GridSec = dynamic(() => import('@/components/platforms/GridSec').then((mod) => mod.default));
+const FaqSec = dynamic(() => import('@/components/platforms/FAQSec').then((mod) => mod.default));
+const CTASec = dynamic(() => import('@/components/platforms/CTASec').then((mod) => mod.default));
+const StepSec = dynamic(() => import('@/components/platforms/StepSec').then((mod) => mod.default));
+const PainPoint = dynamic(() => import('@/components/platforms/PainPoint').then((mod) => mod.default));
 
 // Map section type to component
-const sectionMap: Record<string, React.ComponentType<{ section: any }>> = {
+const sectionMap: Record<string, ComponentType<{ section: any }>> = {
   hero: Hero,
   text: TextSec,
   features: FeatureSec,

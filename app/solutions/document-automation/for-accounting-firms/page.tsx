@@ -1,22 +1,23 @@
 // app/solutions/document-automation/for-accounting-firms/page.tsx
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { PageWrapper } from '@/components/solutions/layout/PageWrapper';
 import { HeroSection } from '@/components/solutions/sections/Hero';
-import {
-  WhySection,
-  ProblemsSection,
-  AutomationSection,
-  StartSection,
-  ExampleSection,
-  BoundariesSection,
-  RealitiesSection,
-  ReturnSection,
-  WhyUsSection,
-} from '@/components/solutions/sections/variants';
 import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { documentAutomationForAccountingFirms } from '@/content/Solutions/document-automation-for-accounting-firms';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
+
+const WhySection = dynamic(() => import('@/components/solutions/sections/variants').then((mod) => mod.WhySection));
+const ProblemsSection = dynamic(() => import('@/components/solutions/sections/variants').then((mod) => mod.ProblemsSection));
+const AutomationSection = dynamic(() => import('@/components/solutions/sections/variants').then((mod) => mod.AutomationSection));
+const StartSection = dynamic(() => import('@/components/solutions/sections/variants').then((mod) => mod.StartSection));
+const ExampleSection = dynamic(() => import('@/components/solutions/sections/variants').then((mod) => mod.ExampleSection));
+const BoundariesSection = dynamic(() => import('@/components/solutions/sections/variants').then((mod) => mod.BoundariesSection));
+const RealitiesSection = dynamic(() => import('@/components/solutions/sections/variants').then((mod) => mod.RealitiesSection));
+const ReturnSection = dynamic(() => import('@/components/solutions/sections/variants').then((mod) => mod.ReturnSection));
+const WhyUsSection = dynamic(() => import('@/components/solutions/sections/variants').then((mod) => mod.WhyUsSection));
 
 export const metadata: Metadata = {
   title: documentAutomationForAccountingFirms.titleTag,
@@ -68,10 +69,18 @@ export default function ForAccountingFirmsPage() {
           text: 'Learn More',
           href: '#why-accounting-firms-need-document-data-automation',
         }}
-        image="/images/solutions/document-automation-accounting-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Accounting Firms"
+            triggerLabel="New Document Request"
+            actionLabels={['Generate Invoices', 'Create Reports', 'Manage Client Data']}
+            metricValue="5000"
+            metricLabel="documents processed automatically each month"
+            submetric="90% reduction in processing time"
+            platform="Document & Data Automation + Accounting Software"
+            accent="#3B82F6"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForAccountingFirmsPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForAccountingFirmsPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where document automation pays off for accounting firms."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where document automation pays off for accounting firms."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

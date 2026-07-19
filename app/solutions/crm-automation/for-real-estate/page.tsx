@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { crmAutomationForRealEstate } from '@/content/Solutions/crm-automation-for-real-estate';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: crmAutomationForRealEstate.titleTag,
@@ -68,10 +69,18 @@ export default function ForRealEstatePage() {
           text: 'Learn More',
           href: '#why-real-estate-need-crm-automation',
         }}
-        image="/images/solutions/crm-automation-real-estate-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Real Estate"
+            triggerLabel="New Client Inquiry"
+            actionLabels={['Qualify Lead', 'Send Informational Email', 'Schedule Consultation']}
+            metricValue="500"
+            metricLabel="new client inquiries captured automatically each month"
+            submetric="75% increase in lead conversion rates"
+            platform="CRM + Real Estate Management System"
+            accent="#8B5CF6"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForRealEstatePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForRealEstatePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where CRM automation pays off for real estate."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where CRM automation pays off for real estate."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

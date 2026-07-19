@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { aiWorkflowAutomationForManufacturing } from '@/content/Solutions/ai-workflow-automation-for-manufacturing';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: aiWorkflowAutomationForManufacturing.titleTag,
@@ -68,10 +69,18 @@ export default function ForManufacturingPage() {
           text: 'Learn More',
           href: '#why-manufacturing-need-ai-workflow-automation',
         }}
-        image="/images/solutions/ai-workflow-automation-manufacturing-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+                                            <AutomationHeroMockup
+                                              industry="Manufacturing"
+                                              triggerLabel="New Production Request"
+                                              actionLabels={['Gather Requirements', 'Schedule Meeting', 'Submit Proposal']}
+                                              metricValue="5,000"
+                                              metricLabel="production requests processed automatically this week"
+                                              submetric="90% improved turnaround time"
+                                              platform="CRM + Manufacturing Platform"
+                                              accent="#3B82F6"
+                                            />
+                                          }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForManufacturingPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForManufacturingPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where workflow automation pays off for manufacturing."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where workflow automation pays off for manufacturing."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

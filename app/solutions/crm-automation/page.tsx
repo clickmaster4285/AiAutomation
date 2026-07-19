@@ -42,7 +42,7 @@ export default function CRMAutomationPage() {
     badge: 'CRM Automation',
     heading: 'CRM Automation Solutions',
     subheading:
-      'Keep your CRM accurate and active automatically — built on the platforms you already use.',
+      'Keep your CRM accurate and active automaticallybuilt on the platforms you already use.',
     primaryCta: {
       text: 'Book a Free Audit',
       href: '/free-automation-audit',
@@ -59,7 +59,7 @@ export default function CRMAutomationPage() {
       title: 'Airtable CRM Automation',
       icon: Database,
       description:
-        'Flexible CRM automation on Airtable — perfect for custom operational tools and data workflows without full custom development.',
+        'Flexible CRM automation on Airtableperfect for custom operational tools and data workflows without full custom development.',
       href: '/solutions/crm-automation/with-airtable',
       features: ['Flexible database', 'Custom workflows', 'Ops teams'],
       color: 'from-brand/30 to-orange-400/30',
@@ -74,7 +74,7 @@ export default function CRMAutomationPage() {
       title: 'HubSpot CRM Automation',
       icon: Mail,
       description:
-        'Extend HubSpot\'s CRM power with AI workflows connected to your wider stack — ideal for teams already running sales and marketing on HubSpot.',
+        'Extend HubSpot\'s CRM power with AI workflows connected to your wider stackideal for teams already running sales and marketing on HubSpot.',
       href: '/solutions/crm-automation/with-hubspot',
       features: ['Native CRM', 'AI integration', 'Scalable'],
       color: 'from-brand/30 to-orange-400/30',
@@ -89,7 +89,7 @@ export default function CRMAutomationPage() {
       title: 'Salesforce CRM Automation',
       icon: Cloud,
       description:
-        'Enterprise-grade CRM automation on Salesforce — ideal for organizations with Salesforce at the core of revenue operations.',
+        'Enterprise-grade CRM automation on Salesforceideal for organizations with Salesforce at the core of revenue operations.',
       href: '/solutions/crm-automation/with-salesforce',
       features: ['Enterprise security', 'Native CRM', 'Scalable'],
       color: 'from-brand/30 to-orange-400/30',
@@ -239,28 +239,28 @@ export default function CRMAutomationPage() {
     {
       id: 'automatic-record-updates',
       title: 'Automatic Record Updates',
-      description: 'Activity and data captured without manual entry — your CRM stays current automatically.',
+      description: 'Activity and data captured without manual entryyour CRM stays current automatically.',
       icon: Database,
       color: 'from-blue-500/20 to-cyan-500/20',
     },
     {
       id: 'data-hygiene',
       title: 'Data Hygiene',
-      description: 'Deduplication, enrichment, and cleaning that runs continuously — keep your CRM pristine.',
+      description: 'Deduplication, enrichment, and cleaning that runs continuouslykeep your CRM pristine.',
       icon: Sparkles,
       color: 'from-green-500/20 to-emerald-500/20',
     },
     {
       id: 'lead-routing',
       title: 'Lead Routing & Sequencing',
-      description: 'The right lead to the right person with the right follow-up — every time.',
+      description: 'The right lead to the right person with the right follow-upevery time.',
       icon: Users,
       color: 'from-purple-500/20 to-pink-500/20',
     },
     {
       id: 'cross-system-sync',
       title: 'Cross-System Sync',
-      description: 'Your CRM connected to billing, support, and marketing tools — data flows seamlessly.',
+      description: 'Your CRM connected to billing, support, and marketing toolsdata flows seamlessly.',
       icon: Link2,
       color: 'from-orange-500/20 to-red-500/20',
     },
@@ -397,7 +397,7 @@ export default function CRMAutomationPage() {
             </span>
             <h2 className="display text-3xl md:text-5xl text-white font-bold">Choose Your Platform</h2>
             <p className="text-base md:text-lg text-gray-300 mt-4 leading-relaxed max-w-2xl mx-auto">
-              We build CRM automation on the platforms you already use — with honest platform recommendations.
+              We build CRM automation on the platforms you already usewith honest platform recommendations.
             </p>
           </div>
 
@@ -595,26 +595,26 @@ export default function CRMAutomationPage() {
                   className="relative group"
                 >
                   <div
-                    className={`
-                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 
+                    className="
+                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100
                       transition-all duration-500 blur-xl
-                      bg-gradient-to-r ${industry.color}
-                    `}
+                      bg-brand/10
+                    "
                   />
 
                   <Link
                     href={industry.href}
-                    className={`
-                      relative block h-full p-6 rounded-2xl 
-                      bg-gradient-to-br ${industry.color}
-                      border-2 border-brand/30 group-hover:border-brand/60
-                      transition-all duration-300 shadow-lg hover:shadow-2xl
-                      backdrop-blur-sm bg-white/5
+                    className="
+                      relative block h-full p-6 rounded-2xl
+                      bg-gradient-to-br from-white/10 via-white/5 to-brand/5
+                      border border-white/10 group-hover:border-brand/30
+                      transition-all duration-300 shadow-[0_12px_30px_rgba(0,0,0,0.18)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.24)]
+                      backdrop-blur-sm
                       text-white
-                    `}
+                    "
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand blur-3xl" />
+                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand/25 blur-3xl" />
                     </div>
 
                     <motion.div
@@ -624,13 +624,13 @@ export default function CRMAutomationPage() {
                       whileHover="hover"
                     >
                       <div
-                        className={`
-                          w-14 h-14 rounded-2xl 
-                          bg-gradient-to-br ${industry.color}
+                        className="
+                          w-14 h-14 rounded-2xl
+                          bg-brand/10
                           flex items-center justify-center
                           transition-all duration-300
                           group-hover:shadow-lg
-                        `}
+                        "
                       >
                         <Icon className="h-7 w-7 text-brand" />
                       </div>

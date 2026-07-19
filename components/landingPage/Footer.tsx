@@ -38,8 +38,8 @@ export default function Footer() {
             <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-5">Company</h4>
             <ul className="space-y-4">
               {[
-                { label: 'Work', href: '/#work' },
-                { label: 'Process', href: '/#process' },
+                { label: 'Work', href: '/work' },
+                { label: 'Process', href: '/process' },
                 { label: 'About', href: '/about' },
                 { label: 'Blog', href: '/blog' },
               ].map((item) => (
@@ -60,9 +60,9 @@ export default function Footer() {
                 <Mail className="h-4 w-4 text-brand mt-0.5 flex-shrink-0" />
                 <a 
                   href="mailto:sales@clickmastersdigitalmarketing.com" 
-                  className="hover:text-brand transition-colors whitespace-nowrap"
+                  className="hover:text-brand transition-colors break-all"
                 >
-                  sales@clickmastersdigitalmarketing.com
+                  sales@clickmastersdigital<br />marketing.com
                 </a>
               </li>
               <li className="flex items-start gap-3">

@@ -606,7 +606,7 @@ export default function Hero({ section }: HeroProps) {
       )}
 
       {/* ====== MAIN CONTENT ====== */}
-      <div className="mx-auto max-w-[84vw] px-6 pt-24 pb-20">
+      <div className="mx-auto max-w-[92vw] sm:max-w-[84vw] px-4 sm:px-6 pt-20 pb-16 sm:pt-24 sm:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2">
 
           {/* ====== LEFT CONTENT ====== */}
@@ -628,7 +628,7 @@ export default function Hero({ section }: HeroProps) {
             </motion.div>
 
             {/* Heading – uses display class */}
-            <motion.h1 className="display mb-4 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1]">
+            <motion.h1 className="display mb-4 text-3xl sm:text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1]">
               {words.map((word, index) => {
                 const isHighlighted = highlightWords.some(hw =>
                   word.toLowerCase().includes(hw.toLowerCase())
@@ -654,7 +654,7 @@ export default function Hero({ section }: HeroProps) {
             {subheading && (
               <motion.p
                 variants={fadeInUp}
-                className="mb-6 text-lg text-gray-300 md:text-xl max-w-xl leading-relaxed font-light text-justify"
+                className="mb-6 text-base sm:text-lg text-gray-300 md:text-xl max-w-xl leading-relaxed font-light text-justify"
               >
                 {subheading}
               </motion.p>
@@ -663,7 +663,7 @@ export default function Hero({ section }: HeroProps) {
             {/* Stats + CTAs – with square corners and hover effects */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-row items-center gap-6 mt-2 flex-wrap"
+              className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6 mt-2 flex-wrap"
             >
               {stats.map((stat, idx) => (
                 <div key={idx} className="flex items-baseline gap-1.5">
@@ -678,7 +678,7 @@ export default function Hero({ section }: HeroProps) {
                   <div className="absolute inset-0 bg-brand/30 blur-xl rounded-none group-hover:blur-2xl transition-all" />
                   <Button
                     size="lg"
-                    className="relative bg-brand hover:bg-brand-dark text-white px-8 py-6 text-lg rounded-none transition-all font-medium shadow-lg shadow-brand/25"
+                    className="relative bg-brand hover:bg-brand-dark text-white px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg rounded-none transition-all font-medium shadow-lg shadow-brand/25 w-full sm:w-auto"
                   >
                     {primaryCta.text}
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -692,7 +692,7 @@ export default function Hero({ section }: HeroProps) {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="font-medium rounded-none transition-all duration-300"
+                    className="font-medium rounded-none transition-all duration-300 w-full sm:w-auto"
                     style={{
                       background: '#ffffff',
                       color: '#000000',

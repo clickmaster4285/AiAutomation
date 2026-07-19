@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { businessProcessAutomationForInsurance } from '@/content/Solutions/bussiness-process-automation-for-insurance';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: businessProcessAutomationForInsurance.titleTag,
@@ -68,10 +69,18 @@ export default function ForInsurancePage() {
           text: 'Learn More',
           href: '#why-insurance-agencies-need-bussiness-process-automation',
         }}
-        image="/images/solutions/bussiness-process-automation-insurance-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Insurance"
+            triggerLabel="New Lead Inquiry"
+            actionLabels={['Send Quote', 'Schedule Consultation', 'Close Deal']}
+            metricValue="2,000"
+            metricLabel="leads managed automatically this month"
+            submetric="80% improved conversion rate"
+            platform="CRM + Policy Management System"
+            accent="#3B82F6"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForInsurancePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForInsurancePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where process automation pays off for insurance agencies."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where process automation pays off for insurance agencies."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

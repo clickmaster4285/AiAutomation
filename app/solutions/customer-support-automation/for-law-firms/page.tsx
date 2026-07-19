@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { customerSupportAutomationForLawFirms } from '@/content/Solutions/customer-support-automation-for-law-firms';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: customerSupportAutomationForLawFirms.titleTag,
@@ -68,10 +69,18 @@ export default function ForLawFirmsPage() {
           text: 'Learn More',
           href: '#why-law-firms-need-customer-support-automation',
         }}
-        image="/images/solutions/customer-support-automation-law-firms-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Law Firms"
+            triggerLabel="New Client Inquiry"
+            actionLabels={['Respond to Inquiry', 'Schedule Consultation', 'Provide Legal Information']}
+            metricValue="600"
+            metricLabel="new client inquiries handled automatically each month"
+            submetric="80% reduction in response time"
+            platform="Customer Support + Legal Case Management System"
+            accent="#10B981"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForLawFirmsPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForLawFirmsPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where support automation pays off for law firms."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where support automation pays off for law firms."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

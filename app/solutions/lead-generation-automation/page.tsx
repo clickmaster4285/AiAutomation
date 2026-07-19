@@ -38,7 +38,7 @@ export default function LeadGenerationPage() {
   const heroData = {
     badge: 'Lead Generation Automation',
     heading: 'Lead Generation Automation Solutions',
-    subheading: 'Capture, qualify, and route leads instantly with AI — built on the platforms you already use.',
+    subheading: 'Capture, qualify, and route leads instantly with AIbuilt on the platforms you already use.',
     primaryCta: {
       text: 'Book a Free Audit',
       href: '/free-automation-audit',
@@ -54,7 +54,7 @@ export default function LeadGenerationPage() {
       id: 'hubspot',
       title: 'HubSpot Lead Generation',
       icon: Mail,
-      description: 'Extend HubSpot\'s power with AI lead capture, qualification, and routing — ideal for teams already running sales and marketing on HubSpot.',
+      description: 'Extend HubSpot\'s power with AI lead capture, qualification, and routingideal for teams already running sales and marketing on HubSpot.',
       href: '/solutions/lead-generation-automation/with-hubspot',
       features: ['Native CRM', 'AI qualification', 'Instant response'],
       color: 'from-brand/30 to-orange-400/30',
@@ -68,7 +68,7 @@ export default function LeadGenerationPage() {
       id: 'salesforce',
       title: 'Salesforce Lead Generation',
       icon: Cloud,
-      description: 'Enterprise-grade lead generation on Salesforce — ideal for organizations with Salesforce at the core of revenue operations.',
+      description: 'Enterprise-grade lead generation on Salesforceideal for organizations with Salesforce at the core of revenue operations.',
       href: '/solutions/lead-generation-automation/with-salesforce',
       features: ['Enterprise security', 'Native CRM', 'Scalable'],
       color: 'from-brand/30 to-orange-400/30',
@@ -217,35 +217,35 @@ export default function LeadGenerationPage() {
     {
       id: 'instant-response',
       title: 'Instant Lead Response',
-      description: 'Every inquiry engaged within seconds, at any hour — no lead waits.',
+      description: 'Every inquiry engaged within seconds, at any hourno lead waits.',
       icon: Target,
       color: 'from-blue-500/20 to-cyan-500/20',
     },
     {
       id: 'conversational-qualification',
       title: 'Conversational Qualification',
-      description: 'Needs, fit, and timeline established naturally — before human hand-off.',
+      description: 'Needs, fit, and timeline established naturallybefore human hand-off.',
       icon: Mail,
       color: 'from-green-500/20 to-emerald-500/20',
     },
     {
       id: 'enrichment-scoring',
       title: 'Enrichment & Scoring',
-      description: 'Leads researched and prioritized automatically — so you know who to call first.',
+      description: 'Leads researched and prioritized automaticallyso you know who to call first.',
       icon: Sparkles,
       color: 'from-purple-500/20 to-pink-500/20',
     },
     {
       id: 'nurture-sequences',
       title: 'Nurture Sequences',
-      description: 'Long-tail sequences that convert over months — because most leads aren\'t ready today.',
+      description: 'Long-tail sequences that convert over monthsbecause most leads aren\'t ready today.',
       icon: Mail,
       color: 'from-orange-500/20 to-red-500/20',
     },
     {
       id: 'routing-context',
       title: 'Routing with Context',
-      description: 'Sales-ready leads delivered to the right person, briefed — no warm hand-off needed.',
+      description: 'Sales-ready leads delivered to the right person, briefedno warm hand-off needed.',
       icon: ArrowRight,
       color: 'from-teal-500/20 to-cyan-500/20',
     },
@@ -375,7 +375,7 @@ export default function LeadGenerationPage() {
             </span>
             <h2 className="display text-3xl md:text-5xl text-white font-bold">Choose Your Platform</h2>
             <p className="text-base md:text-lg text-gray-300 mt-4 leading-relaxed max-w-2xl mx-auto">
-              We build lead generation automation on the platforms you already use — with honest platform recommendations.
+              We build lead generation automation on the platforms you already usewith honest platform recommendations.
             </p>
           </div>
 
@@ -573,26 +573,26 @@ export default function LeadGenerationPage() {
                   className="relative group"
                 >
                   <div
-                    className={`
-                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 
+                    className="
+                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100
                       transition-all duration-500 blur-xl
-                      bg-gradient-to-r ${industry.color}
-                    `}
+                      bg-brand/10
+                    "
                   />
 
                   <Link
                     href={industry.href}
-                    className={`
-                      relative block h-full p-6 rounded-2xl 
-                      bg-gradient-to-br ${industry.color}
-                      border-2 border-brand/30 group-hover:border-brand/60
-                      transition-all duration-300 shadow-lg hover:shadow-2xl
-                      backdrop-blur-sm bg-white/5
+                    className="
+                      relative block h-full p-6 rounded-2xl
+                      bg-gradient-to-br from-white/10 via-white/5 to-brand/5
+                      border border-white/10 group-hover:border-brand/30
+                      transition-all duration-300 shadow-[0_12px_30px_rgba(0,0,0,0.18)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.24)]
+                      backdrop-blur-sm
                       text-white
-                    `}
+                    "
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand blur-3xl" />
+                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand/25 blur-3xl" />
                     </div>
 
                     <motion.div
@@ -602,13 +602,13 @@ export default function LeadGenerationPage() {
                       whileHover="hover"
                     >
                       <div
-                        className={`
-                          w-14 h-14 rounded-2xl 
-                          bg-gradient-to-br ${industry.color}
+                        className="
+                          w-14 h-14 rounded-2xl
+                          bg-brand/10
                           flex items-center justify-center
                           transition-all duration-300
                           group-hover:shadow-lg
-                        `}
+                        "
                       >
                         <Icon className="h-7 w-7 text-brand" />
                       </div>

@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { aiAgentsForRetail } from '@/content/Solutions';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: aiAgentsForRetail.titleTag,
@@ -68,10 +69,18 @@ export default function ForRetailPage() {
           text: 'Learn More',
           href: '#why-retail-need-ai-agent-development',
         }}
-        image="/images/ai-agent-retail-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+                              <AutomationHeroMockup
+                                industry="Retail"
+                                triggerLabel="New Customer Inquiry"
+                                actionLabels={['Send Product Details', 'Provide Recommendations', 'Process Returns']}
+                                metricValue="2,500"
+                                metricLabel="customer inquiries handled automatically this week"
+                                submetric="80% improved response time"
+                                platform="CRM + E-commerce Platform"
+                                accent="#F97316"
+                              />
+                            }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForRetailPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForRetailPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where AI agent pays off for retail."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where AI agent pays off for retail."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

@@ -157,13 +157,13 @@ export default function TextSec({ section }: { section: Section }) {
   if (isStandalone) {
     const text = typeof content === 'string' ? content : content[0];
     return (
-      <section className="py-24 md:py-32 border-t border-gray-200/50 bg-gray-50/80 relative overflow-hidden">
+      <section className="py-20 sm:py-24 lg:py-32 border-t border-gray-200/50 bg-gray-50/80 relative overflow-hidden">
         {/* Light grey with minimal orange accents */}
         <div className="absolute top-0 right-0 w-1/4 h-full bg-gradient-to-l from-orange-400/5 via-orange-300/3 to-transparent pointer-events-none" />
         <div className="absolute top-1/2 right-0 w-48 h-48 bg-orange-400/8 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-gray-200/30 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute inset-0 bg-grid-gray-900/[0.02] bg-[size:60px_60px]" />
-        <div className="mx-auto max-w-[84vw] px-6 relative">
+        <div className="mx-auto max-w-[92vw] sm:max-w-[84vw] px-4 sm:px-6 relative">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -178,7 +178,7 @@ export default function TextSec({ section }: { section: Section }) {
                 scale: 1.02,
                 transition: { duration: 0.3 }
               }}
-              className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed font-serif font-medium italic tracking-wide transition-all duration-300 cursor-default text-justify"
+              className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed font-serif font-medium italic tracking-wide transition-all duration-300 cursor-default text-justify"
             >
               {text}
             </motion.p>
@@ -216,7 +216,7 @@ export default function TextSec({ section }: { section: Section }) {
   const iconColor = 'text-brand';
 
   return (
-    <section className={`py-24 md:py-32 ${borderClasses} ${bgClasses} relative overflow-hidden ${patternClasses}`}>
+    <section className={`py-20 sm:py-24 lg:py-32 ${borderClasses} ${bgClasses} relative overflow-hidden ${patternClasses}`}>
       {/* Light grey with minimal orange accents */}
       <div className="absolute top-0 right-0 w-1/4 h-full bg-gradient-to-l from-orange-400/5 via-orange-300/3 to-transparent pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-48 h-48 bg-orange-400/8 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
@@ -251,13 +251,13 @@ export default function TextSec({ section }: { section: Section }) {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainer}
-          className={hasImage ? 'grid grid-cols-1 lg:grid-cols-2 gap-16 items-center' : ''}
+          className={hasImage ? 'grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center' : ''}
         >
           <div className={hasImage ? 'order-1' : ''}>
             {section.heading && (
               <motion.h2 
                 variants={fadeInLeft}
-                className={`display mb-6 text-3xl font-bold md:text-4xl ${headingColor} flex items-start gap-4 text-left relative`}
+                className={`display mb-6 text-2xl sm:text-3xl font-bold md:text-4xl ${headingColor} flex items-start gap-4 text-left relative`}
               >
                 <Quote className={`h-8 w-8 ${iconColor} flex-shrink-0 mt-1`} />
                 <span className="relative">
@@ -288,7 +288,7 @@ export default function TextSec({ section }: { section: Section }) {
             
             <motion.div 
               variants={fadeInUp}
-              className={`space-y-4 ${textColor} leading-relaxed text-lg pl-12 text-justify`}
+              className={`space-y-4 ${textColor} leading-relaxed text-base sm:text-lg pl-0 sm:pl-12 text-justify`}
             >
               {contentArray.map((paragraph, idx) => {
                 if (paragraph.includes('\n') || paragraph.includes('•') || paragraph.includes('-') || paragraph.match(/^\d+\./)) {

@@ -17,6 +17,8 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { documentAutomationForRealEstate } from '@/content/Solutions/document-automation-for-real-estate';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
+
 
 export const metadata: Metadata = {
   title: documentAutomationForRealEstate.titleTag,
@@ -68,10 +70,18 @@ export default function ForRealEstatePage() {
           text: 'Learn More',
           href: '#why-real-estate-need-document-data-automation',
         }}
-        image="/images/solutions/document-automation-realestate-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Real Estate"
+            triggerLabel="New Document Request"
+            actionLabels={['Generate Reports', 'Create Property Documents', 'Manage Client Data']}
+            metricValue="1800"
+            metricLabel="documents processed automatically each month"
+            submetric="85% reduction in processing time"
+            platform="Document & Data Automation + Real Estate Management System"
+            accent="#F59E0B"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +116,8 @@ export default function ForRealEstatePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +150,7 @@ export default function ForRealEstatePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where document automation pays off for real estate."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where document automation pays off for real estate."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

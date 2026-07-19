@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { reportingAutomationForEcommerce } from '@/content/Solutions/reporting-automation-for-ecommerce';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: reportingAutomationForEcommerce.titleTag,
@@ -68,10 +69,18 @@ export default function ForEcommercePage() {
           text: 'Learn More',
           href: '#why-ecommerce-need-reporting-automation',
         }}
-        image="/images/solutions/reporting-automation-ecommerce-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="E-commerce"
+            triggerLabel="New Document Request"
+            actionLabels={['Generate Reports', 'Create Invoices', 'Manage Client Data']}
+            metricValue="1500"
+            metricLabel="reports generated automatically each month"
+            submetric="50% increase in decision-making speed"
+            platform="Reporting Automation + E-commerce Platform"
+            accent="#10B981"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForEcommercePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForEcommercePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where reporting automation pays off for e-commerce."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where reporting automation pays off for e-commerce."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

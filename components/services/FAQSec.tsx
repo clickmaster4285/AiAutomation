@@ -183,8 +183,8 @@ export default function FAQSec({ section }: FAQSecProps) {
   };
 
   return (
-    <section className="relative py-24 md:py-32 border-t border-border bg-background overflow-hidden">
-      <div className="mx-auto max-w-[84vw] px-6 relative">
+    <section className="relative py-20 sm:py-24 lg:py-32 border-t border-border bg-background overflow-hidden">
+      <div className="mx-auto max-w-[92vw] sm:max-w-[84vw] px-4 sm:px-6 relative">
 
         {/* ── DECORATIVE ELEMENTS (absolute, right side, behind cards) ── */}
         <div
@@ -257,7 +257,7 @@ export default function FAQSec({ section }: FAQSecProps) {
               className="mb-12"
             >
               <span className="eyebrow text-brand block mb-2">FAQ</span>
-              <h2 className="display text-3xl md:text-4xl lg:text-5xl text-foreground">
+              <h2 className="display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground">
                 {section.heading}
               </h2>
             </motion.div>
@@ -286,10 +286,10 @@ export default function FAQSec({ section }: FAQSecProps) {
                 >
                   <button
                     onClick={() => toggleQuestion(idx)}
-                    className="w-full text-left p-5 md:p-6 flex items-start justify-between gap-4 focus:outline-none"
+                    className="w-full text-left p-4 sm:p-5 md:p-6 flex items-start justify-between gap-4 focus:outline-none"
                   >
                     <span
-                      className={`text-base md:text-lg font-medium transition-colors ${
+                      className={`text-sm sm:text-base md:text-lg font-medium transition-colors ${
                         isOpen
                           ? 'text-brand'
                           : 'text-foreground group-hover:text-brand'
@@ -322,7 +322,7 @@ export default function FAQSec({ section }: FAQSecProps) {
                         className="overflow-hidden"
                       >
                         <div className="px-5 pb-5 md:px-6 md:pb-6">
-                          <p className="text-muted-foreground leading-relaxed text-justify">
+                          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-justify">
                             {item.description}
                           </p>
                         </div>

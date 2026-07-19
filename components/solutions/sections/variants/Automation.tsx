@@ -1,4 +1,3 @@
-// components/solutions/sections/variants/AutomationSectio// components/solutions/sections/variants/AutomationSection.tsx
 'use client';
 
 import { motion } from 'framer-motion';
@@ -144,7 +143,7 @@ export function AutomationSection({ title, content }: AutomationSectionProps) {
               </h2>
               
               {introText && (
-                <p className="text-lg md:text-xl lg:text-2xl text-gray-500 max-w-xl leading-relaxed">
+                <p className="text-lg text-gray-500 max-w-xl leading-relaxed">
                   {introText}
                 </p>
               )}
@@ -176,7 +175,7 @@ export function AutomationSection({ title, content }: AutomationSectionProps) {
                       <Icon className="h-6 w-6 text-brand" />
                     </div>
                     <div>
-                      <h4 className="text-base md:text-lg font-semibold text-gray-900">{title}</h4>
+                      <h4 className="text-base md:text-lg text-gray-900">{title}</h4>
                       <p className="text-sm md:text-base text-gray-500 leading-relaxed">{description}</p>
                     </div>
                   </motion.div>
@@ -199,77 +198,79 @@ export function AutomationSection({ title, content }: AutomationSectionProps) {
             </div>
           </div>
 
-          {/* Right Content - Animated Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 gap-4"
-          >
-            {animatedCards.map((card, idx) => {
-              const Icon = card.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: card.delay }}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  className="group relative p-6 rounded-2xl bg-white border border-gray-100 hover:border-brand/20 hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  <div className="relative">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="h-6 w-6 text-brand" />
-                    </div>
-                    
-                    <div className="text-2xl md:text-3xl font-bold text-brand mb-1">
-                      {card.value}
-                    </div>
-                    
-                    <div className="text-sm font-semibold text-gray-900">
-                      {card.label}
-                    </div>
-                    
-                    <div className="text-xs text-gray-400">
-                      {card.desc}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-
-            {/* Animated progress bar card */}
+          {/* Right Content - Animated Cards with double top padding */}
+          <div className="flex flex-col gap-4 pt-[240px]">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 1 }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="col-span-2 p-6 rounded-2xl bg-white border border-gray-100 hover:border-brand/20 hover:shadow-xl transition-all duration-300"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="grid grid-cols-2 gap-4"
             >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-900">Automation Progress</span>
-                <span className="text-sm font-bold text-brand">78%</span>
-              </div>
-              <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: '78%' }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.5, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="h-full bg-gradient-to-r from-brand to-orange-400 rounded-full"
-                />
-              </div>
-              <div className="mt-3 flex items-center justify-between text-xs text-gray-400">
-                <span>Phase 1: Discovery</span>
-                <span>Phase 3: Optimization</span>
-              </div>
+              {animatedCards.map((card, idx) => {
+                const Icon = card.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: card.delay }}
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    className="group relative p-6 rounded-2xl bg-white border border-gray-100 hover:border-brand/20 hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    <div className="relative">
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className="h-6 w-6 text-brand" />
+                      </div>
+                      
+                      <div className="text-2xl md:text-3xl font-bold text-brand mb-1">
+                        {card.value}
+                      </div>
+                      
+                      <div className="text-sm font-medium text-gray-900">
+                        {card.label}
+                      </div>
+                      
+                      <div className="text-xs text-gray-400">
+                        {card.desc}
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+
+              {/* Animated progress bar card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="col-span-2 p-6 rounded-2xl bg-white border border-gray-100 hover:border-brand/20 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-gray-900">Automation Progress</span>
+                  <span className="text-sm font-bold text-brand">78%</span>
+                </div>
+                <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '78%' }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.5, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                    className="h-full bg-gradient-to-r from-brand to-orange-400 rounded-full"
+                  />
+                </div>
+                <div className="mt-3 flex items-center justify-between text-xs text-gray-400">
+                  <span>Phase 1: Discovery</span>
+                  <span>Phase 3: Optimization</span>
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

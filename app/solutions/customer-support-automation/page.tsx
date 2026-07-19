@@ -42,7 +42,7 @@ export default function CustomerSupportAutomationPage() {
     badge: 'Customer Support Automation',
     heading: 'Customer Support Automation Solutions',
     subheading:
-      'Resolve, route, and escalate tickets automatically with AI — built on the platforms you already use.',
+      'Resolve, route, and escalate tickets automatically with AIbuilt on the platforms you already use.',
     primaryCta: {
       text: 'Book a Free Audit',
       href: '/free-automation-audit',
@@ -59,7 +59,7 @@ export default function CustomerSupportAutomationPage() {
       title: 'Zapier Support Automation',
       icon: Zap,
       description:
-        'Accessible support automation built on Zapier — perfect for straightforward workflows and teams that want to self-serve changes.',
+        'Accessible support automation built on Zapierperfect for straightforward workflows and teams that want to self-serve changes.',
       href: '/solutions/customer-support-automation/with-zapier',
       features: ['6,000+ app integrations', 'Fast deployment', 'Self-serve friendly'],
       color: 'from-brand/30 to-orange-400/30',
@@ -209,35 +209,35 @@ export default function CustomerSupportAutomationPage() {
     {
       id: 'ai-support-agents',
       title: 'AI Support Agents (RAG)',
-      description: 'Answers grounded in your real docs and policies — accurate, on-brand, and available 24/7.',
+      description: 'Answers grounded in your real docs and policiesaccurate, on-brand, and available 24/7.',
       icon: Bot,
       color: 'from-blue-500/20 to-cyan-500/20',
     },
     {
       id: 'ticket-triage',
       title: 'Ticket Triage & Routing',
-      description: 'Classification and prioritization without a human sorting the queue — the right agent gets the right ticket.',
+      description: 'Classification and prioritization without a human sorting the queuethe right agent gets the right ticket.',
       icon: GitBranch,
       color: 'from-green-500/20 to-emerald-500/20',
     },
     {
       id: 'ai-drafted-replies',
       title: 'AI-Drafted Replies',
-      description: 'Suggested responses your agents approve or edit — faster replies without sacrificing quality.',
+      description: 'Suggested responses your agents approve or editfaster replies without sacrificing quality.',
       icon: MessageSquare,
       color: 'from-purple-500/20 to-pink-500/20',
     },
     {
       id: 'first-line-resolution',
       title: '24/7 First-Line Resolution',
-      description: 'Coverage without staffing every hour — common questions answered automatically around the clock.',
+      description: 'Coverage without staffing every hourcommon questions answered automatically around the clock.',
       icon: Clock,
       color: 'from-orange-500/20 to-red-500/20',
     },
     {
       id: 'contextual-escalation',
       title: 'Contextual Escalation',
-      description: 'Complex cases handed to humans with full history — your team picks up exactly where the AI left off.',
+      description: 'Complex cases handed to humans with full historyyour team picks up exactly where the AI left off.',
       icon: Headphones,
       color: 'from-teal-500/20 to-cyan-500/20',
     },
@@ -363,7 +363,7 @@ export default function CustomerSupportAutomationPage() {
             </span>
             <h2 className="display text-3xl md:text-5xl text-white font-bold">Choose Your Platform</h2>
             <p className="text-base md:text-lg text-gray-300 mt-4 leading-relaxed max-w-2xl mx-auto">
-              We build support automation on the platforms you already use — with honest platform recommendations.
+              We build support automation on the platforms you already usewith honest platform recommendations.
             </p>
           </div>
 
@@ -561,26 +561,26 @@ export default function CustomerSupportAutomationPage() {
                   className="relative group"
                 >
                   <div
-                    className={`
-                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 
+                    className="
+                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100
                       transition-all duration-500 blur-xl
-                      bg-gradient-to-r ${industry.color}
-                    `}
+                      bg-brand/10
+                    "
                   />
 
                   <Link
                     href={industry.href}
-                    className={`
-                      relative block h-full p-6 rounded-2xl 
-                      bg-gradient-to-br ${industry.color}
-                      border-2 border-brand/30 group-hover:border-brand/60
-                      transition-all duration-300 shadow-lg hover:shadow-2xl
-                      backdrop-blur-sm bg-white/5
+                    className="
+                      relative block h-full p-6 rounded-2xl
+                      bg-gradient-to-br from-white/10 via-white/5 to-brand/5
+                      border border-white/10 group-hover:border-brand/30
+                      transition-all duration-300 shadow-[0_12px_30px_rgba(0,0,0,0.18)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.24)]
+                      backdrop-blur-sm
                       text-white
-                    `}
+                    "
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand blur-3xl" />
+                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand/25 blur-3xl" />
                     </div>
 
                     <motion.div
@@ -590,13 +590,13 @@ export default function CustomerSupportAutomationPage() {
                       whileHover="hover"
                     >
                       <div
-                        className={`
-                          w-14 h-14 rounded-2xl 
-                          bg-gradient-to-br ${industry.color}
+                        className="
+                          w-14 h-14 rounded-2xl
+                          bg-brand/10
                           flex items-center justify-center
                           transition-all duration-300
                           group-hover:shadow-lg
-                        `}
+                        "
                       >
                         <Icon className="h-7 w-7 text-brand" />
                       </div>

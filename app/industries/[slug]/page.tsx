@@ -1,16 +1,19 @@
 // app/industries/[slug]/page.tsx
 import { notFound } from 'next/navigation';
+import dynamic from 'next/dynamic';
+import type { ComponentType } from 'react';
 import { industryContent, industrySlugs } from '@/content/Industries';
-import Hero from '@/components/industries/Hero';
-import TextSec from '@/components/industries/TextSec';
-import FeatureSec from '@/components/industries/FeaturesSec';
-import GridSec from '@/components/industries/GridSec';
-import FAQSec from '@/components/industries/FAQSec';
-import CTASec from '@/components/industries/CTASec';
-import PainPoint from '@/components/industries/PainPoint';
-import StepSec from '@/components/industries/StepSec';
 
-const sectionMap: Record<string, React.ComponentType<{ section: any; bg?: string }>> = {
+const Hero = dynamic(() => import('@/components/industries/Hero').then((mod) => mod.default));
+const TextSec = dynamic(() => import('@/components/industries/TextSec').then((mod) => mod.default));
+const FeatureSec = dynamic(() => import('@/components/industries/FeaturesSec').then((mod) => mod.default));
+const GridSec = dynamic(() => import('@/components/industries/GridSec').then((mod) => mod.default));
+const FAQSec = dynamic(() => import('@/components/industries/FAQSec').then((mod) => mod.default));
+const CTASec = dynamic(() => import('@/components/industries/CTASec').then((mod) => mod.default));
+const PainPoint = dynamic(() => import('@/components/industries/PainPoint').then((mod) => mod.default));
+const StepSec = dynamic(() => import('@/components/industries/StepSec').then((mod) => mod.default));
+
+const sectionMap: Record<string, ComponentType<{ section: any; bg?: string }>> = {
   hero: Hero,
   text: TextSec,
   features: FeatureSec,

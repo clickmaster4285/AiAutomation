@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { invoiceAutomationForEducation } from '@/content/Solutions/invoice-automation-for-education';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: invoiceAutomationForEducation.titleTag,
@@ -68,10 +69,18 @@ export default function ForEducationPage() {
           text: 'Learn More',
           href: '#why-education-need-invoice-finance-automation',
         }}
-        image="/images/solutions/invoice-automation-education-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Education"
+            triggerLabel="New Document Request"
+            actionLabels={['Generate Reports', 'Create Invoices', 'Manage Client Data']}
+            metricValue="1200"
+            metricLabel="invoices processed automatically each month"
+            submetric="70% reduction in processing time"
+            platform="Invoice & Finance Automation + Educational Institution Management System"
+            accent="#F59E0B"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForEducationPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForEducationPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where finance automation pays off for education."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where finance automation pays off for education."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

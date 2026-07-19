@@ -43,12 +43,12 @@ export default function AppointmentBookingAutomationPage() {
     badge: 'Appointment & Booking Automation',
     heading: 'Appointment & Booking Automation Solutions',
     subheading:
-      'Automation that books, confirms, and reminds — never miss a booking again.',
+      'Automation that books, confirms, and remindsnever miss a booking again.',
     primaryCta: {
       text: 'Book a Free Audit',
       href: '/free-automation-audit',
     },
-    image: '/images/appointment-booking-hero.png',
+    image: '/images/appointment.jpg',
     imageWidth: 700,
     imageHeight: 580,
     textSize: 'xlarge' as const,
@@ -179,7 +179,7 @@ export default function AppointmentBookingAutomationPage() {
     {
       id: 'real-time-scheduling',
       title: 'Real-Time Scheduling',
-      description: 'Availability checked and booked instantly across all channels — never miss a booking opportunity.',
+      description: 'Availability checked and booked instantly across all channelsnever miss a booking opportunity.',
       icon: Calendar,
       color: 'from-blue-500/20 to-cyan-500/20',
     },
@@ -193,21 +193,21 @@ export default function AppointmentBookingAutomationPage() {
     {
       id: 'self-service-rescheduling',
       title: 'Self-Service Rescheduling',
-      description: 'Changes handled without staff involvement — clients reschedule on their own.',
+      description: 'Changes handled without staff involvementclients reschedule on their own.',
       icon: RefreshCw,
       color: 'from-purple-500/20 to-pink-500/20',
     },
     {
       id: 'calendar-crm-sync',
       title: 'Calendar & CRM Sync',
-      description: 'Every booking logged where it belongs — your calendar and CRM stay in perfect sync.',
+      description: 'Every booking logged where it belongsyour calendar and CRM stay in perfect sync.',
       icon: Link2,
       color: 'from-orange-500/20 to-red-500/20',
     },
     {
       id: 'intake-at-booking',
       title: 'Intake at Booking',
-      description: 'The information you need collected up front — no more chasing for details after the booking.',
+      description: 'The information you need collected up frontno more chasing for details after the booking.',
       icon: FileText,
       color: 'from-teal-500/20 to-cyan-500/20',
     },
@@ -348,26 +348,26 @@ export default function AppointmentBookingAutomationPage() {
                   className="relative group"
                 >
                   <div
-                    className={`
-                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 
+                    className="
+                      absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100
                       transition-all duration-500 blur-xl
-                      bg-gradient-to-r ${industry.color}
-                    `}
+                      bg-brand/10
+                    "
                   />
 
                   <Link
                     href={industry.href}
-                    className={`
-                      relative block h-full p-6 rounded-2xl 
-                      bg-gradient-to-br ${industry.color}
-                      border-2 border-brand/30 group-hover:border-brand/60
-                      transition-all duration-300 shadow-lg hover:shadow-2xl
-                      backdrop-blur-sm bg-white/5
+                    className="
+                      relative block h-full p-6 rounded-2xl
+                      bg-gradient-to-br from-white/10 via-white/5 to-brand/5
+                      border border-white/10 group-hover:border-brand/30
+                      transition-all duration-300 shadow-[0_12px_30px_rgba(0,0,0,0.18)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.24)]
+                      backdrop-blur-sm
                       text-white
-                    `}
+                    "
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand blur-3xl" />
+                      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-brand/25 blur-3xl" />
                     </div>
 
                     <motion.div
@@ -377,13 +377,13 @@ export default function AppointmentBookingAutomationPage() {
                       whileHover="hover"
                     >
                       <div
-                        className={`
-                          w-14 h-14 rounded-2xl 
-                          bg-gradient-to-br ${industry.color}
+                        className="
+                          w-14 h-14 rounded-2xl
+                          bg-brand/10
                           flex items-center justify-center
                           transition-all duration-300
                           group-hover:shadow-lg
-                        `}
+                        "
                       >
                         <Icon className={`h-7 w-7 text-brand`} />
                       </div>

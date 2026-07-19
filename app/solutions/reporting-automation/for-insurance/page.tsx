@@ -17,6 +17,8 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { reportingAutomationForInsurance } from '@/content/Solutions/reporting-automation-for-insurance';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
+
 
 export const metadata: Metadata = {
   title: reportingAutomationForInsurance.titleTag,
@@ -68,10 +70,18 @@ export default function ForInsurancePage() {
           text: 'Learn More',
           href: '#why-insurance-agencies-need-reporting-automation',
         }}
-        image="/images/solutions/reporting-automation-insurance-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Insurance"
+            triggerLabel="New Document Request"
+            actionLabels={['Generate Reports', 'Create Invoices', 'Manage Client Data']}
+            metricValue="1000"
+            metricLabel="reports generated automatically each month"
+            submetric="25% increase in productivity"
+            platform="Reporting Automation + Insurance Platform"
+            accent="#F59E0B"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +116,8 @@ export default function ForInsurancePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +150,7 @@ export default function ForInsurancePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where reporting automation pays off for insurance agencies."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where reporting automation pays off for insurance agencies."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

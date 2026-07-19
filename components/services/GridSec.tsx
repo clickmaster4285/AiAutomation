@@ -48,16 +48,16 @@ export default function GridSec({ section }: { section: Section }) {
   const highlightIndex = getHighlightIndex();
 
   return (
-    <section className="py-24 md:py-32 border-t border-gray-200 bg-white relative overflow-hidden">
+    <section className="py-20 sm:py-24 lg:py-32 border-t border-gray-200 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(249,115,22,0.02),rgba(0,0,0,0))]" />
 
-      <div className="mx-auto max-w-[84vw] px-6">
+      <div className="mx-auto max-w-[92vw] sm:max-w-[84vw] px-4 sm:px-6">
         {heading && (
           <motion.h2
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="display mb-4 text-4xl md:text-5xl lg:text-6xl font-bold text-black text-left italic leading-tight"
+            className="display mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black text-left italic leading-tight"
           >
             {words.map((word, index) => (
               <motion.span
@@ -78,7 +78,7 @@ export default function GridSec({ section }: { section: Section }) {
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeInUp}
-            className="mb-12 text-left text-gray-600 max-w-2xl leading-relaxed text-justify"
+            className="mb-8 sm:mb-12 text-left text-gray-600 max-w-2xl leading-relaxed text-justify text-sm sm:text-base"
           >
             {section.subheading}
           </motion.p>
@@ -89,7 +89,7 @@ export default function GridSec({ section }: { section: Section }) {
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {visibleItems.map((item: SectionItem, idx: number) => {
             const Icon = getIcon(item.icon);
@@ -100,7 +100,7 @@ export default function GridSec({ section }: { section: Section }) {
                 variants={fadeInUp}
                 whileHover={{ y: -10, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="group relative rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 transition-all duration-300 hover:border-brand/50 hover:bg-white hover:shadow-xl hover:shadow-brand/10"
+                className="group relative rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-sm p-5 sm:p-6 transition-all duration-300 hover:border-brand/50 hover:bg-white hover:shadow-xl hover:shadow-brand/10"
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative">
@@ -141,7 +141,7 @@ export default function GridSec({ section }: { section: Section }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
               onClick={toggleShowAll}
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-brand text-brand hover:bg-brand hover:text-white transition-all duration-300 font-medium"
+              className="inline-flex items-center gap-2 w-full sm:w-auto justify-center px-6 sm:px-8 py-3 rounded-full border-2 border-brand text-brand hover:bg-brand hover:text-white transition-all duration-300 font-medium"
             >
               {showAll ? (
                 <>

@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { crmAutomationForConstruction } from '@/content/Solutions/crm-automation-for-construction';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: crmAutomationForConstruction.titleTag,
@@ -68,10 +69,18 @@ export default function ForConstructionPage() {
           text: 'Learn More',
           href: '#why-construction-need-crm-automation',
         }}
-        image="/images/solutions/crm-automation-construction-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="Construction"
+            triggerLabel="New Project Opportunity"
+            actionLabels={['Qualify Lead', 'Schedule Consultation', 'Submit Proposal']}
+            metricValue="800"
+            metricLabel="project opportunities generated automatically each month"
+            submetric="75% increase in conversion rates"
+            platform="CRM + Project Management System"
+            accent="#F59E0B"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForConstructionPage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForConstructionPage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where CRM automation pays off for construction."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where CRM automation pays off for construction."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,

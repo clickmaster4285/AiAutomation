@@ -17,6 +17,7 @@ import { FAQSection } from '@/components/solutions/sections/FAQ';
 import { CTASection } from '@/components/solutions/sections/CTA';
 import { RelatedSolutions } from '@/components/solutions/sections/RelatedSolutions';
 import { leadGenerationAutomationForEcommerce } from '@/content/Solutions/lead-generation-automation-for-ecommerce';
+import { AutomationHeroMockup } from '@/components/solutions/sections/IndustryHeroMockup';
 
 export const metadata: Metadata = {
   title: leadGenerationAutomationForEcommerce.titleTag,
@@ -68,10 +69,18 @@ export default function ForEcommercePage() {
           text: 'Learn More',
           href: '#why-ecommerce-need-lead-generation-automation',
         }}
-        image="/images/solutions/lead-generation-ecommerce-hero.png"
-        imageWidth={700}
-        imageHeight={580}
-        textSize="xlarge"
+        visual={
+          <AutomationHeroMockup
+            industry="E-commerce"
+            triggerLabel="New Document Request"
+            actionLabels={['Generate Reports', 'Create Invoices', 'Manage Client Data']}
+            metricValue="2000"
+            metricLabel="leads generated automatically each month"
+            submetric="70% increase in conversion rates"
+            platform="Lead Generation Automation + E-commerce Management System"
+            accent="#8B5CF6"
+          />
+        }
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
@@ -106,8 +115,8 @@ export default function ForEcommercePage() {
       />
 
       <BoundariesSection
-        title="What This Is — and Isn't"
-        content={[content.sections['What This Is — and Isn\'t']]}
+        title="What This Isand Isn't"
+        content={[content.sections['What This Isand Isn\'t']]}
       />
 
       <RealitiesSection
@@ -140,7 +149,7 @@ export default function ForEcommercePage() {
 
       <CTASection
         title={content.cta}
-        subtitle="Book a free automation audit — 30 minutes, no obligation, and an honest read on where lead generation system pays off for e-commerce."
+        subtitle="Book a free automation audit30 minutes, no obligation, and an honest read on where lead generation system pays off for e-commerce."
         primaryCta={{
           text: 'Book a Free Automation Audit',
           href: content.bookingLink,
