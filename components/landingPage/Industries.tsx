@@ -30,7 +30,7 @@ export default function Industries() {
 
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <h2 className="display text-5xl md:text-7xl">We Serve Every<br /><span className="display-italic text-brand">Major Industry</span></h2>
+          <h2 className="display text-5xl md:text-7xl">We Serves Every<br /><span className="display-italic text-brand">Major Industry</span></h2>
           <p className="text-sm text-white/60 md:text-right md:self-end max-w-xs md:ml-auto">Proven results across every major vertical. Niche-agnostic. Results obsessed.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-px bg-white/10 border border-black/10">
