@@ -131,7 +131,7 @@ export const leadGenerationAutomationWithHubspot: SolutionData = {
       answer: 'Completely. Everything is documented and transparent, in your own accounts, with no dependency on us for changes.',
     },
     {
-      question: 'Lead generation automation captures and responds to leads instantly, qualifies them conversationally, enriches and scores them, and routes sales-ready prospects to the right personis that what this does?',
+      question: 'Lead generation automation captures and responds to leads instantly and routes sales-ready prospects to the right personis that what this does?',
       answer: 'Lead generation automation captures and responds to leads instantly, qualifies them conversationally, enriches and scores them, and routes sales-ready prospects to the right personwhile nurturing the rest until they\'re ready. Built on HubSpot, it runs with the platform\'s strengths: teams already running sales and marketing on HubSpot.',
     },
   ],

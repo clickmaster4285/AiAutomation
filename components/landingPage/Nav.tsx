@@ -4,6 +4,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import {
   ChevronDown,
@@ -111,98 +112,84 @@ const industryIconMap: Record<string, React.ElementType> = {
 
 // ── Solutions data ──
 const solutionsData = [
-  // AI Chatbot Solutions
   {
     title: 'AI Chatbot Solutions',
     slug: 'ai-chatbots',
     description: 'Intelligent chatbots that answer, qualify, and book automatically.',
     icon: MessageSquare,
   },
-  // AI Voice Agent Solutions
   {
     title: 'AI Voice Agents',
     slug: 'ai-voice-agents',
     description: 'Intelligent voice conversations that answer, book, and route automaticallynever miss a call.',
     icon: PhoneCall,
   },
-  // AI Workflow Automation Solutions
   {
     title: 'AI Workflow Automation',
     slug: 'ai-workflow-automation',
     description: 'Multi-step processes that run automatically across your tools.',
     icon: Workflow,
   },
-  // Appointment & Booking Automation Solutions
   {
     title: 'Appointment & Booking Automation',
     slug: 'appointment-booking-automation',
     description: 'Automation that books, confirms, and remindsnever miss a booking again.',
     icon: Calendar,
   },
-  // Business Process Automation Solutions
   {
     title: 'Business Process Automation',
     slug: 'bussiness-process-automation',
     description: 'Automation that runs, coordinates, and completesend-to-end processes that eliminate manual hand-offs.',
     icon: RefreshCw,
   },
-  // CRM Automation Solutions
   {
     title: 'CRM Automation',
     slug: 'crm-automation',
     description: 'Keep your CRM accurate and active without manual data entry.',
     icon: Database,
   },
-  // Document Automation Solutions
   {
     title: 'Document & Data Automation',
     slug: 'document-automation',
     description: 'Extract, validate, and route data from documents automatically.',
     icon: FileText,
   },
-  // Invoice & Finance Automation Solutions
   {
     title: 'Invoice & Finance Automation',
     slug: 'invoice-automation',
     description: 'Capture, validate, and post invoices automaticallycut days from the close.',
     icon: Receipt,
   },
-  // Lead Generation Solutions
   {
     title: 'Lead Generation Automation',
     slug: 'lead-generation-automation',
     description: 'Capture, qualify, and route leads instantly with AI.',
     icon: Target,
   },
-  // Customer Support Solutions
   {
     title: 'Customer Support Automation',
     slug: 'customer-support-automation',
     description: 'AI agents that resolve tickets and escalate complex cases.',
     icon: Headphones,
   },
-  // Marketing Automation Solutions
   {
     title: 'Marketing Automation',
     slug: 'marketing-automation',
     description: 'AI-driven content, nurture sequences, and campaign management.',
     icon: TrendingUp,
   },
-  // Reporting Automation Solutions
   {
     title: 'Reporting Automation',
     slug: 'reporting-automation',
     description: 'Automated reports and dashboards with AI summaries.',
     icon: BarChart3,
   },
-  // Sales Automation Solutions
   {
     title: 'Sales Automation',
     slug: 'sales-automation',
     description: 'Enrich, follow up, and log automatically so reps can sell.',
     icon: Briefcase,
   },
-  // AI Agent Development
   {
     title: 'AI Agent Development',
     slug: 'ai-agents',
@@ -211,7 +198,7 @@ const solutionsData = [
   },
 ];
 
-// ── Standalone services (no category) - these will use /services/ directly ──
+// ── Standalone services ──
 const standaloneServices = [
   { title: 'AI Consulting Services', slug: 'ai-consulting', description: 'Strategy that shipsopportunity audits, roadmaps, and implementation.' },
   { title: 'Custom AI Development', slug: 'custom-ai-development', description: 'Custom AI solutions on proven models with honest scoping.' },
@@ -219,10 +206,10 @@ const standaloneServices = [
   { title: 'AI Lead Generation', slug: 'ai-lead-generation', description: 'AI-powered lead generation and qualification systems.' },
 ];
 
-// Fallback icon
 const FallbackIcon = Plug;
 
 export default function Nav() {
+  const pathname = usePathname();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isPlatformsOpen, setIsPlatformsOpen] = useState(false);
@@ -250,6 +237,27 @@ export default function Nav() {
       setActiveCategory(serviceCategories[0].title);
     }
   }, [isServicesOpen, activeCategory]);
+
+  // Handle hash navigation after page load
+  useEffect(() => {
+    if (pathname === '/') {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          setTimeout(() => {
+            const offset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }, 100);
+        }
+      }
+    }
+  }, [pathname]);
 
   const handleServicesMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -347,7 +355,6 @@ export default function Nav() {
   const activeCat = serviceCategories.find(cat => cat.title === activeCategory);
   const activeServices = activeCat?.services ?? [];
 
-  // Helper to get icons
   const getServiceIcon = (title: string) => {
     const Icon = serviceIconMap[title] || FallbackIcon;
     return <Icon className="h-4 w-4 text-brand flex-shrink-0" />;
@@ -372,6 +379,14 @@ export default function Nav() {
     const solution = solutionsData.find(s => s.title === title);
     const Icon = solution?.icon || Sparkles;
     return <Icon className="h-4 w-4 text-brand flex-shrink-0" />;
+  };
+
+  // Close all dropdowns
+  const closeAllDropdowns = () => {
+    setIsServicesOpen(false);
+    setIsSolutionsOpen(false);
+    setIsPlatformsOpen(false);
+    setIsIndustriesOpen(false);
   };
 
   return (
@@ -527,7 +542,6 @@ export default function Nav() {
                         ))}
                       </div>
 
-                      {/* ── BOTTOM CTA ── */}
                       <div className="px-6 py-3 border-t border-gray-200 bg-gray-50/50 flex items-center justify-between">
                         <p className="text-xs text-gray-400">Not sure what you need?</p>
                         <Link
@@ -685,7 +699,6 @@ export default function Nav() {
                           </Link>
                         ))}
 
-                        {/* ── Airtable ── */}
                         <div className="mt-2 pt-2 border-t border-gray-100">
                           <Link
                             href="/platforms/airtable-automation-services"
@@ -792,11 +805,30 @@ export default function Nav() {
             </AnimatePresence>
           </div>
 
-          {/* ── Simple links (removed hashes) ── */}
-          <Link href="/work" className="text-gray-700 hover:text-black transition-colors">Work</Link>
-          <Link href="/process" className="text-gray-700 hover:text-black transition-colors">Process</Link>
-          <Link href="/about" className="text-gray-700 hover:text-black transition-colors">About</Link>
-          <Link href="/contact" className="text-gray-700 hover:text-black transition-colors">Contact</Link>
+          {/* ── Work & Process Links with Hash Navigation ── */}
+          <Link 
+            href="/#work" 
+            className="text-gray-700 hover:text-black transition-colors"
+            onClick={closeAllDropdowns}
+          >
+            Work
+          </Link>
+          
+          <Link 
+            href="/#process" 
+            className="text-gray-700 hover:text-black transition-colors"
+            onClick={closeAllDropdowns}
+          >
+            Process
+          </Link>
+          
+          <Link href="/about" className="text-gray-700 hover:text-black transition-colors">
+            About
+          </Link>
+          
+          <Link href="/contact" className="text-gray-700 hover:text-black transition-colors">
+            Contact
+          </Link>
         </nav>
 
         <Link
@@ -876,7 +908,6 @@ export default function Nav() {
                       </div>
                     ))}
                     
-                    {/* Standalone Services in Mobile */}
                     <div className="mt-4 pt-4 border-t border-gray-200">
                       {standaloneServices.map((service, idx) => (
                         <Link
@@ -978,7 +1009,6 @@ export default function Nav() {
                         </Link>
                       ))}
 
-                      {/* Airtable (Mobile) */}
                       <Link
                         href="/platforms/airtable-automation-services"
                         className="flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-brand/10 transition-colors"
@@ -1055,11 +1085,38 @@ export default function Nav() {
               )}
             </div>
 
-            {/* Mobile links (removed hashes) */}
-            <Link href="/work" className="block text-gray-700 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Work</Link>
-            <Link href="/process" className="block text-gray-700 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Process</Link>
-            <Link href="/about" className="block text-gray-700 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-            <Link href="/contact" className="block text-gray-700 hover:text-black transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+            {/* Mobile Work & Process with Hash Navigation */}
+            <Link 
+              href="/#work" 
+              className="block text-gray-700 hover:text-black transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Work
+            </Link>
+            
+            <Link 
+              href="/#process" 
+              className="block text-gray-700 hover:text-black transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Process
+            </Link>
+            
+            <Link 
+              href="/about" 
+              className="block text-gray-700 hover:text-black transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            
+            <Link 
+              href="/contact" 
+              className="block text-gray-700 hover:text-black transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
 
             <Link
               href="/contact"

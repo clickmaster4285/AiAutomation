@@ -131,7 +131,7 @@ export const documentAutomationWithSalesforce: SolutionData = {
       answer: 'Completely. Everything is documented and transparent, in your own accounts, with no dependency on us for changes.',
     },
     {
-      question: 'Document and data automation uses OCR and AI to read documents, extract and validate structured data, and route it into business systems automaticallyis that what this does?',
+      question: 'Document and data automation uses OCR and AI to read documents route it into business systems automaticallyis that what this does?',
       answer: 'Document and data automation uses OCR and AI to read documents, extract and validate structured data, and route it into business systems automaticallyreplacing manual reading and data entry. Built on Salesforce, it runs with the platform\'s strengths: organizations with Salesforce at the core of revenue operations.',
     },
   ],

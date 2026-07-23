@@ -131,7 +131,7 @@ export const aiChatbotsWithZapier: SolutionData = {
       answer: 'Completely. Everything is documented and transparent, in your own accounts, with no dependency on us for changes.',
     },
     {
-      question: 'An AI chatbot uses a language model to understand and respond in natural language, answering from a business\'s own content and taking actions like booking or routing is that what this does?',
+      question: 'An AI chatbot uses a language model to understand and respond in natural language, answering from a business\'s own content is that what this does?',
       answer: 'An AI chatbot uses a language model to understand and respond in natural language, answering from a business\'s own content and taking actions like booking or routing far beyond old script-based bots. Built on Zapier, it runs with the platform\'s strengths: straightforward workflows and teams that want to self-serve simple changes later.',
     },
   ],

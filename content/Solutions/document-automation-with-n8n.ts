@@ -131,7 +131,7 @@ export const documentAutomationWithN8n: SolutionData = {
       answer: 'Completely. Everything is documented and transparent, in your own accounts, with no dependency on us for changes.',
     },
     {
-      question: 'Uses OCR and AI to read documents, extract and validate structured data, and route it into business systems automatically is that what this does?',
+      question: 'Uses OCR and AI to read documents route it into business systems automatically is that what this does?',
       answer: 'Document and data automation uses OCR and AI to read documents, extract and validate structured data, and route it into business systems automatically replacing manual reading and data entry. Built on n8n, it runs with the platform\'s strengths: high-volume, data-sensitive, or AI-heavy production workflows.',
     },
   ],

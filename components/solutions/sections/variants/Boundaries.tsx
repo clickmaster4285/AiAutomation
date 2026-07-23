@@ -148,7 +148,7 @@ export function BoundariesSection({ title, content }: BoundariesSectionProps) {
                         <CheckCircle2 className="h-3 w-3 text-brand" />
                       </div>
                     </div>
-                    <p className="text-sm text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                    <p className="text-base md:text-lg text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                       {cleanItem}
                     </p>
                   </motion.li>
@@ -188,7 +188,7 @@ export function BoundariesSection({ title, content }: BoundariesSectionProps) {
                         <XCircle className="h-3 w-3 text-gray-400" />
                       </div>
                     </div>
-                    <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                    <p className="text-base md:text-lg text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
                       {cleanItem}
                     </p>
                   </motion.li>

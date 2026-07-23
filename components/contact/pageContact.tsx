@@ -12,6 +12,11 @@ import {
   Sparkles,
   Clock,
   CheckCircle,
+  Rocket,
+  Cpu,
+  Zap,
+  Bot,
+  TrendingUp,
 } from 'lucide-react';
 
 export default function ContactPage() {
@@ -19,33 +24,124 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
+    phone: '',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // State for the hero form
-  const [heroFormData, setHeroFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [heroSubmitted, setHeroSubmitted] = useState(false);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      // Validate required fields
+      if (!formData.name.trim()) {
+        alert('❌ Please enter your name.');
+        setIsSubmitting(false);
+        return;
+      }
+      if (!formData.email.trim()) {
+        alert('❌ Please enter your email address.');
+        setIsSubmitting(false);
+        return;
+      }
+      if (!formData.phone.trim()) {
+        alert('❌ Please enter your phone number.');
+        setIsSubmitting(false);
+        return;
+      }
+      if (!formData.message.trim()) {
+        alert('❌ Please enter your message.');
+        setIsSubmitting(false);
+        return;
+      }
 
-  const handleSubmit = () => {
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-  };
+      const formDataObj = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        message: formData.message.trim(),
+        website: 'clickmastersaiautomation.com',
+        service: 'Automation', // Changed from 'AI Automation' to match API expectations
+        landingPage: window.location.href,
+        referrer: document.referrer || '',
+        utm_source: new URLSearchParams(window.location.search).get('utm_source') || '',
+        utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || '',
+        utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
+        utm_term: new URLSearchParams(window.location.search).get('utm_term') || '',
+        utm_content: new URLSearchParams(window.location.search).get('utm_content') || '',
+      };
 
-  const handleHeroSubmit = () => {
-    setHeroSubmitted(true);
-    setTimeout(() => setHeroSubmitted(false), 3000);
-    setHeroFormData({ name: '', email: '', message: '' });
+      console.log('📤 Sending to CRM:', formDataObj);
+
+      const res = await fetch('https://crm.clickmasters.pk/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formDataObj),
+      });
+
+      // Get response text first
+      const responseText = await res.text();
+      console.log('📥 Raw Response:', responseText);
+
+      let responseData;
+      try {
+        responseData = JSON.parse(responseText);
+      } catch (e) {
+        console.error('Failed to parse response:', e);
+        throw new Error('Invalid response from server');
+      }
+
+      if (res.ok) {
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 3000);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        alert('✅ Thank you! We will contact you shortly.');
+      } else {
+        // Handle validation errors properly
+        if (responseData.details) {
+          let errorMessage = '❌ Validation failed:\n';
+          
+          // Check if details is an object with field errors
+          if (typeof responseData.details === 'object') {
+            // Loop through each field and its errors
+            for (const [field, errors] of Object.entries(responseData.details)) {
+              if (Array.isArray(errors)) {
+                errorMessage += `\n${field}: ${errors.join(', ')}`;
+              } else if (typeof errors === 'string') {
+                errorMessage += `\n${field}: ${errors}`;
+              } else if (typeof errors === 'object') {
+                // If errors is an object with message property
+                errorMessage += `\n${field}: ${JSON.stringify(errors)}`;
+              }
+            }
+          } else if (typeof responseData.details === 'string') {
+            errorMessage += `\n${responseData.details}`;
+          } else {
+            errorMessage += `\n${JSON.stringify(responseData.details)}`;
+          }
+          
+          alert(errorMessage);
+        } else if (responseData.error) {
+          alert(`❌ Error: ${responseData.error}`);
+        } else if (responseData.message) {
+          alert(`❌ Error: ${responseData.message}`);
+        } else {
+          alert('❌ Submission failed. Please try again.');
+        }
+      }
+    } catch (err) {
+      console.error('Lead submission failed:', err);
+      alert('❌ Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <main className="bg-white text-gray-900 overflow-hidden">
-      {/* ====== HERO – BLACK with TRANSPARENT FORM & BRAND GLOW ====== */}
+      {/* ====== HERO – BLACK with ANIMATED GRAPHICS ====== */}
       <section className="relative min-h-[50vh] flex items-center py-8 md:py-12 lg:py-16 bg-black">
         {/* Background decorations */}
         <div className="absolute inset-0 overflow-hidden">
@@ -59,12 +155,17 @@ export default function ContactPage() {
             animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.3, 0.1] }}
             transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
           />
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand/5 rounded-full blur-3xl"
+            animate={{ scale: [1, 1.3, 1], opacity: [0.05, 0.15, 0.05] }}
+            transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+          />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(249,115,22,0.05),transparent_60%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
         </div>
 
         <div className="relative mx-auto max-w-[84vw] px-6 pt-12 pb-8 md:pt-16 md:pb-12 lg:pt-20 lg:pb-16 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-start lg:items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
             
             {/* Left: Text */}
             <motion.div
@@ -97,77 +198,205 @@ export default function ContactPage() {
               >
                 Whether you're ready to automate something specific or just want to know if it's worth it we're easy to reach and we'll give you a straight answer either way.
               </motion.p>
+              
+              {/* Added CRM notice */}
+              <motion.div
+                variants={fadeInUp}
+                className="mt-6 p-4 rounded-xl border border-brand/20 bg-brand/5 backdrop-blur-sm"
+              >
+                <p className="text-xs text-gray-400">
+                  🔄 All leads are automatically synced to our central CRM at{' '}
+                  <span className="text-brand font-medium">crm.clickmasters.pk</span>
+                </p>
+              </motion.div>
             </motion.div>
 
-            {/* Right: Transparent form with glass effect and brand glow (no white borders) */}
+            {/* Right: Animated Graphical Elements */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-full relative"
+              className="relative w-full h-[300px] md:h-[400px] lg:h-[450px] flex items-center justify-center"
             >
-              <div className="absolute -inset-4 bg-brand/20 blur-3xl rounded-3xl opacity-70" />
-              <div className="absolute -inset-2 bg-brand/10 blur-2xl rounded-3xl" />
+              {/* Central glowing orb */}
+              <motion.div
+                className="absolute w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full bg-brand/20 blur-3xl"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              />
 
-              <div className="relative p-5 sm:p-6 md:p-8 rounded-2xl border border-brand/10 bg-transparent backdrop-blur-sm shadow-xl">
-                <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">Quick Message</h2>
-                <p className="text-gray-300 text-sm mb-4 md:mb-6">We'll reply within a few hours.</p>
-
-                <div className="space-y-3 md:space-y-4">
-                  <div>
-                    <label className="block text-sm text-gray-200 mb-1 font-medium">Name</label>
-                    <input
-                      type="text"
-                      value={heroFormData.name}
-                      onChange={e => setHeroFormData({ ...heroFormData, name: e.target.value })}
-                      placeholder="Your full name"
-                      className="w-full bg-white/10 border border-brand/20 rounded-xl px-4 py-2.5 md:py-3 text-white placeholder-white/50 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/30 transition-all duration-200 text-sm"
-                    />
+              {/* Floating icons container */}
+              <div className="relative w-full h-full">
+                {/* Icon 1 - Rocket (top) */}
+                <motion.div
+                  className="absolute top-0 left-1/2 -translate-x-1/2"
+                  animate={{
+                    y: [0, -20, 0],
+                    rotate: [0, 5, -5, 0],
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                >
+                  <div className="p-4 bg-brand/10 backdrop-blur-sm rounded-2xl border border-brand/30 shadow-lg shadow-brand/20">
+                    <Rocket className="w-10 h-10 md:w-14 md:h-14 text-brand" />
                   </div>
-                  <div>
-                    <label className="block text-sm text-gray-200 mb-1 font-medium">Email</label>
-                    <input
-                      type="email"
-                      value={heroFormData.email}
-                      onChange={e => setHeroFormData({ ...heroFormData, email: e.target.value })}
-                      placeholder="your@email.com"
-                      className="w-full bg-white/10 border border-brand/20 rounded-xl px-4 py-2.5 md:py-3 text-white placeholder-white/50 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/30 transition-all duration-200 text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-gray-200 mb-1 font-medium">Message</label>
-                    <textarea
-                      value={heroFormData.message}
-                      onChange={e => setHeroFormData({ ...heroFormData, message: e.target.value })}
-                      placeholder="What do you want to automate?"
-                      rows={3}
-                      className="w-full bg-white/10 border border-brand/20 rounded-xl px-4 py-2.5 md:py-3 text-white placeholder-white/50 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/30 transition-all duration-200 resize-none text-sm"
-                    />
-                  </div>
+                </motion.div>
 
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="relative group">
-                    <div className="absolute inset-0 bg-brand/20 blur-xl rounded-xl group-hover:blur-2xl transition-all" />
-                    <Button
-                      size="lg"
-                      onClick={handleHeroSubmit}
-                      className="relative w-full bg-brand hover:bg-brand-dark text-white py-5 md:py-6 text-sm md:text-base rounded-xl font-medium shadow-lg shadow-brand/30 transition-all"
-                    >
-                      {heroSubmitted ? (
-                        <span className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 md:h-5 md:w-5" /> Sent!
-                        </span>
-                      ) : (
-                        <span className="flex items-center gap-2">
-                          Send <ArrowRight className="h-4 w-4" />
-                        </span>
-                      )}
-                    </Button>
-                  </motion.div>
+                {/* Icon 2 - Cpu (right) */}
+                <motion.div
+                  className="absolute top-1/4 right-0"
+                  animate={{
+                    x: [0, 20, 0],
+                    y: [0, -10, 0],
+                    rotate: [0, 10, -10, 0],
+                  }}
+                  transition={{
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: 0.5,
+                  }}
+                >
+                  <div className="p-4 bg-brand/10 backdrop-blur-sm rounded-2xl border border-brand/30 shadow-lg shadow-brand/20">
+                    <Cpu className="w-10 h-10 md:w-14 md:h-14 text-brand" />
+                  </div>
+                </motion.div>
 
-                  <p className="text-xs text-gray-400 text-center">
-                    We never share your data. Your details are used only to respond to your enquiry.
-                  </p>
-                </div>
+                {/* Icon 3 - Bot (bottom right) */}
+                <motion.div
+                  className="absolute bottom-1/4 right-1/4"
+                  animate={{
+                    x: [0, -15, 0],
+                    y: [0, 15, 0],
+                    rotate: [0, -8, 8, 0],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: 1,
+                  }}
+                >
+                  <div className="p-4 bg-brand/10 backdrop-blur-sm rounded-2xl border border-brand/30 shadow-lg shadow-brand/20">
+                    <Bot className="w-10 h-10 md:w-14 md:h-14 text-brand" />
+                  </div>
+                </motion.div>
+
+                {/* Icon 4 - Zap (left) */}
+                <motion.div
+                  className="absolute top-1/3 left-0"
+                  animate={{
+                    x: [0, 15, 0],
+                    y: [0, -15, 0],
+                    rotate: [0, -12, 12, 0],
+                  }}
+                  transition={{
+                    duration: 5.5,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: 0.3,
+                  }}
+                >
+                  <div className="p-4 bg-brand/10 backdrop-blur-sm rounded-2xl border border-brand/30 shadow-lg shadow-brand/20">
+                    <Zap className="w-10 h-10 md:w-14 md:h-14 text-brand" />
+                  </div>
+                </motion.div>
+
+                {/* Icon 5 - TrendingUp (bottom left) */}
+                <motion.div
+                  className="absolute bottom-0 left-1/4"
+                  animate={{
+                    x: [0, -10, 0],
+                    y: [0, -20, 0],
+                    rotate: [0, 8, -8, 0],
+                  }}
+                  transition={{
+                    duration: 6.5,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: 0.8,
+                  }}
+                >
+                  <div className="p-4 bg-brand/10 backdrop-blur-sm rounded-2xl border border-brand/30 shadow-lg shadow-brand/20">
+                    <TrendingUp className="w-10 h-10 md:w-14 md:h-14 text-brand" />
+                  </div>
+                </motion.div>
+
+                {/* Orbiting particle rings */}
+                <motion.div
+                  className="absolute inset-0"
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                >
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-brand/40 blur-sm" />
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-brand/40 blur-sm" />
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-brand/40 blur-sm" />
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-brand/40 blur-sm" />
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="absolute inset-0"
+                  animate={{ rotate: -360 }}
+                  transition={{
+                    duration: 25,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                >
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px]">
+                    <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-brand/30 blur-[1px]" />
+                    <div className="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-brand/30 blur-[1px]" />
+                    <div className="absolute left-[15%] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-brand/30 blur-[1px]" />
+                    <div className="absolute right-[15%] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-brand/30 blur-[1px]" />
+                    <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-brand/20 blur-[1px]" />
+                    <div className="absolute bottom-1/4 right-1/4 w-2 h-2 rounded-full bg-brand/20 blur-[1px]" />
+                    <div className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full bg-brand/20 blur-[1px]" />
+                    <div className="absolute bottom-1/4 left-1/4 w-2 h-2 rounded-full bg-brand/20 blur-[1px]" />
+                  </div>
+                </motion.div>
+
+                {/* Central pulse ring */}
+                <motion.div
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full border-2 border-brand/20"
+                  animate={{
+                    scale: [1, 1.5, 1],
+                    opacity: [0.5, 0, 0.5],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                />
+                <motion.div
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full border border-brand/10"
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    opacity: [0.3, 0, 0.3],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: 0.5,
+                  }}
+                />
               </div>
             </motion.div>
           </div>
@@ -259,7 +488,7 @@ export default function ContactPage() {
               </motion.div>
             </motion.div>
 
-            {/* RIGHT – Full Contact Form */}
+            {/* RIGHT – Full Contact Form - Simple HTML-style form with React */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -271,45 +500,73 @@ export default function ContactPage() {
                 className="relative p-6 sm:p-8 md:p-10 rounded-2xl border border-gray-200 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 <h2 className="display text-xl sm:text-2xl font-bold mb-1 text-gray-900">Send us a message</h2>
-                <p className="text-gray-500 mb-6 sm:mb-8 text-sm text-justify">We'll get back to you within a few hours.</p>
+                <p className="text-gray-500 mb-6 sm:mb-8 text-sm text-justify">
+                  We'll get back to you within a few hours. All leads are automatically synced to our central CRM.
+                </p>
 
-                <div className="space-y-4 sm:space-y-5">
-                  {[
-                    { label: 'Name', key: 'name', type: 'text', placeholder: 'Your full name' },
-                    { label: 'Email', key: 'email', type: 'email', placeholder: 'your@email.com' },
-                    { label: 'Company', key: 'company', type: 'text', placeholder: 'Your company name' },
-                  ].map((field) => (
-                    <div key={field.key}>
-                      <label className="block text-sm text-gray-600 mb-1 sm:mb-2 font-medium">{field.label}</label>
-                      <input
-                        type={field.type}
-                        value={formData[field.key as keyof typeof formData]}
-                        onChange={e => setFormData({ ...formData, [field.key]: e.target.value })}
-                        placeholder={field.placeholder}
-                        className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 sm:py-3.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all duration-200 text-sm shadow-sm"
-                      />
-                    </div>
-                  ))}
+                <form id="leadForm" onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={e => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Your Name"
+                    required
+                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 sm:py-3.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all duration-200 text-sm shadow-sm"
+                  />
 
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1 sm:mb-2 font-medium">Message</label>
-                    <textarea
-                      value={formData.message}
-                      onChange={e => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell us what you're looking to automate..."
-                      rows={5}
-                      className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 sm:py-3.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all duration-200 resize-none text-sm shadow-sm"
-                    />
-                  </div>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={e => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="Your Email"
+                    required
+                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 sm:py-3.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all duration-200 text-sm shadow-sm"
+                  />
+
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder="Phone Number"
+                    required
+                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 sm:py-3.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all duration-200 text-sm shadow-sm"
+                  />
+
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={e => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Your Message"
+                    rows={5}
+                    required
+                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 sm:py-3.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all duration-200 resize-none text-sm shadow-sm"
+                  />
+
+                  {/* Hidden fields for CRM */}
+                  <input type="hidden" id="website" name="website" value="clickmastersaiautomation.com" />
+                  <input type="hidden" id="service" name="service" value="Artificial Intelligence" />
 
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="relative group">
                     <div className="absolute inset-0 bg-brand/20 blur-xl rounded-xl group-hover:blur-2xl transition-all" />
                     <Button
+                      type="submit"
                       size="lg"
-                      onClick={handleSubmit}
-                      className="relative w-full bg-brand hover:bg-brand-dark text-white py-5 sm:py-6 text-sm sm:text-base rounded-xl font-medium shadow-lg shadow-brand/20 transition-all"
+                      disabled={isSubmitting}
+                      className="relative w-full bg-brand hover:bg-brand-dark text-white py-5 sm:py-6 text-sm sm:text-base rounded-xl font-medium shadow-lg shadow-brand/20 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      {submitted ? (
+                      {isSubmitting ? (
+                        <span className="flex items-center gap-2">
+                          <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
+                          Sending...
+                        </span>
+                      ) : submitted ? (
                         <span className="flex items-center gap-2">
                           <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5" /> Message Sent!
                         </span>
@@ -324,7 +581,16 @@ export default function ContactPage() {
                   <p className="text-xs text-gray-500 text-center">
                     We never share your data. Your details are used only to respond to your enquiry.
                   </p>
-                </div>
+                  
+                  <div className="flex items-center justify-center gap-2 text-xs text-gray-400 border-t border-gray-100 pt-4 mt-2">
+                    <span className="flex items-center gap-1">
+                      <CheckCircle className="h-3 w-3 text-green-500" />
+                      Synced to CRM
+                    </span>
+                    <span className="w-px h-3 bg-gray-300" />
+                    <span>crm.clickmasters.pk</span>
+                  </div>
+                </form>
               </motion.div>
             </motion.div>
           </div>

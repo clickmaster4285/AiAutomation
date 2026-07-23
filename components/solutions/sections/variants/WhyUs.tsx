@@ -65,20 +65,20 @@ export function WhyUsSection({ title, content, cta, stats }: WhyUsSectionProps) 
                 Why Choose Us
               </div>
 
-              {/* Exact same heading style as AutomationSection */}
+              {/* Exact same heading style as ExampleSection */}
               <h2 className="display text-3xl md:text-5xl lg:text-6xl text-gray-900 mb-6 leading-[1.05]">
                 {title}
               </h2>
 
-              {/* Exact same intro text style as AutomationSection */}
+              {/* Updated intro text to match ExampleSection paragraph style */}
               {introText && (
-                <p className="text-xl md:text-2xl lg:text-3xl text-gray-500 max-w-xl leading-relaxed">
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
                   {introText}
                 </p>
               )}
             </motion.div>
 
-            {/* Cards - Left side - Matching AutomationSection item style */}
+            {/* Cards - Left side - Updated text sizes */}
             <div className="space-y-4">
               {displayItems.map((item, idx) => {
                 const cleanItem = item.replace(/\*\*/g, '').trim();
@@ -105,7 +105,7 @@ export function WhyUsSection({ title, content, cta, stats }: WhyUsSectionProps) 
                     </div>
                     <div>
                       <h4 className="text-base md:text-lg font-semibold text-gray-900">{title}</h4>
-                      <p className="text-sm md:text-base text-gray-500 leading-relaxed">{description}</p>
+                      <p className="text-base md:text-lg text-gray-600 leading-relaxed">{description}</p>
                     </div>
                   </motion.div>
                 );
@@ -131,7 +131,7 @@ export function WhyUsSection({ title, content, cta, stats }: WhyUsSectionProps) 
             )}
           </div>
 
-          {/* Right Content - Animated Cards - Exact same as AutomationSection */}
+          {/* Right Content - Stats Cards - Updated text sizes */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -163,7 +163,7 @@ export function WhyUsSection({ title, content, cta, stats }: WhyUsSectionProps) 
                       {stat.label}
                     </div>
                     {stat.desc && (
-                      <div className="text-xs text-gray-400">
+                      <div className="text-sm text-gray-500">
                         {stat.desc}
                       </div>
                     )}
@@ -172,7 +172,7 @@ export function WhyUsSection({ title, content, cta, stats }: WhyUsSectionProps) 
               );
             })}
 
-            {/* Trust badge card - Matching AutomationSection progress card style */}
+            {/* Trust badge card - Updated text sizes */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -182,8 +182,8 @@ export function WhyUsSection({ title, content, cta, stats }: WhyUsSectionProps) 
               className="col-span-2 p-6 rounded-2xl bg-white border border-gray-100 hover:border-brand/20 hover:shadow-xl transition-all duration-300"
             >
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-900">Trust Score</span>
-                <span className="text-sm font-bold text-brand">98%</span>
+                <span className="text-base font-medium text-gray-900">Trust Score</span>
+                <span className="text-base font-bold text-brand">98%</span>
               </div>
               <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
                 <motion.div
@@ -194,7 +194,7 @@ export function WhyUsSection({ title, content, cta, stats }: WhyUsSectionProps) 
                   className="h-full bg-gradient-to-r from-brand to-orange-400 rounded-full"
                 />
               </div>
-              <div className="mt-3 flex items-center justify-between text-xs text-gray-400">
+              <div className="mt-3 flex items-center justify-between text-sm text-gray-500">
                 <span>Client Satisfaction</span>
                 <span>Industry Leading</span>
               </div>
