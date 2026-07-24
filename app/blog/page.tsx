@@ -51,7 +51,7 @@ const blogPosts = [
     author: 'Emily Roberts',
     date: 'March 10, 2026',
     readTime: '6 min read',
-    image: '/images/bg3.jpg', // Fixed typo: should be '/images/blog3.jpg'
+    image: '/images/bg3.jpg',
     slug: 'crm-automation-sales-pipeline',
     tags: ['CRM', 'Sales Automation', 'AI'],
   },
@@ -158,6 +158,12 @@ export default function BlogPage() {
     },
   };
 
+  // Handle click to prevent navigation
+  const handlePreventClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   return (
     <PageWrapper>
       {/* Hero Section - Matching the homepage style with larger main heading */}
@@ -191,18 +197,18 @@ export default function BlogPage() {
               </p>
 
               <div className="blog-meta flex flex-wrap justify-center gap-3 mt-6">
-                <a
-                  href="#latest"
-                  className="bg-ink text-white text-sm md:text-base px-5 py-3 hover:bg-brand transition-colors inline-flex items-center justify-center gap-2 text-center"
+                <div
+                  className="bg-ink text-white text-sm md:text-base px-5 py-3 hover:bg-brand transition-colors inline-flex items-center justify-center gap-2 text-center cursor-default"
+                  onClick={handlePreventClick}
                 >
                   View Latest Posts <span>›</span>
-                </a>
-                <a
-                  href="/blog/categories"
-                  className="border border-ink text-ink text-sm md:text-base px-5 py-3 font-medium hover:bg-ink hover:text-white transition-colors text-center"
+                </div>
+                <div
+                  className="border border-ink text-ink text-sm md:text-base px-5 py-3 font-medium hover:bg-ink hover:text-white transition-colors text-center cursor-default"
+                  onClick={handlePreventClick}
                 >
                   Browse Categories
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -250,6 +256,7 @@ export default function BlogPage() {
                 variants={cardVariants}
                 whileHover="hover"
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100/50 cursor-default"
+                onClick={handlePreventClick}
               >
                 <div className="block">
                   <div className="relative h-56 overflow-hidden bg-gray-100">
@@ -334,13 +341,13 @@ export default function BlogPage() {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="text-center mt-12"
           >
-            <a
-              href="/blog/archive"
-              className="inline-flex items-center gap-2 border-2 border-brand text-brand hover:bg-brand hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 group"
+            <div
+              className="inline-flex items-center gap-2 border-2 border-brand text-brand hover:bg-brand hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 group cursor-default"
+              onClick={handlePreventClick}
             >
               Load More Articles
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </div>
           </motion.div>
         </div>
       </Section>
@@ -373,13 +380,13 @@ export default function BlogPage() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <a
+                <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 bg-brand hover:bg-brand/90 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 group shadow-lg shadow-orange-200/40 hover:shadow-orange-300/50"
                 >
                   Subscribe Now
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
 
               <div className="mt-8 flex flex-wrap gap-6">
@@ -407,7 +414,7 @@ export default function BlogPage() {
               className="w-full"
             >
               <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gray-200/60 shadow-2xl shadow-orange-100/20">
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">
                       Your Name
@@ -415,7 +422,9 @@ export default function BlogPage() {
                     <input
                       type="text"
                       placeholder="John Doe"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200/70 text-gray-900 placeholder:text-gray-400 focus:border-brand focus:ring-2 focus:ring-orange-200/40 hover:border-orange-200/80 transition-colors bg-white/95"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200/70 text-gray-900 placeholder:text-gray-400 focus:border-brand focus:ring-2 focus:ring-orange-200/40 hover:border-orange-200/80 transition-colors bg-white/95 cursor-default"
+                      readOnly
+                      onClick={handlePreventClick}
                     />
                   </div>
 
@@ -426,13 +435,16 @@ export default function BlogPage() {
                     <input
                       type="email"
                       placeholder="john@example.com"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200/70 text-gray-900 placeholder:text-gray-400 focus:border-brand focus:ring-2 focus:ring-orange-200/40 hover:border-orange-200/80 transition-colors bg-white/95"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200/70 text-gray-900 placeholder:text-gray-400 focus:border-brand focus:ring-2 focus:ring-orange-200/40 hover:border-orange-200/80 transition-colors bg-white/95 cursor-default"
+                      readOnly
+                      onClick={handlePreventClick}
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 bg-brand hover:bg-brand/90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 group shadow-lg shadow-orange-200/40 hover:shadow-orange-300/50"
+                    className="w-full flex items-center justify-center gap-2 bg-brand hover:bg-brand/90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 group shadow-lg shadow-orange-200/40 hover:shadow-orange-300/50 cursor-default"
+                    onClick={handlePreventClick}
                   >
                     Subscribe to Newsletter
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

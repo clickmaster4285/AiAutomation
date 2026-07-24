@@ -30,7 +30,7 @@ export default function CategoryTemplate({ category }: CategoryTemplateProps) {
         {category.services.map((service) => (
           <Link
             key={service.slug}
-            href={`/services/${category.slug}/${service.slug}`}
+            href={`/${category.slug}/${service.slug}`}
             className="block p-6 border rounded-xl hover:shadow-lg transition-shadow bg-white hover:border-brand"
           >
             <h2 className="text-xl font-semibold text-gray-800">{service.title}</h2>

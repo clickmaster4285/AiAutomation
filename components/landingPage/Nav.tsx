@@ -454,7 +454,7 @@ export default function Nav() {
                           return (
                             <Link
                               key={idx}
-                              href={category.slug === 'ai-strategy-development' ? '/services/ai-strategy-development' : `/services/${category.slug}`}
+                              href={category.slug === 'ai-strategy-development' ? '/ai-strategy-development' : `/${category.slug}`}
                               className={`w-full text-left px-5 py-3 flex items-center gap-3 transition-all duration-150 relative group ${
                                 isActive ? 'bg-white' : 'hover:bg-white/70'
                               }`}
@@ -519,7 +519,7 @@ export default function Nav() {
                             animate="visible"
                           >
                             <Link
-                              href={`/services/${activeCat?.slug}/${service.slug}`}
+                              href={`/${activeCat?.slug}/${service.slug}`}
                               className="group flex items-start gap-3 p-3 rounded-xl border border-transparent hover:border-gray-200 hover:bg-gray-50 transition-all duration-200"
                               onClick={() => setIsServicesOpen(false)}
                             >
@@ -805,23 +805,7 @@ export default function Nav() {
             </AnimatePresence>
           </div>
 
-          {/* ── Work & Process Links with Hash Navigation ── */}
-          <Link 
-            href="/#work" 
-            className="text-gray-700 hover:text-black transition-colors"
-            onClick={closeAllDropdowns}
-          >
-            Work
-          </Link>
-          
-          <Link 
-            href="/#process" 
-            className="text-gray-700 hover:text-black transition-colors"
-            onClick={closeAllDropdowns}
-          >
-            Process
-          </Link>
-          
+          {/* ── About & Contact Links ── */}
           <Link href="/about" className="text-gray-700 hover:text-black transition-colors">
             About
           </Link>
@@ -872,7 +856,7 @@ export default function Nav() {
                             {getCategoryIcon(category.title)}
                           </span>
                           <Link
-                            href={`/services/${category.slug}`}
+                            href={`/${category.slug}`}
                             className="text-sm font-medium text-gray-800 hover:text-brand transition-colors"
                             onClick={() => {
                               setIsMobileMenuOpen(false);
@@ -886,7 +870,7 @@ export default function Nav() {
                           {category.services.map((service, sIdx) => (
                             <Link
                               key={sIdx}
-                              href={`/services/${category.slug}/${service.slug}`}
+                              href={`/${category.slug}/${service.slug}`}
                               className="flex items-center gap-3 py-1.5 text-sm text-gray-600 hover:text-brand transition-colors"
                               onClick={() => {
                                 setIsMobileMenuOpen(false);
@@ -912,7 +896,7 @@ export default function Nav() {
                       {standaloneServices.map((service, idx) => (
                         <Link
                           key={idx}
-                          href={`/services/${service.slug}`}
+                          href={`/${service.slug}`}
                           className="flex items-center gap-3 py-2 text-sm text-gray-600 hover:text-brand transition-colors"
                           onClick={() => {
                             setIsMobileMenuOpen(false);
@@ -1085,23 +1069,7 @@ export default function Nav() {
               )}
             </div>
 
-            {/* Mobile Work & Process with Hash Navigation */}
-            <Link 
-              href="/#work" 
-              className="block text-gray-700 hover:text-black transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Work
-            </Link>
-            
-            <Link 
-              href="/#process" 
-              className="block text-gray-700 hover:text-black transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Process
-            </Link>
-            
+            {/* Mobile About & Contact */}
             <Link 
               href="/about" 
               className="block text-gray-700 hover:text-black transition-colors"
