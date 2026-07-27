@@ -8,44 +8,27 @@ export async function GET() {
   // Get all industries and their sub-pages from the app directory
   const industries = getIndustries();
 
+  // Define industries to exclude
+  const excludeIndustries = [
+    'professional-services',
+    'logistics-supply-chain',
+    'real-estate',
+    'education'
+  ];
+
+  // Filter out excluded industries
+  const filteredIndustries = industries.filter(
+    industry => !excludeIndustries.includes(industry.slug)
+  );
+
   // Debug: Log what we found
-  console.log('Generating industries sitemap with:', industries);
+  console.log('Generating industries sitemap with:', filteredIndustries);
 
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
-  // If no industries found, add a default message or use hardcoded fallback
-  if (industries.length === 0) {
-    // Add a comment but still generate valid XML
-    sitemap += `
-  <!-- No industry pages found - please check your folder structure -->`;
-    
-    // You can optionally add hardcoded URLs here as a fallback
-    const fallbackIndustries = [
-      'finance-accounting',
-      'healthcare',
-      'law-firms',
-      'ecommerce',
-      'saas',
-      'professional-services',
-      'logistics-supply-chain',
-      'real-estate',
-      'education'
-    ];
-    
-    for (const slug of fallbackIndustries) {
-      sitemap += `
-  <url>
-    <loc>${siteUrl}/industries/${slug}</loc>
-    <lastmod>${lastModified}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>`;
-    }
-  }
-
-  // Add all industries and their sub-pages
-  for (const industry of industries) {
+  // Add all industries and their sub-pages (filtered)
+  for (const industry of filteredIndustries) {
     // Add the main industry page
     sitemap += `
   <url>

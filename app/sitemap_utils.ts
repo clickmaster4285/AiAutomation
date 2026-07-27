@@ -227,9 +227,17 @@ export function getSolutions(): string[] {
   return solutionRoutes.map(route => route.replace('/solutions/', ''));
 }
 
-// Get industries - FIXED VERSION
+// Get industries - UPDATED: Removed professional-services, logistics-supply-chain, real-estate, education
 export function getIndustries(): { slug: string; subPages: string[] }[] {
   const allRoutes = getAllRoutes();
+  
+  // Define industries to exclude
+  const excludeIndustries = [
+    'professional-services',
+    'logistics-supply-chain',
+    'real-estate',
+    'education'
+  ];
   
   // Try to find industries in the routes
   const industryRoutes = allRoutes.filter(route => 
@@ -238,7 +246,7 @@ export function getIndustries(): { slug: string; subPages: string[] }[] {
     !route.includes('[')
   );
   
-  // If industries found, extract them
+  // If industries found, extract them (excluding the ones we don't want)
   if (industryRoutes.length > 0) {
     const mainIndustries: string[] = [];
     const subPages: { [key: string]: string[] } = {};
@@ -247,16 +255,20 @@ export function getIndustries(): { slug: string; subPages: string[] }[] {
       const parts = route.split('/').filter(p => p !== '');
       if (parts.length === 2) {
         const slug = parts[1];
-        if (!mainIndustries.includes(slug)) {
+        // Skip excluded industries
+        if (!excludeIndustries.includes(slug) && !mainIndustries.includes(slug)) {
           mainIndustries.push(slug);
         }
       } else if (parts.length > 2) {
         const industrySlug = parts[1];
-        if (!subPages[industrySlug]) {
-          subPages[industrySlug] = [];
-        }
-        if (!subPages[industrySlug].includes(route)) {
-          subPages[industrySlug].push(route);
+        // Skip sub-pages of excluded industries
+        if (!excludeIndustries.includes(industrySlug)) {
+          if (!subPages[industrySlug]) {
+            subPages[industrySlug] = [];
+          }
+          if (!subPages[industrySlug].includes(route)) {
+            subPages[industrySlug].push(route);
+          }
         }
       }
     }
@@ -267,7 +279,7 @@ export function getIndustries(): { slug: string; subPages: string[] }[] {
     }));
   }
   
-  // Hardcoded fallback for industries
+  // Hardcoded fallback (excluding the ones you don't want)
   return [
     {
       slug: 'finance-accounting',
@@ -288,33 +300,17 @@ export function getIndustries(): { slug: string; subPages: string[] }[] {
     {
       slug: 'saas',
       subPages: [],
-    },
-    {
-      slug: 'professional-services',
-      subPages: [],
-    },
-    {
-      slug: 'logistics-supply-chain',
-      subPages: [],
-    },
-    {
-      slug: 'real-estate',
-      subPages: [],
-    },
-    {
-      slug: 'education',
-      subPages: [],
     }
   ];
 }
 
-// Get blogs - FIXED VERSION
+// Get blogs - Only returns the main /blog page
 export function getBlogPosts(): { slug: string; subPages: string[]; date?: string }[] {
-   return [
+  return [
     {
-      slug: '', // An empty slug means the base /blog path.
-      subPages: [], // No sub-pages for the main page.
-      date: new Date().toISOString().split('T')[0], // Today's date.
+      slug: '', // Empty slug means the main /blog page
+      subPages: [], // No sub-pages
+      date: new Date().toISOString().split('T')[0],
     },
   ];
 }
