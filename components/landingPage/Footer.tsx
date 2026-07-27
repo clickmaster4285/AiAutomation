@@ -143,9 +143,18 @@ export default function Footer() {
         <div className="mt-10 pt-6 border-t border-muted-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>© 2026 Clickmastersaiautomationcompany. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-6">
-            <span className="hover:text-brand transition-colors cursor-default">Privacy Policy</span>
-            <span className="hover:text-brand transition-colors cursor-default">Terms of Service</span>
-            {/* Sitemap Link - Navigates to /sitemap.xml */}
+            <Link 
+              href="/privacy-policy" 
+              className="hover:text-brand transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link 
+              href="/terms-conditions" 
+              className="hover:text-brand transition-colors"
+            >
+              Terms of Service
+            </Link>
             <Link 
               href="/sitemap.xml" 
               className="hover:text-brand transition-colors"
