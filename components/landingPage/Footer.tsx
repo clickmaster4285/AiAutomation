@@ -145,7 +145,15 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center gap-6">
             <span className="hover:text-brand transition-colors cursor-default">Privacy Policy</span>
             <span className="hover:text-brand transition-colors cursor-default">Terms of Service</span>
-            <span className="hover:text-brand transition-colors cursor-default">Sitemap</span>
+            {/* Sitemap Link - Navigates to /sitemap.xml */}
+            <Link 
+              href="/sitemap.xml" 
+              className="hover:text-brand transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sitemap
+            </Link>
           </div>
         </div>
       </div>
