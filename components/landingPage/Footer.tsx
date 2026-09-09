@@ -9,54 +9,14 @@ import { useRouter } from 'next/navigation';
 export default function Footer() {
   const router = useRouter();
 
-  // ── Scroll utility ──
-  const scrollToSection = (sectionId: string, offset: number = 80) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const handleWorkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    
-    // Check if we're on the homepage
-    if (window.location.pathname === '/') {
-      // If on homepage, scroll directly to work section
-      scrollToSection('work');
-    } else {
-      // If on another page, navigate to homepage with hash
-      router.push('/#work');
-    }
-  };
-
-  const handleProcessClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    
-    // Check if we're on the homepage
-    if (window.location.pathname === '/') {
-      // If on homepage, scroll directly to process section
-      scrollToSection('process');
-    } else {
-      // If on another page, navigate to homepage with hash
-      router.push('/#process');
-    }
-  };
-
   return (
     <footer className="bg-muted text-gray-600 border-t border-muted-foreground/10 py-12 md:py-20">
       <div className="mx-auto max-w-[84vw] px-6">
-        {/* ── Grid with equal spacing between all 4 columns ── */}
-        <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-4 items-start">
+        {/* ── Flex layout: equal visual gaps between column content, not just equal tracks ── */}
+        <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:flex lg:flex-nowrap lg:justify-between lg:items-start lg:gap-x-0">
           
           {/* Brand - Column 1 */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:max-w-[220px] lg:flex-shrink-0">
             <Link href="/" className="inline-block">
               <Image
                 src="/images/clickmasters-logo.png"
@@ -67,7 +27,7 @@ export default function Footer() {
                 priority
               />
             </Link>
-            <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               AI automation that businesses actually use and own built for production, not presentations.
             </p>
             <div className="flex items-center gap-3 pt-2">
@@ -76,28 +36,37 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Company - Column 2 */}
-          <div>
-            <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-5">Company</h4>
+          {/* Services - Column 2 */}
+          <div className="lg:flex-shrink-0">
+            <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-5">Services</h4>
             <ul className="space-y-4">
               <li>
-                <a 
-                  href="/#work" 
-                  onClick={handleWorkClick}
-                  className="text-sm hover:text-brand transition-colors duration-200 cursor-pointer"
-                >
-                  Work
-                </a>
+                <Link href="/core-automation" className="text-sm hover:text-brand transition-colors duration-200">
+                  Core Automation
+                </Link>
               </li>
               <li>
-                <a 
-                  href="/#process" 
-                  onClick={handleProcessClick}
-                  className="text-sm hover:text-brand transition-colors duration-200 cursor-pointer"
-                >
-                  Process
-                </a>
+                <Link href="/ai-agents-and-assistants" className="text-sm hover:text-brand transition-colors duration-200">
+                  AI Agents & Assistants
+                </Link>
               </li>
+              <li>
+                <Link href="/automation-by-function" className="text-sm hover:text-brand transition-colors duration-200">
+                  Automation by Function
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-strategy-development" className="text-sm hover:text-brand transition-colors duration-200">
+                  AI Strategy & Development
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company - Column 3 */}
+          <div className="lg:flex-shrink-0">
+            <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-5">Company</h4>
+            <ul className="space-y-4">
               <li>
                 <Link href="/about" className="text-sm hover:text-brand transition-colors duration-200">
                   About
@@ -108,18 +77,23 @@ export default function Footer() {
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link href="/contact" className="text-sm hover:text-brand transition-colors duration-200">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Contact - Column 3 */}
-          <div>
+          {/* Contact - Column 4 */}
+          <div className="lg:flex-shrink-0">
             <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-5">Contact</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 text-brand mt-0.5 flex-shrink-0" />
                 <a 
                   href="mailto:sales@clickmastersdigitalmarketing.com" 
-                  className="hover:text-brand transition-colors break-all"
+                  className="hover:text-brand transition-colors"
                 >
                   sales@clickmastersdigital<br />marketing.com
                 </a>
@@ -147,9 +121,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Get in Touch - Column 4 - Right aligned */}
-          <div className="flex flex-col items-start lg:items-end gap-4">
-            <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider lg:text-right w-full">Get in Touch</h4>
+          {/* Get in Touch - Column 5 */}
+          <div className="flex flex-col gap-4 lg:items-end lg:flex-shrink-0">
+            <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider w-full lg:text-right">
+              Get in Touch
+            </h4>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white font-medium px-6 py-3 rounded-none transition-all shadow-lg shadow-brand/25 hover:shadow-brand/40 group"
@@ -157,7 +133,9 @@ export default function Footer() {
               Contact Us
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
-            <p className="text-xs text-muted-foreground lg:text-right w-full">We reply within a few hours.</p>
+            <p className="text-xs text-muted-foreground w-full lg:text-right">
+              We reply within a few hours.
+            </p>
           </div>
         </div>
 
@@ -165,10 +143,26 @@ export default function Footer() {
         <div className="mt-10 pt-6 border-t border-muted-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>© 2026 Clickmastersaiautomationcompany. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-6">
-            <Link href="/privacy" className="hover:text-brand transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-brand transition-colors">Terms of Service</Link>
-            <Link href="/sitemap" className="hover:text-brand transition-colors">Sitemap</Link>
-         
+            <Link 
+              href="/privacy-policy" 
+              className="hover:text-brand transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link 
+              href="/terms-conditions" 
+              className="hover:text-brand transition-colors"
+            >
+              Terms of Service
+            </Link>
+            <Link 
+              href="/sitemap.xml" 
+              className="hover:text-brand transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sitemap
+            </Link>
           </div>
         </div>
       </div>

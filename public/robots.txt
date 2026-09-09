@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin
+Disallow: /api
+Disallow: /login
+
+Sitemap: https://clickmastersaiautomation.com/sitemap.xml
