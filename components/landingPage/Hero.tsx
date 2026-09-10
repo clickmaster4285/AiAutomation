@@ -5,9 +5,39 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
 import Image from "next/image";
 
-import { Dot, Marker } from "./Shared";
+import { Dot } from "./Shared";
 
-export default function Hero() {
+type HeroCta = { text: string; link: string; primary?: boolean };
+
+export type HeroData = {
+  badge?: string;
+  headline: string;
+  subheading?: string;
+  description?: string;
+  note?: string;
+  cta?: HeroCta;
+  secondaryCta?: HeroCta;
+};
+
+export type StatItem = { label: string; value: string };
+
+// Split the headline into short lines so each line animates in like the original design
+function toLines(headline: string, wordsPerLine = 3): string[] {
+  const words = headline.split(/\s+/).filter(Boolean);
+  const lines: string[] = [];
+  for (let i = 0; i < words.length; i += wordsPerLine) {
+    lines.push(words.slice(i, i + wordsPerLine).join(" "));
+  }
+  return lines;
+}
+
+export default function Hero({
+  data,
+  stats = [],
+}: {
+  data: HeroData;
+  stats?: StatItem[];
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -40,6 +70,9 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
+  const lines = toLines(data.headline);
+  const heroStats = stats.slice(0, 2);
+
   return (
     <section
       ref={ref}
@@ -53,21 +86,31 @@ export default function Hero() {
 
           {/* TEXT */}
           <div className="relative z-10 py-6 md:py-10">
-            <h1 className="display text-[13vw] md:text-[8.5vw] leading-[1.05]">
-              <div className="overflow-hidden">
-                <div className="hero-word py-1">AUTOMATE</div>
-              </div>
-              <div className="overflow-hidden">
-                <div className="hero-word whitespace-nowrap py-1">
-                  THE <span className="text-brand">FUTURE</span>
+            {data.badge && (
+              <span className="hero-meta eyebrow text-brand border border-brand inline-block px-3 py-1 mb-6 text-xs md:text-sm">
+                {data.badge}
+              </span>
+            )}
+
+            <h1 className="display text-[9.5vw] sm:text-6xl md:text-[4.6vw] leading-[1.08]">
+              {lines.map((line, i) => (
+                <div key={i} className="overflow-hidden">
+                  <div
+                    className={`hero-word py-1 ${
+                      i === lines.length - 1 ? "display-italic font-normal" : ""
+                    }`}
+                  >
+                    {line}
+                  </div>
                 </div>
-              </div>
-              <div className="overflow-hidden">
-                <div className="hero-word display-italic font-normal py-1">
-                  of work.
-                </div>
-              </div>
+              ))}
             </h1>
+
+            {data.subheading && (
+              <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
+                {data.subheading}
+              </p>
+            )}
           </div>
 
           {/* IMAGE */}
@@ -90,37 +133,49 @@ export default function Hero() {
         {/* BOTTOM SECTION */}
         <div className="mt-8 md:mt-16 grid md:grid-cols-[1.4fr_auto_auto] items-end gap-6 md:gap-8 hero-meta relative z-10">
 
-          <p className="text-base md:text-lg text-muted-foreground max-w-md leading-relaxed">
-            We build intelligent AI systems that eliminate repetitive work,
-            supercharge your team, and scale without headcount.
-          </p>
+          {data.description && (
+            <p className="text-base md:text-lg text-muted-foreground max-w-md leading-relaxed">
+              {data.description}
+            </p>
+          )}
 
-          <div className="flex gap-6 md:gap-10">
-            <div>
-              <div className="display text-3xl md:text-5xl">500+</div>
-              <div className="eyebrow text-muted-foreground mt-1 text-xs md:text-sm">Projects</div>
-            </div>
+          {data.note && (
+            <p className="text-sm md:text-base text-muted-foreground/80 max-w-md leading-relaxed">
+              {data.note}
+            </p>
+          )}
 
-            <div>
-              <div className="display text-3xl md:text-5xl">120+</div>
-              <div className="eyebrow text-muted-foreground mt-1 text-xs md:text-sm">Clients</div>
+          {heroStats.length > 0 && (
+            <div className="flex gap-6 md:gap-10">
+              {heroStats.map((s) => (
+                <div key={s.label}>
+                  <div className="display text-3xl md:text-5xl">{s.value}</div>
+                  <div className="eyebrow text-muted-foreground mt-1 text-xs md:text-sm">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
+          )}
 
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <a
-              href="#contact"
-              className="bg-ink text-white text-sm px-5 py-3 hover:bg-brand transition-colors inline-flex items-center justify-center gap-2 text-center"
-            >
-              Start Automating <span>›</span>
-            </a>
+            {data.cta && (
+              <a
+                href={data.cta.link}
+                className="bg-ink text-white text-sm px-5 py-3 hover:bg-brand transition-colors inline-flex items-center justify-center gap-2 text-center"
+              >
+                {data.cta.text} <span>›</span>
+              </a>
+            )}
 
-            <a
-              href="#work"
-              className="border border-ink text-ink text-sm px-5 py-3 font-medium hover:bg-ink hover:text-white transition-colors text-center"
-            >
-              View Work
-            </a>
+            {data.secondaryCta && (
+              <a
+                href={data.secondaryCta.link}
+                className="border border-ink text-ink text-sm px-5 py-3 font-medium hover:bg-ink hover:text-white transition-colors text-center"
+              >
+                {data.secondaryCta.text}
+              </a>
+            )}
           </div>
 
         </div>

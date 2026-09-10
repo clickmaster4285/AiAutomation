@@ -5,33 +5,20 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
-export default function FAQ() {
-  const faqs = [
-    {
-      q: "How long does it take to deploy an AI automation system?",
-      a: "Most projects go live within 2–6 weeks depending on complexity. Simple workflow automations can be deployed in days. Full AI agent ecosystems with custom integrations typically take 4–6 weeks.",
-    },
-    {
-      q: "Do I need to change my existing software or tech stack?",
-      a: "No. We integrate with your existing tools and layer automation on top.",
-    },
-    {
-      q: "What types of businesses benefit most from AI automation?",
-      a: "Any business with repetitive, rules-based workflows sales, support, ops, finance, marketing.",
-    },
-    {
-      q: "How do you ensure data security and compliance?",
-      a: "Enterprise-grade encryption, SOC 2 aligned processes, and full GDPR/HIPAA compliance options.",
-    },
-    {
-      q: "What happens after the automation is deployed?",
-      a: "We provide ongoing optimization, monitoring, and improvements as your business evolves.",
-    },
-    {
-      q: "Can I start with a small pilot before committing to a full system?",
-      a: "Absolutely. We recommend a 30-day pilot for most engagements.",
-    },
-  ];
+import { splitHeading } from "./Shared";
+
+type FAQData = {
+  heading: string;
+  items: { question: string; answer: string }[];
+};
+
+export default function FAQ({ data }: { data: FAQData }) {
+  const faqs = data.items.map((item) => ({
+    q: item.question,
+    a: item.answer,
+  }));
+
+  const { head, tail } = splitHeading(data.heading);
 
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -53,9 +40,9 @@ export default function FAQ() {
               </span>
             </div>
             <h2 className="display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
-              Common
+              {head}
               <br />
-              <span className="display-italic text-brand">Questions</span>
+              <span className="display-italic text-brand">{tail}</span>
             </h2>
             <p className="mt-4 text-gray-500 text-sm leading-relaxed max-w-xs">
               Still curious? Book a free discovery call and we'll answer everything specific to your business.
