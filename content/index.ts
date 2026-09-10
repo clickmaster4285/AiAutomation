@@ -14,6 +14,9 @@ import { aiVoiceAgents } from './ai-voice-agents';
 import { aiKnowledgeAssistants } from './ai-knowledge-assistants';
 import { aiMarketingAutomation } from './ai-marketing-automation';
 
+// Import homepage data
+import { homepageData, getHeroData, getServicesList, getFAQs, getTestimonials, getIndustriesList, getToolsCategories, getProcessSteps, getStats } from './homepage';
+
 // Import service pages from solution index
 import { 
   SERVICE_PAGES, 

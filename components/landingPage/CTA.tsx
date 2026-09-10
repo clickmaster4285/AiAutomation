@@ -3,7 +3,16 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function CTA() {
+import { splitHeading } from "./Shared";
+
+type FinalCtaData = {
+  heading: string;
+  subheading: string;
+  cta: { text: string; link: string; primary?: boolean };
+};
+
+export default function CTA({ data }: { data: FinalCtaData }) {
+  const { head, tail } = splitHeading(data.heading);
   return (
     <section className="bg-paper py-24 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 text-center relative">
@@ -51,17 +60,28 @@ export default function CTA() {
         </div>
 
         {/* Headings */}
-        <h2 className="display text-5xl md:text-8xl py-8">
-          Got A Vision?
-        </h2>
+        {head && (
+          <h2 className="display text-4xl sm:text-5xl md:text-7xl py-8">
+            {head}
+          </h2>
+        )}
 
-        <h2 className="display-italic text-5xl md:text-8xl mt-2">
-          Let's Build It.
+        <h2 className="display-italic text-4xl sm:text-5xl md:text-7xl mt-2">
+          {tail}
         </h2>
 
         <p className="text-lg text-muted-foreground mt-10 max-w-md mx-auto">
-          The AI automation agency for businesses that refuse to be left behind.
+          {data.subheading}
         </p>
+
+        {data.cta && (
+          <a
+            href={data.cta.link}
+            className="inline-block mt-8 bg-ink text-white text-sm px-8 py-4 hover:bg-brand transition-colors"
+          >
+            {data.cta.text} <span>›</span>
+          </a>
+        )}
 
         {/* Bottom marquee text – left to right continuous slide */}
 <div className="mt-16 overflow-hidden">

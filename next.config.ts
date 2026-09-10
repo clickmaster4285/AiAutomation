@@ -2,10 +2,8 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // Remove redirects - they're causing issues
-  // The dynamic routes should handle the URLs directly
-  
-  // If you want to keep redirects for old URLs, use this format:
+  // Allow other devices on the LAN to access the dev server
+  allowedDevOrigins: ['192.168.88.39'],
   async redirects() {
     return [
       // Redirect old AI Consulting URL to new AI Strategy & Advisory URL

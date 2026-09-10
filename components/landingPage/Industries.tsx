@@ -1,25 +1,30 @@
 
 "use client";
 import { motion } from "framer-motion";
-import { Marker } from "./Shared";
+import { Marker, splitHeading } from "./Shared";
 
-export default function Industries() {
-  const items = [
-    ["Real Estate", "3× more booked calls", "Automated outreach, property matching, appointment scheduling, and follow-up sequences."],
-    ["Healthcare", "60% admin reduction", "Patient onboarding, reminders, billing workflows, and compliance automation."],
-    ["Finance", "99.9% accuracy", "Document processing, compliance checks, client reporting, and fraud detection."],
-    ["Education", "5× enrollment rates", "Student inquiry automation, personalized outreach, and retention systems."],
-    ["Marketing", "60% lower CAC", "Omnichannel campaign optimization, lead scoring, attribution tracking, and content automation."],
-    ["Ecommerce", "2× repeat purchases", "Order management, abandoned cart recovery, post-purchase automations."],
-    ["SaaS", "85% churn reduction", "Onboarding automation, health scoring, renewal alerts, and expansion triggers."],
-  ];
+type IndustryItem = {
+  title: string;
+  description: string;
+  link?: string;
+};
+
+type IndustriesData = {
+  heading: string;
+  subheading: string;
+  items: IndustryItem[];
+};
+
+export default function Industries({ data }: { data: IndustriesData }) {
+  const { head, tail } = splitHeading(data.heading);
+
   return (
     <section id="industries" className="bg-ink text-white py-24">
           <div className="mx-auto max-w-[84vw] px-6">
               
 
        <div className="flex items-center w-full gap-4 mb-12">
-  <Marker n="07" />
+  <Marker n="09" />
 
   <div className="flex-1 h-px bg-white/10" />
 
@@ -30,21 +35,33 @@ export default function Industries() {
 
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <h2 className="display text-5xl md:text-7xl">We Serves Every<br /><span className="display-italic text-brand">Major Industry</span></h2>
-          <p className="text-sm text-white/60 md:text-right md:self-end max-w-xs md:ml-auto">Proven results across every major vertical. Niche-agnostic. Results obsessed.</p>
+          <h2 className="display text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+            {head}
+            <br />
+            <span className="display-italic text-brand">{tail}</span>
+          </h2>
+          <p className="text-sm text-white/60 md:text-right md:self-end max-w-xs md:ml-auto">{data.subheading}</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-px bg-white/10 border border-black/10">
-          {items.map((it, i) => (
-            <motion.div key={it[0]}
+          {data.items.map((it, i) => (
+            <motion.div key={it.title}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ delay: i * 0.05 }}
               className={`bg-ink p-8 hover:bg-white/5 transition-colors ${i < 4 ? "md:col-span-3" : "md:col-span-4"}`}>
               <div className="eyebrow text-white/40 py-6">0{i + 1}</div>
-                  <h3 className="display text-3xl mb-2 pb-6 border-white/10 border-b">{it[0]}</h3>
+                  <h3 className="display text-2xl md:text-3xl mb-2 pb-6 border-white/10 border-b">{it.title}</h3>
                   
 
-              <div className="text-brand text-md  pt-4  mb-3">{it[1]}</div>
-              <p className="text-md text-white/60 leading-relaxed">{it[2]}</p>
+              <p className="text-md text-white/60 leading-relaxed pt-4">{it.description}</p>
+
+              {it.link && (
+                <a
+                  href={it.link}
+                  className="mt-6 inline-block eyebrow text-brand text-xs md:text-sm hover:underline"
+                >
+                  Explore →
+                </a>
+              )}
             </motion.div>
           ))}
         </div>

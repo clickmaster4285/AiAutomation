@@ -1,5 +1,17 @@
-export default function Marquee() {
-  const items = ["25+ Countries", "98% Satisfaction", "24/7 AI Active", "500+ Projects Delivered", "120+ Global Clients"];
+type StatItem = { label: string; value: string };
+
+const fallbackItems = [
+  "25+ Countries",
+  "98% Satisfaction",
+  "24/7 AI Active",
+  "500+ Projects Delivered",
+  "120+ Global Clients",
+];
+
+export default function Marquee({ stats = [] }: { stats?: StatItem[] }) {
+  const items = stats.length
+    ? stats.map((s) => `${s.value} ${s.label}`)
+    : fallbackItems;
   const row = [...items, ...items, ...items];
 
   return (

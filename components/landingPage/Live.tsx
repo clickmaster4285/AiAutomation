@@ -24,7 +24,7 @@ export default function Live() {
     <section className="bg-paper py-12 md:py-24">
       <div className="mx-auto max-w-[90vw] md:max-w-[84vw] px-4 md:px-6">
         <div className="flex items-center w-full gap-3 md:gap-4 mb-8 md:mb-12">
-          <Marker n="06" />
+          <Marker n="07" />
           <div className="flex-1 h-px bg-black/10" />
           <span className="eyebrow text-muted-foreground whitespace-nowrap text-xs md:text-sm">Live System</span>
         </div>

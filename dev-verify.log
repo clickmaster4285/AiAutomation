@@ -1,0 +1,55 @@
+
+> my-app@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.88.39:3000
+✓ Ready in 957ms
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\ihtishammmmmm\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\ihtishammmmmm\Desktop\tefch\AiAutomation\package-lock.json
+   * C:\Users\ihtishammmmmm\Desktop\tefch\package-lock.json
+
+
+ GET / 200 in 3.0s (next.js: 1745ms, application-code: 1280ms)
+ GET / 200 in 48ms (next.js: 18ms, application-code: 31ms)
+ GET / 200 in 857ms (next.js: 14ms, application-code: 842ms)
+[browser] Invalid property scrollTrigger set to { once: [33mtrue[39m, start: [32m'top 80%'[39m, trigger: [32m'[object HTMLSpanElement]'[39m } Missing plugin? gsap.registerPlugin() (components/landingPage/CountUp.tsx:10:24)
+[browser] Invalid property scrollTrigger set to { once: [33mtrue[39m, start: [32m'top 80%'[39m, trigger: [32m'[object HTMLSpanElement]'[39m } Missing plugin? gsap.registerPlugin() (components/landingPage/CountUp.tsx:10:24)
+[browser] Invalid property scrollTrigger set to { once: [33mtrue[39m, start: [32m'top 80%'[39m, trigger: [32m'[object HTMLSpanElement]'[39m } Missing plugin? gsap.registerPlugin() (components/landingPage/CountUp.tsx:10:24)
+[browser] Invalid property scrollTrigger set to { once: [33mtrue[39m, start: [32m'top 80%'[39m, trigger: [32m'[object HTMLSpanElement]'[39m } Missing plugin? gsap.registerPlugin() (components/landingPage/CountUp.tsx:10:24)
+ GET /contact 200 in 1596ms (next.js: 1552ms, application-code: 44ms)
+○ Compiling /solutions/ai-agents ...
+ GET / 200 in 190ms (next.js: 126ms, application-code: 64ms)
+ GET / 200 in 1651ms (next.js: 17ms, application-code: 1634ms)
+[browser] Invalid property scrollTrigger set to { once: [33mtrue[39m, start: [32m'top 80%'[39m, trigger: [32m'[object HTMLSpanElement]'[39m } Missing plugin? gsap.registerPlugin() (components/landingPage/CountUp.tsx:10:24)
+[browser] Invalid property scrollTrigger set to { once: [33mtrue[39m, start: [32m'top 80%'[39m, trigger: [32m'[object HTMLSpanElement]'[39m } Missing plugin? gsap.registerPlugin() (components/landingPage/CountUp.tsx:10:24)
+[browser] Invalid property scrollTrigger set to { once: [33mtrue[39m, start: [32m'top 80%'[39m, trigger: [32m'[object HTMLSpanElement]'[39m } Missing plugin? gsap.registerPlugin() (components/landingPage/CountUp.tsx:10:24)
+[browser] Invalid property scrollTrigger set to { once: [33mtrue[39m, start: [32m'top 80%'[39m, trigger: [32m'[object HTMLSpanElement]'[39m } Missing plugin? gsap.registerPlugin() (components/landingPage/CountUp.tsx:10:24)
+[browser] Image with src "/images/work3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[browser] Image with src "/images/work4.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[browser] Image with src "/images/work2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET / 200 in 786ms (next.js: 12ms, application-code: 774ms)
+⚠ Blocked cross-origin request to Next.js dev resource /_next/webpack-hmr from "192.168.88.39".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['192.168.88.39'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET /logo.png 404 in 312ms (next.js: 30ms, application-code: 282ms)
+✓ Compiled in 416ms
+ GET / 200 in 327ms (next.js: 107ms, application-code: 220ms)
+ GET / 200 in 56ms (next.js: 8ms, application-code: 48ms)
+ GET / 200 in 44ms (next.js: 29ms, application-code: 15ms)
+ GET / 200 in 999ms (next.js: 13ms, application-code: 986ms)
+ GET / 200 in 496ms (next.js: 10ms, application-code: 485ms)
+[?25h

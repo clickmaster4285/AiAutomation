@@ -54,23 +54,49 @@ Google: (
 ),
 };
 
-export default function Tools() {
-const tools: [string, string][] = [
-["OpenAI", "GPT-4 & Assistants"],
-["Anthropic", "Claude Models"],
-["n8n", "Workflow Engine"],
-["Zapier", "Integrations"],
-["Make", "Automation Platform"],
-["HubSpot", "CRM & Marketing"],
-["Salesforce", "Enterprise CRM"],
-["Google", "Workspace API"],
-];
+type ToolsData = {
+  heading: string;
+  subheading: string;
+  categories: { category: string; items: string[] }[];
+};
+
+// Map tool names from the data file to available brand icons
+const iconAlias: Record<string, string> = {
+  Claude: "Anthropic",
+  "Google Gemini": "Google",
+};
+
+const fallbackIcon = (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    className="w-6 h-6"
+  >
+    <rect x="4" y="4" width="16" height="16" rx="3" />
+    <path d="M9 9h6v6H9z" />
+  </svg>
+);
+
+export default function Tools({ data }: { data: ToolsData }) {
+  // Flatten the categories into unique [name, category] pairs
+  const seen = new Set<string>();
+  const tools: [string, string][] = [];
+  for (const category of data.categories) {
+    for (const name of category.items) {
+      if (!seen.has(name)) {
+        seen.add(name);
+        tools.push([name, category.category]);
+      }
+    }
+  }
 
 return (
 <section className="bg-secondary py-24">
 <div className="mx-auto max-w-[84vw] px-6">
 <div className="flex items-center w-full gap-4 mb-12">
-<Marker n="11" />
+<Marker n="13" />
 <div className="flex-1 h-px bg-black/10" />
 <span className="eyebrow text-muted-foreground whitespace-nowrap">
 Our Stack
@@ -79,17 +105,12 @@ Our Stack
 
     <div className="grid md:grid-cols-[1fr_2fr] gap-12">
       <div>
-        <h2 className="display text-6xl">
-          Built on
-          <br />
-          the best
-          <br />
-          <span className="display-italic text-brand">tools.</span>
+        <h2 className="display text-3xl sm:text-4xl md:text-5xl">
+          {data.heading}
         </h2>
 
         <p className="text-muted-foreground text-md mt-6 max-w-xs">
-          We integrate with your existing tools and layer AI on top no
-          rip-and-replace required.
+          {data.subheading}
         </p>
       </div>
 
@@ -104,7 +125,7 @@ Our Stack
             className="bg-paper border border-border p-4 hover:border-brand transition-colors"
           >
             <div className="text-muted-foreground mb-3">
-              {icons[t[0]]}
+              {icons[iconAlias[t[0]] ?? t[0]] ?? fallbackIcon}
             </div>
 
             <div className="font-semibold text-sm">{t[0]}</div>

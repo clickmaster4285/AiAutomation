@@ -3,9 +3,17 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { Dot, Marker } from "./Shared";
+import { Marker, splitHeading } from "./Shared";
 
-export default function Intelligence() {
+type IntelligenceData = {
+  heading: string;
+  content: string;
+  tags: string[];
+};
+
+export default function Intelligence({ data }: { data: IntelligenceData }) {
+  const { head, tail } = splitHeading(data.heading);
+
   return (
     <section id="about" className="bg-paper py-24">
       <div className="mx-auto max-w-[84vw] px-6">
@@ -23,14 +31,10 @@ export default function Intelligence() {
 
           {/* LEFT */}
           <div className="relative">
-            <h2 className="display text-5xl md:text-8xl">
-              Intelligence
+            <h2 className="display text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+              {head}
               <br />
-              that works
-              <br />
-              <span className="display-italic text-brand">
-                while you sleep.
-              </span>
+              <span className="display-italic text-brand">{tail}</span>
             </h2>
 
             {/* Mascot */}
@@ -49,34 +53,24 @@ export default function Intelligence() {
             </motion.div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mt-10">
-              {[
-                "Zero Downtime",
-                "AI-Native",
-                "Fully Managed",
-                "ROI in 30 Days",
-              ].map((t) => (
-                <span
-                  key={t}
-                  className="text-sm border border-gray-300 px-3 py-1.5"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
+            {data.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-10">
+                {data.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="text-sm border border-gray-300 px-3 py-1.5"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* RIGHT */}
           <div>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              AI automation replaces manual, repetitive work with intelligent
-              systems that qualify, communicate, organize, and convert 24/7
-              without human intervention.
-            </p>
-
             <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-              We design, build, and deploy end-to-end automation ecosystems
-              tailored to your specific workflows and goals.
+              {data.content}
             </p>
 
             <div className="divide-y divide-border border-t border-border">
