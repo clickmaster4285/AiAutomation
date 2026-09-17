@@ -13,6 +13,9 @@ const INITIAL_LIMIT = 6;
 export default function GridSec({ section }: { section: Section }) {
   const gridItems = section.items || [];
   const [showAll, setShowAll] = useState(false);
+  // Comparison-table mode: when `columns` is defined the grid renders as a
+  // proper table (Platform | Best For | Trade-Off style) instead of cards.
+  const isTable = Array.isArray(section.columns) && section.columns.length > 0;
 
   const visibleItems = showAll ? gridItems : gridItems.slice(0, INITIAL_LIMIT);
   const hasMore = gridItems.length > INITIAL_LIMIT;
@@ -84,6 +87,53 @@ export default function GridSec({ section }: { section: Section }) {
           </motion.p>
         )}
 
+        {isTable && (
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={staggerContainer}
+            className="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm"
+          >
+            <table className="w-full min-w-[640px] text-left">
+              <thead>
+                <tr className="bg-brand/10">
+                  {section.columns!.map((col: string, idx: number) => (
+                    <th
+                      key={idx}
+                      className="px-4 sm:px-6 py-4 text-xs sm:text-sm font-semibold uppercase tracking-widest text-brand"
+                    >
+                      {col}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {gridItems.map((item: SectionItem, idx: number) => (
+                  <motion.tr
+                    key={idx}
+                    variants={fadeInUp}
+                    className="border-t border-gray-200 transition-colors hover:bg-brand/5"
+                  >
+                    <td className="px-4 sm:px-6 py-4 text-sm sm:text-base font-semibold text-black align-top">
+                      {item.title}
+                    </td>
+                    {(item.columns || []).map((cell: string, cIdx: number) => (
+                      <td
+                        key={cIdx}
+                        className="px-4 sm:px-6 py-4 text-sm text-gray-600 leading-relaxed align-top"
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          </motion.div>
+        )}
+
+        {!isTable && (
         <motion.div
           key={showAll ? 'all' : 'limited'}
           initial="hidden"
@@ -133,8 +183,9 @@ export default function GridSec({ section }: { section: Section }) {
             );
           })}
         </motion.div>
+        )}
 
-        {hasMore && (
+        {hasMore && !isTable && (
           <div className="mt-12 text-center">
             <motion.button
               initial={{ opacity: 0, y: 20 }}

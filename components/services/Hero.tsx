@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Sparkles, ArrowRight, Settings, BarChart3, Zap } from 'lucide-react';
+import { Sparkles, ArrowRight, Settings, BarChart3, Zap, CheckCircle2 } from 'lucide-react';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
 import { useRef, ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
@@ -450,6 +450,10 @@ export default function Hero({ section }: HeroProps) {
   const primaryCta = ctas.find(c => c.primary) || ctas[0];
   const secondaryCtas = ctas.filter(c => !c.primary);
 
+  // Long-form stat values are checklist bullet points, not numbers – render them
+  // as a stacked check list instead of inline "value + label" pairs next to the CTAs.
+  const isChecklistStats = stats.some(s => typeof s.value === 'string' && s.value.length > 24);
+
   const wordVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
@@ -660,12 +664,24 @@ export default function Hero({ section }: HeroProps) {
               </motion.p>
             )}
 
+            {/* Checklist stats – stacked list for hero sections with long-form bullet values */}
+            {isChecklistStats && (
+              <motion.ul variants={fadeInUp} className="mt-1 space-y-3 max-w-xl">
+                {stats.map((stat, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-brand" />
+                    <span className="text-base sm:text-lg text-gray-200 leading-relaxed">{stat.value}</span>
+                  </li>
+                ))}
+              </motion.ul>
+            )}
+
             {/* Stats + CTAs – with square corners and hover effects */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6 mt-2 flex-wrap"
+              className={`flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6 flex-wrap ${isChecklistStats ? 'mt-6' : 'mt-2'}`}
             >
-              {stats.map((stat, idx) => (
+              {!isChecklistStats && stats.map((stat, idx) => (
                 <div key={idx} className="flex items-baseline gap-1.5">
                   <span className="text-2xl md:text-3xl font-bold text-brand">{stat.value}</span>
                   <span className="text-xs text-gray-400 tracking-widest uppercase">{stat.label}</span>

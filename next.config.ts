@@ -3,7 +3,7 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   // Allow other devices on the LAN to access the dev server
-  allowedDevOrigins: ['192.168.88.39'],
+  allowedDevOrigins: ['192.168.88.53'],
   async redirects() {
     return [
       // Redirect old AI Consulting URL to new AI Strategy & Advisory URL

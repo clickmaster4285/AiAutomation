@@ -18,6 +18,7 @@ export interface SectionItem {
   suffix?: string;
   prefix?: string;
   isViewAll?: boolean;
+  columns?: string[];
 }
 
 export interface Section {
@@ -36,6 +37,7 @@ export interface Section {
   subheading?: string;
   content?: string | string[];
   items?: SectionItem[];
+  columns?: string[];
   stats?: { label: string; value: string }[];
   ctas?: { text: string; link: string; primary?: boolean }[];
   image?: string | {
