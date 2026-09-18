@@ -31,7 +31,7 @@ export interface ServicePage {
 export const SERVICE_PAGES: ServicePage[] = [
   // ── UPDATED: AI Strategy & Advisory (moved to AI Strategy & Development category) ──
   {
-    url: '/services/ai-strategy-development/ai-strategy-advisory/',
+    url: '/services/ai-strategy-advisory/',
     title: 'AI Strategy & Advisory | Strategy That Ships | Clickmasters',
     description: 'Clickmasters provides AI strategy and advisory that ends in working systems, not slide decksopportunity audits, roadmaps, tool selection, and implementation by the same team that builds.',
     primaryKeyword: 'ai strategy advisory (cluster: 49 keywords, incl. "ai consulting services" 5K bucket at $40, "ai consulting companies/firms" 5K at $39, "ai consultant" 5K at $26)',
@@ -145,7 +145,7 @@ export const SERVICE_PAGES: ServicePage[] = [
 
   // ── UPDATED: AI Lead Generation (moved to AI Agents & Assistants category) ──
   {
-    url: '/services/ai-agents-and-assistants/ai-lead-generation/',
+    url: '/services/ai-lead-generation/',
     title: 'AI Lead Generation Automation | Clickmasters',
     description: 'Clickmasters builds AI lead generation systems instant response, conversational qualification, enrichment, scoring, and nurture that converts leads your team is currently losing.',
     primaryKeyword: 'ai lead generation (cluster: 190 keywords, incl. "lead generator" 50K bucket, "ai lead generation" 5K bucket, $27–38 CPCs)',
@@ -267,7 +267,7 @@ export const SERVICE_PAGES: ServicePage[] = [
 
   // ── UPDATED: AI Reporting Automation (moved to Core Automation category) ──
   {
-    url: '/services/core-automation/ai-reporting-automation/',
+    url: '/services/ai-reporting-automation/',
     title: 'AI Reporting Automation | Reports That Build Themselves | Clickmasters',
     description: 'Clickmasters builds reporting automation recurring reports and live dashboards assembled from your systems automatically, with AI summaries of what changed and why it matters.',
     primaryKeyword: 'reporting automation (cluster: 15 direct keywords, "reporting automation" ~500 bucket at up to $200 CPC small cluster, strong commercial intent; validate before prioritizing)',
@@ -372,7 +372,7 @@ export const SERVICE_PAGES: ServicePage[] = [
 
   // ── UPDATED: Custom AI Development (moved to AI Strategy & Development category) ──
   {
-    url: '/services/ai-strategy-development/custom-ai-development/',
+    url: '/services/custom-ai-development/',
     title: 'Custom AI Development | Clickmasters',
     description: 'Clickmasters builds custom AI solutions on proven models AI applications, agents, and integrations designed for your business. Honest scoping: we\'ll tell you when integration beats development.',
     primaryKeyword: 'ai development services (cluster: 291 keywords, incl. "ai development companies" 5K bucket at $77 CPC, "ai development services" 5K at $75)',

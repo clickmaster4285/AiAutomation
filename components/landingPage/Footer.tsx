@@ -39,25 +39,65 @@ export default function Footer() {
           {/* Services - Column 2 */}
           <div className="lg:flex-shrink-0">
             <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-5">Services</h4>
-            <ul className="space-y-4">
-              <li>
-                <Link href="/core-automation" className="text-sm hover:text-brand transition-colors duration-200">
-                  Core Automation
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3 min-w-[340px]">
+              <li className="sm:col-span-2">
+                <Link href="/services" className="text-sm font-semibold text-foreground hover:text-brand transition-colors duration-200">
+                  View All Services
                 </Link>
               </li>
               <li>
-                <Link href="/ai-agents-and-assistants" className="text-sm hover:text-brand transition-colors duration-200">
-                  AI Agents & Assistants
+                <Link href="/services/ai-workflow-automation" className="text-sm hover:text-brand transition-colors duration-200">
+                  AI Workflow Automation
                 </Link>
               </li>
               <li>
-                <Link href="/automation-by-function" className="text-sm hover:text-brand transition-colors duration-200">
-                  Automation by Function
+                <Link href="/services/business-process-automation" className="text-sm hover:text-brand transition-colors duration-200">
+                  Business Process Automation
                 </Link>
               </li>
               <li>
-                <Link href="/ai-strategy-development" className="text-sm hover:text-brand transition-colors duration-200">
-                  AI Strategy & Development
+                <Link href="/services/robotic-process-automation" className="text-sm hover:text-brand transition-colors duration-200">
+                  Robotic Process Automation
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/ai-reporting-automation" className="text-sm hover:text-brand transition-colors duration-200">
+                  AI Reporting Automation
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/ai-agent-development" className="text-sm hover:text-brand transition-colors duration-200">
+                  AI Agent Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/ai-chatbots" className="text-sm hover:text-brand transition-colors duration-200">
+                  AI Chatbots
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/ai-voice-agents" className="text-sm hover:text-brand transition-colors duration-200">
+                  AI Voice Agents
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/ai-lead-generation" className="text-sm hover:text-brand transition-colors duration-200">
+                  AI Lead Generation
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/ai-knowledge-assistants" className="text-sm hover:text-brand transition-colors duration-200">
+                  AI Knowledge Assistants
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/ai-strategy-advisory" className="text-sm hover:text-brand transition-colors duration-200">
+                  AI Strategy &amp; Advisory
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/custom-ai-development" className="text-sm hover:text-brand transition-colors duration-200">
+                  Custom AI Development
                 </Link>
               </li>
             </ul>

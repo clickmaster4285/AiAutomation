@@ -109,6 +109,7 @@ export function getStaticPages(): string[] {
     '/contact',
     '/platforms',
     '/industries',
+    '/services',  // Main services hub page
   ];
   
   const existingMainPages = mainPages.filter(route => 
@@ -119,78 +120,21 @@ export function getStaticPages(): string[] {
 }
 
 // Get services
+// All services now live at the root level (main category pages removed),
+// so we return a flat list of the 11 live service URLs with no sub-pages.
 export function getServices(): { path: string; subPages: string[] }[] {
-  const allRoutes = getAllRoutes();
-  
-  const mainServices = [
-    '/core-automation',
-    '/ai-agents-and-assistants',
-    '/automation-by-function',
-    '/ai-strategy-development',
-  ];
-  
-  const existingMainServices = mainServices.filter(route => 
-    allRoutes.includes(route)
-  );
-  
-  if (existingMainServices.length > 0) {
-    const result: { path: string; subPages: string[] }[] = [];
-    
-    for (const servicePath of existingMainServices) {
-      const subPages = allRoutes.filter(route => 
-        route.startsWith(servicePath + '/') && 
-        route !== servicePath &&
-        !route.includes('[') &&
-        !route.includes('...')
-      );
-      
-      result.push({
-        path: servicePath,
-        subPages: subPages,
-      });
-    }
-    
-    return result;
-  }
-  
-  // Hardcoded fallback
   return [
-    {
-      path: '/core-automation',
-      subPages: [
-        '/core-automation/ai-workflow-automation',
-        '/core-automation/business-process-automation',
-        '/core-automation/robotic-process-automation',
-      ]
-    },
-    {
-      path: '/ai-agents-and-assistants',
-      subPages: [
-        '/ai-agents-and-assistants/ai-agent-development',
-        '/ai-agents-and-assistants/ai-chatbot-automation',
-        '/ai-agents-and-assistants/ai-voice-agents',
-        '/ai-agents-and-assistants/ai-knowledge-assistants',
-      ]
-    },
-    {
-      path: '/automation-by-function',
-      subPages: [
-        '/automation-by-function/ai-sales-automation',
-        '/automation-by-function/ai-marketing-automation',
-        '/automation-by-function/ai-customer-support-automation',
-        '/automation-by-function/ai-data-document-automation',
-        '/automation-by-function/ai-integration-services',
-      ]
-    },
-    {
-      path: '/ai-strategy-development',
-      subPages: [
-        '/ai-strategy-development/ai-consulting-services',
-        '/ai-strategy-development/custom-ai-development',
-        '/ai-strategy-development/ai-reporting-automation',
-        '/ai-strategy-development/ai-lead-generation',
-      ]
-    }
+    { path: '/services/ai-workflow-automation', subPages: [] },
+    { path: '/services/business-process-automation', subPages: [] },
+    { path: '/services/robotic-process-automation', subPages: [] },
+    { path: '/services/ai-reporting-automation', subPages: [] },
+    { path: '/services/ai-agent-development', subPages: [] },
+    { path: '/services/ai-chatbots', subPages: [] },
+    { path: '/services/ai-voice-agents', subPages: [] },
+    { path: '/services/ai-lead-generation', subPages: [] },
+    { path: '/services/ai-knowledge-assistants', subPages: [] },
+    { path: '/services/ai-strategy-advisory', subPages: [] },
+    { path: '/services/custom-ai-development', subPages: [] },
   ];
 }
 
