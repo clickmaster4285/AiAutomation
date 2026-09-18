@@ -62,32 +62,18 @@ const serviceIconMap: Record<string, React.ElementType> = {
   'AI Workflow Automation': Workflow,
   'Business Process Automation': RefreshCw,
   'Robotic Process Automation (RPA)': Bot,
-  
+  'AI Reporting Automation': BarChart3,
+
   // AI Agents & Assistants
   'AI Agent Development': Brain,
-  'AI Chatbot Automation': MessageSquare,
+  'AI Chatbots': MessageSquare,
   'AI Voice Agents': PhoneCall,
   'AI Knowledge Assistants': Brain,
-  
-  // Automation by Function
-  'AI Sales Automation': TrendingUp,
-  'AI Marketing Automation': Users,
-  'AI Customer Support Automation': Headphones,
-  'AI Data & Document Automation': FileText,
-  'AI Integration Services': GitMerge,
-  
-  // Standalone Services (new pages - no category)
-  'AI Consulting Services': Lightbulb,
-  'Custom AI Development': Briefcase,
-  'AI Reporting Automation': BarChart3,
   'AI Lead Generation': Target,
-};
 
-// ── Category icons (left panel) ──
-const categoryIconMap: Record<string, React.ElementType> = {
-  'Core Automation': Settings,
-  'AI Agents & Assistants': Bot,
-  'Automation by Function': Layers,
+  // AI Strategy & Development
+  'AI Strategy & Advisory': Lightbulb,
+  'Custom AI Development': Briefcase,
 };
 
 // ── Platform icons ──
@@ -198,15 +184,16 @@ const solutionsData = [
   },
 ];
 
-// ── Standalone services ──
-const standaloneServices = [
-  { title: 'AI Consulting Services', slug: 'ai-consulting', description: 'Strategy that shipsopportunity audits, roadmaps, and implementation.' },
-  { title: 'Custom AI Development', slug: 'custom-ai-development', description: 'Custom AI solutions on proven models with honest scoping.' },
-  { title: 'AI Reporting Automation', slug: 'ai-reporting-automation', description: 'Automated reports and dashboards with AI summaries.' },
-  { title: 'AI Lead Generation', slug: 'ai-lead-generation', description: 'AI-powered lead generation and qualification systems.' },
-];
-
 const FallbackIcon = Plug;
+
+// ── All services, flat list (subpages shown directly in the navbar — no category grouping) ──
+const servicesList = serviceCategories.flatMap((cat) =>
+  cat.services.map((s) => ({
+    title: s.title,
+    slug: s.slug,
+    description: s.description,
+  }))
+);
 
 export default function Nav() {
   const pathname = usePathname();
@@ -220,7 +207,6 @@ export default function Nav() {
   const [isMobilePlatformsOpen, setIsMobilePlatformsOpen] = useState(false);
   const [isMobileIndustriesOpen, setIsMobileIndustriesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const solutionsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const platformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -231,12 +217,6 @@ export default function Nav() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    if (isServicesOpen && serviceCategories.length > 0 && !activeCategory) {
-      setActiveCategory(serviceCategories[0].title);
-    }
-  }, [isServicesOpen, activeCategory]);
 
   // Handle hash navigation after page load
   useEffect(() => {
@@ -264,20 +244,14 @@ export default function Nav() {
     setIsServicesOpen(true);
   };
   const handleServicesMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setIsServicesOpen(false);
-      setActiveCategory(null);
-    }, 200);
+    timeoutRef.current = setTimeout(() => setIsServicesOpen(false), 200);
   };
   const handleServicesDropdownMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setIsServicesOpen(true);
   };
   const handleServicesDropdownMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setIsServicesOpen(false);
-      setActiveCategory(null);
-    }, 200);
+    timeoutRef.current = setTimeout(() => setIsServicesOpen(false), 200);
   };
 
   const handleSolutionsMouseEnter = () => {
@@ -325,8 +299,6 @@ export default function Nav() {
     industryTimeoutRef.current = setTimeout(() => setIsIndustriesOpen(false), 200);
   };
 
-  const handleCategoryHover = (title: string) => setActiveCategory(title);
-
   const dropdownVariants: Variants = {
     hidden: { opacity: 0, y: -12, scale: 0.97 },
     visible: {
@@ -352,17 +324,9 @@ export default function Nav() {
     }),
   };
 
-  const activeCat = serviceCategories.find(cat => cat.title === activeCategory);
-  const activeServices = activeCat?.services ?? [];
-
   const getServiceIcon = (title: string) => {
     const Icon = serviceIconMap[title] || FallbackIcon;
     return <Icon className="h-4 w-4 text-brand flex-shrink-0" />;
-  };
-
-  const getCategoryIcon = (title: string) => {
-    const Icon = categoryIconMap[title] || FallbackIcon;
-    return <Icon className="h-4 w-4 flex-shrink-0" />;
   };
 
   const getPlatformIcon = (title: string) => {
@@ -439,87 +403,30 @@ export default function Nav() {
                   onMouseEnter={handleServicesDropdownMouseEnter}
                   onMouseLeave={handleServicesDropdownMouseLeave}
                 >
-                  <div className="flex" style={{ minHeight: '360px' }}>
-                    {/* LEFT PANEL: Categories */}
-                    <div className="w-[220px] flex-shrink-0 bg-gray-50 border-r border-gray-200 flex flex-col">
-                      <div className="px-5 pt-5 pb-3 border-b border-gray-200">
-                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.12em]">
-                          What we do
-                        </p>
-                      </div>
-
-                      <div className="flex-1 py-2">
-                        {serviceCategories.map((category, idx) => {
-                          const isActive = activeCategory === category.title;
-                          return (
-                            <Link
-                              key={idx}
-                              href={category.slug === 'ai-strategy-development' ? '/ai-strategy-development' : `/${category.slug}`}
-                              className={`w-full text-left px-5 py-3 flex items-center gap-3 transition-all duration-150 relative group ${
-                                isActive ? 'bg-white' : 'hover:bg-white/70'
-                              }`}
-                              style={{
-                                borderRight: isActive
-                                  ? '2px solid var(--brand, #f97316)'
-                                  : '2px solid transparent',
-                              }}
-                              onMouseEnter={() => handleCategoryHover(category.title)}
-                              onClick={() => setIsServicesOpen(false)}
-                            >
-                              <span
-                                className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-bold flex-shrink-0 transition-colors ${
-                                  isActive
-                                    ? 'bg-brand text-white'
-                                    : 'bg-gray-200 text-gray-500 hover:bg-gray-300 hover:text-gray-700'
-                                }`}
-                              >
-                                {getCategoryIcon(category.title)}
-                              </span>
-                              <span
-                                className={`text-sm font-medium leading-tight transition-all duration-200 ${
-                                  isActive
-                                    ? 'text-gray-900 font-bold'
-                                    : 'text-gray-500 group-hover:text-gray-900 group-hover:font-bold'
-                                }`}
-                              >
-                                {category.title}
-                              </span>
-                              {isActive && (
-                                <ArrowRight className="ml-auto h-3.5 w-3.5 text-brand flex-shrink-0" />
-                              )}
-                            </Link>
-                          );
-                        })}
-                      </div>
+                  <div className="p-4 max-h-[80vh] overflow-y-auto">
+                    {/* Header */}
+                    <div className="flex items-center gap-2 px-3 pb-3 border-b border-gray-100">
+                      <Sparkles className="h-4 w-4 text-brand" />
+                      <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.12em]">
+                        Our Services
+                      </p>
+                      <span className="text-[10px] font-medium text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full ml-auto">
+                        {servicesList.length}
+                      </span>
                     </div>
 
-                    {/* RIGHT PANEL: Sub-services with icons */}
-                    <div className="flex-1 flex flex-col">
-                      <div className="px-6 pt-5 pb-3 border-b border-gray-200 flex items-center justify-between">
-                        <div>
-                          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.12em]">
-                            Solutions
-                          </p>
-                          <p className="text-sm font-semibold text-gray-900 mt-0.5">
-                            {activeCategory}
-                          </p>
-                        </div>
-                        <span className="text-[10px] font-medium text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full border border-gray-200">
-                          {activeServices.length} services
-                        </span>
-                      </div>
-
-                      <div className="flex-1 p-4 grid grid-cols-2 gap-2 content-start overflow-y-auto">
-                        {activeServices.map((service, idx) => (
+                    {/* All services — subpages shown directly (no category list) */}
+                    <div className="grid grid-cols-2 gap-2 pt-3">
+                        {servicesList.map((service, idx) => (
                           <motion.div
-                            key={`${activeCategory}-${idx}`}
+                            key={service.slug}
                             custom={idx}
                             variants={serviceItemVariants}
                             initial="hidden"
                             animate="visible"
                           >
                             <Link
-                              href={`/${activeCat?.slug}/${service.slug}`}
+                              href={`/services/${service.slug}`}
                               className="group flex items-start gap-3 p-3 rounded-xl border border-transparent hover:border-gray-200 hover:bg-gray-50 transition-all duration-200"
                               onClick={() => setIsServicesOpen(false)}
                             >
@@ -542,16 +449,21 @@ export default function Nav() {
                         ))}
                       </div>
 
-                      <div className="px-6 py-3 border-t border-gray-200 bg-gray-50/50 flex items-center justify-between">
-                        <p className="text-xs text-gray-400">Not sure what you need?</p>
-                        <Link
-                          href="/contact"
-                          className="text-xs font-semibold text-brand hover:underline flex items-center gap-1"
-                          onClick={() => setIsServicesOpen(false)}
-                        >
-                          Talk to us <ArrowRight className="h-3 w-3" />
-                        </Link>
-                      </div>
+                    <div className="px-3 pt-3 mt-1 border-t border-gray-100 flex items-center justify-between">
+                      <Link
+                        href="/services"
+                        className="text-xs font-semibold text-gray-700 hover:text-brand flex items-center gap-1"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        View all services <ArrowRight className="h-3 w-3" />
+                      </Link>
+                      <Link
+                        href="/contact"
+                        className="text-xs font-semibold text-brand hover:underline flex items-center gap-1"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        Talk to us <ArrowRight className="h-3 w-3" />
+                      </Link>
                     </div>
                   </div>
                 </motion.div>
@@ -844,71 +756,35 @@ export default function Nav() {
                 <ChevronDown className={`h-4 w-4 transition-transform ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
               </button>
               {isMobileServicesOpen && (
-                <div className="mt-2 pl-4 space-y-6 border-l-2 border-brand/30">
-                  <div>
-                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                      Services
-                    </p>
-                    {serviceCategories.map((category, idx) => (
-                      <div key={idx} className="mb-4">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="w-5 h-5 rounded bg-brand/10 text-brand flex items-center justify-center">
-                            {getCategoryIcon(category.title)}
-                          </span>
-                          <Link
-                            href={`/${category.slug}`}
-                            className="text-sm font-medium text-gray-800 hover:text-brand transition-colors"
-                            onClick={() => {
-                              setIsMobileMenuOpen(false);
-                              setIsMobileServicesOpen(false);
-                            }}
-                          >
-                            {category.title}
-                          </Link>
-                        </div>
-                        <div className="ml-7 space-y-1">
-                          {category.services.map((service, sIdx) => (
-                            <Link
-                              key={sIdx}
-                              href={`/${category.slug}/${service.slug}`}
-                              className="flex items-center gap-3 py-1.5 text-sm text-gray-600 hover:text-brand transition-colors"
-                              onClick={() => {
-                                setIsMobileMenuOpen(false);
-                                setIsMobileServicesOpen(false);
-                              }}
-                            >
-                              {getServiceIcon(service.title)}
-                              <div>
-                                <span>{service.title}</span>
-                                {service.description && (
-                                  <span className="text-xs text-gray-400 block">
-                                    {service.description}
-                                  </span>
-                                )}
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                    
-                    <div className="mt-4 pt-4 border-t border-gray-200">
-                      {standaloneServices.map((service, idx) => (
-                        <Link
-                          key={idx}
-                          href={`/${service.slug}`}
-                          className="flex items-center gap-3 py-2 text-sm text-gray-600 hover:text-brand transition-colors"
-                          onClick={() => {
-                            setIsMobileMenuOpen(false);
-                            setIsMobileServicesOpen(false);
-                          }}
-                        >
-                          {getServiceIcon(service.title)}
-                          <span>{service.title}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
+                <div className="mt-2 pl-4 space-y-1 border-l-2 border-brand/30">
+                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                    Services
+                  </p>
+                  <Link
+                    href="/services"
+                    className="flex items-center gap-3 py-2 text-sm font-medium text-gray-800 hover:text-brand transition-colors"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setIsMobileServicesOpen(false);
+                    }}
+                  >
+                    <Layers className="h-4 w-4 text-brand flex-shrink-0" />
+                    <span>View all services</span>
+                  </Link>
+                  {servicesList.map((service, idx) => (
+                    <Link
+                      key={idx}
+                      href={`/services/${service.slug}`}
+                      className="flex items-center gap-3 py-2 text-sm text-gray-600 hover:text-brand transition-colors"
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setIsMobileServicesOpen(false);
+                      }}
+                    >
+                      {getServiceIcon(service.title)}
+                      <span>{service.title}</span>
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>

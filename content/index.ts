@@ -188,7 +188,7 @@ const initialServiceContent: Record<string, ServiceContent> = {
   'ai-agent-development': aiAgentDevelopment,
   'ai-integration-services': aiIntegrationServices,
   'robotic-process-automation': roboticProcessAutomation,
-  'ai-chatbot-automation': aiChatbotAutomation,
+  'ai-chatbots': aiChatbotAutomation,
   'ai-sales-automation': aiSalesAutomation,
   'ai-customer-support-automation': aiCustomerSupportAutomation,
   'ai-data-document-automation': aiDataDocumentAutomation,
@@ -242,27 +242,14 @@ export const serviceCategories: ServiceCategory[] = [
     heroDescription: 'From chatbots to voice agents – create AI assistants that work 24/7 for your business.',
     services: [
       { title: 'AI Agent Development', slug: 'ai-agent-development', description: 'Build autonomous agents for complex tasks.' },
-      { title: 'AI Chatbot Automation', slug: 'ai-chatbot-automation', description: 'AI-powered chatbots for customer engagement.' },
+      { title: 'AI Chatbots', slug: 'ai-chatbots', description: 'AI-powered chatbots for customer engagement.' },
       { title: 'AI Voice Agents', slug: 'ai-voice-agents', description: 'Voice assistants for hands-free operations.' },
       { title: 'AI Knowledge Assistants', slug: 'ai-knowledge-assistants', description: 'Assistants that retrieve and summarize knowledge.' },
       { title: 'AI Lead Generation', slug: 'ai-lead-generation', description: 'AI-powered lead generation and qualification systems.' },
     ],
   },
-  {
-    title: 'Automation by Function',
-    slug: 'automation-by-function',
-    description: 'Automate specific business functions – sales, marketing, support, data, and integrations.',
-    heroTitle: 'Automation by Function',
-    heroDescription: 'Targeted automation solutions for every department – from lead generation to customer retention.',
-    services: [
-      { title: 'AI Sales Automation', slug: 'ai-sales-automation', description: 'Automate lead scoring, outreach, and follow-ups.' },
-      { title: 'AI Marketing Automation', slug: 'ai-marketing-automation', description: 'Personalized campaigns and audience segmentation.' },
-      { title: 'AI Customer Support Automation', slug: 'ai-customer-support-automation', description: 'Automated ticket routing, chatbots, and self-service.' },
-      { title: 'AI Data & Document Automation', slug: 'ai-data-document-automation', description: 'Extract, process, and organize data and documents.' },
-      { title: 'AI Integration Services', slug: 'ai-integration-services', description: 'Connect your apps and systems with AI-powered integration.' },
-    ],
-  },
-  // ── NEW CATEGORY ADDED ──
+  // ── REMOVED: 'Automation by Function' category (main category pages removed; its former
+  // subpages now 301-redirect to their /solutions/ equivalents in next.config.ts) ──
   {
     title: 'AI Strategy & Development',
     slug: 'ai-strategy-development',
@@ -273,7 +260,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         title: 'AI Strategy & Advisory',
         slug: 'ai-strategy-advisory',
-        description: 'Strategy that shipsopportunity audits, roadmaps, and implementation.',
+        description: 'Strategy that ships — opportunity audits, roadmaps, and implementation.',
       },
       {
         title: 'Custom AI Development',
@@ -284,16 +271,13 @@ export const serviceCategories: ServiceCategory[] = [
   },
 ];
 
-// ── Category slugs for static generation ──
-export const categorySlugs = serviceCategories.map((cat) => cat.slug);
-
-// ── Flat list of all services ──
+// ── Flat list of all services (root-level URLs, no /category/ prefix) ──
 export const allServices: { slug: string; title: string; path: string }[] = [
   ...serviceCategories.flatMap((cat) =>
     cat.services.map((s) => ({
       slug: s.slug,
       title: s.title,
-      path: `/services/${cat.slug}/${s.slug}`,
+      path: `/services/${s.slug}`,
     }))
   ),
 ];
