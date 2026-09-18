@@ -28,7 +28,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              AI automation that businesses actually use and own built for production, not presentations.
+              AI automation that businesses actually use and own-built for production, not presentations.
             </p>
             <div className="flex items-center gap-3 pt-2">
               <span className="inline-block w-8 h-0.5 bg-brand" />
